@@ -170,6 +170,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-blue  { background: #001d2d; border: 1px solid #388bfd; color: #79c0ff; }
 .rb-amber { background: #2d2200; border: 1px solid #d29922; color: #ffc966; }
 .rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
+.rb-gold  { background: #1a1500; border: 1px solid #f3d327; color: #f3d327; }
+.top-info .role-badge { margin-left: 0; margin-top: 6px; display: inline-block; }
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
@@ -690,7 +692,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png" alt="Seel">
       <div class="cap-info">
-        <h3>Seel</h3>
+        <h3 class="rarity-purple">Seel</h3>
         <div class="cap-meta">Lv.34 &bull; Relaxed &bull; Hydration</div>
         <div class="cap-ivs">HP <strong class="iv-high">31</strong> &bull; SpAtk <strong class="iv-high">29</strong> &bull; Speed <strong class="iv-high">31</strong></div>
         <div class="cap-note">Tres IVs perfectos/casi perfectos. Hydration cura status en lluvia. Evoluciona a Dewgong. Candidato a entrar al equipo.</div>
@@ -701,7 +703,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png" alt="Slowbro">
       <div class="cap-info">
-        <h3>Slowbro (Relaxed)</h3>
+        <h3 class="rarity-blue">Slowbro (Relaxed)</h3>
         <div class="cap-meta">Lv.34 &bull; Relaxed &bull; Oblivious</div>
         <div class="cap-ivs">Def <strong class="iv-high">31</strong> &bull; Atk <strong class="iv-high">30</strong> &bull; SpAtk <strong class="iv-mid">24</strong></div>
         <div class="cap-note">Def 31 perfecto. Relaxed (+Def/-Speed) es la nature ideal para Slowbro tanque. Gran candidato a reemplazar a Furret.</div>
@@ -712,7 +714,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png" alt="Dewgong">
       <div class="cap-info">
-        <h3>Dewgong (Rash)</h3>
+        <h3 class="rarity-green">Dewgong (Rash)</h3>
         <div class="cap-meta">Lv.39 &bull; Rash &bull; Thick Fat</div>
         <div class="cap-ivs">Atk <strong class="iv-high">31</strong> &bull; SpD <strong class="iv-high">29</strong> &bull; Speed <strong class="iv-low">5</strong></div>
         <div class="cap-note">Thick Fat absorbe Fire e Ice. Atk 31 y SpD 29 excelentes. Speed 5 y Rash problemáticos. Solo en rol defensivo lento.</div>
@@ -723,7 +725,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venomoth.png" alt="Venomoth">
       <div class="cap-info">
-        <h3>Venomoth</h3>
+        <h3 class="rarity-green">Venomoth</h3>
         <div class="cap-meta">Lv.32 &bull; Sassy &bull; Tinted Lens</div>
         <div class="cap-ivs">SpD <strong class="iv-mid">27</strong> &bull; Speed <strong class="iv-mid">22</strong></div>
         <div class="cap-note">Tinted Lens (ataques no efectivos hacen doble daño) es habilidad premium. Sassy penaliza Speed. Guardarlo por la habilidad.</div>
@@ -734,7 +736,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png" alt="Grimer">
       <div class="cap-info">
-        <h3>Grimer</h3>
+        <h3 class="rarity-green">Grimer</h3>
         <div class="cap-meta">Lv.28 &bull; Hasty &bull; Sticky Hold</div>
         <div class="cap-ivs">Atk <strong class="iv-high">28</strong> &bull; Speed <strong class="iv-high">31</strong> &bull; HP <strong class="iv-low">3</strong></div>
         <div class="cap-note">Atk 28 y Speed 31 buenos para Muk fisico. HP 3 es critico. Busca uno con Poison Touch para usarlo en serio.</div>
@@ -745,7 +747,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png" alt="Slowbro">
       <div class="cap-info">
-        <h3>Slowbro (Hardy)</h3>
+        <h3 class="rarity-white">Slowbro (Hardy)</h3>
         <div class="cap-meta">Lv.36 &bull; Hardy &bull; Own Tempo</div>
         <div class="cap-ivs">Def <strong class="iv-low">9</strong> &bull; SpAtk <strong class="iv-low">11</strong></div>
         <div class="cap-note">Def 9 es fatal para Slowbro. Ya tienes uno con Def 31. Sin motivo para guardarlo.</div>
@@ -756,7 +758,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png" alt="Golduck">
       <div class="cap-info">
-        <h3>Golduck</h3>
+        <h3 class="rarity-grey">Golduck</h3>
         <div class="cap-meta">Lv.35 &bull; Timid &bull; Damp</div>
         <div class="cap-ivs">SpAtk <strong class="iv-low">13</strong> &bull; SpD <strong class="iv-low">2</strong></div>
         <div class="cap-note">Timid era buena oportunidad pero SpAtk IV 13 arruina el potencial especial. SpD 2 critico. Liberar.</div>
@@ -767,7 +769,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="Horsea">
       <div class="cap-info">
-        <h3>Horsea</h3>
+        <h3 class="rarity-white">Horsea</h3>
         <div class="cap-meta">Lv.34 &bull; Relaxed &bull; Swift Swim</div>
         <div class="cap-ivs">SpAtk <strong class="iv-low">13</strong> &bull; Speed <strong class="iv-mid">25</strong></div>
         <div class="cap-note">Relaxed penaliza Speed en un Swift Swim que necesita velocidad. SpAtk 13 bajo. Para Kingdra busca Modest/Timid con SpAtk alto.</div>
@@ -791,9 +793,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-1">1</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png" alt="">
       <div class="top-info">
-        <h3>Slowbro <span class="top-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-blue">Slowbro</h3>
         <div class="top-meta">Relaxed &bull; Oblivious &bull; Def IV 31 / Atk IV 30</div>
         <div class="top-why">Nature perfecta para tanque defensivo. Def 31 es el IV clave de Slowbro. Candidato inmediato a reemplazar a Furret en el equipo. Water/Psychic cubre bien.</div>
+        <div class="role-badge rb-gold"><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
       </div>
     </div>
 
@@ -801,9 +804,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-2">2</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png" alt="">
       <div class="top-info">
-        <h3>Nidorino &rarr; Nidoking <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-green">Nidorino &rarr; Nidoking</h3>
         <div class="top-meta">Serious &bull; Poison Point &bull; Atk IV 31</div>
         <div class="top-why">Atk 31 perfecto para Nidoking fisico. Serious es neutral (ok). Evoluciona con Moon Stone. Poison/Ground tiene gran cobertura. Muy util para el equipo.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -811,9 +815,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-3">3</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png" alt="">
       <div class="top-info">
-        <h3>Seel &rarr; Dewgong <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-purple">Seel &rarr; Dewgong</h3>
         <div class="top-meta">Relaxed &bull; Hydration &bull; HP/SpAtk/Speed todos altos</div>
         <div class="top-why">HP 31 + SpAtk 29 + Speed 31 es un catch excepcional. Hydration en lluvia es enorme. Evoluciona facilmente. Candidato al equipo principal.</div>
+        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
     </div>
 
@@ -821,9 +826,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">4</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gastly.png" alt="">
       <div class="top-info">
-        <h3>Gastly &rarr; Gengar <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-blue">Gastly &rarr; Gengar</h3>
         <div class="top-meta">Calm &bull; Levitate &bull; HP 29 / Atk 29 / Def 30</div>
         <div class="top-why">Levitate es inmunidad a Ground &mdash; habilidad premium. HP/Def IVs altos pero SpAtk 17 y Speed 13 son bajos. Guardarlo por Levitate.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -831,9 +837,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">5</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/jolteon.png" alt="">
       <div class="top-info">
-        <h3>Jolteon <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-white">Jolteon</h3>
         <div class="top-meta">Sassy &bull; Volt Absorb &bull; Lv.35</div>
         <div class="top-why">Volt Absorb inmune a Electric y recupera HP &mdash; habilidad increible. Sassy (+SpD/-Speed) es terrible para Jolteon. Solo por la habilidad.</div>
+        <div class="role-badge rb-amber"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -841,9 +848,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">6</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/electabuzz.png" alt="">
       <div class="top-info">
-        <h3>Electabuzz <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-green">Electabuzz</h3>
         <div class="top-meta">Careful &bull; Static &bull; Lv.38 &bull; Atk 27</div>
         <div class="top-why">Nivel 38 es el mas alto de las cajas. Atk 27 decente. Static paraliza al tocar. Careful (-SpAtk) no es ideal pero tiene nivel para ser util de inmediato.</div>
+        <div class="role-badge rb-amber"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -851,9 +859,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">7</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/pinsir.png" alt="">
       <div class="top-info">
-        <h3>Pinsir <span class="top-stars">&#9733;&#9733;</span></h3>
+        <h3 class="rarity-white">Pinsir</h3>
         <div class="top-meta">Naive &bull; Moxie &bull; Speed 22</div>
         <div class="top-why">Moxie (+1 Atk por cada KO) es habilidad premium para sweeper. Naive es decente (+Speed/-SpD). Atk IV 13 bajo &mdash; guardarlo por la habilidad.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -861,9 +870,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">8</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seaking.png" alt="">
       <div class="top-info">
-        <h3>Seaking <span class="top-stars">&#9733;&#9733;</span></h3>
+        <h3 class="rarity-white">Seaking</h3>
         <div class="top-meta">Jolly &bull; Water Veil &bull; Lv.40</div>
         <div class="top-why">El mas alto nivel de las cajas (40). Jolly para fisico es correcto. Water Veil previene quemaduras. IVs mediocres &mdash; usar como HM slave de Surf y Waterfall.</div>
+        <div class="role-badge rb-amber"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -879,18 +889,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   </div>
   <div class="drop-grid">
 
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/kakuna.png"><div class="drop-info"><h3>Kakuna</h3><div class="drop-reason">Crisalida sin movimientos. Sin utilidad alguna.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><div class="drop-info"><h3>Krabby</h3><div class="drop-reason">Atk IV 0. Fatal para un atacante fisico. Imposible de usar.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><div class="drop-info"><h3>Dewgong (Sassy)</h3><div class="drop-reason">SpAtk 0 + Speed 1. Ya tienes el Dewgong Rash con Thick Fat mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/caterpie.png"><div class="drop-info"><h3>Caterpie</h3><div class="drop-reason">Bug inicial sin utilidad competitiva.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/hoothoot.png"><div class="drop-info"><h3>Hoothoot</h3><div class="drop-reason">Ya tienes Noctowl Lv.36 en caja. Este es redundante.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3>Tentacool</h3><div class="drop-reason">Atk 3, Def 3, SpD 3. Practicamente todos los IVs malos.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><div class="drop-info"><h3>Scyther</h3><div class="drop-reason">HP 0 y Def 1. Para Scizor necesitas Atk alto y buenos IVs.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3>Slowpoke</h3><div class="drop-reason">SpD 3 critico. Ya tienes dos Slowbro mejores en cajas.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/fearow.png"><div class="drop-info"><h3>Fearow</h3><div class="drop-reason">Atk IV 8. Inaceptable para un atacante fisico.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rattata.png"><div class="drop-info"><h3>Rattata</h3><div class="drop-reason">Early-game filler. Sin potencial con el equipo actual.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/ledyba.png"><div class="drop-info"><h3>Ledyba</h3><div class="drop-reason">Bug debil sin potencial. IVs bajos generales.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><div class="drop-info"><h3>Growlithe (Intimidate)</h3><div class="drop-reason">Ya tienes uno con Flash Fire. Intimidate es inferior para Arcanine.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/kakuna.png"><div class="drop-info"><h3 class="rarity-grey">Kakuna</h3><div class="drop-reason">Crisalida sin movimientos. Sin utilidad alguna.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><div class="drop-info"><h3 class="rarity-grey">Krabby</h3><div class="drop-reason">Atk IV 0. Fatal para un atacante fisico. Imposible de usar.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><div class="drop-info"><h3 class="rarity-grey">Dewgong (Sassy)</h3><div class="drop-reason">SpAtk 0 + Speed 1. Ya tienes el Dewgong Rash con Thick Fat mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/caterpie.png"><div class="drop-info"><h3 class="rarity-grey">Caterpie</h3><div class="drop-reason">Bug inicial sin utilidad competitiva.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/hoothoot.png"><div class="drop-info"><h3 class="rarity-white">Hoothoot</h3><div class="drop-reason">Ya tienes Noctowl Lv.36 en caja. Este es redundante.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3 class="rarity-grey">Tentacool</h3><div class="drop-reason">Atk 3, Def 3, SpD 3. Practicamente todos los IVs malos.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><div class="drop-info"><h3 class="rarity-grey">Scyther</h3><div class="drop-reason">HP 0 y Def 1. Para Scizor necesitas Atk alto y buenos IVs.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3 class="rarity-grey">Slowpoke</h3><div class="drop-reason">SpD 3 critico. Ya tienes dos Slowbro mejores en cajas.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/fearow.png"><div class="drop-info"><h3 class="rarity-white">Fearow</h3><div class="drop-reason">Atk IV 8. Inaceptable para un atacante fisico.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rattata.png"><div class="drop-info"><h3 class="rarity-white">Rattata</h3><div class="drop-reason">Early-game filler. Sin potencial con el equipo actual.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/ledyba.png"><div class="drop-info"><h3 class="rarity-white">Ledyba</h3><div class="drop-reason">Bug debil sin potencial. IVs bajos generales.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><div class="drop-info"><h3 class="rarity-white">Growlithe (Intimidate)</h3><div class="drop-reason">Ya tienes uno con Flash Fire. Intimidate es inferior para Arcanine.</div></div><div class="drop-tag">LIBERAR</div></div>
 
   </div>
 </div>

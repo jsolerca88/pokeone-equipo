@@ -169,6 +169,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-blue  { background: #001d2d; border: 1px solid #388bfd; color: #79c0ff; }
 .rb-amber { background: #2d2200; border: 1px solid #d29922; color: #ffc966; }
 .rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
+.rb-gold  { background: #1a1500; border: 1px solid #f3d327; color: #f3d327; }
+.top-info .role-badge { margin-left: 0; margin-top: 6px; display: inline-block; }
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
@@ -692,7 +694,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="Horsea">
       <div class="cap-info">
-        <h3>Horsea</h3>
+        <h3 class="rarity-green">Horsea</h3>
         <div class="cap-meta">Lv.34 &bull; Modest &bull; Swift Swim</div>
         <div class="cap-ivs">SpAtk <strong class="iv-high">27</strong> &bull; SpDef <strong class="iv-high">28</strong></div>
         <div class="cap-note">Evoluciona a Kingdra (Water/Dragon) con Dragon Scale + trade. Swift Swim dobla Speed bajo lluvia. Muy valioso.</div>
@@ -703,7 +705,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png" alt="Lanturn">
       <div class="cap-info">
-        <h3>Lanturn</h3>
+        <h3 class="rarity-blue">Lanturn</h3>
         <div class="cap-meta">Lv.40 &bull; Hasty &bull; Volt Absorb</div>
         <div class="cap-ivs">Def <strong class="iv-high">31</strong> &bull; Speed <strong class="iv-high">29</strong></div>
         <div class="cap-note">Volt Absorb absorbe ataques Electric y recupera HP. Tipologia Water/Electric excelente. Guardar como opcion de equipo.</div>
@@ -714,7 +716,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png" alt="Golduck">
       <div class="cap-info">
-        <h3>Golduck</h3>
+        <h3 class="rarity-blue">Golduck</h3>
         <div class="cap-meta">Lv.35 &bull; Naive &bull; Cloud Nine</div>
         <div class="cap-ivs">Def <strong class="iv-high">30</strong> &bull; SpAtk <strong class="iv-high">27</strong></div>
         <div class="cap-note">Naive penaliza SpDef pero IVs ofensivos decentes. Cloud Nine anula efectos de clima. Guardar como reserva.</div>
@@ -725,7 +727,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png" alt="Dewgong">
       <div class="cap-info">
-        <h3>Dewgong</h3>
+        <h3 class="rarity-green">Dewgong</h3>
         <div class="cap-meta">Lv.36 &bull; Sassy &bull; Thick Fat</div>
         <div class="cap-ivs">Atk <strong class="iv-high">28</strong> &bull; SpDef bajo</div>
         <div class="cap-note">Thick Fat resiste Fire e Ice. Pero Sassy penaliza Speed bastante. Mediocre en general.</div>
@@ -736,7 +738,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
       <div class="cap-info">
-        <h3>Gyarados (Brave)</h3>
+        <h3 class="rarity-grey">Gyarados (Brave)</h3>
         <div class="cap-meta">Lv.40 &bull; Brave &bull; Intimidate</div>
         <div class="cap-ivs">Speed <strong class="iv-low">1</strong> &bull; Atk <strong class="iv-low">15</strong></div>
         <div class="cap-note">Speed IV 1 con Brave que penaliza Speed aun mas. Completamente inutilizable. Tienes uno Adamant mucho mejor.</div>
@@ -747,7 +749,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
       <div class="cap-info">
-        <h3>Gyarados (Calm)</h3>
+        <h3 class="rarity-green">Gyarados (Calm)</h3>
         <div class="cap-meta">Lv.40 &bull; Calm &bull; Intimidate</div>
         <div class="cap-ivs">Atk <strong class="iv-mid">22</strong> &bull; Speed <strong class="iv-high">27</strong></div>
         <div class="cap-note">Calm penaliza Atk un 10%. Gyarados es atacante fisico, esta nature destruye su potencial. Tu Adamant sigue siendo superior.</div>
@@ -758,7 +760,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
       <div class="cap-info">
-        <h3>Gyarados (Bold)</h3>
+        <h3 class="rarity-white">Gyarados (Bold)</h3>
         <div class="cap-meta">Lv.40 &bull; Bold &bull; Intimidate</div>
         <div class="cap-ivs">Atk <strong class="iv-low">12</strong> &bull; Speed <strong class="iv-low">15</strong></div>
         <div class="cap-note">Bold penaliza Atk. IVs bajos ademas. Peor en todo comparado con el Adamant. Liberar.</div>
@@ -769,7 +771,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png" alt="Seadra">
       <div class="cap-info">
-        <h3>Seadra</h3>
+        <h3 class="rarity-white">Seadra</h3>
         <div class="cap-meta">Lv.40 &bull; Modest &bull; Poison Point</div>
         <div class="cap-ivs">SpAtk <strong class="iv-low">9</strong> &bull; Speed <strong class="iv-mid">18</strong></div>
         <div class="cap-note">Modest es buena nature pero SpAtk IV 9 es muy bajo para Kingdra. Usa el Horsea Modest con SpAtk 27 para Kingdra.</div>
@@ -780,7 +782,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png" alt="Magikarp">
       <div class="cap-info">
-        <h3>Magikarp</h3>
+        <h3 class="rarity-grey">Magikarp</h3>
         <div class="cap-meta">Lv.20 &bull; Hasty &bull; Swift Swim</div>
         <div class="cap-ivs">Atk <strong class="iv-low">6</strong> &bull; SpAtk <strong class="iv-low">14</strong></div>
         <div class="cap-note">IVs muy bajos. Futuro Gyarados mediocre. Tienes uno Adamant con Speed 31 mucho mejor en cajas.</div>
@@ -791,7 +793,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png" alt="Slugma">
       <div class="cap-info">
-        <h3>Slugma</h3>
+        <h3 class="rarity-white">Slugma</h3>
         <div class="cap-meta">Lv.25 &bull; Docile &bull; Magma Armor</div>
         <div class="cap-ivs">SpAtk <strong class="iv-low">4</strong> &bull; Speed <strong class="iv-high">26</strong></div>
         <div class="cap-note">SpAtk IV 4 es terrible para atacante especial Fire. Magma Armor es habilidad inutil en batalla. Sin uso ninguno.</div>
@@ -802,7 +804,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png" alt="Chinchou">
       <div class="cap-info">
-        <h3>Chinchou x3</h3>
+        <h3 class="rarity-white">Chinchou x3</h3>
         <div class="cap-meta">Varios &bull; Mild/Impish/Mild</div>
         <div class="cap-ivs">IVs mediocres en stats clave</div>
         <div class="cap-note">Ninguno tiene buenas stats. Ya tienes un Lanturn Volt Absorb mejor. Liberar todos.</div>
@@ -813,7 +815,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="capture-card">
       <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png" alt="Goldeen">
       <div class="cap-info">
-        <h3>Goldeen x3</h3>
+        <h3 class="rarity-white">Goldeen x3</h3>
         <div class="cap-meta">Calm/Gentle/Gentle</div>
         <div class="cap-ivs">IVs y natures malos</div>
         <div class="cap-note">Seaking no es viable en ningun rol serio. Liberar todos.</div>
@@ -837,9 +839,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-1">1</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="">
       <div class="top-info">
-        <h3>Gyarados <span class="top-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-blue">Gyarados</h3>
         <div class="top-meta">Adamant &bull; Intimidate &bull; Speed IV 31</div>
         <div class="top-why">Nature perfecta para fisico (+Atk/-SpAtk). Speed 31. Intimidate baja Atk rival al entrar. Candidato al equipo principal. EVs: 252 Atk / 252 Speed.</div>
+        <div class="role-badge rb-gold"><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
       </div>
     </div>
 
@@ -847,9 +850,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-2">2</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="">
       <div class="top-info">
-        <h3>Horsea &rarr; Kingdra <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-green">Horsea &rarr; Kingdra</h3>
         <div class="top-meta">Modest &bull; Swift Swim &bull; SpAtk 27 / SpDef 28</div>
         <div class="top-why">Dragon/Water con solo 2 debilidades (Dragon y Fairy). Swift Swim dobla Speed bajo lluvia. Necesita Dragon Scale (5% Horsea/Seadra salvaje o Thief) + trade.</div>
+        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
     </div>
 
@@ -857,9 +861,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-3">3</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png" alt="">
       <div class="top-info">
-        <h3>Eevee <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-blue">Eevee</h3>
         <div class="top-meta">Quiet &bull; Adaptability &bull; Speed 31 / Def 29</div>
         <div class="top-why">Adaptability dobla bonus STAB a x2 (enorme). Quiet baja Speed &mdash; mejor Vaporeon (tanque) o Espeon (especial). Evitar Jolteon con Quiet.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -867,9 +872,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">4</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png" alt="">
       <div class="top-info">
-        <h3>Snorlax <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-green">Snorlax</h3>
         <div class="top-meta">Bashful &bull; Thick Fat &bull; Atk 28 / Def 27</div>
         <div class="top-why">Thick Fat absorbe Fire e Ice. HP base 160 (enorme). Atk 28 decente. Rol tanque con Rest+Sleep Talk. Necesita subir niveles desde cero.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -877,9 +883,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">5</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png" alt="">
       <div class="top-info">
-        <h3>Lanturn <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-blue">Lanturn</h3>
         <div class="top-meta">Hasty &bull; Volt Absorb &bull; Def 31 / Speed 29</div>
         <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -887,9 +894,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">6</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png" alt="">
       <div class="top-info">
-        <h3>Chansey <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <h3 class="rarity-white">Chansey</h3>
         <div class="top-meta">Modest &bull; Natural Cure &bull; HP 23</div>
         <div class="top-why">HP base 250: el mayor del juego. Natural Cure cura status al cambiar. Wall / soporte definitivo. Soft-Boiled para recuperarse. Muy util en PVP defensivo.</div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -897,9 +905,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="rank-badge rank-n">7</div>
       <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png" alt="">
       <div class="top-info">
-        <h3>Houndoom <span class="top-stars">&#9733;&#9733;</span></h3>
+        <h3 class="rarity-green">Houndoom</h3>
         <div class="top-meta">Hardy &bull; Early Bird &bull; Atk 30 / Speed 26</div>
         <div class="top-why">Dark/Fire buena tipologia. Atk 30 alto pero Early Bird no es ideal. Hardy es nature neutral. Potencial medio. Reserva para cuando evolucionas.</div>
+        <div class="role-badge rb-amber"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -915,23 +924,23 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   </div>
   <div class="drop-grid">
 
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Brave)</h3><div class="drop-reason">Speed IV 1 + nature -Speed. Inutil total.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Calm)</h3><div class="drop-reason">Nature penaliza Atk. Tienes Adamant mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Bold)</h3><div class="drop-reason">Nature penaliza Atk + IVs bajos.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><div class="drop-info"><h3>Magikarp (Hasty)</h3><div class="drop-reason">Atk IV 6. Futuro Gyarados malísimo.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><div class="drop-info"><h3>Seadra (Modest)</h3><div class="drop-reason">SpAtk IV 9. Usa el Horsea para Kingdra.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><div class="drop-info"><h3>Slugma (Docile)</h3><div class="drop-reason">SpAtk IV 4. Sin potencial ofensivo alguno.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3>Slowpoke x4</h3><div class="drop-reason">Todos con IVs mediocres. Guarda 1 maximo si quieres Slowbro/Slowking.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><div class="drop-info"><h3>Slowbro x2</h3><div class="drop-reason">IVs mediocres en stats clave. Sin prioridad.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><div class="drop-info"><h3>Goldeen x4</h3><div class="drop-reason">Natures/IVs malos. Seaking sin potencial.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><div class="drop-info"><h3>Chinchou x3</h3><div class="drop-reason">Mediocres. Tienes el Lanturn Volt Absorb mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><div class="drop-info"><h3>Seel x3</h3><div class="drop-reason">Todos con IVs mediocres y natures malas.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><div class="drop-info"><h3>Psyduck (Timid)</h3><div class="drop-reason">SpAtk IV 1. Completamente inutil.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><div class="drop-info"><h3>Venonat (Hardy)</h3><div class="drop-reason">Nature neutral + SpAtk mediocre. Sin uso.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><div class="drop-info"><h3>Grimer (Sassy)</h3><div class="drop-reason">Sassy penaliza Speed. Stench inutil en batalla.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><div class="drop-info"><h3>Rhyhorn (Modest)</h3><div class="drop-reason">Modest penaliza Atk en atacante fisico. Nature incorrecta fatal.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3>Tentacool (Modest)</h3><div class="drop-reason">Speed IV 2. Sin velocidad = sin utilidad.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"><div class="drop-info"><h3>Nidoran / Nidorina</h3><div class="drop-reason">IVs mediocres. Sin potencial competitivo.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-grey">Gyarados (Brave)</h3><div class="drop-reason">Speed IV 1 + nature -Speed. Inutil total.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-green">Gyarados (Calm)</h3><div class="drop-reason">Nature penaliza Atk. Tienes Adamant mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-white">Gyarados (Bold)</h3><div class="drop-reason">Nature penaliza Atk + IVs bajos.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><div class="drop-info"><h3 class="rarity-grey">Magikarp (Hasty)</h3><div class="drop-reason">Atk IV 6. Futuro Gyarados malísimo.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><div class="drop-info"><h3 class="rarity-white">Seadra (Modest)</h3><div class="drop-reason">SpAtk IV 9. Usa el Horsea para Kingdra.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><div class="drop-info"><h3 class="rarity-grey">Slugma (Docile)</h3><div class="drop-reason">SpAtk IV 4. Sin potencial ofensivo alguno.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3 class="rarity-white">Slowpoke x4</h3><div class="drop-reason">Todos con IVs mediocres. Guarda 1 maximo si quieres Slowbro/Slowking.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><div class="drop-info"><h3 class="rarity-white">Slowbro x2</h3><div class="drop-reason">IVs mediocres en stats clave. Sin prioridad.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><div class="drop-info"><h3 class="rarity-grey">Goldeen x4</h3><div class="drop-reason">Natures/IVs malos. Seaking sin potencial.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><div class="drop-info"><h3 class="rarity-white">Chinchou x3</h3><div class="drop-reason">Mediocres. Tienes el Lanturn Volt Absorb mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><div class="drop-info"><h3 class="rarity-white">Seel x3</h3><div class="drop-reason">Todos con IVs mediocres y natures malas.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><div class="drop-info"><h3 class="rarity-grey">Psyduck (Timid)</h3><div class="drop-reason">SpAtk IV 1. Completamente inutil.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><div class="drop-info"><h3 class="rarity-white">Venonat (Hardy)</h3><div class="drop-reason">Nature neutral + SpAtk mediocre. Sin uso.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><div class="drop-info"><h3 class="rarity-white">Grimer (Sassy)</h3><div class="drop-reason">Sassy penaliza Speed. Stench inutil en batalla.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><div class="drop-info"><h3 class="rarity-white">Rhyhorn (Modest)</h3><div class="drop-reason">Modest penaliza Atk en atacante fisico. Nature incorrecta fatal.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3 class="rarity-grey">Tentacool (Modest)</h3><div class="drop-reason">Speed IV 2. Sin velocidad = sin utilidad.</div></div><div class="drop-tag">LIBERAR</div></div>
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"><div class="drop-info"><h3 class="rarity-white">Nidoran / Nidorina</h3><div class="drop-reason">IVs mediocres. Sin potencial competitivo.</div></div><div class="drop-tag">LIBERAR</div></div>
 
   </div>
 </div>
