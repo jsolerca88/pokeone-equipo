@@ -162,7 +162,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rarity-gold   { color: #f3d327; }
 
 /* Puntuacion de rol */
-.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; }
+.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; position: relative; cursor: help; }
 .role-badge .rb-score { font-size: 1.3em; display: block; }
 .role-badge .rb-label { font-size: 0.7em; display: block; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
 .rb-green { background: #001d0e; border: 1px solid #3fb950; color: #7ee787; }
@@ -171,6 +171,23 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
 .rb-gold  { background: #1a1500; border: 1px solid #f3d327; color: #f3d327; }
 .top-info .role-badge { margin-left: 0; margin-top: 6px; display: inline-block; }
+/* Tooltip */
+.role-badge[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute; bottom: calc(100% + 8px); right: 0;
+  background: #0d1117; border: 1px solid #30363d; color: #c9d1d9;
+  font-size: 0.78em; font-weight: 400; padding: 7px 10px; border-radius: 6px;
+  width: 220px; white-space: normal; line-height: 1.5;
+  pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 200;
+  text-transform: none; letter-spacing: 0;
+}
+.role-badge[data-tooltip]:hover::after { opacity: 1; }
+.role-badge[data-tooltip]::before {
+  content: ''; position: absolute; bottom: calc(100% + 2px); right: 14px;
+  border: 5px solid transparent; border-top-color: #30363d;
+  pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 201;
+}
+.role-badge[data-tooltip]:hover::before { opacity: 1; }
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
@@ -217,7 +234,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.29 &bull; Hasty &bull; Sturdy</div>
           <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
         </div>
-        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Atk 28 + Sturdy: absorbe 1 golpe para colocar hazards. Hasty penaliza Def. Sin EVs aún. Potencial sólido pero nature subóptima."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -288,7 +305,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.28 &bull; Modest &bull; Flash Fire</div>
           <div class="types"><span class="type-badge t-fire">Fire</span></div>
         </div>
-        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Flash Fire: inmune a ataques Fire. Atk IV 20 limita el techo ofensivo. Modest + buenas bases, pero sin EVs y nivel bajo aún."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -355,7 +372,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.43 &bull; Rash &bull; Chlorophyll</div>
           <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
         </div>
-        <div class="role-badge rb-amber"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" data-tooltip="Chlorophyll dobla Speed bajo sol. SpAtk 24 mediocre y Rash penaliza SpDef. Nature e IVs limitan su potencial ofensivo."><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -421,7 +438,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.43 &bull; Modest &bull; Synchronize</div>
           <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
         </div>
-        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-green" data-tooltip="Timid + Synchronize + SpAtk 30 + Speed 28: todos los IVs clave altos. Solo necesita EVs para ser devastador."><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -487,7 +504,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.39 &bull; Jolly &bull; Water Absorb</div>
           <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-fighting">Fighting</span></div>
         </div>
-        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Water Absorb + tipología Water/Fighting única. Atk 26 ok. Jolly para sweeper físico. Le faltan EVs y nivel para brillar."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -553,7 +570,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.39 &bull; Modest &bull; Cursed Body</div>
           <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
         </div>
-        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Cursed Body puede deshabilitar movimientos del rival. SpAtk 27 alto + Modest perfecta. Solo le faltan EVs para brillar."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -842,7 +859,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-blue">Gyarados</h3>
         <div class="top-meta">Adamant &bull; Intimidate &bull; Speed IV 31</div>
         <div class="top-why">Nature perfecta para fisico (+Atk/-SpAtk). Speed 31. Intimidate baja Atk rival al entrar. Candidato al equipo principal. EVs: 252 Atk / 252 Speed.</div>
-        <div class="role-badge rb-gold"><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
+        <div class="role-badge rb-gold" data-tooltip="Adamant + Intimidate + Speed 31: los tres factores clave perfectos. Candidato #1 al equipo. Solo le falta nivel y EVs."><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
       </div>
     </div>
 
@@ -853,7 +870,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-green">Horsea &rarr; Kingdra</h3>
         <div class="top-meta">Modest &bull; Swift Swim &bull; SpAtk 27 / SpDef 28</div>
         <div class="top-why">Dragon/Water con solo 2 debilidades (Dragon y Fairy). Swift Swim dobla Speed bajo lluvia. Necesita Dragon Scale (5% Horsea/Seadra salvaje o Thief) + trade.</div>
-        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-green" data-tooltip="Modest + Swift Swim + SpAtk 27/SpDef 28. Dragon/Water solo 2 debilidades. Bajo lluvia dobla Speed y es devastador."><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
     </div>
 
@@ -864,7 +881,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-blue">Eevee</h3>
         <div class="top-meta">Quiet &bull; Adaptability &bull; Speed 31 / Def 29</div>
         <div class="top-why">Adaptability dobla bonus STAB a x2 (enorme). Quiet baja Speed &mdash; mejor Vaporeon (tanque) o Espeon (especial). Evitar Jolteon con Quiet.</div>
-        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Adaptability +++ pero Quiet penaliza Speed. Mejor como Vaporeon tanque o Espeon especial. Evitar Jolteon con esta nature."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -875,7 +892,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-green">Snorlax</h3>
         <div class="top-meta">Bashful &bull; Thick Fat &bull; Atk 28 / Def 27</div>
         <div class="top-why">Thick Fat absorbe Fire e Ice. HP base 160 (enorme). Atk 28 decente. Rol tanque con Rest+Sleep Talk. Necesita subir niveles desde cero.</div>
-        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Thick Fat + HP 160 + Atk/Def sólidos. Bashful neutral aceptable. Tanque top con Rest+Sleep Talk si se sube de nivel."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -886,7 +903,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-blue">Lanturn</h3>
         <div class="top-meta">Hasty &bull; Volt Absorb &bull; Def 31 / Speed 29</div>
         <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente.</div>
-        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="Volt Absorb convierte ataques Electric en curación. Tipología Water/Electric única. Def 31 + Speed 29 excepcionales."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -897,7 +914,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-white">Chansey</h3>
         <div class="top-meta">Modest &bull; Natural Cure &bull; HP 23</div>
         <div class="top-why">HP base 250: el mayor del juego. Natural Cure cura status al cambiar. Wall / soporte definitivo. Soft-Boiled para recuperarse. Muy util en PVP defensivo.</div>
-        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" data-tooltip="HP 250 el mayor del juego. Natural Cure cura status al salir de combate. Wall definitivo. HP IV 23 es el único punto débil."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -908,7 +925,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-green">Houndoom</h3>
         <div class="top-meta">Hardy &bull; Early Bird &bull; Atk 30 / Speed 26</div>
         <div class="top-why">Dark/Fire buena tipologia. Atk 30 alto pero Early Bird no es ideal. Hardy es nature neutral. Potencial medio. Reserva para cuando evolucionas.</div>
-        <div class="role-badge rb-amber"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" data-tooltip="Dark/Fire buena tipología ofensiva. Atk 30 alto. Early Bird mediocre en batalla, Hardy neutral. Potencial ofensivo limitado."><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
