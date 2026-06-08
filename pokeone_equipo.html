@@ -236,6 +236,72 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   </div>
   <div class="team-grid">
 
+    <!-- ALAKAZAM -->
+    <div class="card">
+      <div class="card-header h-alakazam">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
+        <div class="header-info">
+          <h2 class="rarity-blue">ALAKAZAM</h2>
+          <div class="meta">Lv.44 &bull; Modest &bull; Synchronize</div>
+          <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
+        </div>
+        <div class="role-badge rb-green" onclick="openRbModal('alakazam')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs / EVs / Objetivo</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">16</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">1</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">23</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">28</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">56</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">78</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Teleport</span><span class="move-desc">Escape batalla &mdash; reemplazar por Shadow Ball</span><span class="move-bad">cambiar</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Recover</span><span class="move-desc">Recupera 50% HP &#10003; util</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Psychic</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
+        </ul>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
+        </ul>
+        <div class="alert alert-info">Synchronize util para cazar con nature deseada. SpA 27 / Spd 28 excelentes para Alakazam especial.</div>
+      </div>
+    </div>
+
     <!-- GOLEM -->
     <div class="card">
       <div class="card-header h-golem">
@@ -308,6 +374,73 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       </div>
     </div>
 
+    <!-- GENGAR -->
+    <div class="card">
+      <div class="card-header h-gengar">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
+        <div class="header-info">
+          <h2 class="rarity-green">GENGAR</h2>
+          <div class="meta">Lv.40 &bull; Modest &bull; Cursed Body</div>
+          <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
+        </div>
+        <div class="role-badge rb-blue" onclick="openRbModal('gengar')"><span class="rb-score">7/10</span><span class="rb-label">Bueno</span></div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs / EVs / Objetivo</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">1</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">5</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">30</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">30</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">18</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">19</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">18</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">74</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad &#10003;</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Mean Look</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
+        </ul>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
+        </ul>
+        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) cuando consigas la TM.</div>
+        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. SpA 30 / Def 30 excelentes. Speed IV 19 mejorable.</div>
+      </div>
+    </div>
+
     <!-- ARCANINE -->
     <div class="card">
       <div class="card-header h-arcanine">
@@ -372,138 +505,6 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </ul>
         <div class="alert alert-danger">&#9888; URGENTE: Ir a Mr. Mind en Saffron City + conseguir TM35 Flamethrower en Game Corner Celadon.</div>
         <div class="alert alert-warning">Speed IV 14 bajo. Flash Fire inmune a Fire propio &mdash; sinergia excelente con Arcanine especial.</div>
-      </div>
-    </div>
-
-    <!-- VILEPLUME -->
-    <div class="card">
-      <div class="card-header h-vileplume">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
-        <div class="header-info">
-          <h2 class="rarity-green">VILEPLUME</h2>
-          <div class="meta">Lv.44 &bull; Rash &bull; Chlorophyll</div>
-          <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
-        </div>
-        <div class="role-badge rb-amber" onclick="openRbModal('vileplume')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
-      </div>
-      <div class="card-body">
-        <div class="stitle">IVs / EVs / Objetivo</div>
-        <div class="stat-rows">
-          <div class="stat-row-line">
-            <span class="sr-lbl">IV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">24</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">18</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">16</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">2</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">31</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">EV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">OBJ</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="stitle">Moveset actual</div>
-        <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Flash</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Mega Drain</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Acid</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Cut</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
-        </ul>
-        <div class="stitle">Moveset objetivo</div>
-        <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison 90 pot</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Moonblast</span><span class="move-desc">Cobertura Fairy</span></li>
-        </ul>
-        <div class="alert alert-warning">SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas. Rash +SpAtk/-SpD es suboptimo.</div>
-      </div>
-    </div>
-
-    <!-- ALAKAZAM -->
-    <div class="card">
-      <div class="card-header h-alakazam">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
-        <div class="header-info">
-          <h2 class="rarity-blue">ALAKAZAM</h2>
-          <div class="meta">Lv.44 &bull; Modest &bull; Synchronize</div>
-          <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
-        </div>
-        <div class="role-badge rb-green" onclick="openRbModal('alakazam')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
-      </div>
-      <div class="card-body">
-        <div class="stitle">IVs / EVs / Objetivo</div>
-        <div class="stat-rows">
-          <div class="stat-row-line">
-            <span class="sr-lbl">IV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">16</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">23</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">28</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">EV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">56</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">78</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">OBJ</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="stitle">Moveset actual</div>
-        <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Teleport</span><span class="move-desc">Escape batalla &mdash; reemplazar por Shadow Ball</span><span class="move-bad">cambiar</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Recover</span><span class="move-desc">Recupera 50% HP &#10003; util</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Psychic</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
-        </ul>
-        <div class="stitle">Moveset objetivo</div>
-        <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
-        </ul>
-        <div class="alert alert-info">Synchronize util para cazar con nature deseada. SpA 27 / Spd 28 excelentes para Alakazam especial.</div>
       </div>
     </div>
 
@@ -573,16 +574,16 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       </div>
     </div>
 
-    <!-- GENGAR -->
+    <!-- VILEPLUME -->
     <div class="card">
-      <div class="card-header h-gengar">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
+      <div class="card-header h-vileplume">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
         <div class="header-info">
-          <h2 class="rarity-green">GENGAR</h2>
-          <div class="meta">Lv.40 &bull; Modest &bull; Cursed Body</div>
-          <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
+          <h2 class="rarity-green">VILEPLUME</h2>
+          <div class="meta">Lv.44 &bull; Rash &bull; Chlorophyll</div>
+          <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
         </div>
-        <div class="role-badge rb-blue" onclick="openRbModal('gengar')"><span class="rb-score">7/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('vileplume')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -590,23 +591,23 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">5</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">30</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">30</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">18</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">19</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">24</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">18</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">16</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">2</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">31</span></div>
             </div>
           </div>
           <div class="stat-row-line">
             <span class="sr-lbl">EV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">18</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">74</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
             </div>
           </div>
           <div class="stat-row-line">
@@ -623,20 +624,19 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
         <div class="stitle">Moveset actual</div>
         <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost &#10003;</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &#10003;</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad &#10003;</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Mean Look</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
+          <li><div class="move-num">1</div><span class="move-name">Flash</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Mega Drain</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Acid</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Cut</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
         </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
-          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
-          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
-          <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison 90 pot</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Moonblast</span><span class="move-desc">Cobertura Fairy</span></li>
         </ul>
-        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) cuando consigas la TM.</div>
-        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. SpA 30 / Def 30 excelentes. Speed IV 19 mejorable.</div>
+        <div class="alert alert-warning">SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas. Rash +SpAtk/-SpD es suboptimo.</div>
       </div>
     </div>
 
