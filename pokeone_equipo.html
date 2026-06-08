@@ -52,13 +52,19 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .stitle { font-size: 0.68em; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin: 12px 0 6px; border-bottom: 1px solid #21262d; padding-bottom: 3px; }
 
 /* IVs */
-.iv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-.iv-cell { background: #0d1117; border-radius: 6px; padding: 4px 6px; text-align: center; }
-.iv-cell .iv-stat { font-size: 0.6em; color: #8b949e; text-transform: uppercase; }
-.iv-cell .iv-val { font-size: 0.95em; font-weight: 700; }
+/* IV / EV filas compactas */
+.stat-rows { display: flex; flex-direction: column; gap: 3px; }
+.stat-row-line { display: flex; align-items: center; gap: 5px; }
+.sr-lbl { font-size: 0.58em; font-weight: 700; color: #484f58; text-transform: uppercase; width: 16px; flex-shrink: 0; text-align: right; }
+.sr-cells { display: flex; gap: 3px; flex: 1; }
+.sr-cell { flex: 1; background: #0d1117; border-radius: 5px; padding: 3px 2px; text-align: center; min-width: 0; }
+.sr-s { font-size: 0.52em; color: #8b949e; text-transform: uppercase; display: block; letter-spacing: 0.3px; }
+.sr-v { font-size: 0.88em; font-weight: 700; display: block; }
 .iv-high { color: #3fb950; }
 .iv-mid  { color: #d29922; }
 .iv-low  { color: #f85149; }
+.ev-zero { color: #30363d; }
+.ev-set  { color: #f3d327; }
 
 /* EVs */
 .ev-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 0.75em; }
@@ -205,18 +211,35 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <div class="header-info">
           <h2>GOLEM</h2>
           <div class="meta">Lv.29 &bull; Hasty &bull; Sturdy</div>
+
           <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-high">29</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">29</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">29</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">15</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">29</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">29</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">29</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-low">15</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">14</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">14</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
         <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
@@ -251,14 +274,30 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">22</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">13</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">22</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">13</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">14</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">14</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
         <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
@@ -289,14 +328,30 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">24</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">18</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">16</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">2</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">31</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">24</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">18</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-low">16</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">2</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">31</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
         <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
@@ -323,14 +378,30 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">16</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">31</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">1</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">23</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">28</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">16</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">1</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">23</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">28</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">56</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">78</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs &mdash; 138 / 510 asignados</div>
         <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:22%"></div></div><span class="val">56 / 252</span></div>
@@ -361,14 +432,30 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">18</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">22</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">28</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">1</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">16</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">18</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">22</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">28</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">1</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">16</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
         <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
@@ -395,14 +482,30 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs</div>
-        <div class="iv-grid">
-          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">1</div></div>
-          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">5</div></div>
-          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">30</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">30</div></div>
-          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">18</div></div>
-          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-mid">19</div></div>
+        <div class="stitle">IVs / EVs</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">1</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">5</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">30</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">30</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">18</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">19</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">18</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">74</span></div>
+            </div>
+          </div>
         </div>
         <div class="stitle">EVs &mdash; 96 / 510 asignados</div>
         <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:7%"></div></div><span class="val">18 / 252</span></div>
