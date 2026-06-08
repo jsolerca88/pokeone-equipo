@@ -8,37 +8,25 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif; padding: 20px; }
 
-/* HEADER */
-.site-header {
-  text-align: center;
-  padding: 30px 20px 20px;
-  background: linear-gradient(135deg, #161b22, #0d1117);
-  border-bottom: 2px solid #f3d327;
-  margin-bottom: 30px;
-  border-radius: 12px;
-}
+.site-header { text-align: center; padding: 30px 20px 20px; background: linear-gradient(135deg, #161b22, #0d1117); border-bottom: 2px solid #f3d327; margin-bottom: 30px; border-radius: 12px; }
 .site-header h1 { font-size: 2.2em; color: #f3d327; letter-spacing: 3px; }
 .site-header .meta { color: #8b949e; margin-top: 6px; font-size: 0.9em; }
 .stats-row { display: flex; justify-content: center; gap: 30px; margin-top: 14px; flex-wrap: wrap; }
 .stat-chip { background: #161b22; border: 1px solid #30363d; border-radius: 20px; padding: 5px 14px; font-size: 0.82em; }
 .stat-chip span { color: #f3d327; font-weight: 700; }
 
-/* NAVEGACION */
 .nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
 .nav a { background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
 .nav a:hover { background: #f3d327; color: #000; border-color: #f3d327; font-weight: 600; }
 
-/* SECCIONES */
 .section { max-width: 1300px; margin: 0 auto 40px; }
 .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 .section-header h2 { font-size: 1.3em; color: #f3d327; }
 .section-header .badge { background: #f3d327; color: #000; border-radius: 12px; padding: 2px 10px; font-size: 0.75em; font-weight: 700; }
 .divider { flex: 1; height: 1px; background: #21262d; }
 
-/* GRID EQUIPO */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
 
-/* CARDS */
 .card { background: #161b22; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; }
 .card-header { padding: 14px 18px 10px; display: flex; align-items: center; gap: 12px; }
 .pokemon-icon { width: 52px; height: 52px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
@@ -48,11 +36,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .type-badge { padding: 1px 7px; border-radius: 8px; font-size: 0.65em; font-weight: 700; text-transform: uppercase; }
 .card-body { padding: 0 18px 18px; }
 
-/* SECTION TITLES */
 .stitle { font-size: 0.68em; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin: 12px 0 6px; border-bottom: 1px solid #21262d; padding-bottom: 3px; }
 
-/* IVs */
-/* IV / EV filas compactas */
 .stat-rows { display: flex; flex-direction: column; gap: 3px; }
 .stat-row-line { display: flex; align-items: center; gap: 5px; }
 .sr-lbl { font-size: 0.58em; font-weight: 700; color: #484f58; text-transform: uppercase; width: 16px; flex-shrink: 0; text-align: right; }
@@ -65,19 +50,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .iv-low  { color: #f85149; }
 .ev-zero { color: #30363d; }
 .ev-set  { color: #f3d327; }
+.ev-obj  { color: #58a6ff; }
 
-/* EVs */
-.ev-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 0.75em; }
-.ev-row .lbl { width: 46px; color: #8b949e; }
-.bar-bg { flex: 1; background: #0d1117; border-radius: 4px; height: 7px; overflow: hidden; border: 1px solid #21262d; }
-.bar-fill { height: 100%; border-radius: 4px; }
-.bar-spa { background: #bc8cff; }
-.bar-spd { background: #f3d327; }
-.bar-atk { background: #f85149; }
-.bar-hp  { background: #3fb950; }
-.ev-row .val { width: 64px; text-align: right; color: #8b949e; }
-
-/* Moves */
 .moves-list { list-style: none; }
 .moves-list li { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid #21262d; font-size: 0.82em; }
 .moves-list li:last-child { border-bottom: none; }
@@ -86,22 +60,21 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .move-desc { color: #8b949e; font-size: 0.85em; flex: 1; }
 .move-ok { color: #3fb950; }
 .move-tag { background: #21262d; border-radius: 6px; padding: 1px 6px; font-size: 0.68em; color: #d29922; white-space: nowrap; }
+.move-bad { color: #f85149; font-size: 0.68em; background: #2d1117; border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
 
-/* Milestones */
 .milestone { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; border-bottom: 1px dashed #21262d; font-size: 0.78em; }
 .milestone:last-child { border-bottom: none; }
 .milestone-lv { background: #f85149; color: #fff; padding: 2px 6px; border-radius: 6px; font-size: 0.72em; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
 .milestone-text { color: #c9d1d9; line-height: 1.4; }
 .milestone-text strong { color: #f3d327; }
 
-/* Alertas */
 .alert { border-radius: 6px; padding: 7px 10px; font-size: 0.78em; margin-top: 8px; line-height: 1.5; }
 .alert-danger  { background: #2d1117; border-left: 3px solid #f85149; color: #ffa8a8; }
 .alert-warning { background: #2d2200; border-left: 3px solid #d29922; color: #ffc966; }
 .alert-info    { background: #001d2d; border-left: 3px solid #388bfd; color: #79c0ff; }
 .alert-good    { background: #001d0e; border-left: 3px solid #3fb950; color: #7ee787; }
 
-/* Farm */
+/* Farm rows (dentro de sección farmeo) */
 .farm-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px dashed #21262d; font-size: 0.78em; }
 .farm-row:last-child { border-bottom: none; }
 .farm-stat { padding: 2px 7px; border-radius: 6px; font-size: 0.7em; font-weight: 700; white-space: nowrap; color: #000; }
@@ -109,7 +82,15 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .farm-loc { color: #8b949e; flex: 1; }
 .farm-count { color: #f3d327; font-weight: 700; white-space: nowrap; }
 
-/* ======= ULTIMAS CAPTURAS ======= */
+/* ======= SECCION FARMEO ======= */
+.farm-section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.farm-block { background: #161b22; border-radius: 10px; border: 1px solid #30363d; padding: 12px; }
+.farm-block-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.farm-block-icon { width: 36px; height: 36px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5)); }
+.farm-block-name { font-size: 0.88em; font-weight: 700; letter-spacing: 1px; }
+.farm-block-obj { font-size: 0.64em; color: #58a6ff; margin-top: 2px; }
+
+/* ======= CAPTURAS ======= */
 .captures-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
 .capture-card { background: #161b22; border-radius: 10px; border: 1px solid #30363d; padding: 12px; display: flex; gap: 12px; align-items: flex-start; position: relative; }
 .cap-icon { width: 44px; height: 44px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }
@@ -160,6 +141,9 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .t-electric { background: #f3d327; color: #000; }
 .t-ice      { background: #66ccff; color: #000; }
 .t-dragon   { background: #7766ee; color: #fff; }
+.t-flying   { background: #8899ff; color: #fff; }
+.t-fairy    { background: #ee99ee; color: #fff; }
+.t-dark     { background: #775544; color: #fff; }
 
 /* Headers colores */
 .h-golem    { background: linear-gradient(135deg, #1c1a0e, #161b22); border-bottom: 2px solid #bbaa66; }
@@ -190,6 +174,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 <!-- NAV -->
 <div class="nav">
   <a href="#equipo">&#9876; Equipo activo</a>
+  <a href="#farmeo">&#127807; Farmeo EVs</a>
   <a href="#capturas">&#128247; Ultimas capturas</a>
   <a href="#top">&#11088; Top en cajas</a>
   <a href="#borrar">&#128465; A borrar</a>
@@ -211,12 +196,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <div class="header-info">
           <h2>GOLEM</h2>
           <div class="meta">Lv.29 &bull; Hasty &bull; Sturdy</div>
-
           <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
@@ -224,7 +208,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">29</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">29</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">29</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-low">15</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">15</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">14</span></div>
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">14</span></div>
             </div>
@@ -240,13 +224,25 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
-        <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="stitle">Farmeo EVs</div>
-        <div class="farm-row"><span class="farm-stat" style="background:#f85149">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road</span><span class="farm-count">252 batallas</span></div>
-        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Zubat / Pidgey</span><span class="farm-loc">Cuevas / Rutas</span><span class="farm-count">252 batallas</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Smack Down</span><span class="move-desc">Rock fisico &mdash; reemplazar Lv.34</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Bulldoze</span><span class="move-desc">Ground fisico &mdash; reemplazar Lv.40</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Rock Smash</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Stealth Rock</span><span class="move-desc">Entry hazard &#10003;</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Earthquake</span><span class="move-desc">STAB Ground 100 pot &#9733;</span><span class="move-tag">Lv.40</span></li>
@@ -274,7 +270,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
@@ -298,22 +294,34 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
-        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="stitle">Farmeo EVs</div>
-        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">252 batallas</span></div>
-        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252 batallas</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Leer</span><span class="move-desc">Baja Def rival &mdash; inutil</span><span class="move-bad">basura</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Odor Sleuth</span><span class="move-desc">Revela Normal/Fighting &mdash; sin uso</span><span class="move-bad">basura</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Helping Hand</span><span class="move-desc">Solo util en dobles</span><span class="move-bad">basura</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Flame Wheel</span><span class="move-desc">Fire fisico 60 pot &mdash; flojo</span><span class="move-bad">temporal</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Flamethrower</span><span class="move-desc">STAB Fire especial 90 pot &#9733;</span><span class="move-tag">TM35 URGENTE</span></li>
           <li><div class="move-num">2</div><span class="move-name">Extreme Speed</span><span class="move-desc">Normal prioridad +2, 80 pot</span><span class="move-tag">Mr. Mind Saffron</span></li>
-          <li><div class="move-num">3</div><span class="move-name">Crunch</span><span class="move-desc">Dark cobertura Psychic/Ghost</span><span class="move-tag">Lv.45 / Mr. Mind</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Crunch</span><span class="move-desc">Dark cobertura Psychic/Ghost</span><span class="move-tag">Lv.45</span></li>
           <li><div class="move-num">4</div><span class="move-name">Fire Blast</span><span class="move-desc">STAB Fire 110 pot nuke</span><span class="move-tag">TM pendiente</span></li>
         </ul>
-        <div class="alert alert-danger">&#9888; URGENTE: Moves actuales (Leer/Odor Sleuth/Helping Hand/Flame Wheel) son inutiles. Ir a Mr. Mind en Saffron City + conseguir TM35 Flamethrower.</div>
-        <div class="alert alert-warning">Speed IV 14 bajo. Valorar IV Reset bloqueando SpAtk 27 para mejorar Speed.</div>
+        <div class="alert alert-danger">&#9888; URGENTE: Ir a Mr. Mind en Saffron City + conseguir TM35 Flamethrower en Game Corner Celadon.</div>
+        <div class="alert alert-warning">Speed IV 14 bajo. Flash Fire inmune a Fire propio &mdash; sinergia excelente con Arcanine especial.</div>
       </div>
     </div>
 
@@ -328,7 +336,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
@@ -336,7 +344,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">24</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">18</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-low">16</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">16</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">2</span></div>
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">31</span></div>
             </div>
@@ -352,10 +360,25 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
-        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Flash</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Mega Drain</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Acid</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Cut</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
@@ -363,7 +386,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
           <li><div class="move-num">4</div><span class="move-name">Moonblast</span><span class="move-desc">Cobertura Fairy</span></li>
         </ul>
-        <div class="alert alert-warning">Moves actuales malos: Flash/Mega Drain/Acid/Cut. SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas.</div>
+        <div class="alert alert-warning">SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas. Rash +SpAtk/-SpD es suboptimo.</div>
       </div>
     </div>
 
@@ -378,12 +401,12 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">16</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">16</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">1</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
@@ -402,14 +425,25 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">78</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs &mdash; 138 / 510 asignados</div>
-        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:22%"></div></div><span class="val">56 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:31%"></div></div><span class="val">78 / 252</span></div>
-        <div class="ev-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
-        <div class="stitle">Farmeo EVs pendiente</div>
-        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">196 mas</span></div>
-        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">174 mas</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Psybeam</span><span class="move-desc">Psychic 65 pot &mdash; reemplazar</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Reflect</span><span class="move-desc">Sube Def &mdash; reemplazar por Shadow Ball</span><span class="move-bad">temporal</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
@@ -417,7 +451,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
           <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
         </ul>
-        <div class="alert alert-info">Synchronize util para cazar con nature deseada. Para PVP seria Magic Guard es mejor. Valido para historia y Liga.</div>
+        <div class="alert alert-info">Synchronize util para cazar con nature deseada. SpA 27 / Spd 28 excelentes para Alakazam especial.</div>
       </div>
     </div>
 
@@ -432,17 +466,17 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">18</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">18</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">22</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">28</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">16</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">16</span></div>
             </div>
           </div>
           <div class="stat-row-line">
@@ -456,10 +490,25 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
-        <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Surf</span><span class="move-desc">HM Water &mdash; reemplazar por Waterfall</span><span class="move-bad">HM</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Submission</span><span class="move-desc">Fighting 80 pot &mdash; reemplazar</span><span class="move-bad">temporal</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Body Slam</span><span class="move-desc">Normal 85 pot &mdash; ok temporal</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Strength</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Waterfall</span><span class="move-desc">STAB Water fisico 80 pot &#9733;</span></li>
@@ -482,7 +531,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
       </div>
       <div class="card-body">
-        <div class="stitle">IVs / EVs</div>
+        <div class="stitle">IVs / EVs / Objetivo</div>
         <div class="stat-rows">
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
@@ -506,14 +555,25 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">74</span></div>
             </div>
           </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
         </div>
-        <div class="stitle">EVs &mdash; 96 / 510 asignados</div>
-        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:7%"></div></div><span class="val">18 / 252</span></div>
-        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:29%"></div></div><span class="val">74 / 252</span></div>
-        <div class="ev-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
-        <div class="stitle">Farmeo EVs pendiente</div>
-        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">234 mas</span></div>
-        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">178 mas</span></div>
+        <div class="stitle">Moveset actual</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad &#10003;</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Mean Look</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
+        </ul>
         <div class="stitle">Moveset objetivo</div>
         <ul class="moves-list">
           <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
@@ -521,9 +581,77 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
           <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
         </ul>
-        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) o Thunderbolt cuando consigas la TM.</div>
-        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. Speed IV 19 mejorable con IV Reset bloqueando SpAtk 30.</div>
+        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) cuando consigas la TM.</div>
+        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. SpA 30 / Def 30 excelentes. Speed IV 19 mejorable.</div>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== FARMEO EVs ======================== -->
+<div class="section" id="farmeo">
+  <div class="section-header">
+    <h2>&#127807; Farmeo de EVs</h2>
+    <div class="badge">Plan entrenamiento</div>
+    <div class="divider"></div>
+  </div>
+  <div class="farm-section-grid">
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png" alt="">
+        <div><div class="farm-block-name">GOLEM</div><div class="farm-block-obj">OBJ: 252 Atk / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f85149">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road</span><span class="farm-count">252 batallas</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Zubat / Pidgey</span><span class="farm-loc">Cuevas / Rutas</span><span class="farm-count">252 batallas</span></div>
+    </div>
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png" alt="">
+        <div><div class="farm-block-name">ARCANINE</div><div class="farm-block-obj">OBJ: 252 SpA / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">252 batallas</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252 batallas</span></div>
+    </div>
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="">
+        <div><div class="farm-block-name">VILEPLUME</div><div class="farm-block-obj">OBJ: 252 SpA / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">252 batallas</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252 batallas</span></div>
+    </div>
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="">
+        <div><div class="farm-block-name">ALAKAZAM</div><div class="farm-block-obj">OBJ: 252 SpA / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">196 mas (56 hechos)</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">174 mas (78 hechos)</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#3fb950">HP</span><span class="farm-pokemon">&mdash;</span><span class="farm-loc">Completado</span><span class="farm-count" style="color:#3fb950">4 / 4 &#10003;</span></div>
+    </div>
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png" alt="">
+        <div><div class="farm-block-name">POLIWRATH</div><div class="farm-block-obj">OBJ: 252 Atk / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f85149">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road</span><span class="farm-count">252 batallas</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252 batallas</span></div>
+    </div>
+
+    <div class="farm-block">
+      <div class="farm-block-head">
+        <img class="farm-block-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="">
+        <div><div class="farm-block-name">GENGAR</div><div class="farm-block-obj">OBJ: 252 SpA / 252 Spd / 4 HP</div></div>
+      </div>
+      <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">234 mas (18 hechos)</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">178 mas (74 hechos)</span></div>
+      <div class="farm-row"><span class="farm-stat" style="background:#3fb950">HP</span><span class="farm-pokemon">&mdash;</span><span class="farm-loc">Completado</span><span class="farm-count" style="color:#3fb950">4 / 4 &#10003;</span></div>
     </div>
 
   </div>
@@ -567,6 +695,17 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <div class="cap-meta">Lv.35 &bull; Naive &bull; Cloud Nine</div>
         <div class="cap-ivs">Def <strong class="iv-high">30</strong> &bull; SpAtk <strong class="iv-high">27</strong></div>
         <div class="cap-note">Naive penaliza SpDef pero IVs ofensivos decentes. Cloud Nine anula efectos de clima. Guardar como reserva.</div>
+      </div>
+      <div class="cap-rating rating-maybe">QUIZAS</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png" alt="Dewgong">
+      <div class="cap-info">
+        <h3>Dewgong</h3>
+        <div class="cap-meta">Lv.36 &bull; Sassy &bull; Thick Fat</div>
+        <div class="cap-ivs">Atk <strong class="iv-high">28</strong> &bull; SpDef bajo</div>
+        <div class="cap-note">Thick Fat resiste Fire e Ice. Pero Sassy penaliza Speed bastante. Mediocre en general.</div>
       </div>
       <div class="cap-rating rating-maybe">QUIZAS</div>
     </div>
@@ -635,17 +774,6 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <div class="cap-note">SpAtk IV 4 es terrible para atacante especial Fire. Magma Armor es habilidad inutil en batalla. Sin uso ninguno.</div>
       </div>
       <div class="cap-rating rating-drop">BORRAR</div>
-    </div>
-
-    <div class="capture-card">
-      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png" alt="Dewgong">
-      <div class="cap-info">
-        <h3>Dewgong</h3>
-        <div class="cap-meta">Lv.36 &bull; Sassy &bull; Thick Fat</div>
-        <div class="cap-ivs">Atk <strong class="iv-high">28</strong> &bull; SpDef bajo</div>
-        <div class="cap-note">Thick Fat resiste Fire e Ice. Pero Sassy penaliza Speed bastante. Mediocre en general.</div>
-      </div>
-      <div class="cap-rating rating-maybe">QUIZAS</div>
     </div>
 
     <div class="capture-card">
@@ -728,7 +856,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="top-info">
         <h3>Lanturn <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
         <div class="top-meta">Hasty &bull; Volt Absorb &bull; Def 31 / Speed 29</div>
-        <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente. Util como sustituto de Poliwrath.</div>
+        <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente.</div>
       </div>
     </div>
 
@@ -765,37 +893,21 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   <div class="drop-grid">
 
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Brave)</h3><div class="drop-reason">Speed IV 1 + nature -Speed. Inutil total.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Calm)</h3><div class="drop-reason">Nature penaliza Atk. Tienes Adamant mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Bold)</h3><div class="drop-reason">Nature penaliza Atk + IVs bajos.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><div class="drop-info"><h3>Magikarp (Hasty)</h3><div class="drop-reason">Atk IV 6. Futuro Gyarados malísimo.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><div class="drop-info"><h3>Seadra (Modest)</h3><div class="drop-reason">SpAtk IV 9. Usa el Horsea para Kingdra.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><div class="drop-info"><h3>Slugma (Docile)</h3><div class="drop-reason">SpAtk IV 4. Sin potencial ofensivo alguno.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3>Slowpoke x4</h3><div class="drop-reason">Todos con IVs mediocres. Guarda 1 maximo si quieres Slowbro/Slowking.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><div class="drop-info"><h3>Slowbro x2</h3><div class="drop-reason">IVs mediocres en stats clave. Sin prioridad.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><div class="drop-info"><h3>Goldeen x4</h3><div class="drop-reason">Natures/IVs malos. Seaking sin potencial.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><div class="drop-info"><h3>Chinchou x3</h3><div class="drop-reason">Mediocres. Tienes el Lanturn Volt Absorb mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><div class="drop-info"><h3>Seel x3</h3><div class="drop-reason">Todos con IVs mediocres y natures malas.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><div class="drop-info"><h3>Psyduck (Timid)</h3><div class="drop-reason">SpAtk IV 1. Completamente inutil.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><div class="drop-info"><h3>Venonat (Hardy)</h3><div class="drop-reason">Nature neutral + SpAtk mediocre. Sin uso.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><div class="drop-info"><h3>Grimer (Sassy)</h3><div class="drop-reason">Sassy penaliza Speed. Stench inutil en batalla.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><div class="drop-info"><h3>Rhyhorn (Modest)</h3><div class="drop-reason">Modest penaliza Atk en atacante fisico. Nature incorrecta fatal.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3>Tentacool (Modest)</h3><div class="drop-reason">Speed IV 2. Sin velocidad = sin utilidad.</div></div><div class="drop-tag">LIBERAR</div></div>
-
     <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"><div class="drop-info"><h3>Nidoran / Nidorina</h3><div class="drop-reason">IVs mediocres. Sin potencial competitivo.</div></div><div class="drop-tag">LIBERAR</div></div>
 
   </div>
