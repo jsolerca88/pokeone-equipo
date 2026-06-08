@@ -3,598 +3,704 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PokeOne - Equipo de jsolerca</title>
+<title>PokeOne - jsolerca Dashboard</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: #1a1a2e;
-    color: #eee;
-    font-family: 'Segoe UI', sans-serif;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 6px;
-    color: #fff;
-    text-shadow: 0 0 20px #f3d327;
-  }
-  .subtitle {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 30px;
-    font-size: 0.9em;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .card {
-    background: #16213e;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid #0f3460;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  }
-  .card-header {
-    padding: 16px 20px 12px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .pokemon-icon {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    image-rendering: pixelated;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-  }
-  .header-info h2 {
-    font-size: 1.3em;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .header-info .meta {
-    font-size: 0.78em;
-    color: #ccc;
-    margin-top: 2px;
-  }
-  .types {
-    display: flex;
-    gap: 5px;
-    margin-top: 5px;
-  }
-  .type-badge {
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.7em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .card-body { padding: 0 20px 20px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif; padding: 20px; }
 
-  /* Seccion EVs */
-  .section-title {
-    font-size: 0.72em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #f3d327;
-    margin: 14px 0 6px;
-    border-bottom: 1px solid #0f3460;
-    padding-bottom: 4px;
-  }
-  .ev-spread {
-    background: #0f3460;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.85em;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .ev-item { display: flex; flex-direction: column; align-items: center; }
-  .ev-item .ev-val { font-size: 1.1em; font-weight: 700; color: #f3d327; }
-  .ev-item .ev-lbl { font-size: 0.65em; color: #aaa; text-transform: uppercase; }
+/* HEADER */
+.site-header {
+  text-align: center;
+  padding: 30px 20px 20px;
+  background: linear-gradient(135deg, #161b22, #0d1117);
+  border-bottom: 2px solid #f3d327;
+  margin-bottom: 30px;
+  border-radius: 12px;
+}
+.site-header h1 { font-size: 2.2em; color: #f3d327; letter-spacing: 3px; }
+.site-header .meta { color: #8b949e; margin-top: 6px; font-size: 0.9em; }
+.stats-row { display: flex; justify-content: center; gap: 30px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: #161b22; border: 1px solid #30363d; border-radius: 20px; padding: 5px 14px; font-size: 0.82em; }
+.stat-chip span { color: #f3d327; font-weight: 700; }
 
-  /* Progreso EVs */
-  .ev-progress {
-    margin-top: 6px;
-  }
-  .ev-progress-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-    font-size: 0.78em;
-  }
-  .ev-progress-row .lbl { width: 50px; color: #aaa; }
-  .bar-bg {
-    flex: 1;
-    background: #0f3460;
-    border-radius: 4px;
-    height: 8px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 0.3s;
-  }
-  .bar-spd { background: #f3d327; }
-  .bar-spa { background: #9b59b6; }
-  .bar-atk { background: #e74c3c; }
-  .bar-hp  { background: #2ecc71; }
-  .ev-progress-row .val { width: 60px; text-align: right; color: #ccc; font-size: 0.95em; }
+/* NAVEGACION */
+.nav { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.nav a { background: #161b22; border: 1px solid #30363d; color: #8b949e; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-size: 0.85em; transition: all 0.2s; }
+.nav a:hover { background: #f3d327; color: #000; border-color: #f3d327; font-weight: 600; }
 
-  /* Moves */
-  .moves-list { list-style: none; }
-  .moves-list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 0;
-    border-bottom: 1px solid #0f3460;
-    font-size: 0.85em;
-  }
-  .moves-list li:last-child { border-bottom: none; }
-  .move-num {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #0f3460;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7em;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .move-name { font-weight: 600; min-width: 110px; }
-  .move-desc { color: #aaa; font-size: 0.88em; flex: 1; }
-  .move-star { color: #f3d327; }
-  .move-current {
-    background: #1e3a5f;
-    border-radius: 6px;
-    padding: 2px 7px;
-    font-size: 0.7em;
-    color: #e67e22;
-    white-space: nowrap;
-  }
+/* SECCIONES */
+.section { max-width: 1300px; margin: 0 auto 40px; }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.section-header h2 { font-size: 1.3em; color: #f3d327; }
+.section-header .badge { background: #f3d327; color: #000; border-radius: 12px; padding: 2px 10px; font-size: 0.75em; font-weight: 700; }
+.divider { flex: 1; height: 1px; background: #21262d; }
 
-  /* Milestones */
-  .milestone {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 5px 0;
-    border-bottom: 1px dashed #0f3460;
-    font-size: 0.82em;
-  }
-  .milestone:last-child { border-bottom: none; }
-  .milestone-lv {
-    background: #e74c3c;
-    color: #fff;
-    padding: 2px 7px;
-    border-radius: 8px;
-    font-size: 0.75em;
-    font-weight: 700;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .milestone-text { color: #ddd; line-height: 1.4; }
-  .milestone-text strong { color: #f3d327; }
+/* GRID EQUIPO */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
 
-  /* Alertas */
-  .alert {
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 0.82em;
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-  .alert-warning { background: #3d2b00; border-left: 3px solid #e67e22; color: #ffa940; }
-  .alert-danger  { background: #3d0000; border-left: 3px solid #e74c3c; color: #ff7675; }
-  .alert-info    { background: #003d3d; border-left: 3px solid #00b894; color: #55efc4; }
-  .alert-good    { background: #003d1a; border-left: 3px solid #2ecc71; color: #55efc4; }
+/* CARDS */
+.card { background: #161b22; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; }
+.card-header { padding: 14px 18px 10px; display: flex; align-items: center; gap: 12px; }
+.pokemon-icon { width: 52px; height: 52px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
+.header-info h2 { font-size: 1.15em; font-weight: 700; letter-spacing: 1px; }
+.header-info .meta { font-size: 0.75em; color: #8b949e; margin-top: 2px; }
+.types { display: flex; gap: 4px; margin-top: 4px; }
+.type-badge { padding: 1px 7px; border-radius: 8px; font-size: 0.65em; font-weight: 700; text-transform: uppercase; }
+.card-body { padding: 0 18px 18px; }
 
-  /* IVs */
-  .iv-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-  }
-  .iv-cell {
-    background: #0f3460;
-    border-radius: 6px;
-    padding: 5px 8px;
-    text-align: center;
-  }
-  .iv-cell .iv-stat { font-size: 0.65em; color: #aaa; text-transform: uppercase; }
-  .iv-cell .iv-val  { font-size: 1em; font-weight: 700; }
-  .iv-high  { color: #2ecc71; }
-  .iv-mid   { color: #f3d327; }
-  .iv-low   { color: #e74c3c; }
+/* SECTION TITLES */
+.stitle { font-size: 0.68em; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin: 12px 0 6px; border-bottom: 1px solid #21262d; padding-bottom: 3px; }
 
-  /* Farm info */
-  .farm-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 4px 0;
-    font-size: 0.82em;
-    border-bottom: 1px dashed #0f3460;
-  }
-  .farm-row:last-child { border-bottom: none; }
-  .farm-stat {
-    padding: 2px 8px;
-    border-radius: 8px;
-    font-size: 0.75em;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .farm-pokemon { color: #fff; font-weight: 600; }
-  .farm-loc { color: #aaa; flex: 1; }
-  .farm-count { color: #f3d327; font-weight: 700; white-space: nowrap; }
+/* IVs */
+.iv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.iv-cell { background: #0d1117; border-radius: 6px; padding: 4px 6px; text-align: center; }
+.iv-cell .iv-stat { font-size: 0.6em; color: #8b949e; text-transform: uppercase; }
+.iv-cell .iv-val { font-size: 0.95em; font-weight: 700; }
+.iv-high { color: #3fb950; }
+.iv-mid  { color: #d29922; }
+.iv-low  { color: #f85149; }
 
-  /* Tipos colores */
-  .t-fire     { background: #ff4422; color: #fff; }
-  .t-water    { background: #3399ff; color: #fff; }
-  .t-grass    { background: #77cc55; color: #fff; }
-  .t-poison   { background: #a55294; color: #fff; }
-  .t-psychic  { background: #ff5599; color: #fff; }
-  .t-ghost    { background: #6644aa; color: #fff; }
-  .t-rock     { background: #bbaa66; color: #fff; }
-  .t-ground   { background: #ddbb55; color: #fff; }
-  .t-normal   { background: #aaaaaa; color: #fff; }
-  .t-fighting { background: #bb5544; color: #fff; }
-  .t-dark     { background: #775544; color: #fff; }
-  .t-flying   { background: #8899ff; color: #fff; }
+/* EVs */
+.ev-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 0.75em; }
+.ev-row .lbl { width: 46px; color: #8b949e; }
+.bar-bg { flex: 1; background: #0d1117; border-radius: 4px; height: 7px; overflow: hidden; border: 1px solid #21262d; }
+.bar-fill { height: 100%; border-radius: 4px; }
+.bar-spa { background: #bc8cff; }
+.bar-spd { background: #f3d327; }
+.bar-atk { background: #f85149; }
+.bar-hp  { background: #3fb950; }
+.ev-row .val { width: 64px; text-align: right; color: #8b949e; }
 
-  /* Header color por tipo principal */
-  .header-golem    { background: linear-gradient(135deg, #3d3320, #1a1a00); border-bottom: 2px solid #bbaa66; }
-  .header-arcanine { background: linear-gradient(135deg, #3d1500, #1a0500); border-bottom: 2px solid #ff4422; }
-  .header-vileplume{ background: linear-gradient(135deg, #1a3d00, #0a1a00); border-bottom: 2px solid #77cc55; }
-  .header-alakazam { background: linear-gradient(135deg, #3d002d, #1a0012); border-bottom: 2px solid #ff5599; }
-  .header-poliwrath{ background: linear-gradient(135deg, #00203d, #000d1a); border-bottom: 2px solid #3399ff; }
-  .header-gengar   { background: linear-gradient(135deg, #1a0044, #0a001a); border-bottom: 2px solid #6644aa; }
+/* Moves */
+.moves-list { list-style: none; }
+.moves-list li { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid #21262d; font-size: 0.82em; }
+.moves-list li:last-child { border-bottom: none; }
+.move-num { width: 18px; height: 18px; border-radius: 50%; background: #21262d; display: flex; align-items: center; justify-content: center; font-size: 0.65em; font-weight: 700; flex-shrink: 0; }
+.move-name { font-weight: 600; min-width: 115px; }
+.move-desc { color: #8b949e; font-size: 0.85em; flex: 1; }
+.move-ok { color: #3fb950; }
+.move-tag { background: #21262d; border-radius: 6px; padding: 1px 6px; font-size: 0.68em; color: #d29922; white-space: nowrap; }
+
+/* Milestones */
+.milestone { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; border-bottom: 1px dashed #21262d; font-size: 0.78em; }
+.milestone:last-child { border-bottom: none; }
+.milestone-lv { background: #f85149; color: #fff; padding: 2px 6px; border-radius: 6px; font-size: 0.72em; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+.milestone-text { color: #c9d1d9; line-height: 1.4; }
+.milestone-text strong { color: #f3d327; }
+
+/* Alertas */
+.alert { border-radius: 6px; padding: 7px 10px; font-size: 0.78em; margin-top: 8px; line-height: 1.5; }
+.alert-danger  { background: #2d1117; border-left: 3px solid #f85149; color: #ffa8a8; }
+.alert-warning { background: #2d2200; border-left: 3px solid #d29922; color: #ffc966; }
+.alert-info    { background: #001d2d; border-left: 3px solid #388bfd; color: #79c0ff; }
+.alert-good    { background: #001d0e; border-left: 3px solid #3fb950; color: #7ee787; }
+
+/* Farm */
+.farm-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px dashed #21262d; font-size: 0.78em; }
+.farm-row:last-child { border-bottom: none; }
+.farm-stat { padding: 2px 7px; border-radius: 6px; font-size: 0.7em; font-weight: 700; white-space: nowrap; color: #000; }
+.farm-pokemon { color: #e6edf3; font-weight: 600; }
+.farm-loc { color: #8b949e; flex: 1; }
+.farm-count { color: #f3d327; font-weight: 700; white-space: nowrap; }
+
+/* ======= ULTIMAS CAPTURAS ======= */
+.captures-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.capture-card { background: #161b22; border-radius: 10px; border: 1px solid #30363d; padding: 12px; display: flex; gap: 12px; align-items: flex-start; position: relative; }
+.cap-icon { width: 44px; height: 44px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }
+.cap-info h3 { font-size: 0.95em; font-weight: 700; padding-right: 60px; }
+.cap-info .cap-meta { font-size: 0.72em; color: #8b949e; margin-top: 2px; }
+.cap-info .cap-ivs { font-size: 0.72em; margin-top: 4px; color: #c9d1d9; }
+.cap-rating { position: absolute; top: 10px; right: 10px; font-size: 0.7em; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.rating-keep  { background: #001d0e; color: #3fb950; border: 1px solid #3fb950; }
+.rating-maybe { background: #2d2200; color: #d29922; border: 1px solid #d29922; }
+.rating-drop  { background: #2d1117; color: #f85149; border: 1px solid #f85149; }
+.cap-note { font-size: 0.7em; color: #8b949e; margin-top: 4px; font-style: italic; }
+
+/* ======= TOP CAJAS ======= */
+.top-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 12px; }
+.top-card { background: #161b22; border-radius: 10px; border: 1px solid #30363d; padding: 12px; display: flex; gap: 12px; align-items: center; }
+.top-icon { width: 48px; height: 48px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; }
+.top-info { flex: 1; }
+.top-info h3 { font-size: 0.95em; font-weight: 700; }
+.top-info .top-meta { font-size: 0.72em; color: #8b949e; margin-top: 2px; }
+.top-info .top-why { font-size: 0.7em; color: #79c0ff; margin-top: 4px; line-height: 1.4; }
+.rank-badge { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8em; flex-shrink: 0; }
+.rank-1 { background: #f3d327; color: #000; }
+.rank-2 { background: #8b949e; color: #fff; }
+.rank-3 { background: #b35c00; color: #fff; }
+.rank-n { background: #21262d; color: #8b949e; }
+.top-stars { color: #f3d327; font-size: 0.85em; margin-left: 4px; }
+
+/* ======= BORRAR ======= */
+.drop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.drop-card { background: #161b22; border-radius: 10px; border: 1px solid #2d1117; padding: 10px 12px; display: flex; gap: 10px; align-items: center; }
+.drop-icon { width: 36px; height: 36px; object-fit: contain; image-rendering: pixelated; flex-shrink: 0; opacity: 0.6; }
+.drop-info { flex: 1; }
+.drop-info h3 { font-size: 0.85em; font-weight: 600; color: #8b949e; }
+.drop-info .drop-reason { font-size: 0.7em; color: #f85149; margin-top: 2px; }
+.drop-tag { background: #2d1117; color: #f85149; border-radius: 6px; padding: 2px 7px; font-size: 0.68em; font-weight: 700; white-space: nowrap; margin-left: auto; }
+
+/* Colores tipo */
+.t-fire     { background: #ff4422; color: #fff; }
+.t-water    { background: #3399ff; color: #fff; }
+.t-grass    { background: #77cc55; color: #fff; }
+.t-poison   { background: #a55294; color: #fff; }
+.t-psychic  { background: #ff5599; color: #fff; }
+.t-ghost    { background: #6644aa; color: #fff; }
+.t-rock     { background: #bbaa66; color: #fff; }
+.t-ground   { background: #ddbb55; color: #000; }
+.t-normal   { background: #666; color: #fff; }
+.t-fighting { background: #bb5544; color: #fff; }
+.t-electric { background: #f3d327; color: #000; }
+.t-ice      { background: #66ccff; color: #000; }
+.t-dragon   { background: #7766ee; color: #fff; }
+
+/* Headers colores */
+.h-golem    { background: linear-gradient(135deg, #1c1a0e, #161b22); border-bottom: 2px solid #bbaa66; }
+.h-arcanine { background: linear-gradient(135deg, #1c0800, #161b22); border-bottom: 2px solid #ff4422; }
+.h-vileplume{ background: linear-gradient(135deg, #0a1c00, #161b22); border-bottom: 2px solid #77cc55; }
+.h-alakazam { background: linear-gradient(135deg, #1c0015, #161b22); border-bottom: 2px solid #ff5599; }
+.h-poliwrath{ background: linear-gradient(135deg, #001022, #161b22); border-bottom: 2px solid #3399ff; }
+.h-gengar   { background: linear-gradient(135deg, #0e0022, #161b22); border-bottom: 2px solid #6644aa; }
+
+.updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
 </head>
 <body>
 
-<h1>&#9670; Equipo de jsolerca &#9670;</h1>
-<p class="subtitle">PokeOne &mdash; Kanto &mdash; Actualizado: Junio 2026</p>
-
-<div class="grid">
-
-  <!-- ==================== GOLEM ==================== -->
-  <div class="card">
-    <div class="card-header header-golem">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png" alt="Golem">
-      <div class="header-info">
-        <h2>GOLEM</h2>
-        <div class="meta">Lv.29 &bull; Naturaleza: <strong>Hasty</strong> &bull; Habilidad: <strong>Sturdy</strong></div>
-        <div class="types">
-          <span class="type-badge t-rock">Rock</span>
-          <span class="type-badge t-ground">Ground</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-high">29</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">29</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">29</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">15</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Atk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-      <div class="ev-progress">
-        <div class="ev-progress-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-      </div>
-
-      <div class="section-title">Farmeo EVs</div>
-      <div class="farm-row"><span class="farm-stat bar-atk" style="background:#e74c3c">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road / Roca Tubular</span><span class="farm-count">252</span></div>
-      <div class="farm-row"><span class="farm-stat" style="background:#f3d327;color:#000">Spd</span><span class="farm-pokemon">Zubat / Pidgey</span><span class="farm-loc">Cuevas / Rutas</span><span class="farm-count">252</span></div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Earthquake</span><span class="move-desc">STAB Ground &bull; 100 pot <span class="move-star">&#9733;</span></span><span class="move-current">Lv.40</span></li>
-        <li><div class="move-num">2</div><span class="move-name">Stone Edge</span><span class="move-desc">STAB Rock &bull; 100 pot &bull; criticos</span><span class="move-current">Lv.54</span></li>
-        <li><div class="move-num">3</div><span class="move-name">Stealth Rock</span><span class="move-desc">Soporte PVP &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-        <li><div class="move-num">4</div><span class="move-name">Explosion</span><span class="move-desc">250 pot &bull; nuclear de emergencia</span><span class="move-current">Lv.44</span></li>
-      </ul>
-
-      <div class="section-title">Proximos hitos</div>
-      <div class="milestone"><span class="milestone-lv">Lv.34</span><div class="milestone-text">Aprende <strong>Rock Blast</strong> &rarr; reemplaza Smack Down</div></div>
-      <div class="milestone"><span class="milestone-lv">Lv.40</span><div class="milestone-text">Aprende <strong>Earthquake</strong> &rarr; reemplaza Bulldoze y Rock Smash</div></div>
-      <div class="milestone"><span class="milestone-lv">Lv.44</span><div class="milestone-text">Aprende <strong>Explosion</strong> &rarr; reemplaza Rock Blast provisional</div></div>
-      <div class="milestone"><span class="milestone-lv">Lv.54</span><div class="milestone-text">Aprende <strong>Stone Edge</strong> &rarr; moveset completo</div></div>
-    </div>
+<!-- HEADER -->
+<div class="site-header">
+  <h1>&#9670; POKEONE DASHBOARD &#9670;</h1>
+  <div class="meta">Entrenador: <strong>jsolerca</strong> &nbsp;&bull;&nbsp; Kanto</div>
+  <div class="stats-row">
+    <div class="stat-chip">Trainer Lv <span>57</span></div>
+    <div class="stat-chip">Badges <span>6/8</span></div>
+    <div class="stat-chip">Pokedex <span>109</span> capturados</div>
+    <div class="stat-chip">PokeDollar <span>42,656</span></div>
+    <div class="stat-chip">PVP <span>1W / 3L</span></div>
   </div>
-
-  <!-- ==================== ARCANINE ==================== -->
-  <div class="card">
-    <div class="card-header header-arcanine">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png" alt="Arcanine">
-      <div class="header-info">
-        <h2>ARCANINE</h2>
-        <div class="meta">Lv.28 &bull; Naturaleza: <strong>Modest</strong> &bull; Habilidad: <strong>Flash Fire</strong></div>
-        <div class="types">
-          <span class="type-badge t-fire">Fire</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">22</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">13</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">SpAtk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-      <div class="ev-progress">
-        <div class="ev-progress-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
-      </div>
-
-      <div class="section-title">Farmeo EVs</div>
-      <div class="farm-row"><span class="farm-stat" style="background:#9b59b6">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon (Lavender Town)</span><span class="farm-count">252</span></div>
-      <div class="farm-row"><span class="farm-stat" style="background:#f3d327;color:#000">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252</span></div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Flamethrower</span><span class="move-desc">STAB Fire especial &bull; TM35 <span class="move-star">&#9733;</span></span><span class="move-current">TM pendiente</span></li>
-        <li><div class="move-num">2</div><span class="move-name">Extreme Speed</span><span class="move-desc">Prioridad +2 &bull; 80 pot</span><span class="move-current">Mr. Mind Saffron</span></li>
-        <li><div class="move-num">3</div><span class="move-name">Crunch</span><span class="move-desc">Dark &bull; cobertura</span><span class="move-current">Lv.45 / Mr. Mind</span></li>
-        <li><div class="move-num">4</div><span class="move-name">Fire Blast</span><span class="move-desc">STAB Fire &bull; 110 pot alternativa</span><span class="move-current">TM pendiente</span></li>
-      </ul>
-
-      <div class="alert alert-danger">
-        &#9888; URGENTE: Moves actuales son inutils (Leer / Odor Sleuth / Helping Hand / Flame Wheel). Visita Mr. Mind en Saffron City para Extreme Speed y consigue TM35 Flamethrower.
-      </div>
-
-      <div class="section-title">Notas</div>
-      <div class="alert alert-warning">
-        Speed IV 14 es bajo. Considera IV Reset bloqueando SpAtk 27 para mejorar Speed.
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== VILEPLUME ==================== -->
-  <div class="card">
-    <div class="card-header header-vileplume">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
-      <div class="header-info">
-        <h2>VILEPLUME</h2>
-        <div class="meta">Lv.43 &bull; Naturaleza: <strong>Rash</strong> &bull; Habilidad: <strong>Chlorophyll</strong></div>
-        <div class="types">
-          <span class="type-badge t-grass">Grass</span>
-          <span class="type-badge t-poison">Poison</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">24</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">18</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">16</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">2</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">31</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">SpAtk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass &bull; roba vida <span class="move-star">&#9733;</span></span></li>
-        <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &bull; 90 pot</span></li>
-        <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &bull; soporte</span></li>
-        <li><div class="move-num">4</div><span class="move-name">Moonblast / HP Fire</span><span class="move-desc">Cobertura Fairy o Fire</span></li>
-      </ul>
-
-      <div class="alert alert-warning">
-        Moves actuales muy malos: Flash / Mega Drain / Acid / Cut. Reemplazar cuanto antes. SpAtk IV 16 es mediocre &mdash; rol de soporte con Sleep Powder es viable.
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== ALAKAZAM ==================== -->
-  <div class="card">
-    <div class="card-header header-alakazam">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
-      <div class="header-info">
-        <h2>ALAKAZAM</h2>
-        <div class="meta">Lv.43 &bull; Naturaleza: <strong>Modest</strong> &bull; Habilidad: <strong>Synchronize</strong></div>
-        <div class="types">
-          <span class="type-badge t-psychic">Psychic</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">16</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">31</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">1</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">23</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">28</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo &mdash; Progreso: 138 / 510</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">SpAtk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-      <div class="ev-progress">
-        <div class="ev-progress-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:22%"></div></div><span class="val">56 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:31%"></div></div><span class="val">78 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
-      </div>
-
-      <div class="section-title">Farmeo EVs pendiente</div>
-      <div class="farm-row"><span class="farm-stat" style="background:#9b59b6">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">196 mas</span></div>
-      <div class="farm-row"><span class="farm-stat" style="background:#f3d327;color:#000">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">174 mas</span></div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB Psychic &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-        <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef cada turno &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-        <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost &bull; TM pendiente</span><span class="move-current">TM30</span></li>
-        <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting &bull; TM pendiente</span><span class="move-current">TM52</span></li>
-      </ul>
-
-      <div class="alert alert-info">
-        Synchronize es util para cazar pero no es la habilidad PVP ideal (Magic Guard es mejor). Para historia y Liga es perfectamente valido.
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== POLIWRATH ==================== -->
-  <div class="card">
-    <div class="card-header header-poliwrath">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png" alt="Poliwrath">
-      <div class="header-info">
-        <h2>POLIWRATH</h2>
-        <div class="meta">Lv.39 &bull; Naturaleza: <strong>Jolly</strong> &bull; Habilidad: <strong>Water Absorb</strong></div>
-        <div class="types">
-          <span class="type-badge t-water">Water</span>
-          <span class="type-badge t-fighting">Fighting</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">18</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">22</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">28</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">1</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">16</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Atk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-
-      <div class="section-title">Farmeo EVs</div>
-      <div class="farm-row"><span class="farm-stat" style="background:#e74c3c">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road</span><span class="farm-count">252</span></div>
-      <div class="farm-row"><span class="farm-stat" style="background:#f3d327;color:#000">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252</span></div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Waterfall</span><span class="move-desc">STAB Water fisico &bull; 80 pot <span class="move-star">&#9733;</span></span></li>
-        <li><div class="move-num">2</div><span class="move-name">Focus Punch</span><span class="move-desc">STAB Fighting &bull; 150 pot</span></li>
-        <li><div class="move-num">3</div><span class="move-name">Ice Punch</span><span class="move-desc">Cobertura &bull; cubre Dragon/Flying</span></li>
-        <li><div class="move-num">4</div><span class="move-name">Earthquake</span><span class="move-desc">Cobertura Ground &bull; Electric/Poison</span></li>
-      </ul>
-
-      <div class="alert alert-info">
-        Water Absorb absorbe ataques Water y recupera HP &mdash; inmunidad muy util. Jolly + fisico es el rol correcto.
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== GENGAR ==================== -->
-  <div class="card">
-    <div class="card-header header-gengar">
-      <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
-      <div class="header-info">
-        <h2>GENGAR</h2>
-        <div class="meta">Lv.39 &bull; Naturaleza: <strong>Modest</strong> &bull; Habilidad: <strong>Cursed Body</strong></div>
-        <div class="types">
-          <span class="type-badge t-ghost">Ghost</span>
-          <span class="type-badge t-poison">Poison</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="section-title">IVs</div>
-      <div class="iv-grid">
-        <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">1</div></div>
-        <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">5</div></div>
-        <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">30</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">30</div></div>
-        <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">18</div></div>
-        <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-mid">19</div></div>
-      </div>
-
-      <div class="section-title">EVs objetivo &mdash; Progreso: 96 / 510</div>
-      <div class="ev-spread">
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">SpAtk</div></div>
-        <div class="ev-item"><div class="ev-val">252</div><div class="ev-lbl">Speed</div></div>
-        <div class="ev-item"><div class="ev-val">4</div><div class="ev-lbl">HP</div></div>
-      </div>
-      <div class="ev-progress">
-        <div class="ev-progress-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:7%"></div></div><span class="val">18 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:29%"></div></div><span class="val">74 / 252</span></div>
-        <div class="ev-progress-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
-      </div>
-
-      <div class="section-title">Farmeo EVs pendiente</div>
-      <div class="farm-row"><span class="farm-stat" style="background:#9b59b6">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">234 mas</span></div>
-      <div class="farm-row"><span class="farm-stat" style="background:#f3d327;color:#000">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">178 mas</span></div>
-
-      <div class="section-title">Moveset objetivo</div>
-      <ul class="moves-list">
-        <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-        <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-        <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting &bull; TM pendiente</span><span class="move-current">TM52</span></li>
-        <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark &bull; prioridad &bull; ya lo tiene <span class="move-star">&#10003;</span></span></li>
-      </ul>
-
-      <div class="alert alert-danger">
-        &#9888; Reemplazar <strong>Mean Look</strong> por Focus Blast o Thunderbolt cuando consigas la TM.
-      </div>
-      <div class="alert alert-warning">
-        Cursed Body no es la habilidad ideal (Levitate es mejor en PVP &mdash; inmunidad a Ground). Para historia es suficiente. Speed IV 19 es mejorable con IV Reset bloqueando SpAtk 30.
-      </div>
-    </div>
-  </div>
-
 </div>
 
-<div style="text-align:center; margin-top: 30px; color: #555; font-size: 0.8em;">
-  jsolerca &bull; PokeOne Kanto &bull; Trainer Lv.57 &bull; 6 Badges
+<!-- NAV -->
+<div class="nav">
+  <a href="#equipo">&#9876; Equipo activo</a>
+  <a href="#capturas">&#128247; Ultimas capturas</a>
+  <a href="#top">&#11088; Top en cajas</a>
+  <a href="#borrar">&#128465; A borrar</a>
+</div>
+
+<!-- ======================== EQUIPO ======================== -->
+<div class="section" id="equipo">
+  <div class="section-header">
+    <h2>&#9876; Equipo activo</h2>
+    <div class="badge">6 Pokemon</div>
+    <div class="divider"></div>
+  </div>
+  <div class="team-grid">
+
+    <!-- GOLEM -->
+    <div class="card">
+      <div class="card-header h-golem">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png" alt="Golem">
+        <div class="header-info">
+          <h2>GOLEM</h2>
+          <div class="meta">Lv.29 &bull; Hasty &bull; Sturdy</div>
+          <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-high">29</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">29</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">29</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">15</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
+        </div>
+        <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
+        <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Farmeo EVs</div>
+        <div class="farm-row"><span class="farm-stat" style="background:#f85149">Atk</span><span class="farm-pokemon">Machop / Machoke</span><span class="farm-loc">Victoria Road</span><span class="farm-count">252 batallas</span></div>
+        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Zubat / Pidgey</span><span class="farm-loc">Cuevas / Rutas</span><span class="farm-count">252 batallas</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Earthquake</span><span class="move-desc">STAB Ground 100 pot &#9733;</span><span class="move-tag">Lv.40</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Stone Edge</span><span class="move-desc">STAB Rock 100 pot criticos</span><span class="move-tag">Lv.54</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Stealth Rock</span><span class="move-desc">Ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Explosion</span><span class="move-desc">250 pot &mdash; opcion nuclear</span><span class="move-tag">Lv.44</span></li>
+        </ul>
+        <div class="stitle">Proximos hitos</div>
+        <div class="milestone"><span class="milestone-lv">Lv.34</span><div class="milestone-text"><strong>Rock Blast</strong> reemplaza Smack Down</div></div>
+        <div class="milestone"><span class="milestone-lv">Lv.40</span><div class="milestone-text"><strong>Earthquake</strong> reemplaza Bulldoze + quitar Rock Smash en Fuchsia</div></div>
+        <div class="milestone"><span class="milestone-lv">Lv.44</span><div class="milestone-text"><strong>Explosion</strong> reemplaza Rock Blast</div></div>
+        <div class="milestone"><span class="milestone-lv">Lv.54</span><div class="milestone-text"><strong>Stone Edge</strong> &mdash; moveset completo EdgeQuake</div></div>
+        <div class="alert alert-info">Sturdy + Explosion: sobrevive cualquier OHKO con 1 HP y luego destruye. Combo devastador.</div>
+      </div>
+    </div>
+
+    <!-- ARCANINE -->
+    <div class="card">
+      <div class="card-header h-arcanine">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png" alt="Arcanine">
+        <div class="header-info">
+          <h2>ARCANINE</h2>
+          <div class="meta">Lv.28 &bull; Modest &bull; Flash Fire</div>
+          <div class="types"><span class="type-badge t-fire">Fire</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">22</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">13</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">14</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">14</div></div>
+        </div>
+        <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
+        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Farmeo EVs</div>
+        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">252 batallas</span></div>
+        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">252 batallas</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Flamethrower</span><span class="move-desc">STAB Fire especial 90 pot &#9733;</span><span class="move-tag">TM35 URGENTE</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Extreme Speed</span><span class="move-desc">Normal prioridad +2, 80 pot</span><span class="move-tag">Mr. Mind Saffron</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Crunch</span><span class="move-desc">Dark cobertura Psychic/Ghost</span><span class="move-tag">Lv.45 / Mr. Mind</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Fire Blast</span><span class="move-desc">STAB Fire 110 pot nuke</span><span class="move-tag">TM pendiente</span></li>
+        </ul>
+        <div class="alert alert-danger">&#9888; URGENTE: Moves actuales (Leer/Odor Sleuth/Helping Hand/Flame Wheel) son inutiles. Ir a Mr. Mind en Saffron City + conseguir TM35 Flamethrower.</div>
+        <div class="alert alert-warning">Speed IV 14 bajo. Valorar IV Reset bloqueando SpAtk 27 para mejorar Speed.</div>
+      </div>
+    </div>
+
+    <!-- VILEPLUME -->
+    <div class="card">
+      <div class="card-header h-vileplume">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
+        <div class="header-info">
+          <h2>VILEPLUME</h2>
+          <div class="meta">Lv.43 &bull; Rash &bull; Chlorophyll</div>
+          <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-mid">24</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">18</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">3</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-low">16</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">2</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">31</div></div>
+        </div>
+        <div class="stitle">EVs objetivo &mdash; 252 SpAtk / 252 Speed / 4 HP</div>
+        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison 90 pot</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Moonblast</span><span class="move-desc">Cobertura Fairy</span></li>
+        </ul>
+        <div class="alert alert-warning">Moves actuales malos: Flash/Mega Drain/Acid/Cut. SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas.</div>
+      </div>
+    </div>
+
+    <!-- ALAKAZAM -->
+    <div class="card">
+      <div class="card-header h-alakazam">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
+        <div class="header-info">
+          <h2>ALAKAZAM</h2>
+          <div class="meta">Lv.43 &bull; Modest &bull; Synchronize</div>
+          <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">16</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-high">31</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-low">1</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">23</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-high">28</div></div>
+        </div>
+        <div class="stitle">EVs &mdash; 138 / 510 asignados</div>
+        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:22%"></div></div><span class="val">56 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:31%"></div></div><span class="val">78 / 252</span></div>
+        <div class="ev-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
+        <div class="stitle">Farmeo EVs pendiente</div>
+        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">196 mas</span></div>
+        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">174 mas</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
+        </ul>
+        <div class="alert alert-info">Synchronize util para cazar con nature deseada. Para PVP seria Magic Guard es mejor. Valido para historia y Liga.</div>
+      </div>
+    </div>
+
+    <!-- POLIWRATH -->
+    <div class="card">
+      <div class="card-header h-poliwrath">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png" alt="Poliwrath">
+        <div class="header-info">
+          <h2>POLIWRATH</h2>
+          <div class="meta">Lv.39 &bull; Jolly &bull; Water Absorb</div>
+          <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-fighting">Fighting</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">18</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-mid">22</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">28</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">27</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-low">1</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-low">16</div></div>
+        </div>
+        <div class="stitle">EVs objetivo &mdash; 252 Atk / 252 Speed / 4 HP</div>
+        <div class="ev-row"><span class="lbl">Atk</span><div class="bar-bg"><div class="bar-fill bar-atk" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:0%"></div></div><span class="val">0 / 252</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Waterfall</span><span class="move-desc">STAB Water fisico 80 pot &#9733;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Focus Punch</span><span class="move-desc">STAB Fighting 150 pot</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Ice Punch</span><span class="move-desc">Cobertura Dragon / Flying</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Earthquake</span><span class="move-desc">Cobertura Ground</span></li>
+        </ul>
+        <div class="alert alert-info">Water Absorb absorbe ataques Water y recupera HP. Jolly + fisico es el rol correcto para Poliwrath.</div>
+      </div>
+    </div>
+
+    <!-- GENGAR -->
+    <div class="card">
+      <div class="card-header h-gengar">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
+        <div class="header-info">
+          <h2>GENGAR</h2>
+          <div class="meta">Lv.39 &bull; Modest &bull; Cursed Body</div>
+          <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs</div>
+        <div class="iv-grid">
+          <div class="iv-cell"><div class="iv-stat">HP</div><div class="iv-val iv-low">1</div></div>
+          <div class="iv-cell"><div class="iv-stat">Atk</div><div class="iv-val iv-low">5</div></div>
+          <div class="iv-cell"><div class="iv-stat">Def</div><div class="iv-val iv-high">30</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpAtk</div><div class="iv-val iv-high">30</div></div>
+          <div class="iv-cell"><div class="iv-stat">SpDef</div><div class="iv-val iv-mid">18</div></div>
+          <div class="iv-cell"><div class="iv-stat">Speed</div><div class="iv-val iv-mid">19</div></div>
+        </div>
+        <div class="stitle">EVs &mdash; 96 / 510 asignados</div>
+        <div class="ev-row"><span class="lbl">SpAtk</span><div class="bar-bg"><div class="bar-fill bar-spa" style="width:7%"></div></div><span class="val">18 / 252</span></div>
+        <div class="ev-row"><span class="lbl">Speed</span><div class="bar-bg"><div class="bar-fill bar-spd" style="width:29%"></div></div><span class="val">74 / 252</span></div>
+        <div class="ev-row"><span class="lbl">HP</span><div class="bar-bg"><div class="bar-fill bar-hp" style="width:100%"></div></div><span class="val">4 / 4 &#10003;</span></div>
+        <div class="stitle">Farmeo EVs pendiente</div>
+        <div class="farm-row"><span class="farm-stat" style="background:#bc8cff">SpA</span><span class="farm-pokemon">Gastly</span><span class="farm-loc">Torre Pokemon</span><span class="farm-count">234 mas</span></div>
+        <div class="farm-row"><span class="farm-stat" style="background:#f3d327">Spd</span><span class="farm-pokemon">Pidgey</span><span class="farm-loc">Ruta 1 / Ruta 2</span><span class="farm-count">178 mas</span></div>
+        <div class="stitle">Moveset objetivo</div>
+        <ul class="moves-list">
+          <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
+          <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
+          <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
+        </ul>
+        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) o Thunderbolt cuando consigas la TM.</div>
+        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. Speed IV 19 mejorable con IV Reset bloqueando SpAtk 30.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ULTIMAS CAPTURAS ======================== -->
+<div class="section" id="capturas">
+  <div class="section-header">
+    <h2>&#128247; Ultimas capturas valoradas</h2>
+    <div class="badge">8 Jun 2026</div>
+    <div class="divider"></div>
+  </div>
+  <div class="captures-grid">
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="Horsea">
+      <div class="cap-info">
+        <h3>Horsea</h3>
+        <div class="cap-meta">Lv.34 &bull; Modest &bull; Swift Swim</div>
+        <div class="cap-ivs">SpAtk <strong class="iv-high">27</strong> &bull; SpDef <strong class="iv-high">28</strong></div>
+        <div class="cap-note">Evoluciona a Kingdra (Water/Dragon) con Dragon Scale + trade. Swift Swim dobla Speed bajo lluvia. Muy valioso.</div>
+      </div>
+      <div class="cap-rating rating-keep">GUARDAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png" alt="Lanturn">
+      <div class="cap-info">
+        <h3>Lanturn</h3>
+        <div class="cap-meta">Lv.40 &bull; Hasty &bull; Volt Absorb</div>
+        <div class="cap-ivs">Def <strong class="iv-high">31</strong> &bull; Speed <strong class="iv-high">29</strong></div>
+        <div class="cap-note">Volt Absorb absorbe ataques Electric y recupera HP. Tipologia Water/Electric excelente. Guardar como opcion de equipo.</div>
+      </div>
+      <div class="cap-rating rating-keep">GUARDAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png" alt="Golduck">
+      <div class="cap-info">
+        <h3>Golduck</h3>
+        <div class="cap-meta">Lv.35 &bull; Naive &bull; Cloud Nine</div>
+        <div class="cap-ivs">Def <strong class="iv-high">30</strong> &bull; SpAtk <strong class="iv-high">27</strong></div>
+        <div class="cap-note">Naive penaliza SpDef pero IVs ofensivos decentes. Cloud Nine anula efectos de clima. Guardar como reserva.</div>
+      </div>
+      <div class="cap-rating rating-maybe">QUIZAS</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
+      <div class="cap-info">
+        <h3>Gyarados (Brave)</h3>
+        <div class="cap-meta">Lv.40 &bull; Brave &bull; Intimidate</div>
+        <div class="cap-ivs">Speed <strong class="iv-low">1</strong> &bull; Atk <strong class="iv-low">15</strong></div>
+        <div class="cap-note">Speed IV 1 con Brave que penaliza Speed aun mas. Completamente inutilizable. Tienes uno Adamant mucho mejor.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
+      <div class="cap-info">
+        <h3>Gyarados (Calm)</h3>
+        <div class="cap-meta">Lv.40 &bull; Calm &bull; Intimidate</div>
+        <div class="cap-ivs">Atk <strong class="iv-mid">22</strong> &bull; Speed <strong class="iv-high">27</strong></div>
+        <div class="cap-note">Calm penaliza Atk un 10%. Gyarados es atacante fisico, esta nature destruye su potencial. Tu Adamant sigue siendo superior.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
+      <div class="cap-info">
+        <h3>Gyarados (Bold)</h3>
+        <div class="cap-meta">Lv.40 &bull; Bold &bull; Intimidate</div>
+        <div class="cap-ivs">Atk <strong class="iv-low">12</strong> &bull; Speed <strong class="iv-low">15</strong></div>
+        <div class="cap-note">Bold penaliza Atk. IVs bajos ademas. Peor en todo comparado con el Adamant. Liberar.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png" alt="Seadra">
+      <div class="cap-info">
+        <h3>Seadra</h3>
+        <div class="cap-meta">Lv.40 &bull; Modest &bull; Poison Point</div>
+        <div class="cap-ivs">SpAtk <strong class="iv-low">9</strong> &bull; Speed <strong class="iv-mid">18</strong></div>
+        <div class="cap-note">Modest es buena nature pero SpAtk IV 9 es muy bajo para Kingdra. Usa el Horsea Modest con SpAtk 27 para Kingdra.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png" alt="Magikarp">
+      <div class="cap-info">
+        <h3>Magikarp</h3>
+        <div class="cap-meta">Lv.20 &bull; Hasty &bull; Swift Swim</div>
+        <div class="cap-ivs">Atk <strong class="iv-low">6</strong> &bull; SpAtk <strong class="iv-low">14</strong></div>
+        <div class="cap-note">IVs muy bajos. Futuro Gyarados mediocre. Tienes uno Adamant con Speed 31 mucho mejor en cajas.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png" alt="Slugma">
+      <div class="cap-info">
+        <h3>Slugma</h3>
+        <div class="cap-meta">Lv.25 &bull; Docile &bull; Magma Armor</div>
+        <div class="cap-ivs">SpAtk <strong class="iv-low">4</strong> &bull; Speed <strong class="iv-high">26</strong></div>
+        <div class="cap-note">SpAtk IV 4 es terrible para atacante especial Fire. Magma Armor es habilidad inutil en batalla. Sin uso ninguno.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png" alt="Dewgong">
+      <div class="cap-info">
+        <h3>Dewgong</h3>
+        <div class="cap-meta">Lv.36 &bull; Sassy &bull; Thick Fat</div>
+        <div class="cap-ivs">Atk <strong class="iv-high">28</strong> &bull; SpDef bajo</div>
+        <div class="cap-note">Thick Fat resiste Fire e Ice. Pero Sassy penaliza Speed bastante. Mediocre en general.</div>
+      </div>
+      <div class="cap-rating rating-maybe">QUIZAS</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png" alt="Chinchou">
+      <div class="cap-info">
+        <h3>Chinchou x3</h3>
+        <div class="cap-meta">Varios &bull; Mild/Impish/Mild</div>
+        <div class="cap-ivs">IVs mediocres en stats clave</div>
+        <div class="cap-note">Ninguno tiene buenas stats. Ya tienes un Lanturn Volt Absorb mejor. Liberar todos.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+    <div class="capture-card">
+      <img class="cap-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png" alt="Goldeen">
+      <div class="cap-info">
+        <h3>Goldeen x3</h3>
+        <div class="cap-meta">Calm/Gentle/Gentle</div>
+        <div class="cap-ivs">IVs y natures malos</div>
+        <div class="cap-note">Seaking no es viable en ningun rol serio. Liberar todos.</div>
+      </div>
+      <div class="cap-rating rating-drop">BORRAR</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== TOP EN CAJAS ======================== -->
+<div class="section" id="top">
+  <div class="section-header">
+    <h2>&#11088; Top Pokemon en cajas</h2>
+    <div class="badge">Mejores reservas</div>
+    <div class="divider"></div>
+  </div>
+  <div class="top-grid">
+
+    <div class="top-card">
+      <div class="rank-badge rank-1">1</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="">
+      <div class="top-info">
+        <h3>Gyarados <span class="top-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Adamant &bull; Intimidate &bull; Speed IV 31</div>
+        <div class="top-why">Nature perfecta para fisico (+Atk/-SpAtk). Speed 31. Intimidate baja Atk rival al entrar. Candidato al equipo principal. EVs: 252 Atk / 252 Speed.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-2">2</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="">
+      <div class="top-info">
+        <h3>Horsea &rarr; Kingdra <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Modest &bull; Swift Swim &bull; SpAtk 27 / SpDef 28</div>
+        <div class="top-why">Dragon/Water con solo 2 debilidades (Dragon y Fairy). Swift Swim dobla Speed bajo lluvia. Necesita Dragon Scale (5% Horsea/Seadra salvaje o Thief) + trade.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-3">3</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png" alt="">
+      <div class="top-info">
+        <h3>Eevee <span class="top-stars">&#9733;&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Quiet &bull; Adaptability &bull; Speed 31 / Def 29</div>
+        <div class="top-why">Adaptability dobla bonus STAB a x2 (enorme). Quiet baja Speed &mdash; mejor Vaporeon (tanque) o Espeon (especial). Evitar Jolteon con Quiet.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-n">4</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png" alt="">
+      <div class="top-info">
+        <h3>Snorlax <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Bashful &bull; Thick Fat &bull; Atk 28 / Def 27</div>
+        <div class="top-why">Thick Fat absorbe Fire e Ice. HP base 160 (enorme). Atk 28 decente. Rol tanque con Rest+Sleep Talk. Necesita subir niveles desde cero.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-n">5</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png" alt="">
+      <div class="top-info">
+        <h3>Lanturn <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Hasty &bull; Volt Absorb &bull; Def 31 / Speed 29</div>
+        <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente. Util como sustituto de Poliwrath.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-n">6</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png" alt="">
+      <div class="top-info">
+        <h3>Chansey <span class="top-stars">&#9733;&#9733;&#9733;</span></h3>
+        <div class="top-meta">Modest &bull; Natural Cure &bull; HP 23</div>
+        <div class="top-why">HP base 250: el mayor del juego. Natural Cure cura status al cambiar. Wall / soporte definitivo. Soft-Boiled para recuperarse. Muy util en PVP defensivo.</div>
+      </div>
+    </div>
+
+    <div class="top-card">
+      <div class="rank-badge rank-n">7</div>
+      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png" alt="">
+      <div class="top-info">
+        <h3>Houndoom <span class="top-stars">&#9733;&#9733;</span></h3>
+        <div class="top-meta">Hardy &bull; Early Bird &bull; Atk 30 / Speed 26</div>
+        <div class="top-why">Dark/Fire buena tipologia. Atk 30 alto pero Early Bird no es ideal. Hardy es nature neutral. Potencial medio. Reserva para cuando evolucionas.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== A BORRAR ======================== -->
+<div class="section" id="borrar">
+  <div class="section-header">
+    <h2>&#128465; Pokemon a liberar</h2>
+    <div class="badge">Limpiar cajas</div>
+    <div class="divider"></div>
+  </div>
+  <div class="drop-grid">
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Brave)</h3><div class="drop-reason">Speed IV 1 + nature -Speed. Inutil total.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Calm)</h3><div class="drop-reason">Nature penaliza Atk. Tienes Adamant mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3>Gyarados (Bold)</h3><div class="drop-reason">Nature penaliza Atk + IVs bajos.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><div class="drop-info"><h3>Magikarp (Hasty)</h3><div class="drop-reason">Atk IV 6. Futuro Gyarados malísimo.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><div class="drop-info"><h3>Seadra (Modest)</h3><div class="drop-reason">SpAtk IV 9. Usa el Horsea para Kingdra.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><div class="drop-info"><h3>Slugma (Docile)</h3><div class="drop-reason">SpAtk IV 4. Sin potencial ofensivo alguno.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3>Slowpoke x4</h3><div class="drop-reason">Todos con IVs mediocres. Guarda 1 maximo si quieres Slowbro/Slowking.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><div class="drop-info"><h3>Slowbro x2</h3><div class="drop-reason">IVs mediocres en stats clave. Sin prioridad.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><div class="drop-info"><h3>Goldeen x4</h3><div class="drop-reason">Natures/IVs malos. Seaking sin potencial.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><div class="drop-info"><h3>Chinchou x3</h3><div class="drop-reason">Mediocres. Tienes el Lanturn Volt Absorb mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><div class="drop-info"><h3>Seel x3</h3><div class="drop-reason">Todos con IVs mediocres y natures malas.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><div class="drop-info"><h3>Psyduck (Timid)</h3><div class="drop-reason">SpAtk IV 1. Completamente inutil.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><div class="drop-info"><h3>Venonat (Hardy)</h3><div class="drop-reason">Nature neutral + SpAtk mediocre. Sin uso.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><div class="drop-info"><h3>Grimer (Sassy)</h3><div class="drop-reason">Sassy penaliza Speed. Stench inutil en batalla.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><div class="drop-info"><h3>Rhyhorn (Modest)</h3><div class="drop-reason">Modest penaliza Atk en atacante fisico. Nature incorrecta fatal.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3>Tentacool (Modest)</h3><div class="drop-reason">Speed IV 2. Sin velocidad = sin utilidad.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"><div class="drop-info"><h3>Nidoran / Nidorina</h3><div class="drop-reason">IVs mediocres. Sin potencial competitivo.</div></div><div class="drop-tag">LIBERAR</div></div>
+
+  </div>
+</div>
+
+<div class="updated">
+  Ultima actualizacion: 8 de Junio 2026 &nbsp;&bull;&nbsp; jsolerca &nbsp;&bull;&nbsp; PokeOne Kanto &nbsp;&bull;&nbsp;
+  <a href="https://github.com/jsolerca88/pokeone-equipo" style="color:#388bfd">GitHub</a>
 </div>
 
 </body>
