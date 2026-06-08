@@ -153,6 +153,23 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .h-poliwrath{ background: linear-gradient(135deg, #001022, #161b22); border-bottom: 2px solid #3399ff; }
 .h-gengar   { background: linear-gradient(135deg, #0e0022, #161b22); border-bottom: 2px solid #6644aa; }
 
+/* Rareza por suma de IVs */
+.rarity-grey   { color: #8b949e; }
+.rarity-white  { color: #e6edf3; }
+.rarity-green  { color: #3fb950; }
+.rarity-blue   { color: #58a6ff; }
+.rarity-purple { color: #bc8cff; }
+.rarity-gold   { color: #f3d327; }
+
+/* Puntuacion de rol */
+.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; }
+.role-badge .rb-score { font-size: 1.3em; display: block; }
+.role-badge .rb-label { font-size: 0.7em; display: block; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
+.rb-green { background: #001d0e; border: 1px solid #3fb950; color: #7ee787; }
+.rb-blue  { background: #001d2d; border: 1px solid #388bfd; color: #79c0ff; }
+.rb-amber { background: #2d2200; border: 1px solid #d29922; color: #ffc966; }
+.rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
+
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
 </head>
@@ -194,10 +211,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-golem">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png" alt="Golem">
         <div class="header-info">
-          <h2>GOLEM</h2>
+          <h2 class="rarity-blue">GOLEM</h2>
           <div class="meta">Lv.29 &bull; Hasty &bull; Sturdy</div>
           <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -264,10 +282,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-arcanine">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png" alt="Arcanine">
         <div class="header-info">
-          <h2>ARCANINE</h2>
+          <h2 class="rarity-green">ARCANINE</h2>
           <div class="meta">Lv.28 &bull; Modest &bull; Flash Fire</div>
           <div class="types"><span class="type-badge t-fire">Fire</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -330,10 +349,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-vileplume">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
         <div class="header-info">
-          <h2>VILEPLUME</h2>
+          <h2 class="rarity-green">VILEPLUME</h2>
           <div class="meta">Lv.43 &bull; Rash &bull; Chlorophyll</div>
           <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
         </div>
+        <div class="role-badge rb-amber"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -395,10 +415,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-alakazam">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
         <div class="header-info">
-          <h2>ALAKAZAM</h2>
+          <h2 class="rarity-blue">ALAKAZAM</h2>
           <div class="meta">Lv.43 &bull; Modest &bull; Synchronize</div>
           <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
         </div>
+        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -460,10 +481,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-poliwrath">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png" alt="Poliwrath">
         <div class="header-info">
-          <h2>POLIWRATH</h2>
+          <h2 class="rarity-blue">POLIWRATH</h2>
           <div class="meta">Lv.39 &bull; Jolly &bull; Water Absorb</div>
           <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-fighting">Fighting</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -525,10 +547,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-gengar">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
         <div class="header-info">
-          <h2>GENGAR</h2>
+          <h2 class="rarity-green">GENGAR</h2>
           <div class="meta">Lv.39 &bull; Modest &bull; Cursed Body</div>
           <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>

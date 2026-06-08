@@ -154,6 +154,23 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .h-snorlax   { background: linear-gradient(135deg, #141414, #161b22); border-bottom: 2px solid #888; }
 .h-furret    { background: linear-gradient(135deg, #141414, #161b22); border-bottom: 2px solid #aaa; }
 
+/* Rareza por suma de IVs */
+.rarity-grey   { color: #8b949e; }
+.rarity-white  { color: #e6edf3; }
+.rarity-green  { color: #3fb950; }
+.rarity-blue   { color: #58a6ff; }
+.rarity-purple { color: #bc8cff; }
+.rarity-gold   { color: #f3d327; }
+
+/* Puntuacion de rol */
+.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; }
+.role-badge .rb-score { font-size: 1.3em; display: block; }
+.role-badge .rb-label { font-size: 0.7em; display: block; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
+.rb-green { background: #001d0e; border: 1px solid #3fb950; color: #7ee787; }
+.rb-blue  { background: #001d2d; border: 1px solid #388bfd; color: #79c0ff; }
+.rb-amber { background: #2d2200; border: 1px solid #d29922; color: #ffc966; }
+.rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
+
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
 </head>
@@ -196,10 +213,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-charizard">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/charizard.png" alt="Charizard">
         <div class="header-info">
-          <h2>CHARIZARD</h2>
+          <h2 class="rarity-blue">CHARIZARD</h2>
           <div class="meta">Lv.36 &bull; Brave &bull; Blaze</div>
           <div class="types"><span class="type-badge t-fire">Fire</span><span class="type-badge t-flying">Flying</span></div>
         </div>
+        <div class="role-badge rb-amber"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -262,10 +280,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-gyarados">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="Gyarados">
         <div class="header-info">
-          <h2>GYARADOS</h2>
+          <h2 class="rarity-white">GYARADOS</h2>
           <div class="meta">Lv.39 &bull; Gentle &bull; Intimidate</div>
           <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-flying">Flying</span></div>
         </div>
+        <div class="role-badge rb-red"><span class="rb-score">3/10</span><span class="rb-label">Mejorable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -327,10 +346,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-machamp">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/machamp.png" alt="Machamp">
         <div class="header-info">
-          <h2>MACHAMP</h2>
+          <h2 class="rarity-green">MACHAMP</h2>
           <div class="meta">Lv.37 &bull; Lonely &bull; No Guard</div>
           <div class="types"><span class="type-badge t-fighting">Fighting</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -393,10 +413,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-gengar">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
         <div class="header-info">
-          <h2>GENGAR</h2>
+          <h2 class="rarity-white">GENGAR</h2>
           <div class="meta">Lv.35 &bull; Timid &bull; Cursed Body</div>
           <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
         </div>
+        <div class="role-badge rb-blue"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -458,10 +479,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-snorlax">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png" alt="Snorlax">
         <div class="header-info">
-          <h2>SNORLAX</h2>
+          <h2 class="rarity-purple">SNORLAX</h2>
           <div class="meta">Lv.37 &bull; Docile &bull; Thick Fat</div>
           <div class="types"><span class="type-badge t-normal">Normal</span></div>
         </div>
+        <div class="role-badge rb-green"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -523,10 +545,11 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="card-header h-furret">
         <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/furret.png" alt="Furret">
         <div class="header-info">
-          <h2>FURRET</h2>
+          <h2 class="rarity-blue">FURRET</h2>
           <div class="meta">Lv.30 &bull; Quiet &bull; Run Away</div>
           <div class="types"><span class="type-badge t-normal">Normal</span></div>
         </div>
+        <div class="role-badge rb-red"><span class="rb-score">2/10</span><span class="rb-label">Mejorable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
