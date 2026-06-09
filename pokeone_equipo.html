@@ -217,6 +217,36 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-techo-info { font-size: 0.78em; color: #8b949e; line-height: 1.6; }
 .rb-techo-info strong { color: #e6edf3; }
 
+/* ======= MODAL IV/EV NEW SYSTEM ======= */
+.rb-iv-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 6px; }
+.rb-iv-cell { background: #0d1117; border-radius: 6px; padding: 5px 3px; text-align: center; }
+.rb-iv-stat { font-size: 0.52em; color: #484f58; text-transform: uppercase; letter-spacing: 0.3px; display: block; }
+.rb-iv-val  { font-size: 0.95em; font-weight: 700; display: block; margin: 2px 0 3px; }
+.rb-iv-bar  { height: 3px; border-radius: 2px; background: #21262d; overflow: hidden; }
+.rb-iv-fill { height: 100%; border-radius: 2px; }
+.rb-iv-sum  { font-size: 0.72em; color: #8b949e; margin-top: 6px; text-align: right; }
+.rb-pct-display { display: flex; align-items: center; gap: 12px; background: #0d1117; border-radius: 8px; padding: 10px 14px; margin-bottom: 4px; }
+.rb-pct-num { font-size: 2.2em; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.rb-pct-bar-wrap { flex: 1; }
+.rb-pct-bar-bg { height: 6px; background: #21262d; border-radius: 3px; overflow: hidden; }
+.rb-pct-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+.rb-pct-label { font-size: 0.7em; color: #8b949e; margin-top: 4px; }
+.rb-ev-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 6px; }
+.rb-ev-cell { background: #0d1117; border-radius: 6px; padding: 5px 3px; text-align: center; }
+.rb-ev-stat { font-size: 0.52em; color: #484f58; text-transform: uppercase; letter-spacing: 0.3px; display: block; }
+.rb-ev-val  { font-size: 0.82em; font-weight: 700; display: block; margin: 2px 0; }
+.rb-ev-obj  { font-size: 0.62em; color: #58a6ff; display: block; }
+.rb-meta-row { display: flex; gap: 8px; align-items: flex-start; padding: 7px 0; border-bottom: 1px dashed #21262d; font-size: 0.82em; }
+.rb-meta-row:last-child { border-bottom: none; }
+.rb-meta-icon { font-size: 1.1em; flex-shrink: 0; width: 20px; text-align: center; }
+.rb-meta-key { color: #8b949e; min-width: 72px; flex-shrink: 0; }
+.rb-meta-val { color: #e6edf3; font-weight: 600; }
+.rb-meta-desc { color: #8b949e; font-size: 0.88em; margin-top: 2px; }
+.rb-nature-up   { color: #3fb950; font-size: 0.75em; }
+.rb-nature-down { color: #f85149; font-size: 0.75em; }
+.rb-nota { font-size: 0.8em; color: #8b949e; line-height: 1.6; background: #0d1117; border-radius: 6px; padding: 8px 10px; }
+.rb-nota strong { color: #e6edf3; }
+
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 
 /* ======= CAJAS DEL PC ======= */
@@ -2067,34 +2097,213 @@ const RB_DATA = {
     nota:"<strong>Volt Absorb</strong> es habilidad premium. Rol atacante especial: IVs clave = SpA 27 / Spe 17 / HP 25 (media 23). Con EVs completos llega a 6/10.",
   },
 };
+const NATURE_INFO = {
+  'Adamant': {up:'Atk',   down:'SpA',  desc:'Sube Ataque, baja At.Esp.'},
+  'Modest':  {up:'SpA',   down:'Atk',  desc:'Sube At.Esp., baja Ataque'},
+  'Jolly':   {up:'Spd',   down:'SpA',  desc:'Sube Velocidad, baja At.Esp.'},
+  'Timid':   {up:'Spd',   down:'Atk',  desc:'Sube Velocidad, baja Ataque'},
+  'Bold':    {up:'Def',   down:'Atk',  desc:'Sube Defensa, baja Ataque'},
+  'Calm':    {up:'SpD',   down:'Atk',  desc:'Sube Def.Esp., baja Ataque'},
+  'Hasty':   {up:'Spd',   down:'Def',  desc:'Sube Velocidad, baja Defensa'},
+  'Naive':   {up:'Spd',   down:'SpD',  desc:'Sube Velocidad, baja Def.Esp.'},
+  'Rash':    {up:'SpA',   down:'SpD',  desc:'Sube At.Esp., baja Def.Esp.'},
+  'Quiet':   {up:'SpA',   down:'Spd',  desc:'Sube At.Esp., baja Velocidad'},
+  'Brave':   {up:'Atk',   down:'Spd',  desc:'Sube Ataque, baja Velocidad'},
+  'Impish':  {up:'Def',   down:'SpA',  desc:'Sube Defensa, baja At.Esp.'},
+  'Careful': {up:'SpD',   down:'SpA',  desc:'Sube Def.Esp., baja At.Esp.'},
+  'Naughty': {up:'Atk',   down:'SpD',  desc:'Sube Ataque, baja Def.Esp.'},
+  'Lax':     {up:'Def',   down:'SpD',  desc:'Sube Defensa, baja Def.Esp.'},
+  'Mild':    {up:'SpA',   down:'Def',  desc:'Sube At.Esp., baja Defensa'},
+  'Gentle':  {up:'SpD',   down:'Def',  desc:'Sube Def.Esp., baja Defensa'},
+  'Sassy':   {up:'SpD',   down:'Spd',  desc:'Sube Def.Esp., baja Velocidad'},
+  'Relaxed': {up:'Def',   down:'Spd',  desc:'Sube Defensa, baja Velocidad'},
+  'Lonely':  {up:'Atk',   down:'Def',  desc:'Sube Ataque, baja Defensa'},
+  'Bashful': {up:null,    down:null,   desc:'Naturaleza neutra — sin efecto en stats'},
+  'Docile':  {up:null,    down:null,   desc:'Naturaleza neutra — sin efecto en stats'},
+  'Hardy':   {up:null,    down:null,   desc:'Naturaleza neutra — sin efecto en stats'},
+  'Quirky':  {up:null,    down:null,   desc:'Naturaleza neutra — sin efecto en stats'},
+  'Serious': {up:null,    down:null,   desc:'Naturaleza neutra — sin efecto en stats'},
+};
+
+function pctToClass(pct) {
+  if (pct >= 85) return {cls:'rb-gold',  label:'Perfecto'};
+  if (pct >= 70) return {cls:'rb-green', label:'Excelente'};
+  if (pct >= 55) return {cls:'rb-blue',  label:'Bueno'};
+  if (pct >= 40) return {cls:'rb-amber', label:'Regular'};
+  return {cls:'rb-red', label:'Debil'};
+}
+
+function ivColor(v) {
+  if (v >= 25) return '#3fb950';
+  if (v >= 15) return '#d29922';
+  return '#f85149';
+}
+
+function readCardIvs(key) {
+  const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
+  if (!badge) return null;
+  const card = badge.closest('.card');
+  if (!card) return null;
+  const ivRow = Array.from(card.querySelectorAll('.stat-row-line'))
+    .find(r => r.querySelector('.sr-lbl')?.textContent.trim() === 'IV');
+  if (!ivRow) return null;
+  const cells = ivRow.querySelectorAll('.sr-cell');
+  const ivs = [];
+  cells.forEach(c => {
+    ivs.push({stat: c.querySelector('.sr-s')?.textContent.trim(), val: parseInt(c.querySelector('.sr-v')?.textContent) || 0});
+  });
+  const sum = ivs.reduce((a, b) => a + b.val, 0);
+  return {ivs, sum, pct: Math.round(sum / 186 * 100)};
+}
+
+function readCardEvs(key) {
+  const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
+  if (!badge) return [];
+  const card = badge.closest('.card');
+  if (!card) return [];
+  const evRow = Array.from(card.querySelectorAll('.stat-row-line'))
+    .find(r => r.querySelector('.sr-lbl')?.textContent.trim() === 'EV');
+  const objRow = Array.from(card.querySelectorAll('.stat-row-line'))
+    .find(r => r.querySelector('.sr-lbl')?.textContent.trim() === 'OBJ');
+  const evCells = evRow ? evRow.querySelectorAll('.sr-cell') : [];
+  const objCells = objRow ? objRow.querySelectorAll('.sr-cell') : [];
+  const result = [];
+  evCells.forEach((c, i) => {
+    const val = c.querySelector('.sr-v')?.textContent.trim();
+    const obj = objCells[i]?.querySelector('.sr-v')?.textContent.trim() || '—';
+    result.push({stat: c.querySelector('.sr-s')?.textContent.trim(), val, obj});
+  });
+  return result;
+}
+
+function readCardMeta(key) {
+  const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
+  if (!badge) return {};
+  const card = badge.closest('.card');
+  const text = card?.querySelector('.meta')?.textContent || '';
+  const parts = text.split('•').map(s => s.trim());
+  return {level: parts[0] || '', nature: parts[1] || '', ability: parts[2] || ''};
+}
+
+function updateAllBadges() {
+  Object.keys(RB_DATA).forEach(key => {
+    const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
+    if (!badge) return;
+    const iv = readCardIvs(key);
+    if (!iv) return;
+    const {cls, label} = pctToClass(iv.pct);
+    badge.className = badge.className.replace(/\brb-(gold|green|blue|amber|red)\b/, cls);
+    const scoreEl = badge.querySelector('.rb-score, .srb-score');
+    const labelEl = badge.querySelector('.rb-label');
+    if (scoreEl) scoreEl.textContent = iv.pct + '%';
+    if (labelEl) labelEl.textContent = label;
+  });
+}
+
 function openRbModal(key) {
   const d = RB_DATA[key];
   if (!d) return;
-  const actions = d.acciones.map(a =>
-    `<div class="rb-action"><div class="rb-dot ${a.p}"></div><div class="rb-action-text">${a.t}</div></div>`
-  ).join('');
+
+  const ivData = readCardIvs(key);
+  const evData = readCardEvs(key);
+  const meta   = readCardMeta(key);
+  const nature = NATURE_INFO[meta.nature] || null;
+
+  let pct = 0, pctCls = 'rb-red', pctLabel = 'Debil', pctColor = '#f85149';
+  let ivCells = '', ivSumLine = '';
+  if (ivData) {
+    pct = ivData.pct;
+    const pc = pctToClass(pct);
+    pctCls = pc.cls; pctLabel = pc.label;
+    const clsColors = {'rb-gold':'#f3d327','rb-green':'#3fb950','rb-blue':'#58a6ff','rb-amber':'#d29922','rb-red':'#f85149'};
+    pctColor = clsColors[pctCls] || '#8b949e';
+    ivCells = ivData.ivs.map(({stat, val}) => {
+      const c = ivColor(val);
+      const w = Math.round(val / 31 * 100);
+      return `<div class="rb-iv-cell">
+        <span class="rb-iv-stat">${stat}</span>
+        <span class="rb-iv-val" style="color:${c}">${val}</span>
+        <div class="rb-iv-bar"><div class="rb-iv-fill" style="width:${w}%;background:${c}"></div></div>
+      </div>`;
+    }).join('');
+    ivSumLine = `<div class="rb-iv-sum">Suma: <strong style="color:#e6edf3">${ivData.sum}</strong> / 186</div>`;
+  }
+
+  let evCells = '';
+  if (evData.length) {
+    evCells = evData.map(({stat, val, obj}) => {
+      const isZero = val === '0' || val === '—';
+      const color = isZero ? '#30363d' : '#f3d327';
+      return `<div class="rb-ev-cell">
+        <span class="rb-ev-stat">${stat}</span>
+        <span class="rb-ev-val" style="color:${color}">${val}</span>
+        <span class="rb-ev-obj">${obj !== '—' ? obj : ''}</span>
+      </div>`;
+    }).join('');
+  }
+
+  let natureLine = '';
+  if (meta.nature) {
+    const ni = nature;
+    const upSpan   = ni && ni.up   ? `<span class="rb-nature-up">▲ ${ni.up}</span>` : '';
+    const downSpan = ni && ni.down ? `<span class="rb-nature-down">▼ ${ni.down}</span>` : '';
+    const badges = (upSpan || downSpan) ? `&nbsp; ${upSpan} ${downSpan}` : '';
+    natureLine = `<div class="rb-meta-row">
+      <span class="rb-meta-icon">\u{1F30F}</span>
+      <span class="rb-meta-key">Naturaleza</span>
+      <div><div class="rb-meta-val">${meta.nature}${badges}</div><div class="rb-meta-desc">${ni ? ni.desc : ''}</div></div>
+    </div>`;
+  }
+
+  let abilityLine = '';
+  if (meta.ability) {
+    abilityLine = `<div class="rb-meta-row">
+      <span class="rb-meta-icon">✨</span>
+      <span class="rb-meta-key">Habilidad</span>
+      <div><div class="rb-meta-val">${meta.ability}</div></div>
+    </div>`;
+  }
+
+  const notaHtml = d.nota ? `<div class="rb-modal-section"><h4>\u{1F4AC} Notas</h4><div class="rb-nota">${d.nota}</div></div>` : '';
+
+  const actions = d.acciones && d.acciones.length
+    ? `<div class="rb-modal-section"><h4>\u{1F527} Recomendaciones</h4>` +
+      d.acciones.map(a => `<div class="rb-action"><div class="rb-dot ${a.p}"></div><div class="rb-action-text">${a.t}</div></div>`).join('') +
+      `</div>`
+    : '';
+
   document.getElementById('rb-modal-content').innerHTML = `
     <div class="rb-modal-head">
       <img class="rb-modal-icon" src="https://img.pokemondb.net/sprites/black-white/normal/${d.icon}.png" alt="${d.name}">
       <div>
         <div class="rb-modal-title">${d.name}</div>
-        <div class="rb-modal-cur">
-          <span style="font-size:0.75em;color:#8b949e">Actual:</span>
-          <div class="role-badge ${d.cls}"><span class="rb-score">${d.score}</span><span class="rb-label">${d.label}</span></div>
+        ${meta.level ? `<div style="font-size:0.72em;color:#8b949e;margin-top:2px">${meta.level}</div>` : ''}
+      </div>
+    </div>
+
+    <div class="rb-modal-section">
+      <h4>\u{1F4CA} Perfeccion de IVs</h4>
+      <div class="rb-pct-display">
+        <div class="rb-pct-num" style="color:${pctColor}">${pct}%</div>
+        <div class="rb-pct-bar-wrap">
+          <div class="rb-pct-bar-bg"><div class="rb-pct-bar-fill" style="width:${pct}%;background:${pctColor}"></div></div>
+          <div class="rb-pct-label">${pctLabel} &mdash; ${ivData ? ivData.sum : '?'}/186 IVs totales</div>
         </div>
       </div>
+      ${ivData ? `<div class="rb-iv-grid">${ivCells}</div>${ivSumLine}` : '<div style="color:#8b949e;font-size:0.8em">IVs no disponibles para este slot</div>'}
     </div>
+
+    ${evData.length ? `<div class="rb-modal-section"><h4>\u{1F3CB} EVs actuales / objetivo</h4><div class="rb-ev-grid">${evCells}</div></div>` : ''}
+
     <div class="rb-modal-section">
-      <h4>&#128270; Que hacer para mejorar</h4>
-      ${actions}
+      <h4>\u{1F338} Naturaleza &amp; Habilidad</h4>
+      ${natureLine}
+      ${abilityLine}
     </div>
-    <div class="rb-modal-section">
-      <h4>&#127942; Techo maximo alcanzable</h4>
-      <div class="rb-techo">
-        <div class="rb-techo-score">${d.techo}</div>
-        <div class="rb-techo-info">${d.nota}</div>
-      </div>
-    </div>`;
+
+    ${notaHtml}
+    ${actions}`;
+
   document.getElementById('rb-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -2109,6 +2318,7 @@ function rbOverlayClick(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRbModal(); });
+document.addEventListener('DOMContentLoaded', updateAllBadges);
 
 function mvTab(btn, panelId) {
   const tabs = btn.closest('.moveset-tabs');
