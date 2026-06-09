@@ -237,6 +237,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .slot-meta { color: #8b949e; font-size: 0.85em; flex: 1; }
 .slot-tag { font-size: 0.62em; font-weight: 700; padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
 .st-top  { background: #1a1500; color: #f3d327; border: 1px solid #f3d327; }
+.st-top[onclick] { cursor: pointer; transition: filter 0.15s; }
+.st-top[onclick]:hover { filter: brightness(1.4); }
 .st-drop { background: #2d1117; color: #f85149; border: 1px solid #f85149; }
 .st-team { background: #001d2d; color: #79c0ff; border: 1px solid #388bfd; }
 </style>
@@ -333,18 +335,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-alakazam-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Teleport</span><span class="move-desc">Escape batalla &mdash; reemplazar por Shadow Ball</span><span class="move-bad">cambiar</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Recover</span><span class="move-desc">Recupera 50% HP &#10003; util</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Psychic</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Teleport (Teletransporte)</span><span class="move-desc">Escape batalla &mdash; reemplazar por Shadow Ball</span><span class="move-bad">cambiar</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Recover (Recuperacion)</span><span class="move-desc">Recupera 50% HP &#10003; util</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Psychic (Psiquico)</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Calm Mind (Dia Tranquilo)</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
             </ul>
           </div>
           <div id="mv-alakazam-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Psychic</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Calm Mind</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Psychic (Psiquico)</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Calm Mind (Dia Tranquilo)</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Focus Blast (Bola Relampago)</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
             </ul>
           </div>
         </div>
@@ -407,18 +409,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-golem-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Rock Blast</span><span class="move-desc">STAB Rock multihit &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Rock Smash</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Stealth Rock</span><span class="move-desc">Entry hazard &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Earthquake</span><span class="move-desc">STAB Ground 100 pot &#10003;</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Rock Blast (Lanzarrocas)</span><span class="move-desc">STAB Rock multihit &#10003;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Rock Smash (Romperrocas)</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Stealth Rock (Roca Afilada)</span><span class="move-desc">Entry hazard &#10003;</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">STAB Ground 100 pot &#10003;</span></li>
             </ul>
           </div>
           <div id="mv-golem-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Earthquake</span><span class="move-desc">STAB Ground &mdash; ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Stone Edge</span><span class="move-desc">STAB Rock 100 pot criticos</span><span class="move-tag">Lv.54</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Stealth Rock</span><span class="move-desc">Ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Explosion</span><span class="move-desc">250 pot &mdash; opcion nuclear</span><span class="move-tag">Lv.44</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">STAB Ground &mdash; ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Stone Edge (Canto Agudo)</span><span class="move-desc">STAB Rock 100 pot criticos</span><span class="move-tag">Lv.54</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Stealth Rock (Roca Afilada)</span><span class="move-desc">Ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Explosion (Explosion)</span><span class="move-desc">250 pot &mdash; opcion nuclear</span><span class="move-tag">Lv.44</span></li>
             </ul>
           </div>
         </div>
@@ -483,18 +485,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-jsgengar-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Mean Look</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">STAB Ghost &#10003;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison &#10003;</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Sucker Punch (Golpe Bajo)</span><span class="move-desc">Dark prioridad &#10003;</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Mean Look (Mirada Malvada)</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
             </ul>
           </div>
           <div id="mv-jsgengar-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Shadow Ball</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Sucker Punch</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Focus Blast (Bola Relampago)</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Sucker Punch (Golpe Bajo)</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
             </ul>
           </div>
         </div>
@@ -558,18 +560,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-arcanine-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Leer</span><span class="move-desc">Baja Def rival &mdash; inutil</span><span class="move-bad">basura</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Odor Sleuth</span><span class="move-desc">Revela Normal/Fighting &mdash; sin uso</span><span class="move-bad">basura</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Helping Hand</span><span class="move-desc">Solo util en dobles</span><span class="move-bad">basura</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Flame Wheel</span><span class="move-desc">Fire fisico 60 pot &mdash; flojo</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Leer (Mirada Fuerte)</span><span class="move-desc">Baja Def rival &mdash; inutil</span><span class="move-bad">basura</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Odor Sleuth (Rastreo)</span><span class="move-desc">Revela Normal/Fighting &mdash; sin uso</span><span class="move-bad">basura</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Helping Hand (Mano Amiga)</span><span class="move-desc">Solo util en dobles</span><span class="move-bad">basura</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Flame Wheel (Rueda Fuego)</span><span class="move-desc">Fire fisico 60 pot &mdash; flojo</span><span class="move-bad">temporal</span></li>
             </ul>
           </div>
           <div id="mv-arcanine-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Flamethrower</span><span class="move-desc">STAB Fire especial 90 pot &#9733;</span><span class="move-tag">TM35 URGENTE</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Extreme Speed</span><span class="move-desc">Normal prioridad +2, 80 pot</span><span class="move-tag">Mr. Mind Saffron</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Crunch</span><span class="move-desc">Dark cobertura Psychic/Ghost</span><span class="move-tag">Lv.45</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Fire Blast</span><span class="move-desc">STAB Fire 110 pot nuke</span><span class="move-tag">TM pendiente</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Flamethrower (Lanzallamas)</span><span class="move-desc">STAB Fire especial 90 pot &#9733;</span><span class="move-tag">TM35 URGENTE</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Extreme Speed (Celeridad)</span><span class="move-desc">Normal prioridad +2, 80 pot</span><span class="move-tag">Mr. Mind Saffron</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Crunch (Triturar)</span><span class="move-desc">Dark cobertura Psychic/Ghost</span><span class="move-tag">Lv.45</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Fire Blast (Llamarada)</span><span class="move-desc">STAB Fire 110 pot nuke</span><span class="move-tag">TM pendiente</span></li>
             </ul>
           </div>
         </div>
@@ -633,18 +635,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-poliwrath-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Rock Smash</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Mud Shot</span><span class="move-desc">Ground 55 pot baja Speed &mdash; temporal</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Surf</span><span class="move-desc">HM Water 90 pot &mdash; reemplazar por Waterfall</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Wake-Up Slap</span><span class="move-desc">Fighting 70 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Rock Smash (Romperrocas)</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Mud Shot (Disparo Lodo)</span><span class="move-desc">Ground 55 pot baja Speed &mdash; temporal</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Surf (Surf)</span><span class="move-desc">HM Water 90 pot &mdash; reemplazar por Waterfall</span><span class="move-bad">HM</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Wake-Up Slap (Bofeton)</span><span class="move-desc">Fighting 70 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
             </ul>
           </div>
           <div id="mv-poliwrath-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Waterfall</span><span class="move-desc">STAB Water fisico 80 pot &#9733;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Focus Punch</span><span class="move-desc">STAB Fighting 150 pot</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Ice Punch</span><span class="move-desc">Cobertura Dragon / Flying</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Earthquake</span><span class="move-desc">Cobertura Ground</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Waterfall (Cascada)</span><span class="move-desc">STAB Water fisico 80 pot &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Focus Punch (Punyo Certero)</span><span class="move-desc">STAB Fighting 150 pot</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Ice Punch (Punyo Hielo)</span><span class="move-desc">Cobertura Dragon / Flying</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">Cobertura Ground</span></li>
             </ul>
           </div>
         </div>
@@ -707,18 +709,18 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           </div>
           <div id="mv-vileplume-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Flash</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Mega Drain</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Acid</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Cut</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Flash (Destello)</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Mega Drain (Megadrenaje)</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Acid (Acido)</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Cut (Corte)</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
             </ul>
           </div>
           <div id="mv-vileplume-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison 90 pot</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Moonblast</span><span class="move-desc">Cobertura Fairy</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Giga Drain (Giga Drenaje)</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison 90 pot</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Sleep Powder (Somnifero)</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Moonblast (Destructor)</span><span class="move-desc">Cobertura Fairy</span></li>
             </ul>
           </div>
         </div>
@@ -1020,19 +1022,19 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/granbull.png"><span class="slot-name">Granbull</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Intimidate &bull; Def 29, SpD 27</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seaking.png"><span class="slot-name">Seaking</span><span class="slot-meta">Lv.40 &bull; Quirky &bull; Water Veil &bull; SpA 30, SpD 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hitmonlee.png"><span class="slot-name">Hitmonlee</span><span class="slot-meta">Lv.30 &bull; Quiet &bull; Limber</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Intimidate &bull; Spe 31</span><span class="slot-tag st-top">TOP #1</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Intimidate &bull; Spe 31</span><span class="slot-tag st-top" onclick="openRbModal('gyarados-top')">TOP #1</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><span class="slot-name">Grimer</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Stench &bull; SpA 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pinsir.png"><span class="slot-name">Pinsir</span><span class="slot-meta">Lv.28 &bull; Serious &bull; Mold Breaker</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><span class="slot-name">Rhyhorn</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Lightning Rod</span><span class="slot-tag st-drop">LIBERAR</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png"><span class="slot-name">Chansey</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Natural Cure &bull; Atk 28</span><span class="slot-tag st-top">TOP #6</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png"><span class="slot-name">Chansey</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Natural Cure &bull; Atk 28</span><span class="slot-tag st-top" onclick="openRbModal('chansey-top')">TOP #6</span></div>
       <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name">Sandslash</span><span class="slot-meta">Lv.22 &bull; Brave &bull; Sand Veil &bull; HP 29, Atk 28, SpA 27</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><span class="slot-name">Scyther</span><span class="slot-meta">Lv.23 &bull; Bold &bull; Swarm &bull; Spe 30</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><span class="slot-name">Krabby</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Hyper Cutter &bull; SpD 27, Spe 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/vulpix.png"><span class="slot-name">Vulpix</span><span class="slot-meta">Lv.20 &bull; Jolly &bull; Flash Fire &bull; Def 29</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><span class="slot-name">Tentacool</span><span class="slot-meta">Lv.25 &bull; Modest &bull; Clear Body &bull; HP 30</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/murkrow.png"><span class="slot-name">Murkrow</span><span class="slot-meta">Lv.23 &bull; Adamant &bull; Super Luck &bull; SpA 29, SpD 30</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png"><span class="slot-name">Eevee</span><span class="slot-meta">Lv.25 &bull; Quiet &bull; Adaptability &bull; Def 29, Spe 31</span><span class="slot-tag st-top">TOP #3</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name">Snorlax</span><span class="slot-meta">Lv.35 &bull; Bashful &bull; Thick Fat &bull; Atk 28, Def 27</span><span class="slot-tag st-top">TOP #4</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png"><span class="slot-name">Eevee</span><span class="slot-meta">Lv.25 &bull; Quiet &bull; Adaptability &bull; Def 29, Spe 31</span><span class="slot-tag st-top" onclick="openRbModal('eevee-top')">TOP #3</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name">Snorlax</span><span class="slot-meta">Lv.35 &bull; Bashful &bull; Thick Fat &bull; Atk 28, Def 27</span><span class="slot-tag st-top" onclick="openRbModal('snorlax-top')">TOP #4</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name">Slugma</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Magma Armor &bull; HP 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/doduo.png"><span class="slot-name">Doduo</span><span class="slot-meta">Lv.19 &bull; Lax &bull; Early Bird &bull; Def 29, SpD 28, Spe 31</span></div>
       <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weepinbell.png"><span class="slot-name">Weepinbell</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Chlorophyll &bull; Atk 31</span></div>
@@ -1052,17 +1054,17 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="box-slot sl-drop"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Swift Swim &bull; HP 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png"><span class="slot-name">Nidorino</span><span class="slot-meta">Lv.31 &bull; Modest &bull; Rivalry &bull; HP 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/skiploom.png"><span class="slot-name">Skiploom</span><span class="slot-meta">Lv.26 &bull; Bold &bull; Chlorophyll &bull; SpD 27, Spe 27</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png"><span class="slot-name">Houndoom</span><span class="slot-meta">Lv.24 &bull; Hardy &bull; Early Bird &bull; Atk 30, SpD 27</span><span class="slot-tag st-top">TOP #7</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png"><span class="slot-name">Houndoom</span><span class="slot-meta">Lv.24 &bull; Hardy &bull; Early Bird &bull; Atk 30, SpD 27</span><span class="slot-tag st-top" onclick="openRbModal('houndoom-top')">TOP #7</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name">Seel</span><span class="slot-meta">Lv.32 &bull; Docile &bull; Thick Fat</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name">Seel</span><span class="slot-meta">Lv.32 &bull; Timid &bull; Thick Fat &bull; SpD 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.30 &bull; Lax &bull; Oblivious &bull; Def 28, SpA 31, Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><span class="slot-name">Dewgong</span><span class="slot-meta">Lv.36 &bull; Sassy &bull; Thick Fat &bull; Atk 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name">Golduck</span><span class="slot-meta">Lv.35 &bull; Naive &bull; Cloud Nine &bull; Def 30, SpA 27</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png"><span class="slot-name">Horsea</span><span class="slot-meta">Lv.34 &bull; Modest &bull; Swift Swim &bull; SpA 27, SpD 28</span><span class="slot-tag st-top">TOP #2</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png"><span class="slot-name">Horsea</span><span class="slot-meta">Lv.34 &bull; Modest &bull; Swift Swim &bull; SpA 27, SpD 28</span><span class="slot-tag st-top" onclick="openRbModal('horsea-top')">TOP #2</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name">Golduck</span><span class="slot-meta">Lv.36 &bull; Naughty &bull; Damp</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name">Slowbro</span><span class="slot-meta">Lv.39 &bull; Quirky &bull; Own Tempo</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name">Slowbro</span><span class="slot-meta">Lv.36 &bull; Naive &bull; Own Tempo</span><span class="slot-tag st-drop">LIBERAR</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name">Lanturn</span><span class="slot-meta">Lv.40 &bull; Hasty &bull; Volt Absorb &bull; Def 31, Spe 29</span><span class="slot-tag st-top">TOP #5</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name">Lanturn</span><span class="slot-meta">Lv.40 &bull; Hasty &bull; Volt Absorb &bull; Def 31, Spe 29</span><span class="slot-tag st-top" onclick="openRbModal('lanturn-top')">TOP #5</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Water Veil &bull; Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Swift Swim &bull; HP 28, Def 28, SpD 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Volt Absorb &bull; Atk 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
@@ -1091,7 +1093,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name">Slugma</span><span class="slot-meta">Lv.25 &bull; Docile &bull; Magma Armor</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot sl-drop"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kabuto.png"><span class="slot-name">Kabuto</span><span class="slot-meta">Lv.30 &bull; Relaxed &bull; Battle Armor &bull; Def 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/muk.png"><span class="slot-name">Muk</span><span class="slot-meta">Lv.32 &bull; Calm &bull; Sticky Hold &bull; SpA 31</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><span class="slot-name">Koffing</span><span class="slot-meta">Lv.29 &bull; Bold &bull; Levitate &bull; SpA 27</span><span class="slot-tag st-top" style="background:#001d2d;color:#79c0ff;border:1px solid #388bfd">GUARDAR</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><span class="slot-name">Koffing</span><span class="slot-meta">Lv.29 &bull; Bold &bull; Levitate &bull; SpA 27</span><span class="slot-tag" style="background:#001d2d;color:#79c0ff;border:1px solid #388bfd;cursor:pointer;transition:filter 0.15s" onclick="openRbModal('koffing-top')" onmouseover="this.style.filter='brightness(1.4)'" onmouseout="this.style.filter=''">GUARDAR</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weezing.png"><span class="slot-name">Weezing</span><span class="slot-meta">Lv.32 &bull; Serious &bull; Levitate</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name">Tangela</span><span class="slot-meta">Lv.5 &bull; Careful &bull; Leaf Guard &bull; SpD 28</span></div>
       <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kingler.png"><span class="slot-name">Kingler</span><span class="slot-meta">Lv.6 &bull; Naive &bull; Hyper Cutter &bull; HP 27, Atk 27, SpA 31, SpD 28</span></div>
@@ -1112,7 +1114,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name">Growlithe</span><span class="slot-meta">Lv.18 &bull; Bold &bull; Intimidate &bull; Def 28, SpA 31, SpD 28, Spe 28</span></div>
       <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/butterfree.png"><span class="slot-name">Butterfree</span><span class="slot-meta">Lv.38 &bull; Bashful &bull; Compound Eyes &bull; SpA 30, SpD 27</span></div>
       <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/blastoise.png"><span class="slot-name">Blastoise</span><span class="slot-meta">Lv.37 &bull; Impish &bull; Torrent</span></div>
-      <div class="box-slot sl-top"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Volt Absorb &bull; Atk 27, SpA 27</span><span class="slot-tag" style="background:#2d1117;color:#f85149;border:1px solid #f85149;font-size:0.62em;font-weight:700;padding:1px 6px;border-radius:5px;white-space:nowrap">REEMPLAZA</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Volt Absorb &bull; Atk 27, SpA 27</span><span class="slot-tag" style="background:#2d1117;color:#f85149;border:1px solid #f85149;cursor:pointer;transition:filter 0.15s" onclick="openRbModal('chinchou-top')" onmouseover="this.style.filter='brightness(1.4)'" onmouseout="this.style.filter=''">REEMPLAZA</span></div>
     </div>
 
   </div>
@@ -1254,6 +1256,26 @@ const RB_DATA = {
     ],
     techo:"7/10",
     nota:"<strong>Modest no aporta nada</strong> en un wall, pero tampoco perjudica. HP base 250 sigue siendo el mayor activo del juego.",
+  },
+  "koffing-top": {
+    name:"KOFFING &rarr; WEEZING", icon:"koffing", score:"7/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Evolucionar a <strong>Weezing</strong> (Lv.35) &mdash; wall Poison definitivo"},
+      {p:"high", t:"Enseñar <strong>Sludge Bomb + Flamethrower + Will-O-Wisp</strong>"},
+      {p:"med",  t:"Completar EVs: <strong>252 HP / 252 Def / 4 SpA</strong>"},
+    ],
+    techo:"8/10",
+    nota:"<strong>Levitate + Bold + SpA 27</strong> es la combinación perfecta para wall Poison. Con EVs completos llega a 8.",
+  },
+  "chinchou-top": {
+    name:"CHINCHOU (Calm)", icon:"chinchou", score:"7/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Usar en lugar del <strong>Lanturn Hasty</strong> &mdash; Calm mejor para rol especial/tanque"},
+      {p:"med",  t:"Completar EVs: <strong>252 HP / 252 SpA / 4 SpD</strong>"},
+      {p:"low",  t:"Enseñar <strong>Surf + Thunderbolt + Ice Beam</strong>"},
+    ],
+    techo:"7/10",
+    nota:"<strong>Volt Absorb + Calm + IV total 135</strong> &mdash; claramente superior al Lanturn Hasty. Candidato directo a reemplazarlo.",
   },
   "houndoom-top": {
     name:"HOUNDOOM", icon:"houndoom", score:"5/10", label:"Regular", cls:"rb-amber",
