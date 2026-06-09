@@ -249,6 +249,29 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 
+/* ======= PC BOX NAVIGATOR ======= */
+.pc-nav { display:flex; align-items:center; gap:10px; margin-bottom:12px; background:#161b22; border:1px solid #30363d; border-radius:10px; padding:10px 16px; }
+.pc-nav-btn { background:#21262d; border:1px solid #30363d; color:#e6edf3; border-radius:8px; padding:5px 16px; font-size:1.2em; cursor:pointer; transition:background 0.15s; line-height:1; flex-shrink:0; }
+.pc-nav-btn:hover { background:#30363d; }
+.pc-nav-info { flex:1; text-align:center; }
+.pc-box-name { font-size:1em; font-weight:700; color:#f3d327; letter-spacing:1px; }
+.pc-box-counts { font-size:0.72em; color:#8b949e; margin-left:10px; }
+.pc-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
+.pc-cell { background:#0d1117; border:1px solid #21262d; border-radius:8px; padding:8px 4px 20px; text-align:center; position:relative; cursor:default; transition:border-color 0.15s,background 0.15s; min-height:92px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
+.pc-cell.has-rb { cursor:pointer; }
+.pc-cell.has-rb:hover { border-color:#484f58; background:#161b22; }
+.pc-cell.sl-top  { background:rgba(243,211,39,0.05); border-color:rgba(243,211,39,0.22); }
+.pc-cell.sl-drop { background:rgba(248,81,73,0.05); border-color:rgba(248,81,73,0.18); }
+.pc-cell.sl-team { background:rgba(88,166,255,0.05); border-color:rgba(88,166,255,0.22); }
+.pc-cell.pc-empty { opacity:0.12; pointer-events:none; }
+.pc-spr { width:56px; height:56px; object-fit:contain; image-rendering:pixelated; display:block; }
+.pc-name { font-size:0.58em; font-weight:600; letter-spacing:0.2px; margin-top:3px; line-height:1.2; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 3px; }
+.pc-rb { position:absolute; top:4px; right:4px; font-size:0.52em; font-weight:700; border-radius:4px; padding:1px 4px; cursor:pointer; line-height:1.4; }
+.pc-tag-top  { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.48em; font-weight:700; padding:1px 5px; border-radius:4px; white-space:nowrap; background:#1a1500; color:#f3d327; border:1px solid rgba(243,211,39,0.5); }
+.pc-tag-drop { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.48em; font-weight:700; padding:1px 5px; border-radius:4px; white-space:nowrap; background:#2d1117; color:#f85149; border:1px solid rgba(248,81,73,0.4); }
+/* Tooltip */
+.pc-cell[title]:hover::after { content:attr(title); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:#1c2128; border:1px solid #30363d; border-radius:6px; padding:5px 8px; font-size:0.68em; color:#c9d1d9; white-space:nowrap; z-index:50; pointer-events:none; max-width:220px; white-space:pre-wrap; text-align:left; line-height:1.5; }
+
 /* ======= CAJAS DEL PC ======= */
 .box-section-grid { display: flex; flex-direction: column; gap: 16px; }
 .box-block { background: #161b22; border-radius: 10px; border: 1px solid #30363d; overflow: hidden; }
@@ -1028,7 +1051,17 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="badge">81 Pokemon &middot; 5 cajas</div>
     <div class="divider"></div>
   </div>
-  <div class="box-section-grid">
+  <div class="pc-nav">
+    <button class="pc-nav-btn" onclick="showBox(-1)">&#8592;</button>
+    <div class="pc-nav-info">
+      <span class="pc-box-name" id="pc-box-name">CAJA 1</span>
+      <span class="pc-box-counts" id="pc-box-counts"></span>
+    </div>
+    <button class="pc-nav-btn" onclick="showBox(1)">&#8594;</button>
+  </div>
+  <div class="pc-grid" id="pc-grid"></div>
+
+  <div class="box-section-grid" style="display:none">
     <div class="box-block">
       <div class="box-header"><span class="box-num">CAJA 1</span><span class="box-counts">24 Pokemon &nbsp;&bull;&nbsp; <span class="ct-top">4 top</span> &nbsp;&bull;&nbsp; <span class="ct-drop">7 liberar</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/wigglytuff.png"><span class="slot-name rarity-purple">Wigglytuff</span><span class="slot-meta">Lv.38 &bull; Adamant &bull; Competitive &bull; HP 31, SpA 30, Spe 30</span><span class="slot-rb rb-green" onclick="openRbModal('box-1-1')"><span class="srb-score">6/10</span></span></div>
@@ -2200,6 +2233,59 @@ function updateAllBadges() {
   });
 }
 
+const ABILITY_INFO = {
+  'Adaptability':  {desc:'Duplica la potencia del STAB (1.5× → 2×). Excelente para atacantes con moveset STAB puro.'},
+  'Arena Trap':    {desc:'Impide al rival huir o cambiar si está en tierra. Trampa perfecta para atrapar Pokémon débiles.'},
+  'Battle Armor':  {desc:'Inmune a golpes críticos. Aumenta la consistencia defensiva en combates largos.'},
+  'Blaze':         {desc:'Aumenta 50% la potencia de movimientos Fuego cuando el HP baja de 1/3. Útil en apuros.'},
+  'Chlorophyll':   {desc:'Duplica la Velocidad bajo Sol. Permite superar a casi cualquier rival en clima solar.'},
+  'Clear Body':    {desc:'Evita reducciones de stats por movimientos o habilidades del rival. Muy útil contra Intimidate.'},
+  'Cloud Nine':    {desc:'Anula los efectos del clima mientras está en campo. Neutraliza Sun, Rain, Sand y Hail.'},
+  'Competitive':   {desc:'Sube 2 niveles de SpAtk cuando el rival reduce cualquier stat. Castiga a usuarios de Intimidate.'},
+  'Compound Eyes': {desc:'Sube la precisión de los movimientos propios un 30%. Permite usar Thunder/Blizzard más fiables.'},
+  'Cursed Body':   {desc:'20% de probabilidad de deshabilitar el movimiento que acaba de golpear. Molesto para el rival.'},
+  'Damp':          {desc:'Impide el uso de Explosion y Self-Destruct. Contramedida contra equipos con suicidas.'},
+  'Early Bird':    {desc:'Se despierta del sueño en la mitad de turnos. Reduce la desventaja contra Sleep moves.'},
+  'Flash Fire':    {desc:'Inmune a movimientos Fuego; al absorberlos sube 50% la potencia de sus propios movimientos Fuego.'},
+  'Hydration':     {desc:'Cura los estados alterados al final de cada turno bajo lluvia. Excelente en equipos Rain.'},
+  'Hyper Cutter':  {desc:'Evita que el rival reduzca su Ataque. Protege el daño físico frente a Intimidate u otros debuffs.'},
+  'Illuminate':    {desc:'Aumenta la tasa de encuentros salvajes. Sin efecto en combate — habilidad de relleno.'},
+  'Immunity':      {desc:'Inmune al estado Envenenado. Permite aguantar Toxic de rivales sin preocupaciones.'},
+  'Insomnia':      {desc:'Inmune al estado Dormido. Contramedida total contra Sleep Powder, Hypnosis y similares.'},
+  'Intimidate':    {desc:'Al entrar en combate baja 1 nivel el Ataque del rival. Reduce el daño físico recibido significativamente.'},
+  'Keen Eye':      {desc:'Evita que bajen su precisión. Nula ventaja competitiva — habilidad de relleno.'},
+  'Leaf Guard':    {desc:'Previene estados alterados bajo Sol. Solo útil en clima solar, sin efecto fuera de él.'},
+  'Levitate':      {desc:'Inmune a movimientos de tipo Tierra (Earthquake, Magnitude, etc.). Elimina una debilidad clave.'},
+  'Lightning Rod': {desc:'Atrae movimientos Eléctricos y sube 1 SpAtk al recibirlos. Inmunidad eléctrica + boost ofensivo.'},
+  'Limber':        {desc:'Inmune a la Parálisis. Garantiza la Velocidad completa contra Thunder Wave y similares.'},
+  'Magma Armor':   {desc:'Inmune al estado Congelado. Sin ventaja competitiva relevante — habilidad de relleno.'},
+  'Mold Breaker':  {desc:'Los movimientos ignoran las habilidades del rival. Supera Levitate, Sturdy, Volt Absorb, etc.'},
+  'Natural Cure':  {desc:'Cura cualquier estado alterado al cambiar de combate. Excelente habilidad de recuperación pasiva.'},
+  'No Guard':      {desc:'Los ataques propios y rivales nunca fallan. Permite usar Stone Edge y DynamicPunch con 100% precisión.'},
+  'Oblivious':     {desc:'Inmune a Attract y Taunt. Evita ser atraído o silenciado por movimientos de estado.'},
+  'Own Tempo':     {desc:'Inmune a Confusión. Elimina la posibilidad de hacerse daño a sí mismo por confusión.'},
+  'Poison Point':  {desc:'30% de probabilidad de envenenar al rival en contacto físico. Efecto secundario pasivo útil.'},
+  'Rivalry':       {desc:'+25% daño contra Pokémon del mismo sexo, -25% contra el sexo opuesto. Situacional e impredecible.'},
+  'Run Away':      {desc:'Siempre puede huir de encuentros salvajes. Sin efecto en combate — habilidad de relleno.'},
+  'Sand Veil':     {desc:'Sube 20% la evasión durante Tormenta de Arena. Nula ventaja en combates sin clima.'},
+  'Stench':        {desc:'30% de posibilidad de hacer retroceder al rival en encuentros salvajes. Sin efecto en combate.'},
+  'Sticky Hold':   {desc:'Evita que le roben o intercambien el objeto. Protege ítems frente a Trick y Thief.'},
+  'Sturdy':        {desc:'Sobrevive con 1 HP a cualquier golpe que lo dejaría con 0 HP (OHKO). Garantiza un turno extra.'},
+  'Super Luck':    {desc:'Sube la tasa de críticos en 1 etapa. Con High Crit moves logra críticos muy frecuentes.'},
+  'Swarm':         {desc:'Aumenta 50% la potencia de movimientos Bug cuando el HP baja de 1/3. Útil en apuros.'},
+  'Swift Swim':    {desc:'Duplica la Velocidad bajo Lluvia. Convierte al Pokémon en un sweeper veloz en rain teams.'},
+  'Synchronize':   {desc:'Transfiere el estado alterado (Paralizado, Envenenado, Quemado) al rival que lo causó. Útil para cazar con nature deseada.'},
+  'Thick Fat':     {desc:'Reduce a la mitad el daño recibido de tipo Fuego e Hielo. Excelente resistencia pasiva para tanques.'},
+  'Tinted Lens':   {desc:'Dobla la potencia de movimientos que no son muy efectivos. Elimina la desventaja de cobertura parcial.'},
+  'Torrent':       {desc:'Aumenta 50% la potencia de movimientos Agua cuando el HP baja de 1/3. Útil en apuros.'},
+  'Volt Absorb':   {desc:'Inmune a movimientos Eléctricos; los absorbe recuperando 25% del HP máximo. Habilidad premium.'},
+  'Water Absorb':  {desc:'Inmune a movimientos Agua; los absorbe recuperando 25% del HP máximo. Excelente para tanques.'},
+  'Water Veil':    {desc:'Inmune al estado Quemado. Protege el Ataque físico frente a movimientos de quemadura.'},
+  'Intimidate':    {desc:'Al entrar en combate baja 1 nivel el Ataque del rival. Reduce el daño físico recibido significativamente.'},
+  'Shield Dust':   {desc:'Bloquea los efectos secundarios de los movimientos del rival. Evita parálisis, confusión, etc. adicionales.'},
+  'Tangled Feet':  {desc:'Sube la evasión cuando está confundido. Situacional y poco fiable en combate competitivo.'},
+};
+
 function openRbModal(key) {
   const d = RB_DATA[key];
   if (!d) return;
@@ -2257,10 +2343,11 @@ function openRbModal(key) {
 
   let abilityLine = '';
   if (meta.ability) {
+    const ai = ABILITY_INFO[meta.ability] || null;
     abilityLine = `<div class="rb-meta-row">
       <span class="rb-meta-icon">✨</span>
       <span class="rb-meta-key">Habilidad</span>
-      <div><div class="rb-meta-val">${meta.ability}</div></div>
+      <div><div class="rb-meta-val">${meta.ability}</div>${ai ? `<div class="rb-meta-desc">${ai.desc}</div>` : ''}</div>
     </div>`;
   }
 
@@ -2318,7 +2405,87 @@ function rbOverlayClick(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRbModal(); });
-document.addEventListener('DOMContentLoaded', updateAllBadges);
+// ======= PC BOX NAVIGATOR =======
+let _boxData = [];
+let _curBox  = 0;
+
+function buildBoxData() {
+  _boxData = Array.from(document.querySelectorAll('.box-block')).map(block => {
+    const name   = block.querySelector('.box-num')?.textContent.trim() || '';
+    const counts = block.querySelector('.box-counts')?.innerHTML || '';
+    const slots  = Array.from(block.querySelectorAll('.box-slot')).map(slot => {
+      const rb  = slot.querySelector('.slot-rb');
+      const tag = slot.querySelector('.slot-tag');
+      return {
+        src:      slot.querySelector('.slot-spr')?.src || '',
+        name:     slot.querySelector('.slot-name')?.textContent.trim() || '',
+        nameClass:slot.querySelector('.slot-name')?.className || '',
+        meta:     slot.querySelector('.slot-meta')?.textContent.trim() || '',
+        slClass:  [...slot.classList].find(c => c.startsWith('sl-')) || '',
+        tag:      tag?.textContent.trim() || '',
+        tagIsTop: tag ? tag.className.includes('st-top') || tag.textContent.includes('TOP') : false,
+        rbClass:  rb?.className || '',
+        rbScore:  rb?.querySelector('.srb-score')?.textContent.trim() || '',
+        rbOnclick:rb?.getAttribute('onclick') || '',
+      };
+    });
+    return {name, counts, slots};
+  });
+}
+
+function renderBox(idx) {
+  _curBox = ((idx % _boxData.length) + _boxData.length) % _boxData.length;
+  const box = _boxData[_curBox];
+  document.getElementById('pc-box-name').textContent = box.name;
+  document.getElementById('pc-box-counts').innerHTML  = box.counts;
+
+  const grid = document.getElementById('pc-grid');
+  const cells = [];
+  // Always render 24 cells (6×4)
+  for (let i = 0; i < 24; i++) {
+    const s = box.slots[i];
+    if (!s) {
+      cells.push('<div class="pc-cell pc-empty"></div>');
+      continue;
+    }
+    // Badge
+    const rbCls = (s.rbClass.match(/\brb-(gold|green|blue|amber|red)\b/) || ['','rb-red'])[0];
+    const rbHtml = s.rbScore
+      ? `<span class="pc-rb ${rbCls}" ${s.rbOnclick ? `onclick="${s.rbOnclick}"` : ''}>${s.rbScore}</span>`
+      : '';
+    // Tag
+    let tagHtml = '';
+    if (s.tag) {
+      tagHtml = s.tagIsTop
+        ? `<span class="pc-tag-top">${s.tag}</span>`
+        : `<span class="pc-tag-drop">${s.tag}</span>`;
+    }
+    // Name rarity class
+    const rarCls = (s.nameClass.match(/\brarity-\w+\b/) || [''])[0];
+    // Tooltip
+    const tip = s.meta ? s.meta.replace(/•/g, '\n') : '';
+    // Cell click → open modal if rb has onclick
+    const cellClick = s.rbOnclick ? `onclick="${s.rbOnclick}"` : '';
+    const hasCls    = s.rbOnclick ? 'has-rb' : '';
+    cells.push(`<div class="pc-cell ${s.slClass} ${hasCls}" ${cellClick} title="${tip.replace(/"/g,'&quot;')}">
+      ${rbHtml}
+      <img class="pc-spr" src="${s.src}" alt="${s.name}">
+      <span class="pc-name ${rarCls}">${s.name}</span>
+      ${tagHtml}
+    </div>`);
+  }
+  grid.innerHTML = cells.join('');
+}
+
+function showBox(delta) {
+  renderBox(_curBox + delta);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateAllBadges();
+  buildBoxData();
+  renderBox(0);
+});
 
 function mvTab(btn, panelId) {
   const tabs = btn.closest('.moveset-tabs');
