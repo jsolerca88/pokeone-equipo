@@ -268,7 +268,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .pc-name { font-size:0.58em; font-weight:600; letter-spacing:0.2px; margin-top:3px; line-height:1.2; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 3px; }
 .pc-rb { position:absolute; top:4px; right:4px; font-size:0.52em; font-weight:700; border-radius:4px; padding:1px 4px; cursor:pointer; line-height:1.4; }
 .pc-tag-top  { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.48em; font-weight:700; padding:1px 5px; border-radius:4px; white-space:nowrap; background:#1a1500; color:#f3d327; border:1px solid rgba(243,211,39,0.5); }
-.pc-tag-drop { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.48em; font-weight:700; padding:1px 5px; border-radius:4px; white-space:nowrap; background:#2d1117; color:#f85149; border:1px solid rgba(248,81,73,0.4); }
+.pc-tag-drop { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.85em; line-height:1; padding:0; background:none; border:none; }
 /* Tooltip */
 .pc-cell[title]:hover::after { content:attr(title); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:#1c2128; border:1px solid #30363d; border-radius:6px; padding:5px 8px; font-size:0.68em; color:#c9d1d9; white-space:nowrap; z-index:50; pointer-events:none; max-width:220px; white-space:pre-wrap; text-align:left; line-height:1.5; }
 .pc-box-tabs { display:flex; flex-wrap:wrap; gap:5px; justify-content:center; margin-top:8px; }
@@ -2212,8 +2212,7 @@ function readCardIvs(key) {
     const ivs = parseSlotIvText(ivPart);
     if (ivs.length) {
       const sum = ivs.reduce((a, b) => a + b.val, 0);
-      const pct = Math.round(sum / (ivs.length * 31) * 100);
-      return {ivs, sum, pct, partial: true, count: ivs.length};
+      return {ivs, sum, pct: null, partial: true, count: ivs.length};
     }
     return null;
   }
@@ -2222,8 +2221,7 @@ function readCardIvs(key) {
   if (_slotByKey[key] && _slotByKey[key].ivs.length) {
     const ivs = _slotByKey[key].ivs;
     const sum = ivs.reduce((a, b) => a + b.val, 0);
-    const pct = Math.round(sum / (ivs.length * 31) * 100);
-    return {ivs, sum, pct, partial: true, count: ivs.length};
+    return {ivs, sum, pct: null, partial: true, count: ivs.length};
   }
 
   return null;
@@ -2283,7 +2281,7 @@ function updateAllBadges() {
     const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
     if (!badge) return;
     const iv = readCardIvs(key);
-    if (!iv) return;
+    if (!iv || iv.pct === null) return; // no actualizar si IVs parciales
     const {cls, label} = pctToClass(iv.pct);
     badge.className = badge.className.replace(/\brb-(gold|green|blue|amber|red)\b/, cls);
     const scoreEl = badge.querySelector('.rb-score, .srb-score');
@@ -2356,14 +2354,16 @@ function openRbModal(key) {
   const meta   = readCardMeta(key);
   const nature = NATURE_INFO[meta.nature] || null;
 
-  let pct = 0, pctCls = 'rb-red', pctLabel = 'Debil', pctColor = '#f85149';
+  let pct = null, pctCls = 'rb-red', pctLabel = 'Debil', pctColor = '#f85149';
   let ivCells = '', ivSumLine = '';
   if (ivData) {
-    pct = ivData.pct;
-    const pc = pctToClass(pct);
-    pctCls = pc.cls; pctLabel = pc.label;
-    const clsColors = {'rb-gold':'#f3d327','rb-green':'#3fb950','rb-blue':'#58a6ff','rb-amber':'#d29922','rb-red':'#f85149'};
-    pctColor = clsColors[pctCls] || '#8b949e';
+    pct = ivData.pct; // null si IVs parciales
+    if (pct !== null) {
+      const pc = pctToClass(pct);
+      pctCls = pc.cls; pctLabel = pc.label;
+      const clsColors = {'rb-gold':'#f3d327','rb-green':'#3fb950','rb-blue':'#58a6ff','rb-amber':'#d29922','rb-red':'#f85149'};
+      pctColor = clsColors[pctCls] || '#8b949e';
+    }
     ivCells = ivData.ivs.map(({stat, val}) => {
       const c = ivColor(val);
       const w = Math.round(val / 31 * 100);
@@ -2374,7 +2374,7 @@ function openRbModal(key) {
       </div>`;
     }).join('');
     ivSumLine = ivData.partial
-      ? `<div class="rb-iv-sum" style="color:#8b949e">Solo IVs destacados (${ivData.count} stats) &mdash; ${ivData.sum}/${ivData.count * 31} en stats conocidos</div>`
+      ? `<div class="rb-iv-sum" style="color:#8b949e">Solo IVs destacados (${ivData.count} de 6 stats visibles)</div>`
       : `<div class="rb-iv-sum">Suma: <strong style="color:#e6edf3">${ivData.sum}</strong> / 186</div>`;
   }
 
@@ -2432,15 +2432,15 @@ function openRbModal(key) {
     </div>
 
     <div class="rb-modal-section">
-      <h4>\u{1F4CA} Perfeccion de IVs</h4>
-      <div class="rb-pct-display">
+      <h4>\u{1F4CA} IVs</h4>
+      ${pct !== null ? `<div class="rb-pct-display">
         <div class="rb-pct-num" style="color:${pctColor}">${pct}%</div>
         <div class="rb-pct-bar-wrap">
           <div class="rb-pct-bar-bg"><div class="rb-pct-bar-fill" style="width:${pct}%;background:${pctColor}"></div></div>
-          <div class="rb-pct-label">${pctLabel} &mdash; ${ivData ? ivData.sum : '?'}/186 IVs totales</div>
+          <div class="rb-pct-label">${pctLabel} &mdash; ${ivData.sum}/186 IVs totales</div>
         </div>
-      </div>
-      ${ivData ? `<div class="rb-iv-grid">${ivCells}</div>${ivSumLine}` : '<div style="color:#8b949e;font-size:0.8em">IVs no disponibles para este slot</div>'}
+      </div>` : ''}
+      ${ivData ? `<div class="rb-iv-grid">${ivCells}</div>${ivSumLine}` : '<div style="color:#8b949e;font-size:0.8em">Sin datos de IVs para este Pokémon</div>'}
     </div>
 
     ${evData.length ? `<div class="rb-modal-section"><h4>\u{1F3CB} EVs actuales / objetivo</h4><div class="rb-ev-grid">${evCells}</div></div>` : ''}
@@ -2549,7 +2549,7 @@ function renderBox(idx) {
     // Tag — solo LIBERAR, quitar TOP (reemplazado por estrella)
     let tagHtml = '';
     if (s.tag && !s.tagIsTop) {
-      tagHtml = `<span class="pc-tag-drop">${s.tag}</span>`;
+      tagHtml = `<span class="pc-tag-drop" title="${s.tag}">🗑</span>`;
     }
     // Name rarity class
     const rarCls = (s.nameClass.match(/\brarity-\w+\b/) || [''])[0];
