@@ -8,10 +8,16 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif; padding: 20px; }
 
-.site-header { text-align: center; padding: 30px 20px 20px; background: linear-gradient(135deg, #161b22, #0d1117); border-bottom: 2px solid #f3d327; margin-bottom: 30px; border-radius: 12px; }
-.site-header h1 { font-size: 2.2em; color: #f3d327; letter-spacing: 3px; }
-.site-header .meta { color: #8b949e; margin-top: 6px; font-size: 0.9em; }
-.stats-row { display: flex; justify-content: center; gap: 30px; margin-top: 14px; flex-wrap: wrap; }
+.site-header { padding: 24px 28px; background: linear-gradient(135deg, #161b22, #0d1117); border-bottom: 2px solid #f3d327; margin-bottom: 30px; border-radius: 12px; }
+.trainer-card { display: flex; align-items: center; gap: 24px; max-width: 700px; margin: 0 auto; }
+.trainer-sprite { width: 96px; height: 96px; image-rendering: pixelated; flex-shrink: 0; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7)); }
+.trainer-info { flex: 1; }
+.trainer-name { font-size: 1.8em; font-weight: 700; color: #f3d327; letter-spacing: 2px; line-height: 1; }
+.trainer-sub { font-size: 0.8em; color: #8b949e; margin-top: 5px; letter-spacing: 1px; text-transform: uppercase; }
+.trainer-id { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.tid-chip { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 4px 10px; font-size: 0.76em; display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.tid-label { font-size: 0.65em; color: #484f58; text-transform: uppercase; letter-spacing: 0.5px; }
+.tid-value { color: #f3d327; font-weight: 700; }
 .stat-chip { background: #161b22; border: 1px solid #30363d; border-radius: 20px; padding: 5px 14px; font-size: 0.82em; }
 .stat-chip span { color: #f3d327; font-weight: 700; }
 
@@ -239,14 +245,19 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 
 <!-- HEADER -->
 <div class="site-header">
-  <h1>&#9670; POKEONE DASHBOARD &#9670;</h1>
-  <div class="meta">Entrenador: <strong>CarroCarrillo</strong> &nbsp;&bull;&nbsp; Kanto &nbsp;&bull;&nbsp; <em style="color:#58a6ff">Dani</em></div>
-  <div class="stats-row">
-    <div class="stat-chip">Trainer Lv <span>61</span></div>
-    <div class="stat-chip">Badges <span>7/8</span></div>
-    <div class="stat-chip">Pokedex <span>100</span> capturados</div>
-    <div class="stat-chip">PokeDollar <span>216,083</span></div>
-    <div class="stat-chip">Dias jugados <span>1.3</span></div>
+  <div class="trainer-card">
+    <img class="trainer-sprite" src="https://archives.bulbagarden.net/media/upload/1/10/Spr_FRLG_Blue_3.png" alt="Blue">
+    <div class="trainer-info">
+      <div class="trainer-name">CarroCarrillo</div>
+      <div class="trainer-sub">Entrenador Pokemon &nbsp;&bull;&nbsp; Kanto &nbsp;&bull;&nbsp; <span style="color:#58a6ff">Dani</span></div>
+      <div class="trainer-id">
+        <div class="tid-chip"><span class="tid-label">Trainer Lv</span><span class="tid-value">61</span></div>
+        <div class="tid-chip"><span class="tid-label">Medallas</span><span class="tid-value">7 / 8</span></div>
+        <div class="tid-chip"><span class="tid-label">Pokedex</span><span class="tid-value">100</span></div>
+        <div class="tid-chip"><span class="tid-label">PokeDollar</span><span class="tid-value">216,083</span></div>
+        <div class="tid-chip"><span class="tid-label">Dias jugados</span><span class="tid-value">1.3</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
