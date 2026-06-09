@@ -201,6 +201,28 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-techo-info strong { color: #e6edf3; }
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
+
+/* ======= CAJAS DEL PC ======= */
+.box-section-grid { display: flex; flex-direction: column; gap: 16px; }
+.box-block { background: #161b22; border-radius: 10px; border: 1px solid #30363d; overflow: hidden; }
+.box-header { background: #0d1117; padding: 10px 16px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid #21262d; }
+.box-num { color: #f3d327; font-weight: 700; font-size: 0.95em; letter-spacing: 1px; }
+.box-counts { font-size: 0.72em; color: #8b949e; }
+.box-counts .ct-top { color: #f3d327; font-weight: 700; }
+.box-counts .ct-drop { color: #f85149; font-weight: 700; }
+.box-slot { display: flex; align-items: center; gap: 10px; padding: 5px 14px; border-bottom: 1px solid #21262d; font-size: 0.78em; }
+.box-slot:last-child { border-bottom: none; }
+.box-slot.sl-top  { background: rgba(243,211,39,0.04); }
+.box-slot.sl-drop { background: rgba(248,81,73,0.04); }
+.box-slot.sl-team { background: rgba(88,166,255,0.04); }
+.slot-pos { font-size: 0.62em; color: #484f58; font-family: monospace; width: 42px; flex-shrink: 0; }
+.slot-spr { width: 28px; height: 28px; image-rendering: pixelated; flex-shrink: 0; }
+.slot-name { font-weight: 600; min-width: 90px; }
+.slot-meta { color: #8b949e; font-size: 0.85em; flex: 1; }
+.slot-tag { font-size: 0.62em; font-weight: 700; padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
+.st-top  { background: #1a1500; color: #f3d327; border: 1px solid #f3d327; }
+.st-drop { background: #2d1117; color: #f85149; border: 1px solid #f85149; }
+.st-team { background: #001d2d; color: #79c0ff; border: 1px solid #388bfd; }
 </style>
 </head>
 <body>
@@ -223,8 +245,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   <a href="#equipo">&#9876; Equipo activo</a>
   <a href="#farmeo">&#127807; Farmeo EVs</a>
   <a href="#capturas">&#128247; Ultimas capturas</a>
-  <a href="#top">&#11088; Top en cajas</a>
-  <a href="#borrar">&#128465; A borrar</a>
+  <a href="#cajas">&#128230; Cajas PC</a>
 </div>
 
 <!-- ======================== EQUIPO ======================== -->
@@ -899,123 +920,135 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   </div>
 </div>
 
-<!-- ======================== TOP EN CAJAS ======================== -->
-<div class="section" id="top">
+<!-- ======================== CAJAS DEL PC ======================== -->
+<div class="section" id="cajas">
   <div class="section-header">
-    <h2>&#11088; Top Pokemon en cajas</h2>
-    <div class="badge">Mejores reservas</div>
+    <h2>&#128230; Cajas del PC</h2>
+    <div class="badge">81 Pokemon &middot; 5 cajas</div>
     <div class="divider"></div>
   </div>
-  <div class="top-grid">
+  <div class="box-section-grid">
 
-    <div class="top-card">
-      <div class="rank-badge rank-1">1</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-blue">Gyarados</h3>
-        <div class="top-meta">Adamant &bull; Intimidate &bull; Speed IV 31</div>
-        <div class="top-why">Nature perfecta para fisico (+Atk/-SpAtk). Speed 31. Intimidate baja Atk rival al entrar. Candidato al equipo principal. EVs: 252 Atk / 252 Speed.</div>
-        <div class="role-badge rb-green" onclick="openRbModal('gyarados-top')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+    <!-- CAJA 0 — EQUIPO ACTIVO -->
+    <div class="box-block">
+      <div class="box-header">
+        <span class="box-num">CAJA 0</span>
+        <span class="box-counts">6 Pokemon &nbsp;&bull;&nbsp; <span class="ct-team">equipo activo</span></span>
       </div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png"><span class="slot-name">Arcanine</span><span class="slot-meta">Lv.32 &bull; Modest &bull; Flash Fire &bull; SpA 27</span><span class="slot-tag st-team">EQUIPO</span></div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png"><span class="slot-name">Gengar</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Cursed Body &bull; Def 30, SpA 30</span><span class="slot-tag st-team">EQUIPO</span></div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png"><span class="slot-name">Golem</span><span class="slot-meta">Lv.42 &bull; Hasty &bull; Sturdy &bull; HP 29, Atk 29, Def 29</span><span class="slot-tag st-team">EQUIPO</span></div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png"><span class="slot-name">Poliwrath</span><span class="slot-meta">Lv.43 &bull; Jolly &bull; Water Absorb &bull; Def 28, SpA 27</span><span class="slot-tag st-team">EQUIPO</span></div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png"><span class="slot-name">Alakazam</span><span class="slot-meta">Lv.44 &bull; Modest &bull; Synchronize &bull; Atk 31, SpA 27, Spe 28</span><span class="slot-tag st-team">EQUIPO</span></div>
+      <div class="box-slot sl-team"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png"><span class="slot-name">Vileplume</span><span class="slot-meta">Lv.44 &bull; Rash &bull; Chlorophyll &bull; Spe 31</span><span class="slot-tag st-team">EQUIPO</span></div>
     </div>
 
-    <div class="top-card">
-      <div class="rank-badge rank-2">2</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-green">Horsea &rarr; Kingdra</h3>
-        <div class="top-meta">Modest &bull; Swift Swim &bull; SpAtk 27 / SpDef 28</div>
-        <div class="top-why">Dragon/Water con solo 2 debilidades (Dragon y Fairy). Swift Swim dobla Speed bajo lluvia. Necesita Dragon Scale (5% Horsea/Seadra salvaje o Thief) + trade.</div>
-        <div class="role-badge rb-green" onclick="openRbModal('horsea-top')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+    <!-- CAJA 1 -->
+    <div class="box-block">
+      <div class="box-header">
+        <span class="box-num">CAJA 1</span>
+        <span class="box-counts">24 Pokemon &nbsp;&bull;&nbsp; <span class="ct-top">4 top</span> &nbsp;&bull;&nbsp; <span class="ct-drop">7 liberar</span></span>
       </div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/wigglytuff.png"><span class="slot-name">Wigglytuff</span><span class="slot-meta">Lv.38 &bull; Adamant &bull; Competitive &bull; HP 31, SpA 30, Spe 30</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><span class="slot-name">Venonat</span><span class="slot-meta">Lv.9 &bull; Hardy &bull; Tinted Lens &bull; Atk 31, SpD 31</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-m.png"><span class="slot-name">Nidoran&male;</span><span class="slot-meta">Lv.12 &bull; Jolly &bull; Rivalry &bull; SpA 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/granbull.png"><span class="slot-name">Granbull</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Intimidate &bull; Def 29, SpD 27</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seaking.png"><span class="slot-name">Seaking</span><span class="slot-meta">Lv.40 &bull; Quirky &bull; Water Veil &bull; SpA 30, SpD 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hitmonlee.png"><span class="slot-name">Hitmonlee</span><span class="slot-meta">Lv.30 &bull; Quiet &bull; Limber</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Intimidate &bull; Spe 31</span><span class="slot-tag st-top">TOP #1</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><span class="slot-name">Grimer</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Stench &bull; SpA 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pinsir.png"><span class="slot-name">Pinsir</span><span class="slot-meta">Lv.28 &bull; Serious &bull; Mold Breaker</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><span class="slot-name">Rhyhorn</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Lightning Rod</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png"><span class="slot-name">Chansey</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Natural Cure &bull; Atk 28</span><span class="slot-tag st-top">TOP #6</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name">Sandslash</span><span class="slot-meta">Lv.22 &bull; Brave &bull; Sand Veil &bull; HP 29, Atk 28, SpA 27</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><span class="slot-name">Scyther</span><span class="slot-meta">Lv.23 &bull; Bold &bull; Swarm &bull; Spe 30</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><span class="slot-name">Krabby</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Hyper Cutter &bull; SpD 27, Spe 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/vulpix.png"><span class="slot-name">Vulpix</span><span class="slot-meta">Lv.20 &bull; Jolly &bull; Flash Fire &bull; Def 29</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><span class="slot-name">Tentacool</span><span class="slot-meta">Lv.25 &bull; Modest &bull; Clear Body &bull; HP 30</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/murkrow.png"><span class="slot-name">Murkrow</span><span class="slot-meta">Lv.23 &bull; Adamant &bull; Super Luck &bull; SpA 29, SpD 30</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png"><span class="slot-name">Eevee</span><span class="slot-meta">Lv.25 &bull; Quiet &bull; Adaptability &bull; Def 29, Spe 31</span><span class="slot-tag st-top">TOP #3</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name">Snorlax</span><span class="slot-meta">Lv.35 &bull; Bashful &bull; Thick Fat &bull; Atk 28, Def 27</span><span class="slot-tag st-top">TOP #4</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name">Slugma</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Magma Armor &bull; HP 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/doduo.png"><span class="slot-name">Doduo</span><span class="slot-meta">Lv.19 &bull; Lax &bull; Early Bird &bull; Def 29, SpD 28, Spe 31</span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weepinbell.png"><span class="slot-name">Weepinbell</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Chlorophyll &bull; Atk 31</span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name">Snorlax</span><span class="slot-meta">Lv.35 &bull; Gentle &bull; Immunity</span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name">Seel</span><span class="slot-meta">Lv.34 &bull; Bashful &bull; Hydration &bull; SpA 28</span></div>
     </div>
 
-    <div class="top-card">
-      <div class="rank-badge rank-3">3</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-blue">Eevee</h3>
-        <div class="top-meta">Quiet &bull; Adaptability &bull; Speed 31 / Def 29</div>
-        <div class="top-why">Adaptability dobla bonus STAB a x2 (enorme). Quiet baja Speed &mdash; mejor Vaporeon (tanque) o Espeon (especial). Evitar Jolteon con Quiet.</div>
-        <div class="role-badge rb-blue" onclick="openRbModal('eevee-top')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+    <!-- CAJA 2 -->
+    <div class="box-block">
+      <div class="box-header">
+        <span class="box-num">CAJA 2</span>
+        <span class="box-counts">24 Pokemon &nbsp;&bull;&nbsp; <span class="ct-top">3 top</span> &nbsp;&bull;&nbsp; <span class="ct-drop">9 liberar</span></span>
       </div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Own Tempo</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorina.png"><span class="slot-name">Nidorina</span><span class="slot-meta">Lv.31 &bull; Gentle &bull; Rivalry &bull; Def 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><span class="slot-name">Psyduck</span><span class="slot-meta">Lv.40 &bull; Timid &bull; Damp</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Swift Swim &bull; HP 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png"><span class="slot-name">Nidorino</span><span class="slot-meta">Lv.31 &bull; Modest &bull; Rivalry &bull; HP 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/skiploom.png"><span class="slot-name">Skiploom</span><span class="slot-meta">Lv.26 &bull; Bold &bull; Chlorophyll &bull; SpD 27, Spe 27</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png"><span class="slot-name">Houndoom</span><span class="slot-meta">Lv.24 &bull; Hardy &bull; Early Bird &bull; Atk 30, SpD 27</span><span class="slot-tag st-top">TOP #7</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name">Seel</span><span class="slot-meta">Lv.32 &bull; Docile &bull; Thick Fat</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name">Seel</span><span class="slot-meta">Lv.32 &bull; Timid &bull; Thick Fat &bull; SpD 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.30 &bull; Lax &bull; Oblivious &bull; Def 28, SpA 31, Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><span class="slot-name">Dewgong</span><span class="slot-meta">Lv.36 &bull; Sassy &bull; Thick Fat &bull; Atk 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name">Golduck</span><span class="slot-meta">Lv.35 &bull; Naive &bull; Cloud Nine &bull; Def 30, SpA 27</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png"><span class="slot-name">Horsea</span><span class="slot-meta">Lv.34 &bull; Modest &bull; Swift Swim &bull; SpA 27, SpD 28</span><span class="slot-tag st-top">TOP #2</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name">Golduck</span><span class="slot-meta">Lv.36 &bull; Naughty &bull; Damp</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name">Slowbro</span><span class="slot-meta">Lv.39 &bull; Quirky &bull; Own Tempo</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name">Slowbro</span><span class="slot-meta">Lv.36 &bull; Naive &bull; Own Tempo</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name">Lanturn</span><span class="slot-meta">Lv.40 &bull; Hasty &bull; Volt Absorb &bull; Def 31, Spe 29</span><span class="slot-tag st-top">TOP #5</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Water Veil &bull; Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Swift Swim &bull; HP 28, Def 28, SpD 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Volt Absorb &bull; Atk 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Mild &bull; Illuminate &bull; Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Water Veil &bull; SpA 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Own Tempo &bull; HP 29</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Serious &bull; Oblivious</span><span class="slot-tag st-drop">LIBERAR</span></div>
     </div>
 
-    <div class="top-card">
-      <div class="rank-badge rank-n">4</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-green">Snorlax</h3>
-        <div class="top-meta">Bashful &bull; Thick Fat &bull; Atk 28 / Def 27</div>
-        <div class="top-why">Thick Fat absorbe Fire e Ice. HP base 160 (enorme). Atk 28 decente. Rol tanque con Rest+Sleep Talk. Necesita subir niveles desde cero.</div>
-        <div class="role-badge rb-blue" onclick="openRbModal('snorlax-top')"><span class="rb-score">7/10</span><span class="rb-label">Bueno</span></div>
+    <!-- CAJA 3 -->
+    <div class="box-block">
+      <div class="box-header">
+        <span class="box-num">CAJA 3</span>
+        <span class="box-counts">17 Pokemon &nbsp;&bull;&nbsp; <span class="ct-top">2 top</span> &nbsp;&bull;&nbsp; <span class="ct-drop">3 liberar</span></span>
       </div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name">Goldeen</span><span class="slot-meta">Lv.40 &bull; Timid &bull; Swift Swim</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name">Lanturn</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Illuminate</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Brave &bull; Intimidate &bull; Def 29</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Intimidate &bull; Def 27, SpD 30, Spe 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Jolly &bull; Oblivious</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name">Lanturn</span><span class="slot-meta">Lv.40 &bull; Lonely &bull; Illuminate</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name">Gyarados</span><span class="slot-meta">Lv.40 &bull; Bold &bull; Intimidate</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><span class="slot-name">Seadra</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Poison Point &bull; Def 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Relaxed &bull; Illuminate &bull; Spe 28</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><span class="slot-name">Magikarp</span><span class="slot-meta">Lv.20 &bull; Hasty &bull; Swift Swim &bull; Spe 31</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name">Slugma</span><span class="slot-meta">Lv.25 &bull; Docile &bull; Magma Armor</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kabuto.png"><span class="slot-name">Kabuto</span><span class="slot-meta">Lv.30 &bull; Relaxed &bull; Battle Armor &bull; Def 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/muk.png"><span class="slot-name">Muk</span><span class="slot-meta">Lv.32 &bull; Calm &bull; Sticky Hold &bull; SpA 31</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><span class="slot-name">Koffing</span><span class="slot-meta">Lv.29 &bull; Bold &bull; Levitate &bull; SpA 27</span><span class="slot-tag st-top" style="background:#001d2d;color:#79c0ff;border:1px solid #388bfd">GUARDAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weezing.png"><span class="slot-name">Weezing</span><span class="slot-meta">Lv.32 &bull; Serious &bull; Levitate</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name">Tangela</span><span class="slot-meta">Lv.5 &bull; Careful &bull; Leaf Guard &bull; SpD 28</span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kingler.png"><span class="slot-name">Kingler</span><span class="slot-meta">Lv.6 &bull; Naive &bull; Hyper Cutter &bull; HP 27, Atk 27, SpA 31, SpD 28</span></div>
     </div>
 
-    <div class="top-card">
-      <div class="rank-badge rank-n">5</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-blue">Lanturn</h3>
-        <div class="top-meta">Hasty &bull; Volt Absorb &bull; Def 31 / Speed 29</div>
-        <div class="top-why">Volt Absorb inmune a Electric. Tipologia Water/Electric unica. Buen check para equipos de agua. Def 31 resistente.</div>
-        <div class="role-badge rb-blue" onclick="openRbModal('lanturn-top')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+    <!-- CAJA 10 -->
+    <div class="box-block">
+      <div class="box-header">
+        <span class="box-num">CAJA 10</span>
+        <span class="box-counts">10 Pokemon &nbsp;&bull;&nbsp; <span class="ct-top">1 top</span> &nbsp;&bull;&nbsp; <span class="ct-drop">1 liberar</span></span>
       </div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dugtrio.png"><span class="slot-name">Dugtrio</span><span class="slot-meta">Lv.26 &bull; Quirky &bull; Arena Trap &bull; SpD 30, Spe 27</span></div>
+      <div class="box-slot sl-drop"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name">Growlithe</span><span class="slot-meta">Lv.19 &bull; Rash &bull; Flash Fire &bull; HP 28, SpD 27</span><span class="slot-tag st-drop">LIBERAR</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pidgeot.png"><span class="slot-name">Pidgeot</span><span class="slot-meta">Lv.36 &bull; Careful &bull; Keen Eye &bull; Def 28, Spe 30</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hypno.png"><span class="slot-name">Hypno</span><span class="slot-meta">Lv.35 &bull; Brave &bull; Insomnia &bull; SpA 30, SpD 27</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name">Growlithe</span><span class="slot-meta">Lv.18 &bull; Modest &bull; Intimidate &bull; Atk 28, Spe 31</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name">Growlithe</span><span class="slot-meta">Lv.18 &bull; Hasty &bull; Intimidate &bull; Def 31, SpD 29</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name">Growlithe</span><span class="slot-meta">Lv.18 &bull; Bold &bull; Intimidate &bull; Def 28, SpA 31, SpD 28, Spe 28</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/butterfree.png"><span class="slot-name">Butterfree</span><span class="slot-meta">Lv.38 &bull; Bashful &bull; Compound Eyes &bull; SpA 30, SpD 27</span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/blastoise.png"><span class="slot-name">Blastoise</span><span class="slot-meta">Lv.37 &bull; Impish &bull; Torrent</span></div>
+      <div class="box-slot sl-top"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name">Chinchou</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Volt Absorb &bull; Atk 27, SpA 27</span><span class="slot-tag" style="background:#2d1117;color:#f85149;border:1px solid #f85149;font-size:0.62em;font-weight:700;padding:1px 6px;border-radius:5px;white-space:nowrap">REEMPLAZA</span></div>
     </div>
-
-    <div class="top-card">
-      <div class="rank-badge rank-n">6</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-white">Chansey</h3>
-        <div class="top-meta">Modest &bull; Natural Cure &bull; HP 23</div>
-        <div class="top-why">HP base 250: el mayor del juego. Natural Cure cura status al cambiar. Wall / soporte definitivo. Soft-Boiled para recuperarse. Muy util en PVP defensivo.</div>
-        <div class="role-badge rb-blue" onclick="openRbModal('chansey-top')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
-      </div>
-    </div>
-
-    <div class="top-card">
-      <div class="rank-badge rank-n">7</div>
-      <img class="top-icon" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png" alt="">
-      <div class="top-info">
-        <h3 class="rarity-green">Houndoom</h3>
-        <div class="top-meta">Hardy &bull; Early Bird &bull; Atk 30 / Speed 26</div>
-        <div class="top-why">Dark/Fire buena tipologia. Atk 30 alto pero Early Bird no es ideal. Hardy es nature neutral. Potencial medio. Reserva para cuando evolucionas.</div>
-        <div class="role-badge rb-amber" onclick="openRbModal('houndoom-top')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ======================== A BORRAR ======================== -->
-<div class="section" id="borrar">
-  <div class="section-header">
-    <h2>&#128465; Pokemon a liberar</h2>
-    <div class="badge">Limpiar cajas</div>
-    <div class="divider"></div>
-  </div>
-  <div class="drop-grid">
-
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-grey">Gyarados (Brave)</h3><div class="drop-reason">Speed IV 1 + nature -Speed. Inutil total.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-green">Gyarados (Calm)</h3><div class="drop-reason">Nature penaliza Atk. Tienes Adamant mejor.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><div class="drop-info"><h3 class="rarity-white">Gyarados (Bold)</h3><div class="drop-reason">Nature penaliza Atk + IVs bajos.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><div class="drop-info"><h3 class="rarity-grey">Magikarp (Hasty)</h3><div class="drop-reason">Atk IV 6. Futuro Gyarados malísimo.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><div class="drop-info"><h3 class="rarity-white">Seadra (Modest)</h3><div class="drop-reason">SpAtk IV 9. Usa el Horsea para Kingdra.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><div class="drop-info"><h3 class="rarity-grey">Slugma (Docile)</h3><div class="drop-reason">SpAtk IV 4. Sin potencial ofensivo alguno.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><div class="drop-info"><h3 class="rarity-white">Slowpoke x4</h3><div class="drop-reason">Todos con IVs mediocres. Guarda 1 maximo si quieres Slowbro/Slowking.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><div class="drop-info"><h3 class="rarity-white">Slowbro x2</h3><div class="drop-reason">IVs mediocres en stats clave. Sin prioridad.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><div class="drop-info"><h3 class="rarity-white">Goldeen x5</h3><div class="drop-reason">Natures/IVs malos. Seaking sin potencial.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><div class="drop-info"><h3 class="rarity-white">Chinchou x3</h3><div class="drop-reason">Mediocres. Tienes el Chinchou Calm Volt Absorb (135 IVs).</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/kabuto.png"><div class="drop-info"><h3 class="rarity-white">Kabuto (Relaxed)</h3><div class="drop-reason">Atk 5 / Speed 4. Kabutops inutilizable.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><div class="drop-info"><h3 class="rarity-white">Koffing (Bold)</h3><div class="drop-reason">Levitate + Bold + SpAtk 27. GUARDAR para Weezing wall.</div></div><div class="drop-tag" style="background:#001d2d;color:#79c0ff;border:1px solid #388bfd">GUARDAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><div class="drop-info"><h3 class="rarity-white">Seel x3</h3><div class="drop-reason">Todos con IVs mediocres y natures malas.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><div class="drop-info"><h3 class="rarity-grey">Psyduck (Timid)</h3><div class="drop-reason">SpAtk IV 1. Completamente inutil.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><div class="drop-info"><h3 class="rarity-white">Venonat (Hardy)</h3><div class="drop-reason">Nature neutral + SpAtk mediocre. Sin uso.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><div class="drop-info"><h3 class="rarity-white">Grimer (Sassy)</h3><div class="drop-reason">Sassy penaliza Speed. Stench inutil en batalla.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><div class="drop-info"><h3 class="rarity-white">Rhyhorn (Modest)</h3><div class="drop-reason">Modest penaliza Atk en atacante fisico. Nature incorrecta fatal.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><div class="drop-info"><h3 class="rarity-grey">Tentacool (Modest)</h3><div class="drop-reason">Speed IV 2. Sin velocidad = sin utilidad.</div></div><div class="drop-tag">LIBERAR</div></div>
-    <div class="drop-card"><img class="drop-icon" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"><div class="drop-info"><h3 class="rarity-white">Nidoran / Nidorina</h3><div class="drop-reason">IVs mediocres. Sin potencial competitivo.</div></div><div class="drop-tag">LIBERAR</div></div>
 
   </div>
 </div>
