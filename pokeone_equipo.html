@@ -271,6 +271,13 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .pc-tag-drop { position:absolute; bottom:3px; left:50%; transform:translateX(-50%); font-size:0.48em; font-weight:700; padding:1px 5px; border-radius:4px; white-space:nowrap; background:#2d1117; color:#f85149; border:1px solid rgba(248,81,73,0.4); }
 /* Tooltip */
 .pc-cell[title]:hover::after { content:attr(title); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:#1c2128; border:1px solid #30363d; border-radius:6px; padding:5px 8px; font-size:0.68em; color:#c9d1d9; white-space:nowrap; z-index:50; pointer-events:none; max-width:220px; white-space:pre-wrap; text-align:left; line-height:1.5; }
+.pc-box-tabs { display:flex; flex-wrap:wrap; gap:5px; justify-content:center; margin-top:8px; }
+.pc-tab-btn { background:#0d1117; border:1px solid #30363d; color:#8b949e; border-radius:6px; padding:4px 10px; font-size:0.68em; cursor:pointer; transition:all 0.15s; white-space:nowrap; }
+.pc-tab-btn:hover { background:#21262d; color:#e6edf3; }
+.pc-tab-btn.active { background:#f3d327; border-color:#f3d327; color:#000; font-weight:700; }
+.pc-tab-count { font-size:0.85em; opacity:0.75; }
+.pc-star { position:absolute; top:3px; left:4px; font-size:0.8em; line-height:1; pointer-events:none; }
+.rb-star { font-size:0.8em; vertical-align:middle; margin-left:2px; }
 
 /* ======= CAJAS DEL PC ======= */
 .box-section-grid { display: flex; flex-direction: column; gap: 16px; }
@@ -856,13 +863,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
   </div>
 </div>
 
-<!-- ======================== ULTIMAS CAPTURAS ======================== -->
-<div class="section" id="capturas">
-  <div class="section-header">
-    <h2>&#128247; Ultimas capturas valoradas</h2>
-    <div class="badge">8 Jun 2026</div>
-    <div class="divider"></div>
-  </div>
+<!-- capturas eliminadas -->
+<div class="section" id="capturas" style="display:none">
   <div class="captures-grid">
 
     <div class="capture-card">
@@ -1056,6 +1058,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
     <div class="pc-nav-info">
       <span class="pc-box-name" id="pc-box-name">CAJA 1</span>
       <span class="pc-box-counts" id="pc-box-counts"></span>
+      <div class="pc-box-tabs" id="pc-box-tabs"></div>
     </div>
     <button class="pc-nav-btn" onclick="showBox(1)">&#8594;</button>
   </div>
@@ -2172,21 +2175,58 @@ function ivColor(v) {
   return '#f85149';
 }
 
+// Parse "Atk 31, SpA 28, Spe 30" → [{stat:'Atk',val:31}, ...]
+function parseSlotIvText(text) {
+  const result = [];
+  const re = /\b(HP|Atk|Def|SpA|SpD|Spe)\s+(\d+)/g;
+  let m;
+  while ((m = re.exec(text)) !== null) result.push({stat: m[1], val: parseInt(m[2])});
+  return result;
+}
+
+// Returns {ivs, sum, pct, partial} — partial=true when only highlighted IVs are available
 function readCardIvs(key) {
   const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
   if (!badge) return null;
+
+  // Team card path: has full stat table
   const card = badge.closest('.card');
-  if (!card) return null;
-  const ivRow = Array.from(card.querySelectorAll('.stat-row-line'))
-    .find(r => r.querySelector('.sr-lbl')?.textContent.trim() === 'IV');
-  if (!ivRow) return null;
-  const cells = ivRow.querySelectorAll('.sr-cell');
-  const ivs = [];
-  cells.forEach(c => {
-    ivs.push({stat: c.querySelector('.sr-s')?.textContent.trim(), val: parseInt(c.querySelector('.sr-v')?.textContent) || 0});
-  });
-  const sum = ivs.reduce((a, b) => a + b.val, 0);
-  return {ivs, sum, pct: Math.round(sum / 186 * 100)};
+  if (card) {
+    const ivRow = Array.from(card.querySelectorAll('.stat-row-line'))
+      .find(r => r.querySelector('.sr-lbl')?.textContent.trim() === 'IV');
+    if (ivRow) {
+      const ivs = [];
+      ivRow.querySelectorAll('.sr-cell').forEach(c => {
+        ivs.push({stat: c.querySelector('.sr-s')?.textContent.trim(), val: parseInt(c.querySelector('.sr-v')?.textContent) || 0});
+      });
+      const sum = ivs.reduce((a, b) => a + b.val, 0);
+      return {ivs, sum, pct: Math.round(sum / 186 * 100), partial: false};
+    }
+  }
+
+  // Box slot path: try DOM first, then _slotByKey cache
+  const slot = badge.closest('.box-slot');
+  if (slot) {
+    const metaText = slot.querySelector('.slot-meta')?.textContent || '';
+    const ivPart = metaText.split('•').slice(3).join(' ');
+    const ivs = parseSlotIvText(ivPart);
+    if (ivs.length) {
+      const sum = ivs.reduce((a, b) => a + b.val, 0);
+      const pct = Math.round(sum / (ivs.length * 31) * 100);
+      return {ivs, sum, pct, partial: true, count: ivs.length};
+    }
+    return null;
+  }
+
+  // pc-grid cell: look up from _slotByKey cache
+  if (_slotByKey[key] && _slotByKey[key].ivs.length) {
+    const ivs = _slotByKey[key].ivs;
+    const sum = ivs.reduce((a, b) => a + b.val, 0);
+    const pct = Math.round(sum / (ivs.length * 31) * 100);
+    return {ivs, sum, pct, partial: true, count: ivs.length};
+  }
+
+  return null;
 }
 
 function readCardEvs(key) {
@@ -2212,10 +2252,30 @@ function readCardEvs(key) {
 function readCardMeta(key) {
   const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
   if (!badge) return {};
+
+  // Team card
   const card = badge.closest('.card');
-  const text = card?.querySelector('.meta')?.textContent || '';
-  const parts = text.split('•').map(s => s.trim());
-  return {level: parts[0] || '', nature: parts[1] || '', ability: parts[2] || ''};
+  if (card) {
+    const text = card.querySelector('.meta')?.textContent || '';
+    const parts = text.split('•').map(s => s.trim());
+    return {level: parts[0] || '', nature: parts[1] || '', ability: parts[2] || ''};
+  }
+
+  // Box slot
+  const slot = badge.closest('.box-slot');
+  if (slot) {
+    const text = slot.querySelector('.slot-meta')?.textContent || '';
+    const parts = text.split('•').map(s => s.trim());
+    return {level: parts[0] || '', nature: parts[1] || '', ability: parts[2] || ''};
+  }
+
+  // pc-grid cell: look up from _slotByKey cache
+  if (_slotByKey[key]) {
+    const s = _slotByKey[key];
+    return {level: s.level, nature: s.nature, ability: s.ability};
+  }
+
+  return {};
 }
 
 function updateAllBadges() {
@@ -2228,7 +2288,8 @@ function updateAllBadges() {
     badge.className = badge.className.replace(/\brb-(gold|green|blue|amber|red)\b/, cls);
     const scoreEl = badge.querySelector('.rb-score, .srb-score');
     const labelEl = badge.querySelector('.rb-label');
-    if (scoreEl) scoreEl.textContent = iv.pct + '%';
+    const star = iv.pct >= 90 ? ' ⭐' : '';
+    if (scoreEl) scoreEl.textContent = iv.pct + '%' + star;
     if (labelEl) labelEl.textContent = label;
   });
 }
@@ -2312,7 +2373,9 @@ function openRbModal(key) {
         <div class="rb-iv-bar"><div class="rb-iv-fill" style="width:${w}%;background:${c}"></div></div>
       </div>`;
     }).join('');
-    ivSumLine = `<div class="rb-iv-sum">Suma: <strong style="color:#e6edf3">${ivData.sum}</strong> / 186</div>`;
+    ivSumLine = ivData.partial
+      ? `<div class="rb-iv-sum" style="color:#8b949e">Solo IVs destacados (${ivData.count} stats) &mdash; ${ivData.sum}/${ivData.count * 31} en stats conocidos</div>`
+      : `<div class="rb-iv-sum">Suma: <strong style="color:#e6edf3">${ivData.sum}</strong> / 186</div>`;
   }
 
   let evCells = '';
@@ -2409,6 +2472,9 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRbModal
 let _boxData = [];
 let _curBox  = 0;
 
+// Maps rbOnclick key → slot data for box slots
+const _slotByKey = {};
+
 function buildBoxData() {
   _boxData = Array.from(document.querySelectorAll('.box-block')).map(block => {
     const name   = block.querySelector('.box-num')?.textContent.trim() || '';
@@ -2416,21 +2482,42 @@ function buildBoxData() {
     const slots  = Array.from(block.querySelectorAll('.box-slot')).map(slot => {
       const rb  = slot.querySelector('.slot-rb');
       const tag = slot.querySelector('.slot-tag');
-      return {
+      const metaText = slot.querySelector('.slot-meta')?.textContent.trim() || '';
+      const parts = metaText.split('•').map(s => s.trim());
+      const ivPart = parts.slice(3).join(' ');
+      const ivs = parseSlotIvText(ivPart);
+      const rbOnclick = rb?.getAttribute('onclick') || '';
+      // Extract key from onclick="openRbModal('key')"
+      const keyMatch = rbOnclick.match(/openRbModal\('([^']+)'\)/);
+      const slotKey = keyMatch ? keyMatch[1] : null;
+      const slotData = {
         src:      slot.querySelector('.slot-spr')?.src || '',
         name:     slot.querySelector('.slot-name')?.textContent.trim() || '',
         nameClass:slot.querySelector('.slot-name')?.className || '',
-        meta:     slot.querySelector('.slot-meta')?.textContent.trim() || '',
+        meta:     metaText,
+        level:    parts[0] || '',
+        nature:   parts[1] || '',
+        ability:  parts[2] || '',
+        ivs,
         slClass:  [...slot.classList].find(c => c.startsWith('sl-')) || '',
         tag:      tag?.textContent.trim() || '',
         tagIsTop: tag ? tag.className.includes('st-top') || tag.textContent.includes('TOP') : false,
         rbClass:  rb?.className || '',
         rbScore:  rb?.querySelector('.srb-score')?.textContent.trim() || '',
-        rbOnclick:rb?.getAttribute('onclick') || '',
+        rbOnclick,
       };
+      if (slotKey) _slotByKey[slotKey] = slotData;
+      return slotData;
     });
     return {name, counts, slots};
   });
+  // Build tab buttons
+  const tabsEl = document.getElementById('pc-box-tabs');
+  if (tabsEl) {
+    tabsEl.innerHTML = _boxData.map((box, i) =>
+      `<button class="pc-tab-btn" onclick="renderBox(${i})" id="pc-tab-${i}">${box.name} <span class="pc-tab-count">(${box.slots.length})</span></button>`
+    ).join('');
+  }
 }
 
 function renderBox(idx) {
@@ -2438,6 +2525,10 @@ function renderBox(idx) {
   const box = _boxData[_curBox];
   document.getElementById('pc-box-name').textContent = box.name;
   document.getElementById('pc-box-counts').innerHTML  = box.counts;
+  // Update active tab
+  document.querySelectorAll('.pc-tab-btn').forEach((btn, i) =>
+    btn.classList.toggle('active', i === _curBox)
+  );
 
   const grid = document.getElementById('pc-grid');
   const cells = [];
@@ -2450,15 +2541,15 @@ function renderBox(idx) {
     }
     // Badge
     const rbCls = (s.rbClass.match(/\brb-(gold|green|blue|amber|red)\b/) || ['','rb-red'])[0];
+    const pctVal = parseInt(s.rbScore) || 0;
+    const starHtml = pctVal >= 90 ? '<span class="pc-star">⭐</span>' : '';
     const rbHtml = s.rbScore
       ? `<span class="pc-rb ${rbCls}" ${s.rbOnclick ? `onclick="${s.rbOnclick}"` : ''}>${s.rbScore}</span>`
       : '';
-    // Tag
+    // Tag — solo LIBERAR, quitar TOP (reemplazado por estrella)
     let tagHtml = '';
-    if (s.tag) {
-      tagHtml = s.tagIsTop
-        ? `<span class="pc-tag-top">${s.tag}</span>`
-        : `<span class="pc-tag-drop">${s.tag}</span>`;
+    if (s.tag && !s.tagIsTop) {
+      tagHtml = `<span class="pc-tag-drop">${s.tag}</span>`;
     }
     // Name rarity class
     const rarCls = (s.nameClass.match(/\brarity-\w+\b/) || [''])[0];
@@ -2468,7 +2559,7 @@ function renderBox(idx) {
     const cellClick = s.rbOnclick ? `onclick="${s.rbOnclick}"` : '';
     const hasCls    = s.rbOnclick ? 'has-rb' : '';
     cells.push(`<div class="pc-cell ${s.slClass} ${hasCls}" ${cellClick} title="${tip.replace(/"/g,'&quot;')}">
-      ${rbHtml}
+      ${rbHtml}${starHtml}
       <img class="pc-spr" src="${s.src}" alt="${s.name}">
       <span class="pc-name ${rarCls}">${s.name}</span>
       ${tagHtml}
