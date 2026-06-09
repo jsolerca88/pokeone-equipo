@@ -163,7 +163,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rarity-gold   { color: #f3d327; }
 
 /* Puntuacion de rol */
-.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; position: relative; cursor: help; }
+.role-badge { margin-left: auto; border-radius: 8px; padding: 5px 10px; font-size: 0.72em; font-weight: 700; flex-shrink: 0; text-align: center; line-height: 1.3; position: relative; cursor: pointer; transition: filter 0.15s; }
+.role-badge:hover { filter: brightness(1.2); }
 .role-badge .rb-score { font-size: 1.3em; display: block; }
 .role-badge .rb-label { font-size: 0.7em; display: block; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
 .rb-green { background: #001d0e; border: 1px solid #3fb950; color: #7ee787; }
@@ -172,31 +173,33 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-red   { background: #2d1117; border: 1px solid #f85149; color: #ffa8a8; }
 .rb-gold  { background: #1a1500; border: 1px solid #f3d327; color: #f3d327; }
 .top-info .role-badge { margin-left: 0; margin-top: 6px; display: inline-block; }
-/* Tooltip — por defecto va hacia arriba (top-boxes, sin overflow:hidden) */
-.role-badge[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute; bottom: calc(100% + 8px); right: 0;
-  background: #0d1117; border: 1px solid #30363d; color: #c9d1d9;
-  font-size: 0.78em; font-weight: 400; padding: 7px 10px; border-radius: 6px;
-  width: 220px; white-space: normal; line-height: 1.5;
-  pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 200;
-  text-transform: none; letter-spacing: 0;
-}
-.role-badge[data-tooltip]:hover::after { opacity: 1; }
-.role-badge[data-tooltip]::before {
-  content: ''; position: absolute; bottom: calc(100% + 2px); right: 14px;
-  border: 5px solid transparent; border-top-color: #30363d;
-  pointer-events: none; opacity: 0; transition: opacity 0.2s; z-index: 201;
-}
-.role-badge[data-tooltip]:hover::before { opacity: 1; }
-/* Dentro de .card (overflow:hidden) el tooltip va a la izquierda del badge */
-.card .role-badge[data-tooltip]::after {
-  bottom: auto; top: 50%; right: calc(100% + 8px); transform: translateY(-50%);
-}
-.card .role-badge[data-tooltip]::before {
-  bottom: auto; top: 50%; right: calc(100% + 2px); transform: translateY(-50%);
-  border-top-color: transparent; border-left-color: #30363d;
-}
+
+/* ======= MODAL VALORACION ======= */
+.rb-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.78); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+.rb-modal-overlay.open { display: flex; }
+.rb-modal-box { background: #161b22; border: 1px solid #30363d; border-radius: 14px; padding: 24px; max-width: 440px; width: 100%; position: relative; max-height: 85vh; overflow-y: auto; box-shadow: 0 24px 60px rgba(0,0,0,0.9); }
+.rb-modal-close { position: absolute; top: 14px; right: 14px; background: #21262d; border: 1px solid #30363d; color: #8b949e; font-size: 0.85em; cursor: pointer; border-radius: 6px; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+.rb-modal-close:hover { background: #30363d; color: #e6edf3; }
+.rb-modal-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #21262d; }
+.rb-modal-icon { width: 54px; height: 54px; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
+.rb-modal-title { font-size: 1.1em; font-weight: 700; letter-spacing: 1px; color: #e6edf3; }
+.rb-modal-cur { margin-top: 6px; display: flex; align-items: center; gap: 8px; }
+.rb-modal-cur .role-badge { margin: 0; padding: 3px 10px; font-size: 0.85em; cursor: default; }
+.rb-modal-cur .role-badge:hover { filter: none; }
+.rb-modal-section { margin-bottom: 16px; }
+.rb-modal-section h4 { font-size: 0.67em; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin-bottom: 8px; border-bottom: 1px solid #21262d; padding-bottom: 4px; }
+.rb-action { display: flex; align-items: flex-start; gap: 9px; padding: 6px 0; border-bottom: 1px dashed #21262d; font-size: 0.82em; }
+.rb-action:last-child { border-bottom: none; }
+.rb-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.rb-dot.high { background: #f85149; }
+.rb-dot.med  { background: #d29922; }
+.rb-dot.low  { background: #3fb950; }
+.rb-action-text { color: #c9d1d9; line-height: 1.5; }
+.rb-action-text strong { color: #f3d327; }
+.rb-techo { display: flex; align-items: center; gap: 14px; background: #0d1117; border-radius: 8px; padding: 12px 14px; }
+.rb-techo-score { font-size: 2em; font-weight: 700; color: #f3d327; flex-shrink: 0; line-height: 1; }
+.rb-techo-info { font-size: 0.78em; color: #8b949e; line-height: 1.6; }
+.rb-techo-info strong { color: #e6edf3; }
 
 .updated { text-align: center; color: #484f58; font-size: 0.75em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #21262d; }
 </style>
@@ -244,7 +247,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.41 &bull; Brave &bull; Blaze</div>
           <div class="types"><span class="type-badge t-fire">Fire</span><span class="type-badge t-flying">Flying</span></div>
         </div>
-        <div class="role-badge rb-amber" data-tooltip="Blaze solo activa con HP critico. Brave penaliza Speed en sweeper. SpAtk IV bajo. Potencial limitado por nature y habilidad."><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('charizard')"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -311,7 +314,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.40 &bull; Gentle &bull; Intimidate</div>
           <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-flying">Flying</span></div>
         </div>
-        <div class="role-badge rb-red" data-tooltip="Intimidate baja Atk rival al entrar. Gentle penaliza Def en tanque físico. IVs en Atk bajos. Necesita rework completo."><span class="rb-score">3/10</span><span class="rb-label">Mejorable</span></div>
+        <div class="role-badge rb-red" onclick="openRbModal('gyarados')"><span class="rb-score">3/10</span><span class="rb-label">Mejorable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -377,7 +380,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.39 &bull; Lonely &bull; No Guard</div>
           <div class="types"><span class="type-badge t-fighting">Fighting</span></div>
         </div>
-        <div class="role-badge rb-blue" data-tooltip="No Guard: todos los movimientos son certeros, incluido Dynamic Punch (100% confusión). Lonely penaliza Def. Gran habilidad."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('machamp')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -444,7 +447,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.39 &bull; Timid &bull; Cursed Body</div>
           <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
         </div>
-        <div class="role-badge rb-blue" data-tooltip="Cursed Body puede deshabilitar movimientos. Timid + Ghost/Poison excelentes para sweeper especial. Solo le faltan EVs."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('gengar')"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -510,7 +513,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.40 &bull; Docile &bull; Thick Fat</div>
           <div class="types"><span class="type-badge t-normal">Normal</span></div>
         </div>
-        <div class="role-badge rb-green" data-tooltip="Thick Fat resiste Fire e Ice. HP base 160. Atk/Def IVs sólidos. Docile neutral ok. Tanque top con Rest+Sleep Talk."><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-green" onclick="openRbModal('snorlax')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -576,7 +579,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="meta">Lv.31 &bull; Quiet &bull; Run Away</div>
           <div class="types"><span class="type-badge t-normal">Normal</span></div>
         </div>
-        <div class="role-badge rb-red" data-tooltip="Run Away inútil en batalla. Quiet penaliza Speed. Stats base muy bajas para uso competitivo. Solo HM slave temporal."><span class="rb-score">2/10</span><span class="rb-label">Mejorable</span></div>
+        <div class="role-badge rb-red" onclick="openRbModal('furret')"><span class="rb-score">2/10</span><span class="rb-label">Mejorable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -821,7 +824,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-blue">Slowbro</h3>
         <div class="top-meta">Relaxed &bull; Oblivious &bull; Def IV 31 / Atk IV 30</div>
         <div class="top-why">Nature perfecta para tanque defensivo. Def 31 es el IV clave de Slowbro. Candidato inmediato a reemplazar a Furret en el equipo. Water/Psychic cubre bien.</div>
-        <div class="role-badge rb-gold" data-tooltip="Relaxed + Def 31: nature e IV clave perfectos para tanque. Atk 30 como bonus. Candidato inmediato a entrar al equipo."><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
+        <div class="role-badge rb-gold" onclick="openRbModal('slowbro-top')"><span class="rb-score">9/10</span><span class="rb-label">Excelente</span></div>
       </div>
     </div>
 
@@ -832,7 +835,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-green">Nidorino &rarr; Nidoking</h3>
         <div class="top-meta">Serious &bull; Poison Point &bull; Atk IV 31</div>
         <div class="top-why">Atk 31 perfecto para Nidoking fisico. Serious es neutral (ok). Evoluciona con Moon Stone. Poison/Ground tiene gran cobertura. Muy util para el equipo.</div>
-        <div class="role-badge rb-blue" data-tooltip="Atk 31 perfecto para Nidoking físico. Serious neutral ok. Evoluciona con Moon Stone. Poison/Ground tiene gran cobertura ofensiva."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('nidorino-top')"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -843,7 +846,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-purple">Seel &rarr; Dewgong</h3>
         <div class="top-meta">Relaxed &bull; Hydration &bull; HP/SpAtk/Speed todos altos</div>
         <div class="top-why">HP 31 + SpAtk 29 + Speed 31 es un catch excepcional. Hydration en lluvia es enorme. Evoluciona facilmente. Candidato al equipo principal.</div>
-        <div class="role-badge rb-green" data-tooltip="HP 31 + SpAtk 29 + Speed 31: tres IVs excepcionales. Hydration cura status bajo lluvia. Candidato directo al equipo principal."><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-green" onclick="openRbModal('seel-top')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
       </div>
     </div>
 
@@ -854,7 +857,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-blue">Gastly &rarr; Gengar</h3>
         <div class="top-meta">Calm &bull; Levitate &bull; HP 29 / Atk 29 / Def 30</div>
         <div class="top-why">Levitate es inmunidad a Ground &mdash; habilidad premium. HP/Def IVs altos pero SpAtk 17 y Speed 13 son bajos. Guardarlo por Levitate.</div>
-        <div class="role-badge rb-blue" data-tooltip="Levitate: inmune a Ground, habilidad premium. IVs defensivos altos. SpAtk 17 y Speed 13 bajos. La habilidad justifica guardarlo."><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('gastly-top')"><span class="rb-score">7/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -865,7 +868,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-white">Jolteon</h3>
         <div class="top-meta">Sassy &bull; Volt Absorb &bull; Lv.35</div>
         <div class="top-why">Volt Absorb inmune a Electric y recupera HP &mdash; habilidad increible. Sassy (+SpD/-Speed) es terrible para Jolteon. Solo por la habilidad.</div>
-        <div class="role-badge rb-amber" data-tooltip="Volt Absorb es habilidad top pero Sassy destruye Speed de Jolteon. La habilidad es lo único rescatable de este ejemplar."><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('jolteon-top')"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -876,7 +879,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-green">Electabuzz</h3>
         <div class="top-meta">Careful &bull; Static &bull; Lv.38 &bull; Atk 27</div>
         <div class="top-why">Nivel 38 es el mas alto de las cajas. Atk 27 decente. Static paraliza al tocar. Careful (-SpAtk) no es ideal pero tiene nivel para ser util de inmediato.</div>
-        <div class="role-badge rb-amber" data-tooltip="Nivel 38, el más alto de las cajas. Atk 27 decente. Static puede paralizar. Careful penaliza SpAtk. Uso inmediato posible."><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('electabuzz-top')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -887,7 +890,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-white">Pinsir</h3>
         <div class="top-meta">Naive &bull; Moxie &bull; Speed 22</div>
         <div class="top-why">Moxie (+1 Atk por cada KO) es habilidad premium para sweeper. Naive es decente (+Speed/-SpD). Atk IV 13 bajo &mdash; guardarlo por la habilidad.</div>
-        <div class="role-badge rb-blue" data-tooltip="Moxie (+1 Atk por KO): habilidad sweeper premium. Naive +Speed/-SpD decente. Atk 13 bajo pero Moxie lo compensa con el tiempo."><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('pinsir-top')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
     </div>
 
@@ -898,7 +901,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         <h3 class="rarity-white">Seaking</h3>
         <div class="top-meta">Jolly &bull; Water Veil &bull; Lv.40</div>
         <div class="top-why">El mas alto nivel de las cajas (40). Jolly para fisico es correcto. Water Veil previene quemaduras. IVs mediocres &mdash; usar como HM slave de Surf y Waterfall.</div>
-        <div class="role-badge rb-amber" data-tooltip="Nivel 40 útil a corto plazo. Water Veil previene quemaduras. Jolly ok para físico. IVs mediocres limitan mucho el techo."><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('seaking-top')"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
     </div>
 
@@ -931,6 +934,204 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 </div>
 
 <div class="updated">Actualizado: 2026-06-09 &nbsp;&bull;&nbsp; CarroCarrillo (Dani) &nbsp;&bull;&nbsp; PokeOne Kanto &nbsp;&bull;&nbsp; <a href="pokeone_equipo.html" style="color:#8b949e">Ver equipo de jsolerca</a></div>
+
+<!-- ======= MODAL VALORACION ======= -->
+<div id="rb-modal" class="rb-modal-overlay" onclick="rbOverlayClick(event)">
+  <div class="rb-modal-box">
+    <button class="rb-modal-close" onclick="closeRbModal()">&#10005;</button>
+    <div id="rb-modal-content"></div>
+  </div>
+</div>
+
+<script>
+const RB_DATA = {
+  charizard: {
+    name:"CHARIZARD", icon:"charizard", score:"4/10", label:"Regular", cls:"rb-amber",
+    acciones:[
+      {p:"high", t:"<strong>TM35 Flamethrower</strong> — Game Corner Celadon (4.000 coins) &mdash; reemplaza Incinerate y Flame Burst"},
+      {p:"high", t:"Completar EVs: <strong>252 SpAtk / 252 Speed / 4 HP</strong> (tienes 65 SpA / 131 Spd)"},
+      {p:"med",  t:"Aprender <strong>Air Slash</strong> (Lv.47) &mdash; STAB Flying especial"},
+      {p:"low",  t:"Conseguir <strong>Dragon Pulse</strong> y <strong>Roost</strong> cuando esten disponibles"},
+    ],
+    techo:"6/10",
+    nota:"<strong>Brave penaliza Speed</strong> de forma permanente &mdash; Charizard necesita Timid o Modest. Sin recapturar no supera el 6.",
+  },
+  gyarados: {
+    name:"GYARADOS", icon:"gyarados", score:"3/10", label:"Mejorable", cls:"rb-red",
+    acciones:[
+      {p:"high", t:"Completar EVs: <strong>252 Atk / 252 Speed / 4 HP</strong> (tienes 100 Atk / 151 Spd)"},
+      {p:"high", t:"Aprender <strong>Waterfall</strong> (HM07) &mdash; reemplaza Surf"},
+      {p:"high", t:"Aprender <strong>Dragon Dance</strong> en Move Tutor &mdash; +1 Atk +1 Speed"},
+      {p:"med",  t:"Considerar recapturar con nature Adamant o Jolly y mejores IVs en Atk/Speed"},
+    ],
+    techo:"5/10",
+    nota:"<strong>Atk IV 8, Def IV 1, Spd IV 6</strong> son muy bajos. Gentle penaliza Def. Intimidate es lo unico destacable. Con recaptura llega a 8.",
+  },
+  machamp: {
+    name:"MACHAMP", icon:"machamp", score:"6/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Aprender <strong>Dynamic Punch</strong> (Lv.45) &mdash; No Guard = 100% confusion garantizada"},
+      {p:"high", t:"Quitar <strong>Strength</strong> en Move Deleter (Fuchsia City)"},
+      {p:"med",  t:"Completar EVs: <strong>252 Atk / 252 Speed / 4 HP</strong> (tienes 57 Atk / 89 Spd)"},
+      {p:"low",  t:"Conseguir <strong>Ice Punch</strong> en Move Tutor &mdash; cobertura Dragon/Flying"},
+    ],
+    techo:"7/10",
+    nota:"<strong>Atk IV 7</strong> es bajo para un atacante fisico. No Guard compensa en parte. Sin recapturar el techo es 7.",
+  },
+  gengar: {
+    name:"GENGAR", icon:"gengar", score:"7/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"<strong>TM52 Focus Blast</strong> &mdash; cobertura Fighting, reemplaza Psychic"},
+      {p:"high", t:"Completar EVs: <strong>252 SpAtk / 252 Speed / 4 HP</strong> (tienes 7 SpA / 31 Spd)"},
+    ],
+    techo:"8/10",
+    nota:"<strong>Timid es nature perfecta</strong> para Gengar. SpAtk IV 27 decente. Con EVs completos y Focus Blast llega a 8.",
+  },
+  snorlax: {
+    name:"SNORLAX", icon:"snorlax", score:"8/10", label:"Bueno", cls:"rb-green",
+    acciones:[
+      {p:"high", t:"Completar EVs: <strong>252 HP / 252 Atk / 4 SpD</strong> &mdash; prioridad maxima (0 asignados)"},
+      {p:"high", t:"Aprender <strong>Body Slam</strong> (Lv.40) &mdash; reemplaza Rock Tomb"},
+      {p:"med",  t:"Conseguir <strong>Earthquake</strong> (TM) &mdash; reemplaza Giga Impact"},
+    ],
+    techo:"9/10",
+    nota:"<strong>Atk 30 / SpD 31</strong> son IVs excelentes. Thick Fat + HP base 160 lo hacen el mejor tanque del equipo. Docile neutral ok.",
+  },
+  furret: {
+    name:"FURRET", icon:"furret", score:"2/10", label:"Mejorable", cls:"rb-red",
+    acciones:[
+      {p:"high", t:"Ir a <strong>Move Deleter en Fuchsia City</strong> &mdash; borrar Rock Smash y Cut"},
+      {p:"high", t:"Considerar reemplazar por <strong>Slowbro Def31</strong> que esta en caja &mdash; candidato inmediato"},
+      {p:"med",  t:"Si se mantiene: conseguir <strong>Return (TM27)</strong> y <strong>Brick Break (TM31)</strong>"},
+    ],
+    techo:"4/10",
+    nota:"<strong>Quiet penaliza Speed</strong> permanentemente en un Pokemon que depende de la velocidad. Run Away inutil. Stats base muy limitadas.",
+  },
+  "slowbro-top": {
+    name:"SLOWBRO", icon:"slowbro", score:"9/10", label:"Excelente", cls:"rb-gold",
+    acciones:[
+      {p:"high", t:"Incorporar al equipo &mdash; reemplaza a Furret"},
+      {p:"high", t:"Enseñar <strong>Surf + Psychic</strong> &mdash; doble STAB Water/Psychic"},
+      {p:"med",  t:"Completar EVs: <strong>252 HP / 252 Def / 4 SpA</strong> &mdash; tanque fisico definitivo"},
+      {p:"low",  t:"Enseñar <strong>Slack Off</strong> o <strong>Calm Mind</strong> para sustain"},
+    ],
+    techo:"9/10",
+    nota:"<strong>Relaxed + Def 31 + Atk 30</strong> &mdash; nature e IV clave perfectos. Candidato inmediato al equipo principal.",
+  },
+  "nidorino-top": {
+    name:"NIDORINO &rarr; NIDOKING", icon:"nidorino", score:"7/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Evolucionar con <strong>Moon Stone</strong>"},
+      {p:"high", t:"Completar EVs: <strong>252 Atk / 252 Speed / 4 HP</strong>"},
+      {p:"med",  t:"Enseñar <strong>Earthquake + Megahorn</strong> &mdash; cobertura STAB ofensiva"},
+    ],
+    techo:"7/10",
+    nota:"<strong>Atk IV 31</strong> perfecto. Serious neutral es aceptable. Poison/Ground tiene gran cobertura. Potencial solido.",
+  },
+  "seel-top": {
+    name:"SEEL &rarr; DEWGONG", icon:"seel", score:"8/10", label:"Bueno", cls:"rb-green",
+    acciones:[
+      {p:"high", t:"Evolucionar a <strong>Dewgong</strong> (Lv.34)"},
+      {p:"high", t:"Completar EVs: <strong>252 SpAtk / 252 Speed / 4 HP</strong>"},
+      {p:"med",  t:"Enseñar <strong>Surf + Ice Beam</strong> &mdash; doble STAB Water/Ice"},
+    ],
+    techo:"9/10",
+    nota:"<strong>HP 31 + SpAtk 29 + Speed 31</strong> &mdash; catch excepcional con tres IVs altos. Hydration en lluvia es enorme.",
+  },
+  "gastly-top": {
+    name:"GASTLY &rarr; GENGAR", icon:"gastly", score:"7/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Evolucionar y guardar como <strong>Gengar backup</strong> con Levitate"},
+      {p:"med",  t:"<strong>Levitate</strong> es inmunidad a Ground &mdash; habilidad premium que el Gengar del equipo no tiene"},
+      {p:"low",  t:"Si se usa: EVs <strong>252 SpAtk / 252 Speed</strong>"},
+    ],
+    techo:"7/10",
+    nota:"<strong>SpAtk IV 17 y Speed IV 13</strong> son los limitantes permanentes. El valor esta en Levitate, no en los IVs.",
+  },
+  "jolteon-top": {
+    name:"JOLTEON", icon:"jolteon", score:"4/10", label:"Regular", cls:"rb-amber",
+    acciones:[
+      {p:"high", t:"Guardarlo <strong>solo por Volt Absorb</strong> &mdash; inmune a Electric y recupera HP"},
+      {p:"med",  t:"No usarlo como sweeper principal &mdash; Sassy destruye su Speed base 130"},
+      {p:"low",  t:"Buscar un Eevee con mejor nature para hacer un Jolteon util"},
+    ],
+    techo:"5/10",
+    nota:"<strong>Sassy penaliza Speed permanentemente</strong> &mdash; fatal para Jolteon. Volt Absorb es lo unico rescatable.",
+  },
+  "electabuzz-top": {
+    name:"ELECTABUZZ", icon:"electabuzz", score:"5/10", label:"Regular", cls:"rb-amber",
+    acciones:[
+      {p:"high", t:"Uso inmediato posible &mdash; <strong>nivel 38</strong> es el mas alto de las cajas"},
+      {p:"med",  t:"Enseñar <strong>Thunderbolt + Ice Punch + Fire Punch</strong> &mdash; cobertura amplia"},
+      {p:"low",  t:"Completar EVs: <strong>252 SpAtk / 252 Speed</strong>"},
+    ],
+    techo:"6/10",
+    nota:"<strong>Careful penaliza SpAtk</strong> &mdash; Electabuzz necesita una nature especial. Sin recapturar el techo es 6.",
+  },
+  "pinsir-top": {
+    name:"PINSIR", icon:"pinsir", score:"6/10", label:"Viable", cls:"rb-blue",
+    acciones:[
+      {p:"high", t:"Guardarlo &mdash; <strong>Moxie (+1 Atk por cada KO)</strong> es habilidad sweeper premium"},
+      {p:"med",  t:"Completar EVs: <strong>252 Atk / 252 Speed / 4 HP</strong>"},
+      {p:"low",  t:"Enseñar <strong>X-Scissor + Close Combat + Earthquake</strong>"},
+    ],
+    techo:"7/10",
+    nota:"<strong>Atk IV 13</strong> es bajo pero Moxie lo compensa con el tiempo. Naive +Speed/-SpD es una nature decente.",
+  },
+  "seaking-top": {
+    name:"SEAKING", icon:"seaking", score:"4/10", label:"Regular", cls:"rb-amber",
+    acciones:[
+      {p:"high", t:"Usar como <strong>HM slave</strong> de Surf y Waterfall a corto plazo"},
+      {p:"med",  t:"Reemplazar cuando tengas un Water mejor con buenos IVs"},
+    ],
+    techo:"4/10",
+    nota:"<strong>IVs mediocres en todo</strong>. Jolly ok para fisico pero Seaking no tiene el stat total para ser competitivo. Solo uso utilitario.",
+  },
+};
+
+function openRbModal(key) {
+  const d = RB_DATA[key];
+  if (!d) return;
+  const actions = d.acciones.map(a =>
+    `<div class="rb-action"><div class="rb-dot ${a.p}"></div><div class="rb-action-text">${a.t}</div></div>`
+  ).join('');
+  document.getElementById('rb-modal-content').innerHTML = `
+    <div class="rb-modal-head">
+      <img class="rb-modal-icon" src="https://img.pokemondb.net/sprites/black-white/normal/${d.icon}.png" alt="${d.name}">
+      <div>
+        <div class="rb-modal-title">${d.name}</div>
+        <div class="rb-modal-cur">
+          <span style="font-size:0.75em;color:#8b949e">Actual:</span>
+          <div class="role-badge ${d.cls}"><span class="rb-score">${d.score}</span><span class="rb-label">${d.label}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="rb-modal-section">
+      <h4>&#128270; Que hacer para mejorar</h4>
+      ${actions}
+    </div>
+    <div class="rb-modal-section">
+      <h4>&#127942; Techo maximo alcanzable</h4>
+      <div class="rb-techo">
+        <div class="rb-techo-score">${d.techo}</div>
+        <div class="rb-techo-info">${d.nota}</div>
+      </div>
+    </div>`;
+  document.getElementById('rb-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRbModal() {
+  document.getElementById('rb-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function rbOverlayClick(e) {
+  if (e.target === document.getElementById('rb-modal')) closeRbModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRbModal(); });
+</script>
 
 </body>
 </html>
