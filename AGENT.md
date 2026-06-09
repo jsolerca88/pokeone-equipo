@@ -57,7 +57,7 @@ Estos campos se leen directamente del JSON sin interpretación. Actualízalos si
 | `Pokedex <span>X` capturados | `user_info.pokedexCaught` |
 | `PokeDollar <span>` | `user_info.pokeDollar` (formato `69,180`) |
 | `PVP <span>XW / YL` | `user_info.pvpWins` + `W / ` + `user_info.pvpLosses` + `L` |
-| Fecha en `Ultima actualizacion:` | Fecha del archivo JSON (del nombre o `CaughtDateUtc` más reciente) |
+| Fecha en `Ultima actualizacion:` | Fecha actual del día en que se hace la actualización (formato: "D de Mes YYYY", ej. "9 de Junio 2026") |
 
 ### Cards del equipo activo (Box 0)
 
@@ -137,6 +137,13 @@ Si el JSON muestra que Golem subió de Lv.42 a Lv.44:
 - Si los EVs de Atk pasaron de 50 a 252, actualiza la fila EV y marca el farmeo como completado.
 
 ---
+
+## Cómo obtener el JSON
+
+1. Entra a https://pokeonecommunity.com con tus credenciales
+2. Abre las herramientas de desarrollo del navegador (F12) → pestaña **Network**
+3. Navega al perfil o inventario — una de las llamadas devuelve el JSON completo con `user_info` y `pokemon`
+4. Clic derecho sobre esa llamada → "Copy response" → pega en un archivo nuevo
 
 ## Formato de nombre de archivo de entrada
 
