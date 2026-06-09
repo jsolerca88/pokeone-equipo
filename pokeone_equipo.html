@@ -260,9 +260,9 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .pc-cell { background:#0d1117; border:1px solid #21262d; border-radius:8px; padding:8px 4px 20px; text-align:center; position:relative; cursor:default; transition:border-color 0.15s,background 0.15s; min-height:92px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; }
 .pc-cell.has-rb { cursor:pointer; }
 .pc-cell.has-rb:hover { border-color:#484f58; background:#161b22; }
-.pc-cell.sl-top  { background:rgba(243,211,39,0.05); border-color:rgba(243,211,39,0.22); }
-.pc-cell.sl-drop { background:rgba(248,81,73,0.05); border-color:rgba(248,81,73,0.18); }
-.pc-cell.sl-team { background:rgba(88,166,255,0.05); border-color:rgba(88,166,255,0.22); }
+.pc-cell.pq-top  { background:rgba(243,211,39,0.07); border-color:rgba(243,211,39,0.30); }
+.pc-cell.pq-good { background:rgba(63,185,80,0.06);  border-color:rgba(63,185,80,0.22); }
+.pc-cell.pq-bad  { background:rgba(248,81,73,0.06);  border-color:rgba(248,81,73,0.22); }
 .pc-cell.pc-empty { opacity:0.12; pointer-events:none; }
 .pc-spr { width:56px; height:56px; object-fit:contain; image-rendering:pixelated; display:block; }
 .pc-name { font-size:0.58em; font-weight:600; letter-spacing:0.2px; margin-top:3px; line-height:1.2; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 3px; }
@@ -2541,27 +2541,32 @@ function renderBox(idx) {
       cells.push('<div class="pc-cell pc-empty"></div>');
       continue;
     }
-    // Badge
+    // Badge — rbClass ya fue actualizado por updateAllBadges en el DOM oculto
     const rbCls = (s.rbClass.match(/\brb-(gold|green|blue|amber|red)\b/) || ['','rb-red'])[0];
     const pctVal = parseInt(s.rbScore) || 0;
-    const starHtml = pctVal >= 90 ? '<span class="pc-star">⭐</span>' : '';
+    // Icono de calidad: ≥90 → ⭐, <40 → 💀
+    const qualIcon = pctVal >= 90 ? '<span class="pc-star">⭐</span>'
+                   : pctVal > 0 && pctVal < 40 ? '<span class="pc-star">💀</span>'
+                   : '';
     const rbHtml = s.rbScore
       ? `<span class="pc-rb ${rbCls}" ${s.rbOnclick ? `onclick="${s.rbOnclick}"` : ''}>${s.rbScore}</span>`
       : '';
-    // Tag — solo LIBERAR, quitar TOP (reemplazado por estrella)
+    // Tag LIBERAR → 🗑 en esquina inferior
     let tagHtml = '';
     if (s.tag && !s.tagIsTop) {
       tagHtml = `<span class="pc-tag-drop" title="${s.tag}">🗑</span>`;
     }
-    // Name rarity class
+    // Fondo de celda basado en % (ignora sl-top/sl-drop del sistema viejo)
+    const qualCls = pctVal >= 90 ? 'pq-top'
+                  : pctVal >= 70 ? 'pq-good'
+                  : pctVal < 40 && pctVal > 0 ? 'pq-bad'
+                  : '';
     const rarCls = (s.nameClass.match(/\brarity-\w+\b/) || [''])[0];
-    // Tooltip
     const tip = s.meta ? s.meta.replace(/•/g, '\n') : '';
-    // Cell click → open modal if rb has onclick
     const cellClick = s.rbOnclick ? `onclick="${s.rbOnclick}"` : '';
     const hasCls    = s.rbOnclick ? 'has-rb' : '';
-    cells.push(`<div class="pc-cell ${s.slClass} ${hasCls}" ${cellClick} title="${tip.replace(/"/g,'&quot;')}">
-      ${rbHtml}${starHtml}
+    cells.push(`<div class="pc-cell ${qualCls} ${hasCls}" ${cellClick} title="${tip.replace(/"/g,'&quot;')}">
+      ${rbHtml}${qualIcon}
       <img class="pc-spr" src="${s.src}" alt="${s.name}">
       <span class="pc-name ${rarCls}">${s.name}</span>
       ${tagHtml}
