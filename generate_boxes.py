@@ -98,8 +98,9 @@ def build_slot(p: dict, box_num: int) -> str:
 # ── main ─────────────────────────────────────────────────────────────────────
 
 def generate(json_path: str, html_path: str):
-    with open(json_path, encoding="utf-8") as f:
-        data = json.load(f)
+    with open(json_path, "rb") as f:
+        raw = f.read().lstrip(b'\xe2\x80\x8b')  # strip zero-width space BOM
+    data = json.loads(raw)
 
     boxes_raw = data["data"]["pokemon"]
     # solo cajas con contenido, por indice real (Box 0 = equipo activo)
@@ -151,14 +152,21 @@ def generate(json_path: str, html_path: str):
         count=1,
     )
 
-    # actualizar fecha
+    # actualizar fecha — soporta ambos formatos de los dos dashboards
     today = date.today()
     meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
              "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
-    fecha = f"{today.day} de {meses[today.month-1]} {today.year}"
+    fecha_larga = f"{today.day} de {meses[today.month-1]} {today.year}"
+    fecha_corta = today.strftime("%Y-%m-%d")
     new_html = re.sub(
         r'Ultima actualizacion:.*?&nbsp;&bull;&nbsp; jsolerca',
-        f'Ultima actualizacion: {fecha} &nbsp;&bull;&nbsp; jsolerca',
+        f'Ultima actualizacion: {fecha_larga} &nbsp;&bull;&nbsp; jsolerca',
+        new_html,
+        count=1,
+    )
+    new_html = re.sub(
+        r'Actualizado: \d{4}-\d{2}-\d{2}',
+        f'Actualizado: {fecha_corta}',
         new_html,
         count=1,
     )
