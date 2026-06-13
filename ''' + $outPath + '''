@@ -1,0 +1,98 @@
+=== DANI ===
+
+Box 0:
+  P1 F1·C1 | Gengar | Lv.39 | Timid | Cursed Body | SpAtk 27
+  P2 F1·C2 | Gyarados | Lv.40 | Gentle | Intimidate | HP 30
+  P3 F1·C3 | Charizard | Lv.41 | Brave | Blaze | Speed 30
+  P4 F1·C4 | Snorlax | Lv.40 | Docile | Thick Fat | Atk 30, SpDef 31
+  P5 F1·C5 | Machamp | Lv.39 | Lonely | No Guard | —
+  P6 F1·C6 | Furret | Lv.31 | Quiet | Run Away | SpAtk 27
+
+Box 1:
+  P1 F1·C1 | Weedle | Lv.3 | Impish | Shield Dust | HP 29, Atk 27, SpAtk 30
+  P2 F1·C2 | Rattata | Lv.2 | Modest | Run Away | HP 31, Atk 28
+  P3 F1·C3 | Sentret | Lv.3 | Adamant | Run Away | Atk 31, Def 30, SpAtk 28
+  P4 F1·C4 | Pidgey | Lv.5 | Quirky | Tangled Feet | —
+  P5 F1·C5 | Ledyba | Lv.5 | Bold | Swarm | —
+  P6 F1·C6 | Spinarak | Lv.5 | Impish | Insomnia | Atk 31
+  P7 F2·C1 | Noctowl | Lv.8 | Timid | Keen Eye | Def 31, SpDef 29
+  P8 F2·C2 | Hoothoot | Lv.9 | Hardy | Insomnia | Def 28, SpAtk 31
+  P9 F2·C3 | Nidoran♂ | Lv.7 | Naive | Poison Point | —
+  P10 F2·C4 | Jigglypuff | Lv.5 | Bold | Competitive | —
+  P11 F2·C5 | Nidoran♀ | Lv.6 | Lonely | Poison Point | —
+  P12 F2·C6 | Ekans | Lv.8 | Adamant | Intimidate | HP 27
+  P13 F3·C1 | Spearow | Lv.5 | Jolly | Keen Eye | Atk 28
+  P14 F3·C2 | Zubat | Lv.7 | Bold | Inner Focus | SpDef 31
+  P15 F3·C3 | Paras | Lv.8 | Impish | Dry Skin | —
+  P16 F3·C4 | Geodude | Lv.7 | Hasty | Sturdy | HP 30, SpAtk 30, Speed 28
+  P17 F3·C5 | Clefairy | Lv.8 | Quiet | Magic Guard | Def 28, SpDef 31
+  P18 F3·C6 | Sandshrew | Lv.10 | Jolly | Sand Veil | —
+  P19 F4·C1 | Oddish | Lv.13 | Mild | Chlorophyll | Atk 28, Speed 28
+  P20 F4·C2 | Bellsprout | Lv.10 | Hasty | Chlorophyll | HP 27, Def 29
+  P21 F4·C3 | Caterpie | Lv.7 | Rash | Shield Dust | SpDef 28
+  P22 F4·C4 | Kakuna | Lv.8 | Naive | Shed Skin | —
+  P23 F4·C5 | Venonat | Lv.8 | Brave | Compound Eyes | —
+  P24 F4·C6 | Ariados | Lv.7 | Impish | Insomnia | Def 27
+
+Box 2:
+  P1 F1·C1 | Snubbull | Lv.13 | Rash | Intimidate | HP 27, Def 29
+  P2 F1·C2 | Meowth | Lv.13 | Relaxed | Technician | Def 30
+  P3 F1·C3 | Drowzee | Lv.13 | Hasty | Insomnia | Atk 28
+  P4 F1·C4 | Diglett | Lv.19 | Bashful | Arena Trap | SpDef 30
+  P5 F1·C5 | Abra | Lv.9 | Docile | Inner Focus | SpAtk 27
+  P6 F1·C6 | Dugtrio | Lv.25 | Bashful | Arena Trap | —
+  P7 F2·C1 | Hoppip | Lv.14 | Relaxed | Chlorophyll | Def 28, Speed 31
+  P8 F2·C2 | Raticate | Lv.15 | Lonely | Run Away | SpDef 29
+  P9 F2·C3 | Nidorina | Lv.18 | Mild | Rivalry | Atk 29
+  P10 F2·C4 | Nidorino | Lv.18 | Serious | Poison Point | Atk 31
+  P11 F2·C5 | Onix | Lv.16 | Rash | Sturdy | SpDef 28, Speed 31
+  P12 F2·C6 | Mankey | Lv.24 | Quiet | Anger Point | Speed 31
+  P13 F3·C1 | Noctowl | Lv.36 | Hardy | Insomnia | —
+  P14 F3·C2 | Gastly | Lv.17 | Calm | Levitate | HP 29, Atk 29, Def 30
+  P15 F3·C3 | Weepinbell | Lv.29 | Careful | Chlorophyll | HP 30
+  P16 F3·C4 | Growlithe | Lv.17 | Quirky | Intimidate | —
+  P17 F3·C5 | Growlithe | Lv.20 | Bold | Flash Fire | Def 29
+  P18 F3·C6 | Murkrow | Lv.19 | Lonely | Super Luck | Speed 31
+  P19 F4·C1 | Vulpix | Lv.20 | Adamant | Flash Fire | Atk 28, Speed 31
+  P20 F4·C2 | Houndour | Lv.18 | Hardy | Flash Fire | —
+  P21 F4·C3 | Granbull | Lv.15 | Jolly | Intimidate | Def 29, Speed 30
+  P22 F4·C4 | Doduo | Lv.20 | Jolly | Early Bird | Def 27
+  P23 F4·C5 | Slugma | Lv.25 | Quirky | Flame Body | HP 28
+  P24 F4·C6 | Jolteon | Lv.35 | Sassy | Volt Absorb | —
+
+Box 3:
+  P1 F1·C1 | Gloom | Lv.30 | Hasty | Chlorophyll | Atk 27, Speed 28
+  P2 F1·C2 | Beedrill | Lv.10 | Lax | Swarm | SpDef 27
+  P3 F1·C3 | Ledian | Lv.18 | Serious | Swarm | —
+  P4 F1·C4 | Exeggcute | Lv.25 | Timid | Chlorophyll | Speed 29
+  P5 F1·C5 | Weepinbell | Lv.25 | Hardy | Chlorophyll | —
+  P6 F1·C6 | Hitmonchan | Lv.30 | Lonely | Keen Eye | —
+  P7 F2·C1 | Goldeen | Lv.40 | Naive | Swift Swim | HP 31
+  P8 F2·C2 | Parasect | Lv.30 | Adamant | Effect Spore | —
+  P9 F2·C3 | Golbat | Lv.22 | Careful | Inner Focus | —
+  P10 F2·C4 | Psyduck | Lv.40 | Bashful | Cloud Nine | SpDef 29
+  P11 F2·C5 | Fearow | Lv.29 | Careful | Keen Eye | —
+  P12 F2·C6 | Grimer | Lv.28 | Hasty | Sticky Hold | Atk 28, Speed 31
+  P13 F3·C1 | Seaking | Lv.40 | Jolly | Water Veil | —
+  P14 F3·C2 | Pinsir | Lv.28 | Naive | Moxie | —
+  P15 F3·C3 | Rhyhorn | Lv.26 | Relaxed | Rock Head | SpDef 27
+  P16 F3·C4 | Venomoth | Lv.32 | Sassy | Tinted Lens | SpDef 27
+  P17 F3·C5 | Krabby | Lv.40 | Bold | Shell Armor | SpDef 27
+  P18 F3·C6 | Slowpoke | Lv.25 | Relaxed | Oblivious | —
+  P19 F4·C1 | Tentacool | Lv.25 | Gentle | Clear Body | —
+  P20 F4·C2 | Ditto | Lv.25 | Bashful | Limber | Atk 28, Def 28, SpDef 27
+  P21 F4·C3 | Scyther | Lv.23 | Naive | Swarm | —
+  P22 F4·C4 | Seel | Lv.34 | Relaxed | Hydration | HP 31, SpAtk 29, Speed 31
+  P23 F4·C5 | Dewgong | Lv.36 | Sassy | Hydration | HP 28
+  P24 F4·C6 | Lanturn | Lv.40 | Hasty | Illuminate | HP 27, Def 31, SpAtk 31
+
+Box 4:
+  P1 F1·C1 | Golduck | Lv.35 | Timid | Damp | HP 27
+  P2 F1·C2 | Horsea | Lv.34 | Relaxed | Swift Swim | —
+  P3 F1·C3 | Dewgong | Lv.39 | Rash | Thick Fat | HP 27, Atk 31, SpDef 29
+  P4 F1·C4 | Slowbro | Lv.34 | Relaxed | Oblivious | Atk 30, Def 31
+  P5 F1·C5 | Slowbro | Lv.36 | Hardy | Own Tempo | Atk 28
+  P6 F1·C6 | Koffing | Lv.29 | Lonely | Levitate | —
+  P7 F2·C1 | Weezing | Lv.32 | Gentle | Levitate | SpAtk 30
+  P8 F2·C2 | Muk | Lv.32 | Naive | Stench | —
+  P9 F2·C3 | Electabuzz | Lv.39 | Careful | Static | Atk 27
