@@ -2501,17 +2501,31 @@ const ABILITY_INFO = {
 
 function openRbModal(key) {
   let d = RB_DATA[key];
+  let _slotOverride = null;
   if (!d) {
     // Fallback for box slots: build minimal d from _slotByKey cache
     const s = _slotByKey[key];
     if (!s) return;
     const iconName = s.src.split('/').pop().replace('.png','');
     d = { name: s.name, icon: iconName, nota: null, acciones: [] };
+    _slotOverride = s; // use cache directly, avoid querySelector ambiguity
   }
 
-  const ivData = readCardIvs(key);
-  const evData = readCardEvs(key);
-  const meta   = readCardMeta(key);
+  // If we have a slot cache entry, read ivs/meta from it directly
+  // (querySelector can find the pc-grid cell instead of the hidden box-slot)
+  let ivData, evData, meta;
+  if (_slotOverride) {
+    const ivs = _slotOverride.ivs;
+    const sum  = ivs.reduce((a, b) => a + b.val, 0);
+    const full = ivs.length === 6;
+    ivData = ivs.length ? {ivs, sum, pct: full ? Math.round(sum/186*100) : null, partial: !full, count: ivs.length} : null;
+    evData = [];
+    meta   = {level: _slotOverride.level, nature: _slotOverride.nature, ability: _slotOverride.ability};
+  } else {
+    ivData = readCardIvs(key);
+    evData = readCardEvs(key);
+    meta   = readCardMeta(key);
+  }
   const nature = NATURE_INFO[meta.nature] || null;
 
   let pct = null, pctCls = 'rb-red', pctLabel = 'Debil', pctColor = '#f85149';
