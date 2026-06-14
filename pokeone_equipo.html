@@ -1463,11 +1463,12 @@ function readCardMeta(key) {
 }
 
 function updateAllBadges() {
-  Object.keys(RB_DATA).forEach(key => {
-    const badge = document.querySelector(`[onclick="openRbModal('${key}')"]`);
-    if (!badge) return;
+  document.querySelectorAll('[onclick^="openRbModal("]').forEach(badge => {
+    const m = badge.getAttribute('onclick').match(/openRbModal\('([^']+)'\)/);
+    if (!m) return;
+    const key = m[1];
     const iv = readCardIvs(key);
-    if (!iv || iv.pct === null) return; // no actualizar si IVs parciales
+    if (!iv || iv.pct === null) return;
     const {cls, label} = pctToClass(iv.pct);
     badge.className = badge.className.replace(/\brb-(gold|green|blue|amber|red)\b/, cls);
     const scoreEl = badge.querySelector('.rb-score, .srb-score');
