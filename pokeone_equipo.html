@@ -160,6 +160,8 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .t-flying   { background: #8899ff; color: #fff; }
 .t-fairy    { background: #ee99ee; color: #fff; }
 .t-dark     { background: #775544; color: #fff; }
+.t-bug      { background: #aabb22; color: #fff; }
+.t-steel    { background: #aaaacc; color: #000; }
 
 /* Headers colores */
 .h-golem    { background: linear-gradient(135deg, #1c1a0e, #161b22); border-bottom: 2px solid #bbaa66; }
@@ -317,10 +319,10 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
       <div class="trainer-name">jsolerca</div>
       <div class="trainer-sub">Entrenador Pokemon &nbsp;&bull;&nbsp; Kanto &nbsp;&bull;&nbsp; PokeOne</div>
       <div class="trainer-id">
-        <div class="tid-chip"><span class="tid-label">Trainer Lv</span><span class="tid-value">70</span></div>
+        <div class="tid-chip"><span class="tid-label">Trainer Lv</span><span class="tid-value">71</span></div>
         <div class="tid-chip"><span class="tid-label">Medallas</span><span class="tid-value">8 / 8</span></div>
-        <div class="tid-chip"><span class="tid-label">Pokedex</span><span class="tid-value">131</span></div>
-        <div class="tid-chip"><span class="tid-label">PokeDollar</span><span class="tid-value">45,209</span></div>
+        <div class="tid-chip"><span class="tid-label">Pokedex</span><span class="tid-value">146</span></div>
+        <div class="tid-chip"><span class="tid-label">PokeDollar</span><span class="tid-value">33,805</span></div>
         <div class="tid-chip"><span class="tid-label">PVP</span><span class="tid-value">1W / 9L</span></div>
       </div>
     </div>
@@ -339,21 +341,21 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 <div class="section" id="equipo">
   <div class="section-header">
     <h2>&#9876; Equipo activo</h2>
-    <div class="badge">6 Pokemon</div>
+    <div class="badge">5 Pokemon</div>
     <div class="divider"></div>
   </div>
   <div class="team-grid">
 
-    <!-- ALAKAZAM -->
+    <!-- HOPPIP -->
     <div class="card">
-      <div class="card-header h-alakazam">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png" alt="Alakazam">
+      <div class="card-header" style="background: linear-gradient(135deg, #0a1c0f, #161b22); border-bottom: 2px solid #77cc55;">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/hoppip.png" alt="Hoppip">
         <div class="header-info">
-          <h2 class="rarity-blue">ALAKAZAM</h2>
-          <div class="meta">Lv.49 &bull; Modest &bull; Synchronize</div>
-          <div class="types"><span class="type-badge t-psychic">Psychic</span></div>
+          <h2 class="rarity-grey">HOPPIP</h2>
+          <div class="meta">Lv.5 &bull; Bashful &bull; Leaf Guard</div>
+          <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-flying">Flying</span></div>
         </div>
-        <div class="role-badge rb-green" onclick="openRbModal('alakazam')"><span class="rb-score">8/10</span><span class="rb-label">Bueno</span></div>
+        <div class="role-badge rb-red" onclick="openRbModal('hoppip')"><span class="rb-score">1/10</span><span class="rb-label">Malo</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -361,244 +363,19 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">16</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">23</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">28</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">EV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">75</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">102</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">OBJ</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="moveset-tabs">
-          <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-alakazam-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-alakazam-obj')">Objetivo</button>
-          </div>
-          <div id="mv-alakazam-actual" class="mv-panel active">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Teleport (Teletransporte)</span><span class="move-desc">Escape batalla &mdash; reemplazar por Shadow Ball</span><span class="move-bad">cambiar</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Recover (Recuperacion)</span><span class="move-desc">Recupera 50% HP &#10003; util</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Psychic (Fuerza Psiquica)</span><span class="move-desc">STAB Psychic 90 pot &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Calm Mind (Paz Mental)</span><span class="move-desc">+SpAtk +SpDef &#10003;</span></li>
-            </ul>
-          </div>
-          <div id="mv-alakazam-obj" class="mv-panel">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Psychic (Fuerza Psiquica)</span><span class="move-desc">STAB ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Calm Mind (Paz Mental)</span><span class="move-desc">+SpAtk +SpDef ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">Cobertura Ghost/Psychic</span><span class="move-tag">TM30</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Focus Blast (Onda Certera)</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="alert alert-info">Synchronize util para cazar con nature deseada. SpA 27 / Spd 28 excelentes para Alakazam especial.</div>
-      </div>
-    </div>
-
-    <!-- GOLEM -->
-    <div class="card">
-      <div class="card-header h-golem">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png" alt="Golem">
-        <div class="header-info">
-          <h2 class="rarity-blue">GOLEM</h2>
-          <div class="meta">Lv.49 &bull; Hasty &bull; Sturdy</div>
-          <div class="types"><span class="type-badge t-rock">Rock</span><span class="type-badge t-ground">Ground</span></div>
-        </div>
-        <div class="role-badge rb-green" onclick="openRbModal('golem')"><span class="rb-score">7/10</span><span class="rb-label">Bueno</span></div>
-      </div>
-      <div class="card-body">
-        <div class="stitle">IVs / EVs / Objetivo</div>
-        <div class="stat-rows">
-          <div class="stat-row-line">
-            <span class="sr-lbl">IV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">29</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">29</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">2</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">21</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">29</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">15</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">14</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">14</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">EV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-set">93</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">75</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">OBJ</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-obj">252</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="moveset-tabs">
-          <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-golem-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-golem-obj')">Objetivo</button>
-          </div>
-          <div id="mv-golem-actual" class="mv-panel active">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Rock Blast (Pedrada)</span><span class="move-desc">STAB Rock multihit &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Stealth Rock (Trampa Rocas)</span><span class="move-desc">Entry hazard &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">STAB Ground 100 pot &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Explosion (Explosion)</span><span class="move-desc">250 pot &mdash; opcion nuclear &#10003;</span></li>
-            </ul>
-          </div>
-          <div id="mv-golem-obj" class="mv-panel">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">STAB Ground &mdash; ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Stone Edge (Roca Afilada)</span><span class="move-desc">STAB Rock 100 pot criticos</span><span class="move-tag">Lv.54</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Stealth Rock (Trampa Rocas)</span><span class="move-desc">Ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Explosion (Explosion)</span><span class="move-desc">250 pot &mdash; ya lo tiene &#10003;</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="alert alert-good">&#10003; Earthquake + Stealth Rock + Explosion ya listos. Moveset definitivo completado.</div>
-        <div class="alert alert-info">Sturdy + Explosion: sobrevive cualquier OHKO con 1 HP y luego destruye. Combo devastador.</div>
-      </div>
-    </div>
-
-    <!-- GENGAR -->
-    <div class="card">
-      <div class="card-header h-gengar">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png" alt="Gengar">
-        <div class="header-info">
-          <h2 class="rarity-green">GENGAR</h2>
-          <div class="meta">Lv.50 &bull; Modest &bull; Cursed Body</div>
-          <div class="types"><span class="type-badge t-ghost">Ghost</span><span class="type-badge t-poison">Poison</span></div>
-        </div>
-        <div class="role-badge rb-green" onclick="openRbModal('gengar')"><span class="rb-score">7/10</span><span class="rb-label">Bueno</span></div>
-      </div>
-      <div class="card-body">
-        <div class="stitle">IVs / EVs / Objetivo</div>
-        <div class="stat-rows">
-          <div class="stat-row-line">
-            <span class="sr-lbl">IV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">5</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">30</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">30</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-mid">18</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">19</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">EV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-set">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-set">81</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">103</span></div>
-            </div>
-          </div>
-          <div class="stat-row-line">
-            <span class="sr-lbl">OBJ</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="moveset-tabs">
-          <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-jsgengar-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-jsgengar-obj')">Objetivo</button>
-          </div>
-          <div id="mv-jsgengar-actual" class="mv-panel active">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Dark Pulse (Pulso Umbrio)</span><span class="move-desc">Dark especial 80 pot &mdash; reemplazar por Focus Blast</span><span class="move-bad">cambiar</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Mean Look (Mal de Ojo)</span><span class="move-desc">Atrapa rival &mdash; reemplazar</span><span class="move-bad">cambiar</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">STAB Ghost &#10003;</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison &#10003;</span></li>
-            </ul>
-          </div>
-          <div id="mv-jsgengar-obj" class="mv-panel">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Shadow Ball (Bola Sombra)</span><span class="move-desc">STAB Ghost ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison ya lo tiene &#10003;</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Focus Blast (Onda Certera)</span><span class="move-desc">Cobertura Fighting</span><span class="move-tag">TM52 pendiente</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Sucker Punch (Golpe Bajo)</span><span class="move-desc">Dark prioridad ya lo tiene &#10003;</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="alert alert-danger">&#9888; Reemplazar Mean Look por Focus Blast (TM52) cuando consigas la TM.</div>
-        <div class="alert alert-warning">Cursed Body sin inmunidad Ground. SpA 30 / Def 30 excelentes. Speed IV 19 mejorable.</div>
-      </div>
-    </div>
-
-    <!-- PIDGEOT -->
-    <div class="card">
-      <div class="card-header" style="background: linear-gradient(135deg, #0d1522, #161b22); border-bottom: 2px solid #8899ff;">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/pidgeot.png" alt="Pidgeot">
-        <div class="header-info">
-          <h2 class="rarity-purple">PIDGEOT</h2>
-          <div class="meta">Lv.40 &bull; Careful &bull; Keen Eye</div>
-          <div class="types"><span class="type-badge t-normal">Normal</span><span class="type-badge t-flying">Flying</span></div>
-        </div>
-        <div class="role-badge rb-amber" onclick="openRbModal('pidgeot')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
-      </div>
-      <div class="card-body">
-        <div class="stitle">IVs / EVs / Objetivo</div>
-        <div class="stat-rows">
-          <div class="stat-row-line">
-            <span class="sr-lbl">IV</span>
-            <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">26</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-low">14</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">28</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">26</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-high">26</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">30</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">19</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">11</span></div>
             </div>
           </div>
           <div class="stat-row-line">
             <span class="sr-lbl">EV</span>
             <div class="sr-cells">
               <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-set">46</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
@@ -609,50 +386,40 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
             <span class="sr-lbl">OBJ</span>
             <div class="sr-cells">
               <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">&mdash;</span></div>
             </div>
           </div>
         </div>
         <div class="moveset-tabs">
           <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-pidgeot-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-pidgeot-obj')">Objetivo</button>
+            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-hoppip-actual')">Actual</button>
           </div>
-          <div id="mv-pidgeot-actual" class="mv-panel active">
+          <div id="mv-hoppip-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Fly (Vuelo)</span><span class="move-desc">HM Flying 90 pot &mdash; reemplazar</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Twister (Torbellino)</span><span class="move-desc">Dragon 40 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Gust (Vendaval)</span><span class="move-desc">Flying 40 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Quick Attack (Ataque Rapido)</span><span class="move-desc">Normal prioridad 40 pot</span></li>
-            </ul>
-          </div>
-          <div id="mv-pidgeot-obj" class="mv-panel">
-            <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Fly / Brave Bird</span><span class="move-desc">STAB Flying fisico &#10003;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Return (Retribucion)</span><span class="move-desc">STAB Normal fisico 102 pot max</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Tailwind (Viento a Favor)</span><span class="move-desc">Dobla Speed del equipo 3 turnos</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Defog (Antiniebla)</span><span class="move-desc">Limpia entry hazards del campo</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Absorb</span><span class="move-desc">Grass especial 20 pot &mdash; temporal</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Splash</span><span class="move-desc">Sin efecto &mdash; borrar</span><span class="move-bad">inutil</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Synthesis</span><span class="move-desc">Recupera HP segun clima</span></li>
             </ul>
           </div>
         </div>
-        <div class="alert alert-info">Careful baja SpAtk que no usa. Spe 30 excelente para sweeping. Rol de soporte/volador del equipo.</div>
+        <div class="alert alert-warning">Evolucion a Jumpluff (Lv27) para acceder a Acrobatics y Encore. IVs mixtos &mdash; HP 2 y Spd 11 bajos.</div>
       </div>
     </div>
 
-    <!-- POLIWRATH -->
+    <!-- KINGLER -->
     <div class="card">
-      <div class="card-header h-poliwrath">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png" alt="Poliwrath">
+      <div class="card-header" style="background: linear-gradient(135deg, #001022, #161b22); border-bottom: 2px solid #3399ff;">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/kingler.png" alt="Kingler">
         <div class="header-info">
-          <h2 class="rarity-blue">POLIWRATH</h2>
-          <div class="meta">Lv.55 &bull; Jolly &bull; Water Absorb</div>
-          <div class="types"><span class="type-badge t-water">Water</span><span class="type-badge t-fighting">Fighting</span></div>
+          <h2 class="rarity-blue">KINGLER</h2>
+          <div class="meta">Lv.6 &bull; Naive &bull; Hyper Cutter</div>
+          <div class="types"><span class="type-badge t-water">Water</span></div>
         </div>
-        <div class="role-badge rb-blue" onclick="openRbModal('poliwrath')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+        <div class="role-badge rb-blue" onclick="openRbModal('kingler')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -660,12 +427,12 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">18</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">22</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">28</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">27</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">1</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">16</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">27</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">10</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-high">28</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">21</span></div>
             </div>
           </div>
           <div class="stat-row-line">
@@ -693,40 +460,41 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
         <div class="moveset-tabs">
           <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-poliwrath-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-poliwrath-obj')">Objetivo</button>
+            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-kingler-actual')">Actual</button>
+            <button class="mv-tab-btn" onclick="mvTab(this,'mv-kingler-obj')">Objetivo</button>
           </div>
-          <div id="mv-poliwrath-actual" class="mv-panel active">
+          <div id="mv-kingler-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Rock Smash (Romperrocas)</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Mud Shot (Disparo Lodo)</span><span class="move-desc">Ground 55 pot baja Speed &mdash; temporal</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Surf (Surf)</span><span class="move-desc">HM Water 90 pot &mdash; reemplazar por Waterfall</span><span class="move-bad">HM</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Wake-Up Slap (Espabila)</span><span class="move-desc">Fighting 70 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Leer</span><span class="move-desc">Baja Def rival &mdash; util en early</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Mud Sport</span><span class="move-desc">Debilita Electric &mdash; situacional</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Wide Guard</span><span class="move-desc">Protege moves de area</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Vice Grip</span><span class="move-desc">Normal 55 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
             </ul>
           </div>
-          <div id="mv-poliwrath-obj" class="mv-panel">
+          <div id="mv-kingler-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Waterfall (Cascada)</span><span class="move-desc">STAB Water fisico 80 pot &#9733;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Focus Punch (Punyo Certero)</span><span class="move-desc">STAB Fighting 150 pot</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Ice Punch (Punyo Hielo)</span><span class="move-desc">Cobertura Dragon / Flying</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Earthquake (Terremoto)</span><span class="move-desc">Cobertura Ground</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Crabhammer</span><span class="move-desc">STAB Water fisico 100 pot alta critico &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">X-Scissor</span><span class="move-desc">Bug fisico 80 pot &mdash; cobertura</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Rock Slide</span><span class="move-desc">Rock fisico cobertura Flying</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Sword Dance / Agility</span><span class="move-desc">Setup ofensivo</span></li>
             </ul>
           </div>
         </div>
-        <div class="alert alert-info">Water Absorb absorbe ataques Water y recupera HP. Jolly + fisico es el rol correcto para Poliwrath.</div>
+        <div class="alert alert-good">SpA 31 + HP 27 + SpD 28 &mdash; IVs ofensivos excelentes. Hyper Cutter impide bajada de Atk.</div>
+        <div class="alert alert-info">Naive +Spd/-SpD. Def 10 es el punto debil. Candidato a atacante fisico Water con Crabhammer.</div>
       </div>
     </div>
 
-    <!-- VILEPLUME -->
+    <!-- CYNDAQUIL -->
     <div class="card">
-      <div class="card-header h-vileplume">
-        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png" alt="Vileplume">
+      <div class="card-header" style="background: linear-gradient(135deg, #1c0800, #161b22); border-bottom: 2px solid #ff4422;">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/cyndaquil.png" alt="Cyndaquil">
         <div class="header-info">
-          <h2 class="rarity-green">VILEPLUME</h2>
-          <div class="meta">Lv.49 &bull; Rash &bull; Chlorophyll</div>
-          <div class="types"><span class="type-badge t-grass">Grass</span><span class="type-badge t-poison">Poison</span></div>
+          <h2 class="rarity-grey">CYNDAQUIL</h2>
+          <div class="meta">Lv.5 &bull; Lax &bull; Blaze</div>
+          <div class="types"><span class="type-badge t-fire">Fire</span></div>
         </div>
-        <div class="role-badge rb-amber" onclick="openRbModal('vileplume')"><span class="rb-score">5/10</span><span class="rb-label">Regular</span></div>
+        <div class="role-badge rb-amber" onclick="openRbModal('cyndaquil')"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
       </div>
       <div class="card-body">
         <div class="stitle">IVs / EVs / Objetivo</div>
@@ -734,12 +502,12 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
           <div class="stat-row-line">
             <span class="sr-lbl">IV</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-mid">24</span></div>
-              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">18</span></div>
-              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">3</span></div>
-              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">16</span></div>
-              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">2</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-high">29</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">19</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">7</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">22</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-low">5</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">8</span></div>
             </div>
           </div>
           <div class="stat-row-line">
@@ -750,13 +518,13 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
               <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
-              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-set">2</span></div>
             </div>
           </div>
           <div class="stat-row-line">
             <span class="sr-lbl">OBJ</span>
             <div class="sr-cells">
-              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-obj">4</span></div>
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
               <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
@@ -767,27 +535,175 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
         </div>
         <div class="moveset-tabs">
           <div class="mv-tab-bar">
-            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-vileplume-actual')">Actual</button>
-            <button class="mv-tab-btn" onclick="mvTab(this,'mv-vileplume-obj')">Objetivo</button>
+            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-cyndaquil-actual')">Actual</button>
+            <button class="mv-tab-btn" onclick="mvTab(this,'mv-cyndaquil-obj')">Objetivo</button>
           </div>
-          <div id="mv-vileplume-actual" class="mv-panel active">
+          <div id="mv-cyndaquil-actual" class="mv-panel active">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Flash (Destello)</span><span class="move-desc">Baja Acc rival &mdash; sin uso ofensivo</span><span class="move-bad">basura</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Mega Drain (Megaagotar)</span><span class="move-desc">Grass 40 pot &mdash; muy flojo</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Acid (Acido)</span><span class="move-desc">Poison 40 pot &mdash; sin STAB util</span><span class="move-bad">temporal</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Cut (Corte)</span><span class="move-desc">HM &mdash; borrar en Move Deleter</span><span class="move-bad">HM</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Leer</span><span class="move-desc">Baja Def rival &mdash; util early</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Tackle</span><span class="move-desc">Normal 40 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
             </ul>
           </div>
-          <div id="mv-vileplume-obj" class="mv-panel">
+          <div id="mv-cyndaquil-obj" class="mv-panel">
             <ul class="moves-list">
-              <li><div class="move-num">1</div><span class="move-name">Giga Drain (Gigadrenado)</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
-              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb (Bomba Lodo)</span><span class="move-desc">STAB Poison 90 pot</span></li>
-              <li><div class="move-num">3</div><span class="move-name">Sleep Powder (Somnifero)</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
-              <li><div class="move-num">4</div><span class="move-name">Moonblast (Fuerza Lunar)</span><span class="move-desc">Cobertura Fairy</span></li>
+              <li><div class="move-num">1</div><span class="move-name">Flamethrower</span><span class="move-desc">STAB Fire especial 90 pot &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Eruption</span><span class="move-desc">STAB Fire 150 pot cuando HP alto</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Focus Blast</span><span class="move-desc">Cobertura Fighting</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Shadow Ball</span><span class="move-desc">Cobertura Ghost/Psychic</span></li>
             </ul>
           </div>
         </div>
-        <div class="alert alert-warning">SpAtk IV 16 mediocre &mdash; rol soporte con Sleep Powder aprovecha mas. Rash +SpAtk/-SpD es suboptimo.</div>
+        <div class="alert alert-danger">&#9888; NotTradeable &mdash; no se puede intercambiar. Lax +Def/-SpD suboptimo para atacante especial. Spd 8 muy bajo.</div>
+        <div class="alert alert-info">Typhlosion es un atacante especial Fire solido. HP 29 excelente. Evoluciona Lv16 &rarr; Quilava, Lv36 &rarr; Typhlosion.</div>
+      </div>
+    </div>
+
+    <!-- TANGELA -->
+    <div class="card">
+      <div class="card-header" style="background: linear-gradient(135deg, #0a1c00, #161b22); border-bottom: 2px solid #77cc55;">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png" alt="Tangela">
+        <div class="header-info">
+          <h2 class="rarity-grey">TANGELA</h2>
+          <div class="meta">Lv.5 &bull; Sassy &bull; Chlorophyll</div>
+          <div class="types"><span class="type-badge t-grass">Grass</span></div>
+        </div>
+        <div class="role-badge rb-amber" onclick="openRbModal('tangela')"><span class="rb-score">4/10</span><span class="rb-label">Regular</span></div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs / EVs / Objetivo</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">2</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-mid">24</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-low">12</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">15</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-high">28</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-mid">24</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-set">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="moveset-tabs">
+          <div class="mv-tab-bar">
+            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-tangela-actual')">Actual</button>
+            <button class="mv-tab-btn" onclick="mvTab(this,'mv-tangela-obj')">Objetivo</button>
+          </div>
+          <div id="mv-tangela-actual" class="mv-panel active">
+            <ul class="moves-list">
+              <li><div class="move-num">1</div><span class="move-name">Constrict</span><span class="move-desc">Normal 10 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Ingrain</span><span class="move-desc">Recupera HP cada turno &mdash; no puede huir</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &#10003; util</span></li>
+            </ul>
+          </div>
+          <div id="mv-tangela-obj" class="mv-panel">
+            <ul class="moves-list">
+              <li><div class="move-num">1</div><span class="move-name">Giga Drain</span><span class="move-desc">STAB Grass roba vida &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Sleep Powder</span><span class="move-desc">Ya lo tiene &#10003;</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Ancient Power</span><span class="move-desc">Rock 10% sube todos los stats</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Hidden Power Ice / Fire</span><span class="move-desc">Cobertura segun IV</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert alert-info">Chlorophyll duplica Spd bajo sol. Sassy +SpD/-Spd contradice Chlorophyll. HP 2 critico. Sleep Powder ya disponible.</div>
+        <div class="alert alert-warning">Tangrowth (evolucion) requiere Ancient Power a Lv33. SpD 28 excelente para rol defensivo.</div>
+      </div>
+    </div>
+
+    <!-- VENONAT -->
+    <div class="card">
+      <div class="card-header" style="background: linear-gradient(135deg, #1c0015, #161b22); border-bottom: 2px solid #a55294;">
+        <img class="pokemon-icon" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png" alt="Venonat">
+        <div class="header-info">
+          <h2 class="rarity-blue">VENONAT</h2>
+          <div class="meta">Lv.9 &bull; Hardy &bull; Tinted Lens</div>
+          <div class="types"><span class="type-badge t-bug">Bug</span><span class="type-badge t-poison">Poison</span></div>
+        </div>
+        <div class="role-badge rb-blue" onclick="openRbModal('venonat')"><span class="rb-score">6/10</span><span class="rb-label">Viable</span></div>
+      </div>
+      <div class="card-body">
+        <div class="stitle">IVs / EVs / Objetivo</div>
+        <div class="stat-rows">
+          <div class="stat-row-line">
+            <span class="sr-lbl">IV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v iv-low">4</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v iv-high">26</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v iv-mid">21</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v iv-high">31</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v iv-low">2</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">EV</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">0</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-zero">0</span></div>
+            </div>
+          </div>
+          <div class="stat-row-line">
+            <span class="sr-lbl">OBJ</span>
+            <div class="sr-cells">
+              <div class="sr-cell"><span class="sr-s">HP</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Atk</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Def</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">SpA</span><span class="sr-v ev-obj">252</span></div>
+              <div class="sr-cell"><span class="sr-s">SpD</span><span class="sr-v ev-zero">&mdash;</span></div>
+              <div class="sr-cell"><span class="sr-s">Spd</span><span class="sr-v ev-obj">252</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="moveset-tabs">
+          <div class="mv-tab-bar">
+            <button class="mv-tab-btn active" onclick="mvTab(this,'mv-venonat-actual')">Actual</button>
+            <button class="mv-tab-btn" onclick="mvTab(this,'mv-venonat-obj')">Objetivo</button>
+          </div>
+          <div id="mv-venonat-actual" class="mv-panel active">
+            <ul class="moves-list">
+              <li><div class="move-num">1</div><span class="move-name">Disable</span><span class="move-desc">Impide el ultimo movimiento usado &mdash; disruptivo</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Foresight</span><span class="move-desc">Permite golpear Ghost con Normal/Fighting</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Tackle</span><span class="move-desc">Normal 40 pot &mdash; temporal</span><span class="move-bad">temporal</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Supersonic</span><span class="move-desc">Confusion al rival &mdash; soporte</span></li>
+            </ul>
+          </div>
+          <div id="mv-venonat-obj" class="mv-panel">
+            <ul class="moves-list">
+              <li><div class="move-num">1</div><span class="move-name">Bug Buzz</span><span class="move-desc">STAB Bug especial 90 pot &#9733;</span></li>
+              <li><div class="move-num">2</div><span class="move-name">Sludge Bomb</span><span class="move-desc">STAB Poison especial 90 pot</span></li>
+              <li><div class="move-num">3</div><span class="move-name">Sleep Powder</span><span class="move-desc">Duerme al rival &mdash; soporte</span></li>
+              <li><div class="move-num">4</div><span class="move-name">Psychic</span><span class="move-desc">Cobertura Psychic &mdash; neutral en muchos tipos</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert alert-good">Tinted Lens duplica potencia moves no muy efectivos &mdash; habilidad excelente. Atk 31 + SpD 31 destacados.</div>
+        <div class="alert alert-danger">&#9888; Spd IV 2 critico &mdash; Venomoth Lv31 necesita Speed boost o Trick Room. Hardy naturaleza neutral sin penalizacion.</div>
       </div>
     </div>
 
@@ -1049,7 +965,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 <div class="section" id="cajas">
   <div class="section-header">
     <h2>&#128230; Cajas del PC</h2>
-    <div class="badge">98 Pokemon &middot; 6 cajas</div>
+    <div class="badge">145 Pokemon &middot; 8 cajas</div>
     <div class="divider"></div>
   </div>
   <div class="pc-nav">
@@ -1066,125 +982,180 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 <!-- BOX-SECTION-START -->
   <div class="box-section-grid" style="display:none">
     <div class="box-block">
-      <div class="box-header"><span class="box-num">CAJA 1</span><span class="box-counts">24 Pokemon</span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><span class="slot-name rarity-blue">Venonat</span><span class="slot-meta">Lv.9 &bull; Hardy &bull; Tinted Lens &bull; HP 4, Atk 31, Def 26, SpA 21, SpD 31, Spe 2</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-1')"><span class="srb-score">62%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-m.png"><span class="slot-name rarity-blue">Nidoran♂</span><span class="slot-meta">Lv.12 &bull; Jolly &bull; Rivalry &bull; HP 25, Atk 13, Def 22, SpA 28, SpD 22, Spe 2</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-2')"><span class="srb-score">60%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/granbull.png"><span class="slot-name rarity-blue">Granbull</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Intimidate &bull; HP 24, Atk 17, Def 29, SpA 9, SpD 27, Spe 12</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-3')"><span class="srb-score">63%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seaking.png"><span class="slot-name rarity-blue">Seaking</span><span class="slot-meta">Lv.40 &bull; Quirky &bull; Water Veil &bull; HP 11, Atk 10, Def 14, SpA 30, SpD 28, Spe 25</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-4')"><span class="srb-score">63%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hitmonlee.png"><span class="slot-name rarity-white">Hitmonlee</span><span class="slot-meta">Lv.30 &bull; Quiet &bull; Limber &bull; HP 2, Atk 15, Def 10, SpA 20, SpD 2, Spe 19</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-5')"><span class="srb-score">37%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-blue">Gyarados</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Intimidate &bull; HP 0, Atk 11, Def 25, SpA 24, SpD 22, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-6')"><span class="srb-score">61%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><span class="slot-name rarity-white">Grimer</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Stench &bull; HP 5, Atk 20, Def 2, SpA 27, SpD 11, Spe 18</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-7')"><span class="srb-score">45%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pinsir.png"><span class="slot-name rarity-white">Pinsir</span><span class="slot-meta">Lv.28 &bull; Serious &bull; Mold Breaker &bull; HP 25, Atk 3, Def 7, SpA 22, SpD 2, Spe 16</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-8')"><span class="srb-score">40%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hypno.png"><span class="slot-name rarity-purple">Hypno</span><span class="slot-meta">Lv.35 &bull; Brave &bull; Insomnia &bull; HP 18, Atk 19, Def 26, SpA 30, SpD 27, Spe 15</span><span class="slot-rb rb-green" onclick="openRbModal('box-1-9')"><span class="srb-score">73%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png"><span class="slot-name rarity-green">Chansey</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Natural Cure &bull; HP 23, Atk 28, Def 11, SpA 16, SpD 10, Spe 14</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-10')"><span class="srb-score">55%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name rarity-blue">Sandslash</span><span class="slot-meta">Lv.22 &bull; Brave &bull; Sand Veil &bull; HP 29, Atk 28, Def 18, SpA 27, SpD 25, Spe 1</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-11')"><span class="srb-score">69%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><span class="slot-name rarity-white">Scyther</span><span class="slot-meta">Lv.23 &bull; Bold &bull; Swarm &bull; HP 5, Atk 25, Def 14, SpA 2, SpD 8, Spe 30</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-12')"><span class="srb-score">45%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><span class="slot-name rarity-blue">Krabby</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Hyper Cutter &bull; HP 21, Atk 12, Def 16, SpA 13, SpD 27, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-13')"><span class="srb-score">65%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/victreebel.png"><span class="slot-name rarity-green">Victreebel</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Chlorophyll &bull; HP 24, Atk 31, Def 9, SpA 11, SpD 16, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-14')"><span class="srb-score">52%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/murkrow.png"><span class="slot-name rarity-blue">Murkrow</span><span class="slot-meta">Lv.23 &bull; Adamant &bull; Super Luck &bull; HP 23, Atk 20, Def 4, SpA 29, SpD 30, Spe 5</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-15')"><span class="srb-score">60%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png"><span class="slot-name rarity-blue">Eevee</span><span class="slot-meta">Lv.25 &bull; Quiet &bull; Adaptability &bull; HP 26, Atk 0, Def 29, SpA 25, SpD 15, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-16')"><span class="srb-score">68%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name rarity-blue">Snorlax</span><span class="slot-meta">Lv.35 &bull; Bashful &bull; Thick Fat &bull; HP 16, Atk 28, Def 27, SpA 25, SpD 11, Spe 10</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-17')"><span class="srb-score">63%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name rarity-green">Slugma</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Magma Armor &bull; HP 28, Atk 0, Def 2, SpA 26, SpD 11, Spe 26</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-18')"><span class="srb-score">50%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ninetales.png"><span class="slot-name rarity-blue">Ninetales</span><span class="slot-meta">Lv.20 &bull; Jolly &bull; Flash Fire &bull; HP 18, Atk 21, Def 29, SpA 24, SpD 14, Spe 15</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-19')"><span class="srb-score">65%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name rarity-green">Snorlax</span><span class="slot-meta">Lv.35 &bull; Gentle &bull; Immunity &bull; HP 7, Atk 16, Def 24, SpA 16, SpD 7, Spe 21</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-20')"><span class="srb-score">49%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-green">Seel</span><span class="slot-meta">Lv.34 &bull; Bashful &bull; Hydration &bull; HP 0, Atk 16, Def 6, SpA 28, SpD 26, Spe 12</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-21')"><span class="srb-score">47%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name rarity-white">Tangela</span><span class="slot-meta">Lv.5 &bull; Careful &bull; Leaf Guard &bull; HP 3, Atk 11, Def 19, SpA 8, SpD 28, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-22')"><span class="srb-score">44%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacruel.png"><span class="slot-name rarity-white">Tentacruel</span><span class="slot-meta">Lv.30 &bull; Modest &bull; Clear Body &bull; HP 30, Atk 8, Def 14, SpA 18, SpD 2, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-23')"><span class="srb-score">40%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-green">Geodude</span><span class="slot-meta">Lv.29 &bull; Quiet &bull; Sturdy &bull; HP 31, Atk 29, Def 1, SpA 30, SpD 6, Spe 9</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-24')"><span class="srb-score">57%</span></span></div>
+      <div class="box-header"><span class="box-num">CAJA 1</span><span class="box-counts">23 Pokemon</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidoran-m.png"><span class="slot-name rarity-green">Nidoran♂</span><span class="slot-meta">Lv.12 &bull; Jolly &bull; Rivalry &bull; HP 25, Atk 13, Def 22, SpA 28, SpD 22, Spe 2</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-1')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/granbull.png"><span class="slot-name rarity-green">Granbull</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Intimidate &bull; HP 24, Atk 17, Def 29, SpA 9, SpD 27, Spe 12</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-2')"><span class="srb-score">63%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seaking.png"><span class="slot-name rarity-green">Seaking</span><span class="slot-meta">Lv.40 &bull; Quirky &bull; Water Veil &bull; HP 11, Atk 10, Def 14, SpA 30, SpD 28, Spe 25</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-3')"><span class="srb-score">63%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hitmonlee.png"><span class="slot-name rarity-grey">Hitmonlee</span><span class="slot-meta">Lv.30 &bull; Quiet &bull; Limber &bull; HP 2, Atk 15, Def 10, SpA 20, SpD 2, Spe 19</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-4')"><span class="srb-score">37%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-green">Gyarados</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Intimidate &bull; HP 0, Atk 11, Def 25, SpA 24, SpD 22, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-5')"><span class="srb-score">61%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/grimer.png"><span class="slot-name rarity-white">Grimer</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Stench &bull; HP 5, Atk 20, Def 2, SpA 27, SpD 11, Spe 18</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-6')"><span class="srb-score">45%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pinsir.png"><span class="slot-name rarity-grey">Pinsir</span><span class="slot-meta">Lv.28 &bull; Serious &bull; Mold Breaker &bull; HP 25, Atk 3, Def 7, SpA 22, SpD 2, Spe 16</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-7')"><span class="srb-score">40%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/hypno.png"><span class="slot-name rarity-blue">Hypno</span><span class="slot-meta">Lv.35 &bull; Brave &bull; Insomnia &bull; HP 18, Atk 19, Def 26, SpA 30, SpD 27, Spe 15</span><span class="slot-rb rb-green" onclick="openRbModal('box-1-8')"><span class="srb-score">73%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chansey.png"><span class="slot-name rarity-green">Chansey</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Natural Cure &bull; HP 23, Atk 28, Def 11, SpA 16, SpD 10, Spe 14</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-9')"><span class="srb-score">55%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name rarity-blue">Sandslash</span><span class="slot-meta">Lv.22 &bull; Brave &bull; Sand Veil &bull; HP 29, Atk 28, Def 18, SpA 27, SpD 25, Spe 1</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-10')"><span class="srb-score">69%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/scyther.png"><span class="slot-name rarity-white">Scyther</span><span class="slot-meta">Lv.23 &bull; Bold &bull; Swarm &bull; HP 5, Atk 25, Def 14, SpA 2, SpD 8, Spe 30</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-11')"><span class="srb-score">45%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/krabby.png"><span class="slot-name rarity-blue">Krabby</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Hyper Cutter &bull; HP 21, Atk 12, Def 16, SpA 13, SpD 27, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-12')"><span class="srb-score">65%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/victreebel.png"><span class="slot-name rarity-white">Victreebel</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Chlorophyll &bull; HP 24, Atk 31, Def 9, SpA 11, SpD 16, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-13')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/murkrow.png"><span class="slot-name rarity-green">Murkrow</span><span class="slot-meta">Lv.23 &bull; Adamant &bull; Super Luck &bull; HP 23, Atk 20, Def 4, SpA 29, SpD 30, Spe 5</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-14')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/eevee.png"><span class="slot-name rarity-blue">Eevee</span><span class="slot-meta">Lv.25 &bull; Quiet &bull; Adaptability &bull; HP 26, Atk 0, Def 29, SpA 25, SpD 15, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-15')"><span class="srb-score">68%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name rarity-green">Snorlax</span><span class="slot-meta">Lv.35 &bull; Bashful &bull; Thick Fat &bull; HP 16, Atk 28, Def 27, SpA 25, SpD 11, Spe 10</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-16')"><span class="srb-score">63%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name rarity-white">Slugma</span><span class="slot-meta">Lv.24 &bull; Relaxed &bull; Magma Armor &bull; HP 28, Atk 0, Def 2, SpA 26, SpD 11, Spe 26</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-17')"><span class="srb-score">50%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ninetales.png"><span class="slot-name rarity-blue">Ninetales</span><span class="slot-meta">Lv.20 &bull; Jolly &bull; Flash Fire &bull; HP 18, Atk 21, Def 29, SpA 24, SpD 14, Spe 15</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-18')"><span class="srb-score">65%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/snorlax.png"><span class="slot-name rarity-white">Snorlax</span><span class="slot-meta">Lv.35 &bull; Gentle &bull; Immunity &bull; HP 7, Atk 16, Def 24, SpA 16, SpD 7, Spe 21</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-19')"><span class="srb-score">49%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-white">Seel</span><span class="slot-meta">Lv.34 &bull; Bashful &bull; Hydration &bull; HP 0, Atk 16, Def 6, SpA 28, SpD 26, Spe 12</span><span class="slot-rb rb-amber" onclick="openRbModal('box-1-20')"><span class="srb-score">47%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name rarity-grey">Tangela</span><span class="slot-meta">Lv.5 &bull; Careful &bull; Leaf Guard &bull; HP 3, Atk 11, Def 19, SpA 8, SpD 28, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-21')"><span class="srb-score">44%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacruel.png"><span class="slot-name rarity-grey">Tentacruel</span><span class="slot-meta">Lv.30 &bull; Modest &bull; Clear Body &bull; HP 30, Atk 8, Def 14, SpA 18, SpD 2, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-1-22')"><span class="srb-score">40%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-green">Geodude</span><span class="slot-meta">Lv.29 &bull; Quiet &bull; Sturdy &bull; HP 31, Atk 29, Def 1, SpA 30, SpD 6, Spe 9</span><span class="slot-rb rb-blue" onclick="openRbModal('box-1-23')"><span class="srb-score">57%</span></span></div>
     </div>
 
     <div class="box-block">
       <div class="box-header"><span class="box-num">CAJA 2</span><span class="box-counts">24 Pokemon</span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-green">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Own Tempo &bull; HP 7, Atk 24, Def 24, SpA 17, SpD 5, Spe 23</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-1')"><span class="srb-score">54%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-white">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Adamant &bull; Own Tempo &bull; HP 7, Atk 24, Def 24, SpA 17, SpD 5, Spe 23</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-1')"><span class="srb-score">54%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/butterfree.png"><span class="slot-name rarity-green">Butterfree</span><span class="slot-meta">Lv.38 &bull; Bashful &bull; Compound Eyes &bull; HP 0, Atk 20, Def 22, SpA 30, SpD 27, Spe 8</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-2')"><span class="srb-score">58%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><span class="slot-name rarity-white">Psyduck</span><span class="slot-meta">Lv.40 &bull; Timid &bull; Damp &bull; HP 26, Atk 16, Def 6, SpA 1, SpD 8, Spe 20</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-3')"><span class="srb-score">41%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-green">Goldeen</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Swift Swim &bull; HP 31, Atk 8, Def 16, SpA 16, SpD 9, Spe 13</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-4')"><span class="srb-score">50%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png"><span class="slot-name rarity-green">Nidorino</span><span class="slot-meta">Lv.31 &bull; Modest &bull; Rivalry &bull; HP 27, Atk 1, Def 19, SpA 23, SpD 22, Spe 1</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-5')"><span class="srb-score">50%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/skiploom.png"><span class="slot-name rarity-green">Skiploom</span><span class="slot-meta">Lv.26 &bull; Bold &bull; Chlorophyll &bull; HP 25, Atk 0, Def 3, SpA 15, SpD 27, Spe 27</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-6')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><span class="slot-name rarity-grey">Psyduck</span><span class="slot-meta">Lv.40 &bull; Timid &bull; Damp &bull; HP 26, Atk 16, Def 6, SpA 1, SpD 8, Spe 20</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-3')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-white">Goldeen</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Swift Swim &bull; HP 31, Atk 8, Def 16, SpA 16, SpD 9, Spe 13</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-4')"><span class="srb-score">50%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png"><span class="slot-name rarity-white">Nidorino</span><span class="slot-meta">Lv.31 &bull; Modest &bull; Rivalry &bull; HP 27, Atk 1, Def 19, SpA 23, SpD 22, Spe 1</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-5')"><span class="srb-score">50%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/skiploom.png"><span class="slot-name rarity-white">Skiploom</span><span class="slot-meta">Lv.26 &bull; Bold &bull; Chlorophyll &bull; HP 25, Atk 0, Def 3, SpA 15, SpD 27, Spe 27</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-6')"><span class="srb-score">52%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/houndoom.png"><span class="slot-name rarity-blue">Houndoom</span><span class="slot-meta">Lv.24 &bull; Hardy &bull; Early Bird &bull; HP 14, Atk 30, Def 25, SpA 5, SpD 27, Spe 26</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-7')"><span class="srb-score">68%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-green">Seel</span><span class="slot-meta">Lv.32 &bull; Docile &bull; Thick Fat &bull; HP 21, Atk 14, Def 26, SpA 9, SpD 23, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-8')"><span class="srb-score">53%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-green">Seel</span><span class="slot-meta">Lv.32 &bull; Timid &bull; Thick Fat &bull; HP 3, Atk 7, Def 23, SpA 21, SpD 28, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-9')"><span class="srb-score">47%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-white">Seel</span><span class="slot-meta">Lv.32 &bull; Docile &bull; Thick Fat &bull; HP 21, Atk 14, Def 26, SpA 9, SpD 23, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-8')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seel.png"><span class="slot-name rarity-white">Seel</span><span class="slot-meta">Lv.32 &bull; Timid &bull; Thick Fat &bull; HP 3, Atk 7, Def 23, SpA 21, SpD 28, Spe 5</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-9')"><span class="srb-score">47%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-blue">Slowpoke</span><span class="slot-meta">Lv.30 &bull; Lax &bull; Oblivious &bull; HP 2, Atk 19, Def 28, SpA 31, SpD 15, Spe 27</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-10')"><span class="srb-score">66%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><span class="slot-name rarity-green">Dewgong</span><span class="slot-meta">Lv.36 &bull; Sassy &bull; Thick Fat &bull; HP 10, Atk 28, Def 16, SpA 18, SpD 1, Spe 17</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-11')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dewgong.png"><span class="slot-name rarity-white">Dewgong</span><span class="slot-meta">Lv.36 &bull; Sassy &bull; Thick Fat &bull; HP 10, Atk 28, Def 16, SpA 18, SpD 1, Spe 17</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-11')"><span class="srb-score">48%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name rarity-blue">Golduck</span><span class="slot-meta">Lv.35 &bull; Naive &bull; Cloud Nine &bull; HP 4, Atk 25, Def 30, SpA 27, SpD 16, Spe 21</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-12')"><span class="srb-score">66%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/horsea.png"><span class="slot-name rarity-green">Horsea</span><span class="slot-meta">Lv.34 &bull; Modest &bull; Swift Swim &bull; HP 9, Atk 19, Def 2, SpA 27, SpD 28, Spe 20</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-13')"><span class="srb-score">56%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name rarity-green">Golduck</span><span class="slot-meta">Lv.36 &bull; Naughty &bull; Damp &bull; HP 11, Atk 21, Def 21, SpA 20, SpD 20, Spe 11</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-14')"><span class="srb-score">56%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name rarity-white">Slowbro</span><span class="slot-meta">Lv.39 &bull; Quirky &bull; Own Tempo &bull; HP 22, Atk 3, Def 22, SpA 2, SpD 6, Spe 21</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-15')"><span class="srb-score">41%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name rarity-white">Slowbro</span><span class="slot-meta">Lv.36 &bull; Naive &bull; Own Tempo &bull; HP 2, Atk 21, Def 2, SpA 11, SpD 20, Spe 26</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-16')"><span class="srb-score">44%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name rarity-green">Lanturn</span><span class="slot-meta">Lv.40 &bull; Hasty &bull; Volt Absorb &bull; HP 1, Atk 16, Def 31, SpA 4, SpD 15, Spe 29</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-17')"><span class="srb-score">52%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-green">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Water Veil &bull; HP 8, Atk 25, Def 1, SpA 0, SpD 25, Spe 27</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-18')"><span class="srb-score">46%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-blue">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Swift Swim &bull; HP 28, Atk 3, Def 28, SpA 9, SpD 31, Spe 14</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-19')"><span class="srb-score">61%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-white">Chinchou</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Volt Absorb &bull; HP 1, Atk 31, Def 14, SpA 9, SpD 4, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-20')"><span class="srb-score">39%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name rarity-grey">Slowbro</span><span class="slot-meta">Lv.39 &bull; Quirky &bull; Own Tempo &bull; HP 22, Atk 3, Def 22, SpA 2, SpD 6, Spe 21</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-15')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowbro.png"><span class="slot-name rarity-grey">Slowbro</span><span class="slot-meta">Lv.36 &bull; Naive &bull; Own Tempo &bull; HP 2, Atk 21, Def 2, SpA 11, SpD 20, Spe 26</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-16')"><span class="srb-score">44%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name rarity-white">Lanturn</span><span class="slot-meta">Lv.40 &bull; Hasty &bull; Volt Absorb &bull; HP 1, Atk 16, Def 31, SpA 4, SpD 15, Spe 29</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-17')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-white">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Water Veil &bull; HP 8, Atk 25, Def 1, SpA 0, SpD 25, Spe 27</span><span class="slot-rb rb-amber" onclick="openRbModal('box-2-18')"><span class="srb-score">46%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-green">Goldeen</span><span class="slot-meta">Lv.40 &bull; Gentle &bull; Swift Swim &bull; HP 28, Atk 3, Def 28, SpA 9, SpD 31, Spe 14</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-19')"><span class="srb-score">61%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-grey">Chinchou</span><span class="slot-meta">Lv.40 &bull; Impish &bull; Volt Absorb &bull; HP 1, Atk 31, Def 14, SpA 9, SpD 4, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-20')"><span class="srb-score">39%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-green">Chinchou</span><span class="slot-meta">Lv.40 &bull; Mild &bull; Illuminate &bull; HP 20, Atk 11, Def 4, SpA 19, SpD 25, Spe 27</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-21')"><span class="srb-score">57%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-blue">Goldeen</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Water Veil &bull; HP 17, Atk 4, Def 26, SpA 31, SpD 26, Spe 4</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-22')"><span class="srb-score">58%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-white">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Own Tempo &bull; HP 29, Atk 9, Def 0, SpA 7, SpD 2, Spe 9</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-23')"><span class="srb-score">30%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-white">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Serious &bull; Oblivious &bull; HP 10, Atk 6, Def 17, SpA 3, SpD 12, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-24')"><span class="srb-score">34%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-green">Goldeen</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Water Veil &bull; HP 17, Atk 4, Def 26, SpA 31, SpD 26, Spe 4</span><span class="slot-rb rb-blue" onclick="openRbModal('box-2-22')"><span class="srb-score">58%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-grey">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Own Tempo &bull; HP 29, Atk 9, Def 0, SpA 7, SpD 2, Spe 9</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-23')"><span class="srb-score">30%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-grey">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Serious &bull; Oblivious &bull; HP 10, Atk 6, Def 17, SpA 3, SpD 12, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-2-24')"><span class="srb-score">34%</span></span></div>
     </div>
 
     <div class="box-block">
       <div class="box-header"><span class="box-num">CAJA 3</span><span class="box-counts">24 Pokemon</span></div>
       <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/goldeen.png"><span class="slot-name rarity-white">Goldeen</span><span class="slot-meta">Lv.40 &bull; Timid &bull; Swift Swim &bull; HP 21, Atk 5, Def 18, SpA 18, SpD 14, Spe 8</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-1')"><span class="srb-score">45%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name rarity-green">Lanturn</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Illuminate &bull; HP 2, Atk 22, Def 23, SpA 19, SpD 14, Spe 19</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-2')"><span class="srb-score">53%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-green">Gyarados</span><span class="slot-meta">Lv.40 &bull; Brave &bull; Intimidate &bull; HP 22, Atk 15, Def 29, SpA 24, SpD 7, Spe 1</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-3')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name rarity-white">Lanturn</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Illuminate &bull; HP 2, Atk 22, Def 23, SpA 19, SpD 14, Spe 19</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-2')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-white">Gyarados</span><span class="slot-meta">Lv.40 &bull; Brave &bull; Intimidate &bull; HP 22, Atk 15, Def 29, SpA 24, SpD 7, Spe 1</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-3')"><span class="srb-score">53%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-purple">Gyarados</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Intimidate &bull; HP 13, Atk 22, Def 27, SpA 23, SpD 30, Spe 27</span><span class="slot-rb rb-green" onclick="openRbModal('box-3-4')"><span class="srb-score">76%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-white">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Jolly &bull; Oblivious &bull; HP 19, Atk 7, Def 8, SpA 9, SpD 7, Spe 7</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-5')"><span class="srb-score">31%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slowpoke.png"><span class="slot-name rarity-grey">Slowpoke</span><span class="slot-meta">Lv.40 &bull; Jolly &bull; Oblivious &bull; HP 19, Atk 7, Def 8, SpA 9, SpD 7, Spe 7</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-5')"><span class="srb-score">31%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/lanturn.png"><span class="slot-name rarity-grey">Lanturn</span><span class="slot-meta">Lv.40 &bull; Lonely &bull; Illuminate &bull; HP 4, Atk 2, Def 5, SpA 5, SpD 15, Spe 17</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-6')"><span class="srb-score">26%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-white">Gyarados</span><span class="slot-meta">Lv.40 &bull; Bold &bull; Intimidate &bull; HP 2, Atk 12, Def 21, SpA 21, SpD 1, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-7')"><span class="srb-score">39%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><span class="slot-name rarity-blue">Seadra</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Poison Point &bull; HP 13, Atk 26, Def 27, SpA 9, SpD 16, Spe 18</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-8')"><span class="srb-score">59%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-blue">Chinchou</span><span class="slot-meta">Lv.40 &bull; Relaxed &bull; Illuminate &bull; HP 25, Atk 6, Def 9, SpA 20, SpD 24, Spe 28</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-9')"><span class="srb-score">60%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><span class="slot-name rarity-white">Magikarp</span><span class="slot-meta">Lv.20 &bull; Hasty &bull; Swift Swim &bull; HP 12, Atk 6, Def 1, SpA 14, SpD 14, Spe 31</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-10')"><span class="srb-score">42%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name rarity-green">Slugma</span><span class="slot-meta">Lv.25 &bull; Docile &bull; Magma Armor &bull; HP 2, Atk 19, Def 24, SpA 4, SpD 20, Spe 26</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-11')"><span class="srb-score">51%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/muk.png"><span class="slot-name rarity-green">Muk</span><span class="slot-meta">Lv.32 &bull; Calm &bull; Sticky Hold &bull; HP 8, Atk 25, Def 9, SpA 31, SpD 1, Spe 12</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-12')"><span class="srb-score">46%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><span class="slot-name rarity-green">Koffing</span><span class="slot-meta">Lv.29 &bull; Bold &bull; Levitate &bull; HP 13, Atk 8, Def 7, SpA 27, SpD 10, Spe 25</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-13')"><span class="srb-score">48%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weezing.png"><span class="slot-name rarity-white">Weezing</span><span class="slot-meta">Lv.32 &bull; Serious &bull; Levitate &bull; HP 6, Atk 14, Def 23, SpA 13, SpD 7, Spe 14</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-14')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-grey">Gyarados</span><span class="slot-meta">Lv.40 &bull; Bold &bull; Intimidate &bull; HP 2, Atk 12, Def 21, SpA 21, SpD 1, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-7')"><span class="srb-score">39%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/seadra.png"><span class="slot-name rarity-green">Seadra</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Poison Point &bull; HP 13, Atk 26, Def 27, SpA 9, SpD 16, Spe 18</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-8')"><span class="srb-score">59%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-green">Chinchou</span><span class="slot-meta">Lv.40 &bull; Relaxed &bull; Illuminate &bull; HP 25, Atk 6, Def 9, SpA 20, SpD 24, Spe 28</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-9')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magikarp.png"><span class="slot-name rarity-grey">Magikarp</span><span class="slot-meta">Lv.20 &bull; Hasty &bull; Swift Swim &bull; HP 12, Atk 6, Def 1, SpA 14, SpD 14, Spe 31</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-10')"><span class="srb-score">42%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/slugma.png"><span class="slot-name rarity-white">Slugma</span><span class="slot-meta">Lv.25 &bull; Docile &bull; Magma Armor &bull; HP 2, Atk 19, Def 24, SpA 4, SpD 20, Spe 26</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-11')"><span class="srb-score">51%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/muk.png"><span class="slot-name rarity-white">Muk</span><span class="slot-meta">Lv.32 &bull; Calm &bull; Sticky Hold &bull; HP 8, Atk 25, Def 9, SpA 31, SpD 1, Spe 12</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-12')"><span class="srb-score">46%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/koffing.png"><span class="slot-name rarity-white">Koffing</span><span class="slot-meta">Lv.29 &bull; Bold &bull; Levitate &bull; HP 13, Atk 8, Def 7, SpA 27, SpD 10, Spe 25</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-13')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/weezing.png"><span class="slot-name rarity-grey">Weezing</span><span class="slot-meta">Lv.32 &bull; Serious &bull; Levitate &bull; HP 6, Atk 14, Def 23, SpA 13, SpD 7, Spe 14</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-14')"><span class="srb-score">41%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/arbok.png"><span class="slot-name rarity-purple">Arbok</span><span class="slot-meta">Lv.44 &bull; Bashful &bull; Shed Skin &bull; HP 15, Atk 26, Def 19, SpA 31, SpD 27, Spe 22</span><span class="slot-rb rb-green" onclick="openRbModal('box-3-15')"><span class="srb-score">75%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/primeape.png"><span class="slot-name rarity-white">Primeape</span><span class="slot-meta">Lv.42 &bull; Lonely &bull; Defiant &bull; HP 11, Atk 1, Def 18, SpA 5, SpD 31, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-16')"><span class="srb-score">37%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name rarity-white">Sandslash</span><span class="slot-meta">Lv.44 &bull; Rash &bull; Sand Veil &bull; HP 6, Atk 8, Def 20, SpA 5, SpD 16, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-17')"><span class="srb-score">38%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-white">Donphan</span><span class="slot-meta">Lv.43 &bull; Naughty &bull; Sturdy &bull; HP 21, Atk 14, Def 16, SpA 10, SpD 6, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-18')"><span class="srb-score">37%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/primeape.png"><span class="slot-name rarity-grey">Primeape</span><span class="slot-meta">Lv.42 &bull; Lonely &bull; Defiant &bull; HP 11, Atk 1, Def 18, SpA 5, SpD 31, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-16')"><span class="srb-score">37%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sandslash.png"><span class="slot-name rarity-grey">Sandslash</span><span class="slot-meta">Lv.44 &bull; Rash &bull; Sand Veil &bull; HP 6, Atk 8, Def 20, SpA 5, SpD 16, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-17')"><span class="srb-score">38%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-grey">Donphan</span><span class="slot-meta">Lv.43 &bull; Naughty &bull; Sturdy &bull; HP 21, Atk 14, Def 16, SpA 10, SpD 6, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-18')"><span class="srb-score">37%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-green">Donphan</span><span class="slot-meta">Lv.43 &bull; Naive &bull; Sturdy &bull; HP 8, Atk 14, Def 8, SpA 31, SpD 19, Spe 25</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-19')"><span class="srb-score">56%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ursaring.png"><span class="slot-name rarity-white">Ursaring</span><span class="slot-meta">Lv.42 &bull; Brave &bull; Guts &bull; HP 22, Atk 17, Def 10, SpA 3, SpD 3, Spe 27</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-20')"><span class="srb-score">44%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-green">Geodude</span><span class="slot-meta">Lv.32 &bull; Rash &bull; Sturdy &bull; HP 28, Atk 12, Def 4, SpA 30, SpD 4, Spe 10</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-21')"><span class="srb-score">47%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-blue">Onix</span><span class="slot-meta">Lv.44 &bull; Quirky &bull; Sturdy &bull; HP 13, Atk 29, Def 23, SpA 27, SpD 7, Spe 12</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-22')"><span class="srb-score">60%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-green">Donphan</span><span class="slot-meta">Lv.45 &bull; Timid &bull; Sturdy &bull; HP 14, Atk 13, Def 6, SpA 16, SpD 10, Spe 30</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-23')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ursaring.png"><span class="slot-name rarity-grey">Ursaring</span><span class="slot-meta">Lv.42 &bull; Brave &bull; Guts &bull; HP 22, Atk 17, Def 10, SpA 3, SpD 3, Spe 27</span><span class="slot-rb rb-red" onclick="openRbModal('box-3-20')"><span class="srb-score">44%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-white">Geodude</span><span class="slot-meta">Lv.32 &bull; Rash &bull; Sturdy &bull; HP 28, Atk 12, Def 4, SpA 30, SpD 4, Spe 10</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-21')"><span class="srb-score">47%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-green">Onix</span><span class="slot-meta">Lv.44 &bull; Quirky &bull; Sturdy &bull; HP 13, Atk 29, Def 23, SpA 27, SpD 7, Spe 12</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-22')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-white">Donphan</span><span class="slot-meta">Lv.45 &bull; Timid &bull; Sturdy &bull; HP 14, Atk 13, Def 6, SpA 16, SpD 10, Spe 30</span><span class="slot-rb rb-amber" onclick="openRbModal('box-3-23')"><span class="srb-score">48%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ursaring.png"><span class="slot-name rarity-green">Ursaring</span><span class="slot-meta">Lv.44 &bull; Quirky &bull; Quick Feet &bull; HP 3, Atk 30, Def 9, SpA 9, SpD 30, Spe 26</span><span class="slot-rb rb-blue" onclick="openRbModal('box-3-24')"><span class="srb-score">58%</span></span></div>
     </div>
 
     <div class="box-block">
-      <div class="box-header"><span class="box-num">CAJA 4</span><span class="box-counts">13 Pokemon</span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-green">Onix</span><span class="slot-meta">Lv.42 &bull; Bashful &bull; Sturdy &bull; HP 10, Atk 14, Def 26, SpA 17, SpD 2, Spe 29</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-1')"><span class="srb-score">53%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-green">Onix</span><span class="slot-meta">Lv.48 &bull; Gentle &bull; Sturdy &bull; HP 24, Atk 8, Def 16, SpA 10, SpD 24, Spe 16</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-2')"><span class="srb-score">53%</span></span></div>
+      <div class="box-header"><span class="box-num">CAJA 4</span><span class="box-counts">24 Pokemon</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-white">Onix</span><span class="slot-meta">Lv.42 &bull; Bashful &bull; Sturdy &bull; HP 10, Atk 14, Def 26, SpA 17, SpD 2, Spe 29</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-1')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-white">Onix</span><span class="slot-meta">Lv.48 &bull; Gentle &bull; Sturdy &bull; HP 24, Atk 8, Def 16, SpA 10, SpD 24, Spe 16</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-2')"><span class="srb-score">53%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/donphan.png"><span class="slot-name rarity-white">Donphan</span><span class="slot-meta">Lv.42 &bull; Careful &bull; Sturdy &bull; HP 7, Atk 15, Def 14, SpA 19, SpD 7, Spe 23</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-3')"><span class="srb-score">46%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ursaring.png"><span class="slot-name rarity-white">Ursaring</span><span class="slot-meta">Lv.46 &bull; Naive &bull; Guts &bull; HP 9, Atk 25, Def 10, SpA 20, SpD 14, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-4')"><span class="srb-score">43%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-blue">Onix</span><span class="slot-meta">Lv.42 &bull; Calm &bull; Sturdy &bull; HP 2, Atk 18, Def 31, SpA 9, SpD 27, Spe 25</span><span class="slot-rb rb-blue" onclick="openRbModal('box-4-5')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ursaring.png"><span class="slot-name rarity-grey">Ursaring</span><span class="slot-meta">Lv.46 &bull; Naive &bull; Guts &bull; HP 9, Atk 25, Def 10, SpA 20, SpD 14, Spe 2</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-4')"><span class="srb-score">43%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/onix.png"><span class="slot-name rarity-green">Onix</span><span class="slot-meta">Lv.42 &bull; Calm &bull; Sturdy &bull; HP 2, Atk 18, Def 31, SpA 9, SpD 27, Spe 25</span><span class="slot-rb rb-blue" onclick="openRbModal('box-4-5')"><span class="srb-score">60%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidoqueen.png"><span class="slot-name rarity-green">Nidoqueen</span><span class="slot-meta">Lv.31 &bull; Gentle &bull; Rivalry &bull; HP 1, Atk 21, Def 27, SpA 21, SpD 22, Spe 11</span><span class="slot-rb rb-blue" onclick="openRbModal('box-4-6')"><span class="srb-score">55%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/machop.png"><span class="slot-name rarity-white">Machop</span><span class="slot-meta">Lv.34 &bull; Quirky &bull; Guts &bull; HP 15, Atk 2, Def 7, SpA 3, SpD 27, Spe 21</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-7')"><span class="srb-score">40%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-white">Geodude</span><span class="slot-meta">Lv.24 &bull; Rash &bull; Sturdy &bull; HP 18, Atk 3, Def 7, SpA 24, SpD 5, Spe 11</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-8')"><span class="srb-score">37%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/machop.png"><span class="slot-name rarity-grey">Machop</span><span class="slot-meta">Lv.34 &bull; Quirky &bull; Guts &bull; HP 15, Atk 2, Def 7, SpA 3, SpD 27, Spe 21</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-7')"><span class="srb-score">40%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/geodude.png"><span class="slot-name rarity-grey">Geodude</span><span class="slot-meta">Lv.24 &bull; Rash &bull; Sturdy &bull; HP 18, Atk 3, Def 7, SpA 24, SpD 5, Spe 11</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-8')"><span class="srb-score">37%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golduck.png"><span class="slot-name rarity-purple">Golduck</span><span class="slot-meta">Lv.38 &bull; Sassy &bull; Damp &bull; HP 22, Atk 19, Def 30, SpA 15, SpD 31, Spe 22</span><span class="slot-rb rb-green" onclick="openRbModal('box-4-9')"><span class="srb-score">75%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/moltres.png"><span class="slot-name rarity-white">Moltres</span><span class="slot-meta">Lv.50 &bull; Quirky &bull; Pressure &bull; HP 0, Atk 28, Def 9, SpA 1, SpD 16, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-10')"><span class="srb-score">36%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kricketot.png"><span class="slot-name rarity-green">Kricketot</span><span class="slot-meta">Lv.15 &bull; Docile &bull; Shed Skin &bull; HP 29, Atk 12, Def 13, SpA 10, SpD 18, Spe 17</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-11')"><span class="srb-score">53%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gulpin.png"><span class="slot-name rarity-white">Gulpin</span><span class="slot-meta">Lv.15 &bull; Rash &bull; Liquid Ooze &bull; HP 17, Atk 3, Def 1, SpA 26, SpD 15, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-12')"><span class="srb-score">40%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kricketot.png"><span class="slot-name rarity-white">Kricketot</span><span class="slot-meta">Lv.17 &bull; Mild &bull; Shed Skin &bull; HP 6, Atk 19, Def 3, SpA 19, SpD 1, Spe 14</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-13')"><span class="srb-score">33%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/moltres.png"><span class="slot-name rarity-grey">Moltres</span><span class="slot-meta">Lv.50 &bull; Quirky &bull; Pressure &bull; HP 0, Atk 28, Def 9, SpA 1, SpD 16, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-10')"><span class="srb-score">36%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kricketot.png"><span class="slot-name rarity-white">Kricketot</span><span class="slot-meta">Lv.15 &bull; Docile &bull; Shed Skin &bull; HP 29, Atk 12, Def 13, SpA 10, SpD 18, Spe 17</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-11')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gulpin.png"><span class="slot-name rarity-grey">Gulpin</span><span class="slot-meta">Lv.15 &bull; Rash &bull; Liquid Ooze &bull; HP 17, Atk 3, Def 1, SpA 26, SpD 15, Spe 13</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-12')"><span class="srb-score">40%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kricketot.png"><span class="slot-name rarity-grey">Kricketot</span><span class="slot-meta">Lv.17 &bull; Mild &bull; Shed Skin &bull; HP 6, Atk 19, Def 3, SpA 19, SpD 1, Spe 14</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-13')"><span class="srb-score">33%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gyarados.png"><span class="slot-name rarity-grey">Gyarados</span><span class="slot-meta">Lv.40 &bull; Modest &bull; Intimidate &bull; HP 13, Atk 3, Def 4, SpA 31, SpD 26, Spe 0</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-14')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/electrode.png"><span class="slot-name rarity-grey">Electrode</span><span class="slot-meta">Lv.56 &bull; Relaxed &bull; Soundproof &bull; HP 26, Atk 10, Def 0, SpA 3, SpD 1, Spe 23</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-15')"><span class="srb-score">34%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/electabuzz.png"><span class="slot-name rarity-blue">Electabuzz</span><span class="slot-meta">Lv.32 &bull; Relaxed &bull; Static &bull; HP 4, Atk 20, Def 25, SpA 31, SpD 26, Spe 18</span><span class="slot-rb rb-blue" onclick="openRbModal('box-4-16')"><span class="srb-score">67%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/voltorb.png"><span class="slot-name rarity-green">Voltorb</span><span class="slot-meta">Lv.22 &bull; Gentle &bull; Soundproof &bull; HP 14, Atk 28, Def 16, SpA 26, SpD 11, Spe 15</span><span class="slot-rb rb-blue" onclick="openRbModal('box-4-17')"><span class="srb-score">59%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.23 &bull; Lonely &bull; Magnet Pull &bull; HP 15, Atk 25, Def 0, SpA 29, SpD 7, Spe 21</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-18')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.24 &bull; Careful &bull; Sturdy &bull; HP 15, Atk 0, Def 20, SpA 26, SpD 16, Spe 20</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-19')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.25 &bull; Naughty &bull; Sturdy &bull; HP 23, Atk 17, Def 20, SpA 19, SpD 11, Spe 3</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-20')"><span class="srb-score">50%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pikachu.png"><span class="slot-name rarity-grey">Pikachu</span><span class="slot-meta">Lv.23 &bull; Lax &bull; Static &bull; HP 6, Atk 11, Def 2, SpA 2, SpD 13, Spe 27</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-21')"><span class="srb-score">33%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magneton.png"><span class="slot-name rarity-white">Magneton</span><span class="slot-meta">Lv.33 &bull; Impish &bull; Magnet Pull &bull; HP 13, Atk 10, Def 14, SpA 17, SpD 9, Spe 23</span><span class="slot-rb rb-amber" onclick="openRbModal('box-4-22')"><span class="srb-score">46%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-grey">Magnemite</span><span class="slot-meta">Lv.23 &bull; Careful &bull; Sturdy &bull; HP 0, Atk 31, Def 9, SpA 11, SpD 13, Spe 9</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-23')"><span class="srb-score">39%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-grey">Magnemite</span><span class="slot-meta">Lv.23 &bull; Careful &bull; Sturdy &bull; HP 3, Atk 9, Def 6, SpA 1, SpD 2, Spe 27</span><span class="slot-rb rb-red" onclick="openRbModal('box-4-24')"><span class="srb-score">26%</span></span></div>
+    </div>
+
+    <div class="box-block">
+      <div class="box-header"><span class="box-num">CAJA 5</span><span class="box-counts">23 Pokemon</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.22 &bull; Mild &bull; Sturdy &bull; HP 21, Atk 1, Def 10, SpA 27, SpD 12, Spe 17</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-1')"><span class="srb-score">47%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/electabuzz.png"><span class="slot-name rarity-grey">Electabuzz</span><span class="slot-meta">Lv.34 &bull; Adamant &bull; Static &bull; HP 5, Atk 12, Def 0, SpA 19, SpD 15, Spe 19</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-2')"><span class="srb-score">38%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magneton.png"><span class="slot-name rarity-white">Magneton</span><span class="slot-meta">Lv.33 &bull; Jolly &bull; Sturdy &bull; HP 2, Atk 7, Def 23, SpA 24, SpD 20, Spe 14</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-3')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.25 &bull; Bashful &bull; Sturdy &bull; HP 14, Atk 1, Def 21, SpA 27, SpD 18, Spe 13</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-4')"><span class="srb-score">51%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-grey">Magnemite</span><span class="slot-meta">Lv.23 &bull; Relaxed &bull; Sturdy &bull; HP 5, Atk 27, Def 10, SpA 5, SpD 2, Spe 26</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-5')"><span class="srb-score">40%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-grey">Magnemite</span><span class="slot-meta">Lv.25 &bull; Serious &bull; Magnet Pull &bull; HP 18, Atk 1, Def 3, SpA 17, SpD 17, Spe 20</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-6')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magneton.png"><span class="slot-name rarity-grey">Magneton</span><span class="slot-meta">Lv.31 &bull; Lonely &bull; Magnet Pull &bull; HP 6, Atk 4, Def 12, SpA 27, SpD 10, Spe 17</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-7')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/zapdos.png"><span class="slot-name rarity-grey">Zapdos</span><span class="slot-meta">Lv.50 &bull; Brave &bull; Pressure &bull; HP 31, Atk 3, Def 10, SpA 2, SpD 9, Spe 15</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-8')"><span class="srb-score">38%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/aerodactyl.png"><span class="slot-name rarity-grey">Aerodactyl</span><span class="slot-meta">Lv.30 &bull; Sassy &bull; Pressure &bull; HP 11, Atk 16, Def 7, SpA 13, SpD 24, Spe 6</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-9')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/zubat.png"><span class="slot-name rarity-white">Zubat</span><span class="slot-meta">Lv.27 &bull; Hardy &bull; Inner Focus &bull; HP 9, Atk 31, Def 8, SpA 31, SpD 2, Spe 10</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-10')"><span class="srb-score">49%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/psyduck.png"><span class="slot-name rarity-white">Psyduck</span><span class="slot-meta">Lv.28 &bull; Relaxed &bull; Cloud Nine &bull; HP 19, Atk 10, Def 16, SpA 31, SpD 4, Spe 9</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-11')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name rarity-white">Tangela</span><span class="slot-meta">Lv.5 &bull; Careful &bull; Chlorophyll &bull; HP 21, Atk 24, Def 9, SpA 21, SpD 0, Spe 24</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-12')"><span class="srb-score">53%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tangela.png"><span class="slot-name rarity-white">Tangela</span><span class="slot-meta">Lv.5 &bull; Hardy &bull; Leaf Guard &bull; HP 24, Atk 11, Def 23, SpA 21, SpD 14, Spe 3</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-13')"><span class="srb-score">52%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/venonat.png"><span class="slot-name rarity-green">Venonat</span><span class="slot-meta">Lv.22 &bull; Naughty &bull; Compound Eyes &bull; HP 17, Atk 22, Def 23, SpA 17, SpD 16, Spe 19</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-14')"><span class="srb-score">61%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><span class="slot-name rarity-green">Rhyhorn</span><span class="slot-meta">Lv.26 &bull; Calm &bull; Lightning Rod &bull; HP 1, Atk 30, Def 22, SpA 18, SpD 16, Spe 22</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-15')"><span class="srb-score">59%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorino.png"><span class="slot-name rarity-green">Nidorino</span><span class="slot-meta">Lv.30 &bull; Docile &bull; Poison Point &bull; HP 22, Atk 21, Def 13, SpA 18, SpD 9, Spe 22</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-16')"><span class="srb-score">56%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tauros.png"><span class="slot-name rarity-green">Tauros</span><span class="slot-meta">Lv.28 &bull; Sassy &bull; Anger Point &bull; HP 30, Atk 15, Def 21, SpA 4, SpD 16, Spe 20</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-17')"><span class="srb-score">57%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/nidorina.png"><span class="slot-name rarity-green">Nidorina</span><span class="slot-meta">Lv.30 &bull; Naughty &bull; Poison Point &bull; HP 22, Atk 7, Def 18, SpA 14, SpD 16, Spe 27</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-18')"><span class="srb-score">56%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/paras.png"><span class="slot-name rarity-grey">Paras</span><span class="slot-meta">Lv.23 &bull; Lax &bull; Effect Spore &bull; HP 0, Atk 27, Def 1, SpA 4, SpD 18, Spe 4</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-19')"><span class="srb-score">29%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/sableye.png"><span class="slot-name rarity-grey">Sableye</span><span class="slot-meta">Lv.27 &bull; Gentle &bull; Stall &bull; HP 6, Atk 5, Def 25, SpA 10, SpD 30, Spe 3</span><span class="slot-rb rb-red" onclick="openRbModal('box-5-20')"><span class="srb-score">42%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-white">Magnemite</span><span class="slot-meta">Lv.25 &bull; Calm &bull; Sturdy &bull; HP 23, Atk 5, Def 1, SpA 12, SpD 20, Spe 29</span><span class="slot-rb rb-amber" onclick="openRbModal('box-5-21')"><span class="srb-score">48%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/voltorb.png"><span class="slot-name rarity-blue">Voltorb</span><span class="slot-meta">Lv.25 &bull; Lax &bull; Soundproof &bull; HP 31, Atk 19, Def 29, SpA 25, SpD 14, Spe 14</span><span class="slot-rb rb-green" onclick="openRbModal('box-5-22')"><span class="srb-score">71%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F4·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magnemite.png"><span class="slot-name rarity-green">Magnemite</span><span class="slot-meta">Lv.22 &bull; Brave &bull; Sturdy &bull; HP 5, Atk 24, Def 29, SpA 23, SpD 22, Spe 13</span><span class="slot-rb rb-blue" onclick="openRbModal('box-5-23')"><span class="srb-score">62%</span></span></div>
+    </div>
+
+    <div class="box-block">
+      <div class="box-header"><span class="box-num">CAJA 6</span><span class="box-counts">9 Pokemon</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/magneton.png"><span class="slot-name rarity-grey">Magneton</span><span class="slot-meta">Lv.31 &bull; Careful &bull; Sturdy &bull; HP 10, Atk 13, Def 9, SpA 7, SpD 9, Spe 5</span><span class="slot-rb rb-red" onclick="openRbModal('box-6-1')"><span class="srb-score">28%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/raticate.png"><span class="slot-name rarity-green">Raticate</span><span class="slot-meta">Lv.28 &bull; Hasty &bull; Guts &bull; HP 3, Atk 25, Def 18, SpA 20, SpD 23, Spe 28</span><span class="slot-rb rb-blue" onclick="openRbModal('box-6-2')"><span class="srb-score">63%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><span class="slot-name rarity-white">Tentacool</span><span class="slot-meta">Lv.27 &bull; Adamant &bull; Clear Body &bull; HP 12, Atk 10, Def 12, SpA 30, SpD 20, Spe 10</span><span class="slot-rb rb-amber" onclick="openRbModal('box-6-3')"><span class="srb-score">51%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><span class="slot-name rarity-blue">Tentacool</span><span class="slot-meta">Lv.26 &bull; Bashful &bull; Liquid Ooze &bull; HP 24, Atk 12, Def 19, SpA 30, SpD 29, Spe 19</span><span class="slot-rb rb-green" onclick="openRbModal('box-6-4')"><span class="srb-score">72%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/tentacool.png"><span class="slot-name rarity-blue">Tentacool</span><span class="slot-meta">Lv.17 &bull; Sassy &bull; Clear Body &bull; HP 30, Atk 17, Def 6, SpA 29, SpD 27, Spe 13</span><span class="slot-rb rb-blue" onclick="openRbModal('box-6-5')"><span class="srb-score">66%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/ponyta.png"><span class="slot-name rarity-white">Ponyta</span><span class="slot-meta">Lv.32 &bull; Impish &bull; Run Away &bull; HP 2, Atk 21, Def 10, SpA 26, SpD 8, Spe 18</span><span class="slot-rb rb-amber" onclick="openRbModal('box-6-6')"><span class="srb-score">46%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/quagsire.png"><span class="slot-name rarity-green">Quagsire</span><span class="slot-meta">Lv.28 &bull; Modest &bull; Water Absorb &bull; HP 19, Atk 20, Def 7, SpA 28, SpD 8, Spe 30</span><span class="slot-rb rb-blue" onclick="openRbModal('box-6-7')"><span class="srb-score">60%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/quagsire.png"><span class="slot-name rarity-blue">Quagsire</span><span class="slot-meta">Lv.28 &bull; Gentle &bull; Water Absorb &bull; HP 30, Atk 16, Def 19, SpA 24, SpD 29, Spe 10</span><span class="slot-rb rb-blue" onclick="openRbModal('box-6-8')"><span class="srb-score">69%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/shellder.png"><span class="slot-name rarity-white">Shellder</span><span class="slot-meta">Lv.20 &bull; Calm &bull; Skill Link &bull; HP 10, Atk 27, Def 12, SpA 11, SpD 1, Spe 26</span><span class="slot-rb rb-amber" onclick="openRbModal('box-6-9')"><span class="srb-score">47%</span></span></div>
     </div>
 
     <div class="box-block">
       <div class="box-header"><span class="box-num">CAJA 9</span><span class="box-counts">1 Pokemon</span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><span class="slot-name rarity-white">Rhyhorn</span><span class="slot-meta">Lv.26 &bull; Modest &bull; Lightning Rod &bull; HP 4, Atk 10, Def 14, SpA 17, SpD 22, Spe 0</span><span class="slot-rb rb-red" onclick="openRbModal('box-9-1')"><span class="srb-score">36%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dodrio.png"><span class="slot-name rarity-blue">Dodrio</span><span class="slot-meta">Lv.31 &bull; Lax &bull; Early Bird &bull; HP 10, Atk 7, Def 29, SpA 19, SpD 28, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-9-1')"><span class="srb-score">67%</span></span></div>
     </div>
 
     <div class="box-block">
-      <div class="box-header"><span class="box-num">CAJA 10</span><span class="box-counts">12 Pokemon</span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dugtrio.png"><span class="slot-name rarity-purple">Dugtrio</span><span class="slot-meta">Lv.26 &bull; Quirky &bull; Arena Trap &bull; HP 18, Atk 13, Def 25, SpA 24, SpD 30, Spe 27</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-1')"><span class="srb-score">74%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-purple">Growlithe</span><span class="slot-meta">Lv.19 &bull; Rash &bull; Flash Fire &bull; HP 28, Atk 25, Def 23, SpA 15, SpD 27, Spe 19</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-2')"><span class="srb-score">74%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/wigglytuff.png"><span class="slot-name rarity-purple">Wigglytuff</span><span class="slot-meta">Lv.38 &bull; Adamant &bull; Competitive &bull; HP 31, Atk 15, Def 7, SpA 30, SpD 24, Spe 30</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-3')"><span class="srb-score">74%</span></span></div>
+      <div class="box-header"><span class="box-num">CAJA 10</span><span class="box-counts">17 Pokemon</span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/dugtrio.png"><span class="slot-name rarity-blue">Dugtrio</span><span class="slot-meta">Lv.26 &bull; Quirky &bull; Arena Trap &bull; HP 18, Atk 13, Def 25, SpA 24, SpD 30, Spe 27</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-1')"><span class="srb-score">74%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-blue">Growlithe</span><span class="slot-meta">Lv.19 &bull; Rash &bull; Flash Fire &bull; HP 28, Atk 25, Def 23, SpA 15, SpD 27, Spe 19</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-2')"><span class="srb-score">74%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/wigglytuff.png"><span class="slot-name rarity-blue">Wigglytuff</span><span class="slot-meta">Lv.38 &bull; Adamant &bull; Competitive &bull; HP 31, Atk 15, Def 7, SpA 30, SpD 24, Spe 30</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-3')"><span class="srb-score">74%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-purple">Growlithe</span><span class="slot-meta">Lv.18 &bull; Modest &bull; Intimidate &bull; HP 13, Atk 28, Def 25, SpA 24, SpD 24, Spe 31</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-4')"><span class="srb-score">78%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-purple">Growlithe</span><span class="slot-meta">Lv.18 &bull; Hasty &bull; Intimidate &bull; HP 20, Atk 16, Def 31, SpA 17, SpD 29, Spe 21</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-5')"><span class="srb-score">72%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F1·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-blue">Growlithe</span><span class="slot-meta">Lv.18 &bull; Hasty &bull; Intimidate &bull; HP 20, Atk 16, Def 31, SpA 17, SpD 29, Spe 21</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-5')"><span class="srb-score">72%</span></span></div>
       <div class="box-slot"><span class="slot-pos">F1·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/growlithe.png"><span class="slot-name rarity-purple">Growlithe</span><span class="slot-meta">Lv.18 &bull; Bold &bull; Intimidate &bull; HP 14, Atk 14, Def 28, SpA 31, SpD 28, Spe 28</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-6')"><span class="srb-score">77%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-purple">Chinchou</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Volt Absorb &bull; HP 25, Atk 27, Def 25, SpA 27, SpD 14, Spe 17</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-7')"><span class="srb-score">73%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/blastoise.png"><span class="slot-name rarity-white">Blastoise</span><span class="slot-meta">Lv.37 &bull; Impish &bull; Torrent &bull; HP 6, Atk 11, Def 4, SpA 21, SpD 18, Spe 18</span><span class="slot-rb rb-red" onclick="openRbModal('box-10-8')"><span class="srb-score">42%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png"><span class="slot-name rarity-green">Arcanine</span><span class="slot-meta">Lv.33 &bull; Modest &bull; Flash Fire &bull; HP 22, Atk 13, Def 3, SpA 27, SpD 14, Spe 14</span><span class="slot-rb rb-amber" onclick="openRbModal('box-10-9')"><span class="srb-score">50%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kingler.png"><span class="slot-name rarity-purple">Kingler</span><span class="slot-meta">Lv.6 &bull; Naive &bull; Hyper Cutter &bull; HP 27, Atk 27, Def 10, SpA 31, SpD 28, Spe 21</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-10')"><span class="srb-score">77%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/doduo.png"><span class="slot-name rarity-blue">Doduo</span><span class="slot-meta">Lv.29 &bull; Lax &bull; Early Bird &bull; HP 10, Atk 7, Def 29, SpA 19, SpD 28, Spe 31</span><span class="slot-rb rb-blue" onclick="openRbModal('box-10-11')"><span class="srb-score">67%</span></span></div>
-      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kabuto.png"><span class="slot-name rarity-white">Kabuto</span><span class="slot-meta">Lv.30 &bull; Relaxed &bull; Battle Armor &bull; HP 12, Atk 5, Def 27, SpA 9, SpD 20, Spe 4</span><span class="slot-rb rb-red" onclick="openRbModal('box-10-12')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/chinchou.png"><span class="slot-name rarity-blue">Chinchou</span><span class="slot-meta">Lv.40 &bull; Calm &bull; Volt Absorb &bull; HP 25, Atk 27, Def 25, SpA 27, SpD 14, Spe 17</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-7')"><span class="srb-score">73%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/blastoise.png"><span class="slot-name rarity-grey">Blastoise</span><span class="slot-meta">Lv.37 &bull; Impish &bull; Torrent &bull; HP 6, Atk 11, Def 4, SpA 21, SpD 18, Spe 18</span><span class="slot-rb rb-red" onclick="openRbModal('box-10-8')"><span class="srb-score">42%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/arcanine.png"><span class="slot-name rarity-white">Arcanine</span><span class="slot-meta">Lv.33 &bull; Modest &bull; Flash Fire &bull; HP 22, Atk 13, Def 3, SpA 27, SpD 14, Spe 14</span><span class="slot-rb rb-amber" onclick="openRbModal('box-10-9')"><span class="srb-score">50%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/kabuto.png"><span class="slot-name rarity-grey">Kabuto</span><span class="slot-meta">Lv.30 &bull; Relaxed &bull; Battle Armor &bull; HP 12, Atk 5, Def 27, SpA 9, SpD 20, Spe 4</span><span class="slot-rb rb-red" onclick="openRbModal('box-10-10')"><span class="srb-score">41%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/vileplume.png"><span class="slot-name rarity-white">Vileplume</span><span class="slot-meta">Lv.50 &bull; Rash &bull; Chlorophyll &bull; HP 24, Atk 18, Def 3, SpA 16, SpD 2, Spe 31</span><span class="slot-rb rb-amber" onclick="openRbModal('box-10-11')"><span class="srb-score">51%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F2·C6</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/pidgeot.png"><span class="slot-name rarity-purple">Pidgeot</span><span class="slot-meta">Lv.41 &bull; Careful &bull; Keen Eye &bull; HP 26, Atk 14, Def 28, SpA 26, SpD 26, Spe 30</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-12')"><span class="srb-score">81%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C1</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/alakazam.png"><span class="slot-name rarity-blue">Alakazam</span><span class="slot-meta">Lv.51 &bull; Modest &bull; Synchronize &bull; HP 16, Atk 31, Def 1, SpA 27, SpD 23, Spe 28</span><span class="slot-rb rb-blue" onclick="openRbModal('box-10-13')"><span class="srb-score">68%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C2</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/gengar.png"><span class="slot-name rarity-green">Gengar</span><span class="slot-meta">Lv.52 &bull; Modest &bull; Cursed Body &bull; HP 1, Atk 5, Def 30, SpA 30, SpD 18, Spe 19</span><span class="slot-rb rb-blue" onclick="openRbModal('box-10-14')"><span class="srb-score">55%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C3</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/rhyhorn.png"><span class="slot-name rarity-grey">Rhyhorn</span><span class="slot-meta">Lv.33 &bull; Modest &bull; Lightning Rod &bull; HP 4, Atk 10, Def 14, SpA 17, SpD 22, Spe 0</span><span class="slot-rb rb-red" onclick="openRbModal('box-10-15')"><span class="srb-score">36%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C4</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/golem.png"><span class="slot-name rarity-blue">Golem</span><span class="slot-meta">Lv.51 &bull; Hasty &bull; Sturdy &bull; HP 29, Atk 29, Def 29, SpA 15, SpD 14, Spe 14</span><span class="slot-rb rb-green" onclick="openRbModal('box-10-16')"><span class="srb-score">70%</span></span></div>
+      <div class="box-slot"><span class="slot-pos">F3·C5</span><img class="slot-spr" src="https://img.pokemondb.net/sprites/black-white/normal/poliwrath.png"><span class="slot-name rarity-green">Poliwrath</span><span class="slot-meta">Lv.56 &bull; Jolly &bull; Water Absorb &bull; HP 18, Atk 22, Def 28, SpA 27, SpD 1, Spe 16</span><span class="slot-rb rb-blue" onclick="openRbModal('box-10-17')"><span class="srb-score">60%</span></span></div>
     </div>
 
   </div>
@@ -1192,7 +1163,7 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 </div>
 
 <div class="updated">
-  Ultima actualizacion: 13 de Junio 2026 &nbsp;&bull;&nbsp; jsolerca &nbsp;&bull;&nbsp; PokeOne Kanto &nbsp;&bull;&nbsp;
+  Ultima actualizacion: 14 de Junio 2026 &nbsp;&bull;&nbsp; jsolerca &nbsp;&bull;&nbsp; PokeOne Kanto &nbsp;&bull;&nbsp;
   <a href="https://github.com/jsolerca88/pokeone-equipo" style="color:#388bfd">GitHub</a>
 </div>
 
@@ -2529,8 +2500,14 @@ const ABILITY_INFO = {
 };
 
 function openRbModal(key) {
-  const d = RB_DATA[key];
-  if (!d) return;
+  let d = RB_DATA[key];
+  if (!d) {
+    // Fallback for box slots: build minimal d from _slotByKey cache
+    const s = _slotByKey[key];
+    if (!s) return;
+    const iconName = s.src.split('/').pop().replace('.png','');
+    d = { name: s.name, icon: iconName, nota: null, acciones: [] };
+  }
 
   const ivData = readCardIvs(key);
   const evData = readCardEvs(key);
