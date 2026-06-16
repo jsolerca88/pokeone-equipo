@@ -2,15 +2,15 @@
     "success": true,
     "data": {
         "user_info": {
-            "gold": 3280,
-            "pokeDollar": 143429,
-            "playedDays": 1.8512682286956017,
-            "joinDate": 20.770153731138887,
+            "gold": 3420,
+            "pokeDollar": 157132,
+            "playedDays": 1.9941627507291666,
+            "joinDate": 23.088616495710646,
             "fainted": 2,
-            "steps": 103516,
-            "wildEncountered": 1036,
+            "steps": 112125,
+            "wildEncountered": 1156,
             "kantoTrainerLevel": 71,
-            "johtoTrainerLevel": 7,
+            "johtoTrainerLevel": 17,
             "unovaTrainerLevel": 5,
             "accountVersion": "Moon",
             "badges": [
@@ -21,7 +21,8 @@
                 6,
                 5,
                 7,
-                8
+                8,
+                9
             ],
             "kantoPvePoints": 11,
             "kantoPveInfo": {
@@ -30,63 +31,77 @@
                 "maxday": 20,
                 "maxweek": 100,
                 "maxmonth": 300,
-                "day": 1,
+                "day": 0,
                 "month": 11,
-                "week": 4,
+                "week": 0,
                 "last": 18,
                 "lastspent": 0,
                 "total": 29,
                 "totalspent": 0
             },
-            "johtoPvePoints": 0,
+            "johtoPvePoints": 8,
+            "johtoPveInfo": {
+                "current": 8,
+                "spent": 0,
+                "maxday": 20,
+                "maxweek": 100,
+                "maxmonth": 300,
+                "day": 5,
+                "month": 8,
+                "week": 5,
+                "last": 0,
+                "lastspent": 0,
+                "total": 8,
+                "totalspent": 0
+            },
             "unovaPvePoints": 0,
-            "kantoPvpPoints": 7,
+            "kantoPvpPoints": 9,
             "kantoPvpInfo": {
-                "current": 7,
+                "current": 9,
                 "spent": 0,
                 "maxday": 50,
                 "maxweek": 250,
                 "maxmonth": 750,
                 "day": 1,
-                "month": 7,
-                "week": 4,
+                "month": 9,
+                "week": 1,
                 "last": 2,
+                "lastspent": 0,
+                "total": 11,
+                "totalspent": 0
+            },
+            "johtoPvpPoints": 9,
+            "johtoPvpInfo": {
+                "current": 9,
+                "spent": 0,
+                "maxday": 50,
+                "maxweek": 250,
+                "maxmonth": 750,
+                "day": 1,
+                "month": 9,
+                "week": 1,
+                "last": 0,
                 "lastspent": 0,
                 "total": 9,
                 "totalspent": 0
             },
-            "johtoPvpPoints": 7,
-            "johtoPvpInfo": {
-                "current": 7,
-                "spent": 0,
-                "maxday": 50,
-                "maxweek": 250,
-                "maxmonth": 750,
-                "day": 1,
-                "month": 7,
-                "week": 4,
-                "last": 0,
-                "lastspent": 0,
-                "total": 7,
-                "totalspent": 0
-            },
-            "unovaPvpPoints": 7,
+            "unovaPvpPoints": 9,
             "unovaPvpInfo": {
-                "current": 7,
+                "current": 9,
                 "spent": 0,
                 "maxday": 50,
                 "maxweek": 250,
                 "maxmonth": 750,
                 "day": 1,
-                "month": 7,
-                "week": 4,
+                "month": 9,
+                "week": 1,
                 "last": 0,
                 "lastspent": 0,
-                "total": 7,
+                "total": 9,
                 "totalspent": 0
             },
-            "pokedexCaught": 139,
-            "pokedexSeen": 194,
+            "pokedexCaught": 145,
+            "pokedexSeen": 198,
             "pvpWins": 0,
             "pvpLosses": 0,
             "userName": "CarroCarrillo"
@@ -95,18 +110,242 @@
             [
                 {
                     "Pokemon": {
-                        "UniqueID": "fbaa36d2-5ff3-4545-b27e-5c7c84133d59",
+                        "UniqueID": "9b5a7b52-4380-4a49-b53d-41a251ed1809",
                         "Payload": {
-                            "PokemonID": 152,
-                            "Level": 6,
-                            "Exp": 231,
-                            "HP": 21,
+                            "PokemonID": 179,
+                            "Level": 13,
+                            "Exp": 1435,
+                            "HP": 37,
                             "Moves": [
                                 {
-                                    "Move": 45,
+                                    "Move": 178,
                                     "PP": 40,
                                     "MaxPP": 40,
-                                    "Name": "Growl"
+                                    "Name": "Cotton Spore"
+                                },
+                                {
+                                    "Move": 33,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Tackle"
+                                },
+                                {
+                                    "Move": 86,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Thunder Wave"
+                                },
+                                {
+                                    "Move": 84,
+                                    "PP": 30,
+                                    "MaxPP": 30,
+                                    "Name": "Thunder Shock"
+                                }
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 104,
+                            "Nature": 11,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 3,
+                                "Atk": 18,
+                                "Def": 5,
+                                "SpAtk": 31,
+                                "SpDef": 16,
+                                "Speed": 10
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 493,
+                            "HoldItem": 0,
+                            "Personality": 382044888,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 4,
+                                "Atk": 7,
+                                "Def": 9,
+                                "SpAtk": 2,
+                                "SpDef": 0,
+                                "Speed": 20
+                            },
+                            "CaughtDateUtc": "2026-06-16T16:36:15.9132534Z",
+                            "CaughtLevel": 6,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Impish",
+                            "PokeballData": {
+                                "name": "Level Ball",
+                                "pic": "level-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 37,
+                            "Atk": 17,
+                            "Def": 17,
+                            "SpAtk": 22,
+                            "SpDef": 18,
+                            "Speed": 15
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Static",
+                        "ExpStart": 1261,
+                        "ExpNext": 1612,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Mareep",
+                            "Icon": "mareep.png",
+                            "ShinyIcon": "mareep.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Electric",
+                                    "color": "#f3d327"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 1,
+                    "Box": 0,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "ad4f4d34-8fcd-4b65-91b7-33a4e12b9785",
+                        "Payload": {
+                            "PokemonID": 316,
+                            "Level": 16,
+                            "Exp": 2832,
+                            "HP": 53,
+                            "Moves": [
+                                {
+                                    "Move": 281,
+                                    "PP": 10,
+                                    "MaxPP": 10,
+                                    "Name": "Yawn"
+                                },
+                                {
+                                    "Move": 139,
+                                    "PP": 40,
+                                    "MaxPP": 40,
+                                    "Name": "Poison Gas"
+                                },
+                                {
+                                    "Move": 124,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Sludge"
+                                },
+                                {
+                                    "Move": 133,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Amnesia"
+                                }
+                            ],
+                            "AbilitySlot": 2,
+                            "Happiness": 75,
+                            "Nature": 12,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 30,
+                                "Atk": 4,
+                                "Def": 31,
+                                "SpAtk": 25,
+                                "SpDef": 31,
+                                "Speed": 19
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 2,
+                            "HoldItem": 0,
+                            "Personality": 822850952,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 31,
+                                "Def": 0,
+                                "SpAtk": 15,
+                                "SpDef": 2,
+                                "Speed": 16
+                            },
+                            "CaughtDateUtc": "2026-06-13T11:03:41Z",
+                            "CaughtLevel": 15,
+                            "NotTradeable": false,
+                            "Form": "",
+                            "NatureName": "Jolly",
+                            "PokeballData": {
+                                "name": "Ultra Ball",
+                                "pic": "ultra-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 53,
+                            "Atk": 19,
+                            "Def": 26,
+                            "SpAtk": 19,
+                            "SpDef": 26,
+                            "Speed": 22
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Sticky Hold",
+                        "ExpStart": 2457,
+                        "ExpNext": 3046,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Gulpin",
+                            "Icon": "gulpin.png",
+                            "ShinyIcon": "gulpin.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Poison",
+                                    "color": "#a55294"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 2,
+                    "Box": 0,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "fbaa36d2-5ff3-4545-b27e-5c7c84133d59",
+                        "Payload": {
+                            "PokemonID": 153,
+                            "Level": 17,
+                            "Exp": 3124,
+                            "HP": 47,
+                            "Moves": [
+                                {
+                                    "Move": 235,
+                                    "PP": 5,
+                                    "MaxPP": 5,
+                                    "Name": "Synthesis"
                                 },
                                 {
                                     "Move": 33,
@@ -120,10 +359,15 @@
                                     "MaxPP": 25,
                                     "Name": "Razor Leaf"
                                 },
-                                null
+                                {
+                                    "Move": 77,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Poison Powder"
+                                }
                             ],
                             "AbilitySlot": 2,
-                            "Happiness": 75,
+                            "Happiness": 124,
                             "Nature": 2,
                             "Shiny": false,
                             "IVs": {
@@ -149,17 +393,17 @@
                             "Personality": 135838223,
                             "Condition": 0,
                             "EVsCollected": {
-                                "HP": 0,
-                                "Atk": 4,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 4
+                                "HP": 12,
+                                "Atk": 55,
+                                "Def": 24,
+                                "SpAtk": 8,
+                                "SpDef": 5,
+                                "Speed": 92
                             },
-                            "CaughtDateUtc": "2026-06-14T09:22:46.3223871Z",
+                            "CaughtDateUtc": "2026-06-14T09:22:46Z",
                             "CaughtLevel": 5,
                             "NotTradeable": true,
-                            "Form": null,
+                            "Form": "",
                             "NatureName": "Bashful",
                             "PokeballData": {
                                 "name": "Poké Ball",
@@ -167,251 +411,29 @@
                             }
                         },
                         "Stats": {
-                            "HP": 21,
-                            "Atk": 11,
-                            "Def": 14,
-                            "SpAtk": 11,
-                            "SpDef": 13,
-                            "Speed": 11
+                            "HP": 47,
+                            "Atk": 27,
+                            "Def": 37,
+                            "SpAtk": 29,
+                            "SpDef": 34,
+                            "Speed": 28
                         },
                         "Trainer": "CarroCarrillo",
                         "OriginalTrainer": "CarroCarrillo",
                         "Ability": "Overgrow",
-                        "ExpStart": 179,
-                        "ExpNext": 236,
+                        "ExpStart": 3120,
+                        "ExpNext": 3798,
                         "EggState": 0,
                         "StaticData": {
-                            "Name": "Chikorita",
-                            "Icon": "chikorita.png",
-                            "ShinyIcon": "chikorita.png",
+                            "Name": "Bayleef",
+                            "Icon": "bayleef.png",
+                            "ShinyIcon": "bayleef.png",
                             "DBForm": "None",
                             "DBPersonality": "none",
                             "Types": [
                                 {
                                     "name": "Grass",
                                     "color": "#77cc55"
-                                }
-                            ]
-                        }
-                    },
-                    "Position": 1,
-                    "Box": 0,
-                    "CanEvolve": -1,
-                    "CanLearnMove": [],
-                    "_Name": "InventoryPokemon"
-                },
-                {
-                    "Pokemon": {
-                        "UniqueID": "8f863153-7311-4af8-ae31-626a6cdd56e2",
-                        "Payload": {
-                            "PokemonID": 16,
-                            "Level": 5,
-                            "Exp": 141,
-                            "HP": 19,
-                            "Moves": [
-                                {
-                                    "Move": 33,
-                                    "PP": 35,
-                                    "MaxPP": 35,
-                                    "Name": "Tackle"
-                                },
-                                {
-                                    "Move": 28,
-                                    "PP": 15,
-                                    "MaxPP": 15,
-                                    "Name": "Sand Attack"
-                                },
-                                null,
-                                null
-                            ],
-                            "AbilitySlot": 2,
-                            "Happiness": 79,
-                            "Nature": 20,
-                            "Shiny": false,
-                            "IVs": {
-                                "HP": 1,
-                                "Atk": 3,
-                                "Def": 5,
-                                "SpAtk": 15,
-                                "SpDef": 16,
-                                "Speed": 13
-                            },
-                            "EVs": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 0
-                            },
-                            "Gender": 1,
-                            "Nickname": null,
-                            "Pokeball": 4,
-                            "HoldItem": 0,
-                            "Personality": 1391970952,
-                            "Condition": 0,
-                            "EVsCollected": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 3
-                            },
-                            "CaughtDateUtc": "2026-05-24T15:26:06Z",
-                            "CaughtLevel": 3,
-                            "NotTradeable": false,
-                            "Form": null,
-                            "NatureName": "Quirky",
-                            "PokeballData": {
-                                "name": "Poké Ball",
-                                "pic": "poke-ball.png"
-                            }
-                        },
-                        "Stats": {
-                            "HP": 19,
-                            "Atk": 9,
-                            "Def": 9,
-                            "SpAtk": 9,
-                            "SpDef": 9,
-                            "Speed": 11
-                        },
-                        "Trainer": "CarroCarrillo",
-                        "OriginalTrainer": "CarroCarrillo",
-                        "Ability": "Tangled Feet",
-                        "ExpStart": 135,
-                        "ExpNext": 179,
-                        "EggState": 0,
-                        "StaticData": {
-                            "Name": "Pidgey",
-                            "Icon": "pidgey.png",
-                            "ShinyIcon": "pidgey.png",
-                            "DBForm": "None",
-                            "DBPersonality": "none",
-                            "Types": [
-                                {
-                                    "name": "Normal",
-                                    "color": "#a7a796"
-                                },
-                                {
-                                    "name": "Flying",
-                                    "color": "#8899ff"
-                                }
-                            ]
-                        }
-                    },
-                    "Position": 2,
-                    "Box": 0,
-                    "CanEvolve": -1,
-                    "CanLearnMove": [],
-                    "_Name": "InventoryPokemon"
-                },
-                {
-                    "Pokemon": {
-                        "UniqueID": "e1b2ca8b-893c-4917-b639-1aa7d1b3d050",
-                        "Payload": {
-                            "PokemonID": 167,
-                            "Level": 5,
-                            "Exp": 131,
-                            "HP": 19,
-                            "Moves": [
-                                {
-                                    "Move": 132,
-                                    "PP": 35,
-                                    "MaxPP": 35,
-                                    "Name": "Constrict"
-                                },
-                                {
-                                    "Move": 40,
-                                    "PP": 35,
-                                    "MaxPP": 35,
-                                    "Name": "Poison Sting"
-                                },
-                                {
-                                    "Move": 81,
-                                    "PP": 40,
-                                    "MaxPP": 40,
-                                    "Name": "String Shot"
-                                },
-                                {
-                                    "Move": 71,
-                                    "PP": 25,
-                                    "MaxPP": 25,
-                                    "Name": "Absorb"
-                                }
-                            ],
-                            "AbilitySlot": 2,
-                            "Happiness": 69,
-                            "Nature": 11,
-                            "Shiny": false,
-                            "IVs": {
-                                "HP": 7,
-                                "Atk": 31,
-                                "Def": 1,
-                                "SpAtk": 17,
-                                "SpDef": 5,
-                                "Speed": 19
-                            },
-                            "EVs": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 0
-                            },
-                            "Gender": 1,
-                            "Nickname": null,
-                            "Pokeball": 492,
-                            "HoldItem": 0,
-                            "Personality": 664501270,
-                            "Condition": 0,
-                            "EVsCollected": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 2
-                            },
-                            "CaughtDateUtc": "2026-05-24T16:36:41Z",
-                            "CaughtLevel": 5,
-                            "NotTradeable": false,
-                            "Form": null,
-                            "NatureName": "Impish",
-                            "PokeballData": {
-                                "name": "Fast Ball",
-                                "pic": "fast-ball.png"
-                            }
-                        },
-                        "Stats": {
-                            "HP": 19,
-                            "Atk": 12,
-                            "Def": 9,
-                            "SpAtk": 8,
-                            "SpDef": 9,
-                            "Speed": 8
-                        },
-                        "Trainer": "CarroCarrillo",
-                        "OriginalTrainer": "CarroCarrillo",
-                        "Ability": "Insomnia",
-                        "ExpStart": 100,
-                        "ExpNext": 172,
-                        "EggState": 0,
-                        "StaticData": {
-                            "Name": "Spinarak",
-                            "Icon": "spinarak.png",
-                            "ShinyIcon": "spinarak.png",
-                            "DBForm": "None",
-                            "DBPersonality": "none",
-                            "Types": [
-                                {
-                                    "name": "Bug",
-                                    "color": "#aabb22"
-                                },
-                                {
-                                    "name": "Poison",
-                                    "color": "#a55294"
                                 }
                             ]
                         }
@@ -424,44 +446,44 @@
                 },
                 {
                     "Pokemon": {
-                        "UniqueID": "eb62e2e5-475e-40de-b19f-2a5d32f7b63b",
+                        "UniqueID": "746af26c-8e37-4e6e-9dbd-33ff78476f93",
                         "Payload": {
-                            "PokemonID": 39,
+                            "PokemonID": 175,
                             "Level": 5,
                             "Exp": 100,
-                            "HP": 27,
+                            "HP": 18,
                             "Moves": [
                                 {
-                                    "Move": 47,
-                                    "PP": 15,
-                                    "MaxPP": 15,
-                                    "Name": "Sing"
+                                    "Move": 204,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Charm"
                                 },
                                 {
-                                    "Move": 111,
+                                    "Move": 45,
                                     "PP": 40,
                                     "MaxPP": 40,
-                                    "Name": "Defense Curl"
+                                    "Name": "Growl"
                                 },
                                 {
-                                    "Move": 1,
-                                    "PP": 35,
-                                    "MaxPP": 35,
-                                    "Name": "Pound"
+                                    "Move": 118,
+                                    "PP": 10,
+                                    "MaxPP": 10,
+                                    "Name": "Metronome"
                                 },
                                 null
                             ],
                             "AbilitySlot": 2,
                             "Happiness": 70,
-                            "Nature": 3,
+                            "Nature": 6,
                             "Shiny": false,
                             "IVs": {
-                                "HP": 23,
-                                "Atk": 1,
-                                "Def": 9,
-                                "SpAtk": 11,
-                                "SpDef": 18,
-                                "Speed": 25
+                                "HP": 8,
+                                "Atk": 25,
+                                "Def": 29,
+                                "SpAtk": 26,
+                                "SpDef": 3,
+                                "Speed": 20
                             },
                             "EVs": {
                                 "HP": 0,
@@ -471,11 +493,11 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "Gender": 1,
+                            "Gender": 2,
                             "Nickname": null,
-                            "Pokeball": 4,
+                            "Pokeball": 0,
                             "HoldItem": 0,
-                            "Personality": 709027719,
+                            "Personality": 1360573620,
                             "Condition": 0,
                             "EVsCollected": {
                                 "HP": 0,
@@ -485,41 +507,37 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-05-24T18:43:47Z",
+                            "CaughtDateUtc": "2026-06-16T15:37:36.0738224Z",
                             "CaughtLevel": 5,
                             "NotTradeable": false,
                             "Form": null,
-                            "NatureName": "Bold",
+                            "NatureName": "Careful",
                             "PokeballData": {
                                 "name": "Poké Ball",
                                 "pic": "poke-ball.png"
                             }
                         },
                         "Stats": {
-                            "HP": 27,
+                            "HP": 18,
                             "Atk": 8,
-                            "Def": 7,
-                            "SpAtk": 10,
-                            "SpDef": 8,
+                            "Def": 12,
+                            "SpAtk": 9,
+                            "SpDef": 12,
                             "Speed": 8
                         },
                         "Trainer": "CarroCarrillo",
                         "OriginalTrainer": "CarroCarrillo",
-                        "Ability": "Competitive",
+                        "Ability": "Serene Grace",
                         "ExpStart": 100,
                         "ExpNext": 172,
                         "EggState": 0,
                         "StaticData": {
-                            "Name": "Jigglypuff",
-                            "Icon": "jigglypuff.png",
-                            "ShinyIcon": "jigglypuff.png",
+                            "Name": "Togepi",
+                            "Icon": "togepi.png",
+                            "ShinyIcon": "togepi.png",
                             "DBForm": "None",
                             "DBPersonality": "none",
                             "Types": [
-                                {
-                                    "name": "Normal",
-                                    "color": "#a7a796"
-                                },
                                 {
                                     "name": "Fairy",
                                     "color": "#ee99ee"
@@ -535,118 +553,12 @@
                 },
                 {
                     "Pokemon": {
-                        "UniqueID": "92e9e33b-b27a-4395-9720-e210966639cb",
-                        "Payload": {
-                            "PokemonID": 165,
-                            "Level": 5,
-                            "Exp": 100,
-                            "HP": 19,
-                            "Moves": [
-                                {
-                                    "Move": 33,
-                                    "PP": 35,
-                                    "MaxPP": 35,
-                                    "Name": "Tackle"
-                                },
-                                {
-                                    "Move": 48,
-                                    "PP": 20,
-                                    "MaxPP": 20,
-                                    "Name": "Supersonic"
-                                },
-                                null,
-                                null
-                            ],
-                            "AbilitySlot": 1,
-                            "Happiness": 70,
-                            "Nature": 3,
-                            "Shiny": false,
-                            "IVs": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 21,
-                                "SpAtk": 10,
-                                "SpDef": 17,
-                                "Speed": 21
-                            },
-                            "EVs": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 0
-                            },
-                            "Gender": 2,
-                            "Nickname": null,
-                            "Pokeball": 4,
-                            "HoldItem": 0,
-                            "Personality": 770281779,
-                            "Condition": 0,
-                            "EVsCollected": {
-                                "HP": 0,
-                                "Atk": 0,
-                                "Def": 0,
-                                "SpAtk": 0,
-                                "SpDef": 0,
-                                "Speed": 0
-                            },
-                            "CaughtDateUtc": "2026-05-24T17:14:33Z",
-                            "CaughtLevel": 5,
-                            "NotTradeable": false,
-                            "Form": null,
-                            "NatureName": "Bold",
-                            "PokeballData": {
-                                "name": "Poké Ball",
-                                "pic": "poke-ball.png"
-                            }
-                        },
-                        "Stats": {
-                            "HP": 19,
-                            "Atk": 6,
-                            "Def": 9,
-                            "SpAtk": 9,
-                            "SpDef": 13,
-                            "Speed": 11
-                        },
-                        "Trainer": "CarroCarrillo",
-                        "OriginalTrainer": "CarroCarrillo",
-                        "Ability": "Swarm",
-                        "ExpStart": 100,
-                        "ExpNext": 172,
-                        "EggState": 0,
-                        "StaticData": {
-                            "Name": "Ledyba",
-                            "Icon": "ledyba.png",
-                            "ShinyIcon": "ledyba.png",
-                            "DBForm": "None",
-                            "DBPersonality": "none",
-                            "Types": [
-                                {
-                                    "name": "Bug",
-                                    "color": "#aabb22"
-                                },
-                                {
-                                    "name": "Flying",
-                                    "color": "#8899ff"
-                                }
-                            ]
-                        }
-                    },
-                    "Position": 5,
-                    "Box": 0,
-                    "CanEvolve": -1,
-                    "CanLearnMove": [],
-                    "_Name": "InventoryPokemon"
-                },
-                {
-                    "Pokemon": {
-                        "UniqueID": "8a11eaab-bf63-4fd4-b0a6-dde3c3639f38",
+                        "UniqueID": "9845ba2d-94a8-4efc-83ea-b060dd4f00f2",
                         "Payload": {
                             "PokemonID": 187,
-                            "Level": 5,
-                            "Exp": 135,
-                            "HP": 19,
+                            "Level": 6,
+                            "Exp": 179,
+                            "HP": 21,
                             "Moves": [
                                 {
                                     "Move": 71,
@@ -666,19 +578,24 @@
                                     "MaxPP": 5,
                                     "Name": "Synthesis"
                                 },
-                                null
+                                {
+                                    "Move": 39,
+                                    "PP": 30,
+                                    "MaxPP": 30,
+                                    "Name": "Tail Whip"
+                                }
                             ],
                             "AbilitySlot": 2,
                             "Happiness": 70,
-                            "Nature": 11,
+                            "Nature": 8,
                             "Shiny": false,
                             "IVs": {
-                                "HP": 12,
-                                "Atk": 21,
-                                "Def": 8,
-                                "SpAtk": 9,
-                                "SpDef": 11,
-                                "Speed": 15
+                                "HP": 15,
+                                "Atk": 30,
+                                "Def": 18,
+                                "SpAtk": 22,
+                                "SpDef": 24,
+                                "Speed": 31
                             },
                             "EVs": {
                                 "HP": 0,
@@ -688,11 +605,11 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "Gender": 1,
+                            "Gender": 2,
                             "Nickname": null,
-                            "Pokeball": 0,
+                            "Pokeball": 2,
                             "HoldItem": 0,
-                            "Personality": 170055268,
+                            "Personality": 684874636,
                             "Condition": 0,
                             "EVsCollected": {
                                 "HP": 0,
@@ -702,29 +619,29 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-06-14T09:33:32.0498723Z",
-                            "CaughtLevel": 5,
+                            "CaughtDateUtc": "2026-06-16T16:20:59.6167207Z",
+                            "CaughtLevel": 6,
                             "NotTradeable": false,
                             "Form": null,
-                            "NatureName": "Impish",
+                            "NatureName": "Gentle",
                             "PokeballData": {
-                                "name": "Poké Ball",
-                                "pic": "poke-ball.png"
+                                "name": "Ultra Ball",
+                                "pic": "ultra-ball.png"
                             }
                         },
                         "Stats": {
-                            "HP": 19,
-                            "Atk": 9,
+                            "HP": 21,
+                            "Atk": 11,
                             "Def": 9,
-                            "SpAtk": 7,
-                            "SpDef": 11,
-                            "Speed": 10
+                            "SpAtk": 10,
+                            "SpDef": 14,
+                            "Speed": 12
                         },
                         "Trainer": "CarroCarrillo",
                         "OriginalTrainer": "CarroCarrillo",
                         "Ability": "Leaf Guard",
-                        "ExpStart": 135,
-                        "ExpNext": 179,
+                        "ExpStart": 179,
+                        "ExpNext": 236,
                         "EggState": 0,
                         "StaticData": {
                             "Name": "Hoppip",
@@ -740,6 +657,117 @@
                                 {
                                     "name": "Flying",
                                     "color": "#8899ff"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 5,
+                    "Box": 0,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "056aca15-770b-4bb7-b63b-de80e1dd5391",
+                        "Payload": {
+                            "PokemonID": 194,
+                            "Level": 6,
+                            "Exp": 216,
+                            "HP": 22,
+                            "Moves": [
+                                {
+                                    "Move": 39,
+                                    "PP": 30,
+                                    "MaxPP": 30,
+                                    "Name": "Tail Whip"
+                                },
+                                {
+                                    "Move": 55,
+                                    "PP": 25,
+                                    "MaxPP": 25,
+                                    "Name": "Water Gun"
+                                },
+                                {
+                                    "Move": 300,
+                                    "PP": 15,
+                                    "MaxPP": 15,
+                                    "Name": "Mud Sport"
+                                },
+                                null
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 70,
+                            "Nature": 17,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 0,
+                                "Atk": 24,
+                                "Def": 31,
+                                "SpAtk": 3,
+                                "SpDef": 22,
+                                "Speed": 22
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 7,
+                            "HoldItem": 0,
+                            "Personality": 1641795105,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-06-16T17:10:39.7963105Z",
+                            "CaughtLevel": 6,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Naive",
+                            "PokeballData": {
+                                "name": "Dive Ball",
+                                "pic": "dive-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 22,
+                            "Atk": 11,
+                            "Def": 12,
+                            "SpAtk": 8,
+                            "SpDef": 8,
+                            "Speed": 8
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Damp",
+                        "ExpStart": 216,
+                        "ExpNext": 343,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Wooper",
+                            "Icon": "wooper.png",
+                            "ShinyIcon": "wooper.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Water",
+                                    "color": "#3399ff"
+                                },
+                                {
+                                    "name": "Ground",
+                                    "color": "#ddbb55"
                                 }
                             ]
                         }
@@ -2939,6 +2967,423 @@
                         }
                     },
                     "Position": 20,
+                    "Box": 1,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "107cad09-8286-408f-83ca-2887c41dd767",
+                        "Payload": {
+                            "PokemonID": 11,
+                            "Level": 4,
+                            "Exp": 64,
+                            "HP": 2,
+                            "Moves": [
+                                {
+                                    "Move": 106,
+                                    "PP": 17,
+                                    "MaxPP": 30,
+                                    "Name": "Harden"
+                                },
+                                null,
+                                null,
+                                null
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 70,
+                            "Nature": 12,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 23,
+                                "Atk": 21,
+                                "Def": 9,
+                                "SpAtk": 5,
+                                "SpDef": 18,
+                                "Speed": 19
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 4,
+                            "HoldItem": 0,
+                            "Personality": 2090650487,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-06-15T15:15:15Z",
+                            "CaughtLevel": 4,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Jolly",
+                            "PokeballData": {
+                                "name": "Poké Ball",
+                                "pic": "poke-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 18,
+                            "Atk": 7,
+                            "Def": 9,
+                            "SpAtk": 6,
+                            "SpDef": 7,
+                            "Speed": 8
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Shed Skin",
+                        "ExpStart": 64,
+                        "ExpNext": 125,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Metapod",
+                            "Icon": "metapod.png",
+                            "ShinyIcon": "metapod.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Bug",
+                                    "color": "#aabb22"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 21,
+                    "Box": 1,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "a8383171-9f75-41bb-8cb3-68c77360198f",
+                        "Payload": {
+                            "PokemonID": 11,
+                            "Level": 4,
+                            "Exp": 64,
+                            "HP": 6,
+                            "Moves": [
+                                {
+                                    "Move": 106,
+                                    "PP": 28,
+                                    "MaxPP": 30,
+                                    "Name": "Harden"
+                                },
+                                null,
+                                null,
+                                null
+                            ],
+                            "AbilitySlot": 2,
+                            "Happiness": 70,
+                            "Nature": 23,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 15,
+                                "Atk": 9,
+                                "Def": 19,
+                                "SpAtk": 14,
+                                "SpDef": 8,
+                                "Speed": 7
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 2,
+                            "HoldItem": 0,
+                            "Personality": 1442160244,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-06-15T15:38:33Z",
+                            "CaughtLevel": 4,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Sassy",
+                            "PokeballData": {
+                                "name": "Ultra Ball",
+                                "pic": "ultra-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 18,
+                            "Atk": 6,
+                            "Def": 10,
+                            "SpAtk": 7,
+                            "SpDef": 7,
+                            "Speed": 6
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Shed Skin",
+                        "ExpStart": 64,
+                        "ExpNext": 125,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Metapod",
+                            "Icon": "metapod.png",
+                            "ShinyIcon": "metapod.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Bug",
+                                    "color": "#aabb22"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 22,
+                    "Box": 1,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "e3aacd23-cc66-4fd2-b08a-d2816cdc0ca1",
+                        "Payload": {
+                            "PokemonID": 466,
+                            "Level": 46,
+                            "Exp": 100089,
+                            "HP": 126,
+                            "Moves": [
+                                {
+                                    "Move": 86,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Thunder Wave"
+                                },
+                                {
+                                    "Move": 486,
+                                    "PP": 10,
+                                    "MaxPP": 10,
+                                    "Name": "Electro Ball"
+                                },
+                                {
+                                    "Move": 280,
+                                    "PP": 15,
+                                    "MaxPP": 15,
+                                    "Name": "Brick Break"
+                                },
+                                {
+                                    "Move": 9,
+                                    "PP": 15,
+                                    "MaxPP": 15,
+                                    "Name": "Thunder Punch"
+                                }
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 74,
+                            "Nature": 6,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 4,
+                                "Atk": 27,
+                                "Def": 7,
+                                "SpAtk": 21,
+                                "SpDef": 1,
+                                "Speed": 9
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 21,
+                                "Def": 6,
+                                "SpAtk": 0,
+                                "SpDef": 20,
+                                "Speed": 26
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 492,
+                            "HoldItem": 0,
+                            "Personality": 145053463,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 7,
+                                "Atk": 34,
+                                "Def": 28,
+                                "SpAtk": 25,
+                                "SpDef": 28,
+                                "Speed": 47
+                            },
+                            "CaughtDateUtc": "2026-06-02T10:35:13Z",
+                            "CaughtLevel": 32,
+                            "NotTradeable": false,
+                            "Form": "",
+                            "NatureName": "Careful",
+                            "PokeballData": {
+                                "name": "Fast Ball",
+                                "pic": "fast-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 126,
+                            "Atk": 132,
+                            "Def": 70,
+                            "SpAtk": 91,
+                            "SpDef": 93,
+                            "Speed": 99
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "Mniszullo",
+                        "Ability": "Motor Drive",
+                        "ExpStart": 97336,
+                        "ExpNext": 103823,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Electivire",
+                            "Icon": "electivire.png",
+                            "ShinyIcon": "electivire.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Electric",
+                                    "color": "#f3d327"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 23,
+                    "Box": 1,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "535964bf-8ac1-4902-a4e3-5a83087a1bcf",
+                        "Payload": {
+                            "PokemonID": 194,
+                            "Level": 6,
+                            "Exp": 216,
+                            "HP": 23,
+                            "Moves": [
+                                {
+                                    "Move": 39,
+                                    "PP": 30,
+                                    "MaxPP": 30,
+                                    "Name": "Tail Whip"
+                                },
+                                {
+                                    "Move": 55,
+                                    "PP": 25,
+                                    "MaxPP": 25,
+                                    "Name": "Water Gun"
+                                },
+                                {
+                                    "Move": 300,
+                                    "PP": 15,
+                                    "MaxPP": 15,
+                                    "Name": "Mud Sport"
+                                },
+                                null
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 70,
+                            "Nature": 23,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 8,
+                                "Atk": 28,
+                                "Def": 16,
+                                "SpAtk": 22,
+                                "SpDef": 21,
+                                "Speed": 30
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 2,
+                            "Nickname": null,
+                            "Pokeball": 3,
+                            "HoldItem": 0,
+                            "Personality": 1012036837,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-06-16T17:11:17.7533038Z",
+                            "CaughtLevel": 6,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Sassy",
+                            "PokeballData": {
+                                "name": "Great Ball",
+                                "pic": "great-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 23,
+                            "Atk": 12,
+                            "Def": 11,
+                            "SpAtk": 9,
+                            "SpDef": 9,
+                            "Speed": 7
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Damp",
+                        "ExpStart": 216,
+                        "ExpNext": 343,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Wooper",
+                            "Icon": "wooper.png",
+                            "ShinyIcon": "wooper.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Water",
+                                    "color": "#3399ff"
+                                },
+                                {
+                                    "name": "Ground",
+                                    "color": "#ddbb55"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 24,
                     "Box": 1,
                     "CanEvolve": -1,
                     "CanLearnMove": [],
@@ -12303,7 +12748,7 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-06-14T08:37:53.0027997Z",
+                            "CaughtDateUtc": "2026-06-14T08:37:53Z",
                             "CaughtLevel": 28,
                             "NotTradeable": false,
                             "Form": null,
@@ -12415,7 +12860,7 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-06-14T08:39:07.1819704Z",
+                            "CaughtDateUtc": "2026-06-14T08:39:07Z",
                             "CaughtLevel": 30,
                             "NotTradeable": false,
                             "Form": null,
@@ -12531,7 +12976,7 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-06-14T08:59:53.3237579Z",
+                            "CaughtDateUtc": "2026-06-14T08:59:53Z",
                             "CaughtLevel": 32,
                             "NotTradeable": false,
                             "Form": null,
@@ -13033,106 +13478,100 @@
                 },
                 {
                     "Pokemon": {
-                        "UniqueID": "e3aacd23-cc66-4fd2-b08a-d2816cdc0ca1",
+                        "UniqueID": "8f863153-7311-4af8-ae31-626a6cdd56e2",
                         "Payload": {
-                            "PokemonID": 466,
-                            "Level": 46,
-                            "Exp": 100071,
-                            "HP": 126,
+                            "PokemonID": 16,
+                            "Level": 5,
+                            "Exp": 141,
+                            "HP": 19,
                             "Moves": [
                                 {
-                                    "Move": 86,
-                                    "PP": 20,
-                                    "MaxPP": 20,
-                                    "Name": "Thunder Wave"
+                                    "Move": 33,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Tackle"
                                 },
                                 {
-                                    "Move": 486,
-                                    "PP": 10,
-                                    "MaxPP": 10,
-                                    "Name": "Electro Ball"
-                                },
-                                {
-                                    "Move": 280,
+                                    "Move": 28,
                                     "PP": 15,
                                     "MaxPP": 15,
-                                    "Name": "Brick Break"
+                                    "Name": "Sand Attack"
                                 },
-                                {
-                                    "Move": 9,
-                                    "PP": 15,
-                                    "MaxPP": 15,
-                                    "Name": "Thunder Punch"
-                                }
+                                null,
+                                null
                             ],
-                            "AbilitySlot": 1,
-                            "Happiness": 74,
-                            "Nature": 6,
+                            "AbilitySlot": 2,
+                            "Happiness": 79,
+                            "Nature": 20,
                             "Shiny": false,
                             "IVs": {
-                                "HP": 4,
-                                "Atk": 27,
-                                "Def": 7,
-                                "SpAtk": 21,
-                                "SpDef": 1,
-                                "Speed": 9
+                                "HP": 1,
+                                "Atk": 3,
+                                "Def": 5,
+                                "SpAtk": 15,
+                                "SpDef": 16,
+                                "Speed": 13
                             },
                             "EVs": {
                                 "HP": 0,
-                                "Atk": 21,
-                                "Def": 6,
+                                "Atk": 0,
+                                "Def": 0,
                                 "SpAtk": 0,
-                                "SpDef": 20,
-                                "Speed": 26
+                                "SpDef": 0,
+                                "Speed": 0
                             },
                             "Gender": 1,
                             "Nickname": null,
-                            "Pokeball": 492,
+                            "Pokeball": 4,
                             "HoldItem": 0,
-                            "Personality": 145053463,
+                            "Personality": 1391970952,
                             "Condition": 0,
                             "EVsCollected": {
-                                "HP": 7,
-                                "Atk": 34,
-                                "Def": 28,
-                                "SpAtk": 24,
-                                "SpDef": 28,
-                                "Speed": 46
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 3
                             },
-                            "CaughtDateUtc": "2026-06-02T10:35:13Z",
-                            "CaughtLevel": 32,
+                            "CaughtDateUtc": "2026-05-24T15:26:06Z",
+                            "CaughtLevel": 3,
                             "NotTradeable": false,
-                            "Form": "",
-                            "NatureName": "Careful",
+                            "Form": null,
+                            "NatureName": "Quirky",
                             "PokeballData": {
-                                "name": "Fast Ball",
-                                "pic": "fast-ball.png"
+                                "name": "Poké Ball",
+                                "pic": "poke-ball.png"
                             }
                         },
                         "Stats": {
-                            "HP": 126,
-                            "Atk": 132,
-                            "Def": 70,
-                            "SpAtk": 91,
-                            "SpDef": 93,
-                            "Speed": 99
+                            "HP": 19,
+                            "Atk": 9,
+                            "Def": 9,
+                            "SpAtk": 9,
+                            "SpDef": 9,
+                            "Speed": 11
                         },
                         "Trainer": "CarroCarrillo",
-                        "OriginalTrainer": "Mniszullo",
-                        "Ability": "Motor Drive",
-                        "ExpStart": 97336,
-                        "ExpNext": 103823,
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Tangled Feet",
+                        "ExpStart": 135,
+                        "ExpNext": 179,
                         "EggState": 0,
                         "StaticData": {
-                            "Name": "Electivire",
-                            "Icon": "electivire.png",
-                            "ShinyIcon": "electivire.png",
+                            "Name": "Pidgey",
+                            "Icon": "pidgey.png",
+                            "ShinyIcon": "pidgey.png",
                             "DBForm": "None",
                             "DBPersonality": "none",
                             "Types": [
                                 {
-                                    "name": "Electric",
-                                    "color": "#f3d327"
+                                    "name": "Normal",
+                                    "color": "#a7a796"
+                                },
+                                {
+                                    "name": "Flying",
+                                    "color": "#8899ff"
                                 }
                             ]
                         }
@@ -13261,48 +13700,48 @@
                 },
                 {
                     "Pokemon": {
-                        "UniqueID": "ad4f4d34-8fcd-4b65-91b7-33a4e12b9785",
+                        "UniqueID": "e1b2ca8b-893c-4917-b639-1aa7d1b3d050",
                         "Payload": {
-                            "PokemonID": 316,
-                            "Level": 15,
-                            "Exp": 1957,
-                            "HP": 50,
+                            "PokemonID": 167,
+                            "Level": 5,
+                            "Exp": 131,
+                            "HP": 19,
                             "Moves": [
                                 {
-                                    "Move": 281,
-                                    "PP": 10,
-                                    "MaxPP": 10,
-                                    "Name": "Yawn"
+                                    "Move": 132,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Constrict"
                                 },
                                 {
-                                    "Move": 139,
+                                    "Move": 40,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Poison Sting"
+                                },
+                                {
+                                    "Move": 81,
                                     "PP": 40,
                                     "MaxPP": 40,
-                                    "Name": "Poison Gas"
+                                    "Name": "String Shot"
                                 },
                                 {
-                                    "Move": 124,
-                                    "PP": 20,
-                                    "MaxPP": 20,
-                                    "Name": "Sludge"
-                                },
-                                {
-                                    "Move": 133,
-                                    "PP": 20,
-                                    "MaxPP": 20,
-                                    "Name": "Amnesia"
+                                    "Move": 71,
+                                    "PP": 25,
+                                    "MaxPP": 25,
+                                    "Name": "Absorb"
                                 }
                             ],
                             "AbilitySlot": 2,
-                            "Happiness": 70,
-                            "Nature": 12,
+                            "Happiness": 69,
+                            "Nature": 11,
                             "Shiny": false,
                             "IVs": {
-                                "HP": 30,
-                                "Atk": 4,
-                                "Def": 31,
-                                "SpAtk": 25,
-                                "SpDef": 31,
+                                "HP": 7,
+                                "Atk": 31,
+                                "Def": 1,
+                                "SpAtk": 17,
+                                "SpDef": 5,
                                 "Speed": 19
                             },
                             "EVs": {
@@ -13315,9 +13754,125 @@
                             },
                             "Gender": 1,
                             "Nickname": null,
+                            "Pokeball": 492,
+                            "HoldItem": 0,
+                            "Personality": 664501270,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 2
+                            },
+                            "CaughtDateUtc": "2026-05-24T16:36:41Z",
+                            "CaughtLevel": 5,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Impish",
+                            "PokeballData": {
+                                "name": "Fast Ball",
+                                "pic": "fast-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 19,
+                            "Atk": 12,
+                            "Def": 9,
+                            "SpAtk": 8,
+                            "SpDef": 9,
+                            "Speed": 8
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Insomnia",
+                        "ExpStart": 100,
+                        "ExpNext": 172,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Spinarak",
+                            "Icon": "spinarak.png",
+                            "ShinyIcon": "spinarak.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Bug",
+                                    "color": "#aabb22"
+                                },
+                                {
+                                    "name": "Poison",
+                                    "color": "#a55294"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 20,
+                    "Box": 5,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "43279b1c-63e4-4282-8db4-6bcb809e2b24",
+                        "Payload": {
+                            "PokemonID": 211,
+                            "Level": 9,
+                            "Exp": 729,
+                            "HP": 31,
+                            "Moves": [
+                                {
+                                    "Move": 33,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Tackle"
+                                },
+                                {
+                                    "Move": 55,
+                                    "PP": 25,
+                                    "MaxPP": 25,
+                                    "Name": "Water Gun"
+                                },
+                                {
+                                    "Move": 106,
+                                    "PP": 30,
+                                    "MaxPP": 30,
+                                    "Name": "Harden"
+                                },
+                                {
+                                    "Move": 107,
+                                    "PP": 10,
+                                    "MaxPP": 10,
+                                    "Name": "Minimize"
+                                }
+                            ],
+                            "AbilitySlot": 2,
+                            "Happiness": 70,
+                            "Nature": 16,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 8,
+                                "Atk": 21,
+                                "Def": 24,
+                                "SpAtk": 30,
+                                "SpDef": 11,
+                                "Speed": 14
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 2,
+                            "Nickname": null,
                             "Pokeball": 2,
                             "HoldItem": 0,
-                            "Personality": 822850952,
+                            "Personality": 1832267292,
                             "Condition": 0,
                             "EVsCollected": {
                                 "HP": 0,
@@ -13327,37 +13882,41 @@
                                 "SpDef": 0,
                                 "Speed": 0
                             },
-                            "CaughtDateUtc": "2026-06-13T11:03:41Z",
-                            "CaughtLevel": 15,
+                            "CaughtDateUtc": "2026-06-16T15:57:08.1260964Z",
+                            "CaughtLevel": 9,
                             "NotTradeable": false,
                             "Form": "",
-                            "NatureName": "Jolly",
+                            "NatureName": "Modest",
                             "PokeballData": {
                                 "name": "Ultra Ball",
                                 "pic": "ultra-ball.png"
                             }
                         },
                         "Stats": {
-                            "HP": 50,
-                            "Atk": 18,
-                            "Def": 25,
+                            "HP": 31,
+                            "Atk": 20,
+                            "Def": 22,
                             "SpAtk": 18,
-                            "SpDef": 25,
-                            "Speed": 20
+                            "SpDef": 15,
+                            "Speed": 21
                         },
                         "Trainer": "CarroCarrillo",
                         "OriginalTrainer": "CarroCarrillo",
-                        "Ability": "Sticky Hold",
-                        "ExpStart": 1957,
-                        "ExpNext": 2457,
+                        "Ability": "Swift Swim",
+                        "ExpStart": 729,
+                        "ExpNext": 1000,
                         "EggState": 0,
                         "StaticData": {
-                            "Name": "Gulpin",
-                            "Icon": "gulpin.png",
-                            "ShinyIcon": "gulpin.png",
+                            "Name": "Qwilfish",
+                            "Icon": "qwilfish.png",
+                            "ShinyIcon": "qwilfish.png",
                             "DBForm": "None",
                             "DBPersonality": "none",
                             "Types": [
+                                {
+                                    "name": "Water",
+                                    "color": "#3399ff"
+                                },
                                 {
                                     "name": "Poison",
                                     "color": "#a55294"
@@ -13365,7 +13924,335 @@
                             ]
                         }
                     },
-                    "Position": 20,
+                    "Position": 21,
+                    "Box": 5,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "eb62e2e5-475e-40de-b19f-2a5d32f7b63b",
+                        "Payload": {
+                            "PokemonID": 39,
+                            "Level": 5,
+                            "Exp": 100,
+                            "HP": 27,
+                            "Moves": [
+                                {
+                                    "Move": 47,
+                                    "PP": 15,
+                                    "MaxPP": 15,
+                                    "Name": "Sing"
+                                },
+                                {
+                                    "Move": 111,
+                                    "PP": 40,
+                                    "MaxPP": 40,
+                                    "Name": "Defense Curl"
+                                },
+                                {
+                                    "Move": 1,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Pound"
+                                },
+                                null
+                            ],
+                            "AbilitySlot": 2,
+                            "Happiness": 70,
+                            "Nature": 3,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 23,
+                                "Atk": 1,
+                                "Def": 9,
+                                "SpAtk": 11,
+                                "SpDef": 18,
+                                "Speed": 25
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 4,
+                            "HoldItem": 0,
+                            "Personality": 709027719,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-05-24T18:43:47Z",
+                            "CaughtLevel": 5,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Bold",
+                            "PokeballData": {
+                                "name": "Poké Ball",
+                                "pic": "poke-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 27,
+                            "Atk": 8,
+                            "Def": 7,
+                            "SpAtk": 10,
+                            "SpDef": 8,
+                            "Speed": 8
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Competitive",
+                        "ExpStart": 100,
+                        "ExpNext": 172,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Jigglypuff",
+                            "Icon": "jigglypuff.png",
+                            "ShinyIcon": "jigglypuff.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Normal",
+                                    "color": "#a7a796"
+                                },
+                                {
+                                    "name": "Fairy",
+                                    "color": "#ee99ee"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 22,
+                    "Box": 5,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "92e9e33b-b27a-4395-9720-e210966639cb",
+                        "Payload": {
+                            "PokemonID": 165,
+                            "Level": 5,
+                            "Exp": 100,
+                            "HP": 19,
+                            "Moves": [
+                                {
+                                    "Move": 33,
+                                    "PP": 35,
+                                    "MaxPP": 35,
+                                    "Name": "Tackle"
+                                },
+                                {
+                                    "Move": 48,
+                                    "PP": 20,
+                                    "MaxPP": 20,
+                                    "Name": "Supersonic"
+                                },
+                                null,
+                                null
+                            ],
+                            "AbilitySlot": 1,
+                            "Happiness": 70,
+                            "Nature": 3,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 21,
+                                "SpAtk": 10,
+                                "SpDef": 17,
+                                "Speed": 21
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 2,
+                            "Nickname": null,
+                            "Pokeball": 4,
+                            "HoldItem": 0,
+                            "Personality": 770281779,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-05-24T17:14:33Z",
+                            "CaughtLevel": 5,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Bold",
+                            "PokeballData": {
+                                "name": "Poké Ball",
+                                "pic": "poke-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 19,
+                            "Atk": 6,
+                            "Def": 9,
+                            "SpAtk": 9,
+                            "SpDef": 13,
+                            "Speed": 11
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Swarm",
+                        "ExpStart": 100,
+                        "ExpNext": 172,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Ledyba",
+                            "Icon": "ledyba.png",
+                            "ShinyIcon": "ledyba.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Bug",
+                                    "color": "#aabb22"
+                                },
+                                {
+                                    "name": "Flying",
+                                    "color": "#8899ff"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 23,
+                    "Box": 5,
+                    "CanEvolve": -1,
+                    "CanLearnMove": [],
+                    "_Name": "InventoryPokemon"
+                },
+                {
+                    "Pokemon": {
+                        "UniqueID": "8a11eaab-bf63-4fd4-b0a6-dde3c3639f38",
+                        "Payload": {
+                            "PokemonID": 187,
+                            "Level": 5,
+                            "Exp": 135,
+                            "HP": 19,
+                            "Moves": [
+                                {
+                                    "Move": 71,
+                                    "PP": 25,
+                                    "MaxPP": 25,
+                                    "Name": "Absorb"
+                                },
+                                {
+                                    "Move": 150,
+                                    "PP": 40,
+                                    "MaxPP": 40,
+                                    "Name": "Splash"
+                                },
+                                {
+                                    "Move": 235,
+                                    "PP": 5,
+                                    "MaxPP": 5,
+                                    "Name": "Synthesis"
+                                },
+                                null
+                            ],
+                            "AbilitySlot": 2,
+                            "Happiness": 70,
+                            "Nature": 11,
+                            "Shiny": false,
+                            "IVs": {
+                                "HP": 12,
+                                "Atk": 21,
+                                "Def": 8,
+                                "SpAtk": 9,
+                                "SpDef": 11,
+                                "Speed": 15
+                            },
+                            "EVs": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "Gender": 1,
+                            "Nickname": null,
+                            "Pokeball": 0,
+                            "HoldItem": 0,
+                            "Personality": 170055268,
+                            "Condition": 0,
+                            "EVsCollected": {
+                                "HP": 0,
+                                "Atk": 0,
+                                "Def": 0,
+                                "SpAtk": 0,
+                                "SpDef": 0,
+                                "Speed": 0
+                            },
+                            "CaughtDateUtc": "2026-06-14T09:33:32Z",
+                            "CaughtLevel": 5,
+                            "NotTradeable": false,
+                            "Form": null,
+                            "NatureName": "Impish",
+                            "PokeballData": {
+                                "name": "Poké Ball",
+                                "pic": "poke-ball.png"
+                            }
+                        },
+                        "Stats": {
+                            "HP": 19,
+                            "Atk": 9,
+                            "Def": 9,
+                            "SpAtk": 7,
+                            "SpDef": 11,
+                            "Speed": 10
+                        },
+                        "Trainer": "CarroCarrillo",
+                        "OriginalTrainer": "CarroCarrillo",
+                        "Ability": "Leaf Guard",
+                        "ExpStart": 135,
+                        "ExpNext": 179,
+                        "EggState": 0,
+                        "StaticData": {
+                            "Name": "Hoppip",
+                            "Icon": "hoppip.png",
+                            "ShinyIcon": "hoppip.png",
+                            "DBForm": "None",
+                            "DBPersonality": "none",
+                            "Types": [
+                                {
+                                    "name": "Grass",
+                                    "color": "#77cc55"
+                                },
+                                {
+                                    "name": "Flying",
+                                    "color": "#8899ff"
+                                }
+                            ]
+                        }
+                    },
+                    "Position": 24,
                     "Box": 5,
                     "CanEvolve": -1,
                     "CanLearnMove": [],
@@ -13417,7 +14304,7 @@
             [],
             []
         ],
-        "reward_level": 6,
+        "reward_level": 8,
         "selected_avatar": ""
     }
 }
