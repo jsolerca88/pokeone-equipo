@@ -342,7 +342,7 @@ def rarity_pct(ivs: dict) -> int:
     return round(sum(top5) / (31 * 5) * 100)
 
 def rarity_css(pct: int) -> str:
-    if pct >= 75: return "rarity-purple"
+    if pct >= 80: return "rarity-purple"
     if pct >= 65: return "rarity-blue"
     if pct >= 55: return "rarity-green"
     if pct >= 45: return "rarity-white"
