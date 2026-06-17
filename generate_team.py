@@ -25,86 +25,271 @@ def load_movesets() -> dict:
 
 MOVESETS: dict = load_movesets()
 
-# ── traducciones de movimientos (EN → ES) ────────────────────────────────────
+# ── traducciones de movimientos (EN → ES, nombres oficiales Wikidex España) ───
 MOVE_ES: dict[str, str] = {
-    # A
     "Absorb":           "Absorber",
+    "Acid":             "Ácido",
+    "Acid Spray":       "Bomba Ácida",
+    "Aerial Ace":       "Golpe Aéreo",
     "Agility":          "Agilidad",
+    "Air Cutter":       "Aire Afilado",
     "Air Slash":        "Tajo Aéreo",
     "Amnesia":          "Amnesia",
     "Ancient Power":    "Poder Antiguo",
-    # B
+    "Aqua Jet":         "Acua Jet",
+    "Aqua Ring":        "Acua Aro",
+    "Aqua Tail":        "Acua Cola",
+    "Assurance":        "Buena Baza",
+    "Astonish":         "Impresionar",
+    "Aurora Beam":      "Rayo Aurora",
+    "Bestow":           "Ofrenda",
     "Bide":             "Resistir",
+    "Bite":             "Mordisco",
+    "Brick Break":      "Demolición",
+    "Brine":            "Salmuera",
+    "Bubble Beam":      "Rayo Burbuja",
+    "Bug Bite":         "Picadura",
     "Bug Buzz":         "Zumbido",
-    # C
+    "Bulldoze":         "Terratemblor",
+    "Bullet Punch":     "Puño Bala",
+    "Bullet Seed":      "Semilladora",
+    "Calm Mind":        "Paz Mental",
+    "Charge":           "Carga",
+    "Charge Beam":      "Rayo Carga",
     "Charm":            "Seducción",
+    "Chip Away":        "Guardia Baja",
+    "Clear Smog":       "Niebla Clara",
+    "Close Combat":     "A Bocajarro",
+    "Confuse Ray":      "Rayo Confuso",
+    "Confusion":        "Confusión",
+    "Constrict":        "Restricción",
     "Cotton Guard":     "Escudo Algodón",
     "Cotton Spore":     "Polen Algodón",
     "Crabhammer":       "Golpe Cangrejo",
-    # D
+    "Cross Chop":       "Tajo Cruzado",
+    "Crunch":           "Triturar",
+    "Curse":            "Maldición",
+    "Cut":              "Corte",
+    "Dark Pulse":       "Pulso Umbrío",
     "Dazzling Gleam":   "Brillo Deslumbrante",
-    # E
+    "Defense Curl":     "Rizo Defensa",
+    "Dig":              "Excavar",
+    "Disable":          "Anulación",
+    "Disarming Voice":  "Voz Cautivadora",
+    "Discharge":        "Chispazo",
+    "Double Hit":       "Doble Golpe",
+    "Double Kick":      "Doble Patada",
+    "Double Slap":      "Doble Bofetón",
+    "Double Team":      "Doble Equipo",
+    "Dragon Rage":      "Furia Dragón",
+    "Dragon Tail":      "Cola Dragón",
+    "Dual Chop":        "Golpe Bis",
     "Earthquake":       "Terremoto",
+    "Echoed Voice":     "Eco Voz",
+    "Electro Ball":     "Bola Voltio",
     "Ember":            "Ascuas",
     "Endeavor":         "Equiparar",
+    "Endure":           "Aguante",
     "Eruption":         "Erupción",
-    # F
+    "Explosion":        "Explosión",
+    "Extrasensory":     "Paranormal",
     "Fairy Wind":       "Viento Feérico",
+    "Fake Out":         "Sorpresa",
+    "False Swipe":      "Falso Tortazo",
+    "Feint":            "Amago",
+    "Feint Attack":     "Finta",
+    "Fire Spin":        "Giro Fuego",
+    "Flail":            "Azote",
+    "Flame Burst":      "Pirotecnia",
+    "Flame Charge":     "Nitrocarga",
+    "Flame Wheel":      "Rueda Fuego",
     "Flamethrower":     "Lanzallamas",
+    "Flash":            "Destello",
+    "Flash Cannon":     "Cañón Resplandor",
+    "Fling":            "Lanzamiento",
+    "Fly":              "Vuelo",
     "Focus Blast":      "Onda Certera",
-    # G
+    "Focus Energy":     "Foco Energía",
+    "Foresight":        "Profecía",
+    "Freeze-Dry":       "Liofilización",
+    "Fury Attack":      "Ataque Furia",
+    "Fury Cutter":      "Corte Furia",
+    "Fury Swipes":      "Golpes Furia",
+    "Gastro Acid":      "Bilis",
     "Giga Drain":       "Megaagotar",
+    "Giga Impact":      "Gigaimpacto",
+    "Growth":           "Desarrollo",
     "Growl":            "Gruñido",
-    # H
+    "Guillotine":       "Guillotina",
+    "Gust":             "Tornado",
+    "Gyro Ball":        "Giro Bola",
     "Harden":           "Endurecimiento",
-    # I
+    "Haze":             "Neblina",
+    "Headbutt":         "Golpe Cabeza",
+    "Helping Hand":     "Refuerzo",
+    "High Jump Kick":   "Patada Salto Alta",
+    "Horn Attack":      "Cornada",
+    "Horn Drill":       "Perforador",
+    "Howl":             "Aullido",
+    "Hydro Pump":       "Hidrobomba",
+    "Hyper Fang":       "Hipercolmillo",
+    "Hypnosis":         "Hipnosis",
     "Ice Beam":         "Rayo Hielo",
+    "Ice Fang":         "Colmillo Hielo",
     "Ice Punch":        "Puño Hielo",
-    # L
+    "Icicle Spear":     "Carámbano",
+    "Incinerate":       "Calcinación",
+    "Ingrain":          "Arraigo",
+    "Iron Tail":        "Cola Férrea",
+    "Karate Chop":      "Golpe Kárate",
+    "Knock Off":        "Desarme",
+    "Leaf Tornado":     "Ciclón de Hojas",
     "Leer":             "Malicioso",
     "Leech Life":       "Chupavidas",
-    # M
+    "Leech Seed":       "Drenadoras",
+    "Lick":             "Lengüetazo",
+    "Light Screen":     "Pantalla de Luz",
+    "Lucky Chant":      "Conjuro",
+    "Mach Punch":       "Ultrapuño",
+    "Magnet Rise":      "Levitón",
+    "Magnitude":        "Magnitud",
+    "Mean Look":        "Mal de Ojo",
+    "Mega Drain":       "Megaagotar",
+    "Mega Punch":       "Megapuño",
+    "Metal Sound":      "Eco Metálico",
     "Metronome":        "Metrónomo",
+    "Minimize":         "Reducción",
+    "Mirror Move":      "Espejo",
+    "Mirror Shot":      "Disparo Espejo",
+    "Moonlight":        "Luz Lunar",
+    "Mud Bomb":         "Bomba Fango",
+    "Mud Shot":         "Disparo Lodo",
     "Mud Sport":        "Lodazal",
-    # N
+    "Mud-Slap":         "Bofetón Lodo",
     "Nasty Plot":       "Maquinación",
-    # P
+    "Night Shade":      "Tinieblas",
+    "Odor Sleuth":      "Rastreo",
+    "Payback":          "Vendetta",
+    "Peck":             "Picotazo",
+    "Petal Blizzard":   "Tormenta Floral",
+    "Pin Missile":      "Pin Misil",
+    "Play Nice":        "Camaradería",
+    "Pluck":            "Picoteo",
+    "Poison Fang":      "Colmillo Veneno",
     "Poison Gas":       "Gas Venenoso",
     "Poison Powder":    "Polvo Veneno",
+    "Poison Sting":     "Picotazo Veneno",
+    "Pound":            "Destructor",
     "Power Gem":        "Gema Brillante",
-    # Q
+    "Power-Up Punch":   "Puño Incremento",
+    "Protect":          "Protección",
+    "Psybeam":          "Psicorrayo",
+    "Psych Up":         "Autosugestión",
+    "Psychic":          "Psíquico",
+    "Psyshock":         "Psicocarga",
+    "Punishment":       "Castigo",
+    "Pursuit":          "Persecución",
     "Quick Attack":     "Ataque Rápido",
-    # R
+    "Rage":             "Furia",
+    "Rapid Spin":       "Giro Rápido",
     "Razor Leaf":       "Hoja Afilada",
     "Recover":          "Recuperación",
+    "Reflect":          "Reflejo",
+    "Refresh":          "Alivio",
+    "Rest":             "Descanso",
+    "Revenge":          "Desquite",
+    "Reversal":         "Inversión",
+    "Roar":             "Rugido",
+    "Rock Blast":       "Pedradas",
+    "Rock Polish":      "Pulimento",
     "Rock Slide":       "Pedrada",
-    # S
+    "Rock Smash":       "Golpe Roca",
+    "Rock Throw":       "Lanzarrocas",
+    "Rock Tomb":        "Tumba Rocas",
+    "Rollout":          "Rodar",
+    "Safeguard":        "Velo Sagrado",
+    "Sand Attack":      "Ataque Arena",
+    "Sand Tomb":        "Bucle Arena",
+    "Scald":            "Escaldar",
+    "Scary Face":       "Cara Susto",
+    "Scratch":          "Arañazo",
+    "Screech":          "Chirrido",
+    "Self-Destruct":    "Autodestrucción",
     "Shadow Ball":      "Bola Sombra",
+    "Signal Beam":      "Rayo Señal",
     "Sing":             "Canto",
+    "Sky Attack":       "Ataque Aéreo",
+    "Slack Off":        "Relajo",
+    "Slam":             "Atizar",
+    "Slash":            "Cuchillada",
+    "Sleep Powder":     "Somnífero",
+    "Sleep Talk":       "Sonámbulo",
     "Sludge":           "Lodo",
     "Sludge Bomb":      "Bomba Lodo",
+    "Sludge Wave":      "Onda Tóxica",
+    "Smack Down":       "Antiaéreo",
+    "Smog":             "Polución",
+    "Snore":            "Ronquido",
+    "Soak":             "Empapar",
+    "Soft-Boiled":      "Ovocuración",
+    "Sonic Boom":       "Bomba Sónica",
+    "Spark":            "Chispa",
+    "Spikes":           "Púas",
+    "Spite":            "Rencor",
     "Splash":           "Salpicadura",
+    "Spore":            "Espora",
+    "Spotlight":        "Foco",
+    "Stealth Rock":     "Trampa Rocas",
+    "Stomp":            "Pisotón",
+    "Stone Edge":       "Roca Afilada",
+    "Strength":         "Fuerza",
+    "String Shot":      "Disparo Demora",
     "Struggle Bug":     "Agujón",
+    "Stun Spore":       "Paralizador",
+    "Submission":       "Sumisión",
+    "Sucker Punch":     "Golpe Bajo",
+    "Supersonic":       "Supersónico",
     "Surf":             "Surf",
+    "Swallow":          "Tragar",
     "Sweet Kiss":       "Beso Dulce",
+    "Sweet Scent":      "Dulce Aroma",
+    "Swift":            "Meteoros",
     "Sword Dance":      "Danza Espada",
+    "Swords Dance":     "Danza Espada",
     "Synthesis":        "Síntesis",
-    # T
     "Tackle":           "Placaje",
     "Tail Whip":        "Látigo Cola",
+    "Take Down":        "Derribo",
+    "Teleport":         "Teletransporte",
+    "Thrash":           "Saña",
+    "Thunder Fang":     "Colmillo Rayo",
+    "Thunder Punch":    "Puño Trueno",
     "Thunder Shock":    "Impactrueno",
     "Thunder Wave":     "Onda Trueno",
     "Thunderbolt":      "Rayo",
     "Toxic":            "Tóxico",
-    # V
+    "Toxic Spikes":     "Púas Tóxicas",
+    "Transform":        "Transformación",
+    "Tri Attack":       "Triataque",
+    "Twineedle":        "Doble Aguijón",
+    "Twister":          "Ciclón",
+    "Vacuum Wave":      "Onda Vacío",
+    "Venom Drench":     "Trampa Venenosa",
+    "Venoshock":        "Carga Tóxica",
     "Vice Grip":        "Agarrón",
-    # W
+    "Vine Whip":        "Látigo Cepa",
+    "Vital Throw":      "Llave Vital",
+    "Wake-Up Slap":     "Espabila",
     "Water Gun":        "Pistola Agua",
+    "Water Pulse":      "Hidropulso",
+    "Water Sport":      "Hidrochorro",
     "Waterfall":        "Cascada",
-    # X
+    "Will-O-Wisp":      "Fuego Fatuo",
+    "Wing Attack":      "Ataque Ala",
+    "Wrap":             "Constricción",
     "X-Scissor":        "Tijera X",
-    # Y
     "Yawn":             "Bostezo",
+    "Zen Headbutt":     "Cabezazo Zen",
 }
 
 def move_name_es(name: str) -> str:
@@ -325,6 +510,99 @@ BASE_STATS: dict[int, tuple] = {
     # ── Gen IV ─────────────────────────────────────────────────────────────────
     401: (37,  25,   41,  25,  41,  25),  # Kricketot
     466: (75, 123,   67,  95,  85,  95),  # Electivire
+}
+
+# Naturalezas idóneas por rol
+IDEAL_NATURES: dict[str, list] = {
+    "Atacante Físico":   ["Adamant (+Atk/-SpA)", "Jolly (+Spe/-SpA)"],
+    "Atacante Especial": ["Modest (+SpA/-Atk)", "Timid (+Spe/-Atk)"],
+    "Mixto":             ["Naive (+Spe/-SpD)", "Hasty (+Spe/-Def)", "Rash (+SpA/-SpD)", "Naughty (+Atk/-SpD)"],
+    "Wall Físico":       ["Bold (+Def/-Atk)", "Impish (+Def/-SpA)", "Relaxed (+Def/-Spe)"],
+    "Wall Especial":     ["Calm (+SpD/-Atk)", "Careful (+SpD/-SpA)", "Sassy (+SpD/-Spe)"],
+    "Tanque Mixto":      ["Bold (+Def/-Atk)", "Calm (+SpD/-Atk)", "Impish (+Def/-SpA)"],
+    "Soporte":           ["Timid (+Spe/-Atk)", "Bold (+Def/-Atk)", "Calm (+SpD/-Atk)"],
+}
+
+# Descripción de cada naturaleza
+NATURE_DESC: dict[str, str] = {
+    "Hardy":   "Neutra — no modifica ningún stat.",
+    "Lonely":  "+Atk / −Def — agresiva pero frágil físicamente.",
+    "Brave":   "+Atk / −Spe — más daño físico, pero más lento.",
+    "Adamant": "+Atk / −SpA — ideal para atacantes físicos puros.",
+    "Naughty": "+Atk / −SpD — agresiva, pero vulnerable a ataques especiales.",
+    "Bold":    "+Def / −Atk — defensiva, ideal para walls físicos.",
+    "Docile":  "Neutra — no modifica ningún stat.",
+    "Relaxed": "+Def / −Spe — más defensa física, pero más lento.",
+    "Impish":  "+Def / −SpA — defensiva sin sacrificar velocidad.",
+    "Lax":     "+Def / −SpD — más defensa física, peor defensa especial.",
+    "Timid":   "+Spe / −Atk — velocidad máxima, ideal para sweepers especiales.",
+    "Hasty":   "+Spe / −Def — rápido pero frágil físicamente.",
+    "Serious": "Neutra — no modifica ningún stat.",
+    "Jolly":   "+Spe / −SpA — velocidad máxima, ideal para sweepers físicos.",
+    "Naive":   "+Spe / −SpD — rápido pero vulnerable a ataques especiales.",
+    "Modest":  "+SpA / −Atk — ideal para atacantes especiales puros.",
+    "Mild":    "+SpA / −Def — más poder especial, pero frágil físicamente.",
+    "Quiet":   "+SpA / −Spe — más poder especial, pero más lento.",
+    "Bashful": "Neutra — no modifica ningún stat.",
+    "Rash":    "+SpA / −SpD — ofensiva especial, vulnerable a ataques especiales.",
+    "Calm":    "+SpD / −Atk — defensiva especial, ideal para walls especiales.",
+    "Gentle":  "+SpD / −Def — más defensa especial, frágil físicamente.",
+    "Sassy":   "+SpD / −Spe — defensiva especial, pero más lento.",
+    "Careful": "+SpD / −SpA — defensiva especial sin sacrificar ataque físico.",
+    "Quirky":  "Neutra — no modifica ningún stat.",
+}
+
+# Descripción de habilidades
+ABILITY_DESC: dict[str, str] = {
+    "Adaptability":   "Aumenta el multiplicador STAB de 1.5× a 2×.",
+    "Blaze":          "Potencia ataques Fire en ×1.5 cuando el HP cae al 33% o menos.",
+    "Chlorophyll":    "Dobla la velocidad bajo sol.",
+    "Clear Body":     "Impide que los rivales bajen los stats propios.",
+    "Compound Eyes":  "Aumenta la precisión propia en un 30%.",
+    "Damp":           "Impide el uso de Explosión y Autodestrucción en el campo.",
+    "Early Bird":     "Despierta del sueño en la mitad de turnos.",
+    "Effect Spore":   "30% de chance de paralizar/envenenar/adormecer al hacer contacto.",
+    "Flash Fire":     "Inmune a ataques Fire; los absorbe para potenciar los propios.",
+    "Guts":           "Sube Atk en ×1.5 cuando hay estado alterado.",
+    "Hustle":         "Sube Atk en ×1.5 pero reduce precisión de ataques físicos.",
+    "Hyper Cutter":   "Impide que bajen el stat de Ataque.",
+    "Intimidate":     "Al entrar, baja el Ataque del rival 1 etapa.",
+    "Keen Eye":       "Impide que bajen la Precisión propia.",
+    "Leaf Guard":     "Inmune a estados alterados bajo sol.",
+    "Levitate":       "Inmune a ataques Ground.",
+    "Lightning Rod":  "Inmune a ataques Electric; absorbe para subir SpAtk.",
+    "Limber":         "Inmune a parálisis.",
+    "Natural Cure":   "Cura el estado alterado al cambiar de combate.",
+    "No Guard":       "Todos los ataques (propios y rivales) tienen precisión perfecta.",
+    "Oblivious":      "Inmune a Atracción y Provocación.",
+    "Overgrow":       "Potencia ataques Grass en ×1.5 cuando el HP cae al 33% o menos.",
+    "Own Tempo":      "Inmune a confusión.",
+    "Pickup":         "Puede recoger objetos del suelo después del combate.",
+    "Poison Point":   "30% de chance de envenenar al rival al hacer contacto físico.",
+    "Pressure":       "El rival gasta 2 PP por movimiento en vez de 1.",
+    "Regenerator":    "Recupera 1/3 del HP máximo al retirarse del combate.",
+    "Rock Head":      "No recibe daño de retroceso propio.",
+    "Run Away":       "Garantiza huida de combates contra salvajes.",
+    "Serene Grace":   "Duplica la probabilidad de efectos secundarios (flinch, estados…).",
+    "Shed Skin":      "33% de probabilidad por turno de curar el estado alterado.",
+    "Shell Armor":    "Impide golpes críticos rivales.",
+    "Static":         "30% de chance de paralizar al rival al hacer contacto físico.",
+    "Steadfast":      "Sube Velocidad 1 etapa al sufrir flinch.",
+    "Stench":         "10% de chance de causar flinch al atacar.",
+    "Sticky Hold":    "Impide que el rival robe o tire el objeto propio.",
+    "Storm Drain":    "Inmune a ataques Water; absorbe para subir SpAtk.",
+    "Swift Swim":     "Dobla la velocidad bajo lluvia.",
+    "Synchronize":    "Transmite al rival el estado alterado propio (veneno, quemadura, parálisis).",
+    "Technician":     "Multiplica por 1.5 los movimientos con potencia base ≤60.",
+    "Thick Fat":      "Reduce a la mitad el daño recibido de ataques Fire e Ice.",
+    "Torrent":        "Potencia ataques Water en ×1.5 cuando el HP cae al 33% o menos.",
+    "Trace":          "Copia la habilidad del rival al entrar en combate.",
+    "Truant":         "Solo puede atacar un turno de cada dos.",
+    "Unaware":        "Ignora los cambios de stat del rival al calcular daño.",
+    "Vital Spirit":   "Inmune a sueño.",
+    "Volt Absorb":    "Inmune a ataques Electric; los absorbe para recuperar HP.",
+    "Water Absorb":   "Inmune a ataques Water; los absorbe para recuperar HP.",
+    "White Smoke":    "Impide que los rivales bajen los stats propios.",
 }
 
 # Qué stats sube/baja cada naturaleza  (None = neutro)
@@ -845,6 +1123,7 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
                 f'</div>'
             )
 
+        mdata = modal_data(slot)
         rows += (
             f'<div class="box-list-row">'
             f'{rank_html}'
@@ -856,7 +1135,7 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
             f'</div>'
             f'<span class="combat-role {rol_css} top-rol">{rol_text}</span>'
             f'<div class="bls-ivs sr-cells">{iv_cells}</div>'
-            f'<div class="role-badge {rbc}" style="cursor:default">'
+            f'<div class="role-badge {rbc}" onclick="openRbModal(this)" data-modal=\'{mdata}\' style="cursor:pointer">'
             f'<span class="rb-score">{pct}%</span>'
             f'<span class="rb-label">{rb_label(rbc)}</span>'
             f'</div>'
@@ -869,6 +1148,49 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
   Top {top_n} de {total} Pokémon totales ordenados por % IVs relevantes al rol
 </div>
 <div class="box-section-list">{rows}</div>"""
+
+
+def modal_data(slot: dict) -> str:
+    """Genera el JSON embebido en data-modal para openRbModal()."""
+    import json as _json
+    pk      = slot["Pokemon"]
+    payload = pk["Payload"]
+    sd      = pk["StaticData"]
+    ivs     = payload["IVs"]
+    evs     = payload["EVs"]
+    pid     = payload["PokemonID"]
+    nature  = payload["NatureName"]
+    ability = pk.get("Ability") or ""
+    level   = payload["Level"]
+    nick    = payload.get("Nickname") or ""
+    shiny   = payload.get("Shiny", False)
+
+    rol_key  = infer_role(pid, nature, evs)
+    _, rol_text, _ = ROLE_META[rol_key]
+    pct      = iv_pct(ivs, rol_key)
+    rbc      = rb_class(pct)
+    rel_keys = ROLE_IV_KEYS.get(rol_key, [])
+
+    iv_list = [
+        {"s": lbl, "v": ivs.get(k, 0), "dim": k not in rel_keys}
+        for k, lbl in zip(IV_ORDER, IV_LABELS)
+    ]
+
+    d = {
+        "name":         (f"★ " if shiny else "") + sd["Name"] + (f" ({nick})" if nick else ""),
+        "level":        level,
+        "nature":       nature,
+        "nature_desc":  NATURE_DESC.get(nature, ""),
+        "ability":      ability,
+        "ability_desc": ABILITY_DESC.get(ability, ""),
+        "rol":          rol_key,
+        "rol_text":     rol_text,
+        "pct":          pct,
+        "rbc":          rbc,
+        "ivs":          iv_list,
+        "ideal_natures": IDEAL_NATURES.get(rol_key, []),
+    }
+    return _json.dumps(d, ensure_ascii=False).replace("'", "&#39;")
 
 
 def build_card(slot: dict) -> str:
@@ -950,6 +1272,7 @@ def build_card(slot: dict) -> str:
     else:
         obj_panel = '<div class="alert alert-info" style="margin-top:6px">Sin moveset objetivo definido — añádelo en movesets.json.</div>'
 
+    mdata = modal_data(slot)
     return f"""
     <!-- {name} -->
     <div class="card">
@@ -963,7 +1286,7 @@ def build_card(slot: dict) -> str:
             <span class="combat-role {rol_css}" title="{rol_key}">{rol_icon} {rol_text}</span>
           </div>
         </div>
-        <div class="role-badge {rbc}" onclick="openRbModal('{key}')">
+        <div class="role-badge {rbc}" onclick="openRbModal(this)" data-modal='{mdata}'>
           <span class="rb-score">{pct}%</span>
           <span class="rb-label">{rbl}</span>
         </div>
@@ -1068,6 +1391,7 @@ def build_box_list_row(slot: dict, box_num: int) -> str:
         for t in types
     )
 
+    mdata = modal_data(slot)
     return (
         f'<div class="box-list-row">'
         f'<span class="bls-box">C{box_num}</span>'
@@ -1079,7 +1403,7 @@ def build_box_list_row(slot: dict, box_num: int) -> str:
         f'<span class="combat-role {rol_css}">{rol_text}</span></div>'
         f'</div>'
         f'<div class="bls-ivs sr-cells">{iv_cells}</div>'
-        f'<div class="role-badge {rbc}" style="cursor:default">'
+        f'<div class="role-badge {rbc}" onclick="openRbModal(this)" data-modal=\'{mdata}\' style="cursor:pointer">'
         f'<span class="rb-score">{pct}%</span>'
         f'<span class="rb-label">{rb_label(rbc)}</span>'
         f'</div>'
@@ -1359,6 +1683,14 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .rb-iv-cell { background:#0d1117; border-radius:5px; padding:4px 2px; text-align:center; }
 .rb-iv-s { font-size:0.55em; color:#8b949e; text-transform:uppercase; display:block; }
 .rb-iv-v { font-size:0.95em; font-weight:700; display:block; }
+.modal-section { background:#0d1117; border-radius:8px; padding:10px 12px; }
+.modal-section-title { font-size:0.62em; text-transform:uppercase; letter-spacing:1px;
+  color:#484f58; font-weight:700; margin-bottom:5px; }
+.modal-section-desc { font-size:0.78em; color:#c9d1d9; line-height:1.5; }
+.modal-nature-name { font-size:0.9em; font-weight:700; color:#f3d327; }
+.modal-nature-ideals { display:flex; flex-wrap:wrap; gap:5px; margin-top:5px; }
+.modal-nature-ideal { background:#161b22; border:1px solid #30363d; border-radius:6px;
+  padding:2px 8px; font-size:0.7em; color:#8b949e; }
 """
 
 JS = """
@@ -1384,53 +1716,67 @@ function mvTab(btn, panelId) {
   document.getElementById(panelId).classList.add('active');
 }
 
-function openRbModal(key) {
-  const card = document.querySelector('.card .role-badge[onclick*="' + key + '"]')
-               ?.closest('.card');
-  if (!card) return;
-
-  const name = card.querySelector('.header-info h2').textContent.trim();
-  const meta = card.querySelector('.header-info .meta').textContent;
-  const badge = card.querySelector('.role-badge');
-  const pctText = badge.querySelector('.rb-score').textContent;
-  const pct = parseInt(pctText);
-  const label = badge.querySelector('.rb-label').textContent;
-  const cls = badge.className.replace('role-badge','').trim();
-
-  const ivCells = card.querySelectorAll('.stat-row-line:first-child .sr-cell');
-  let ivGrid = '';
-  ivCells.forEach(cell => {
-    const s = cell.querySelector('.sr-s').textContent;
-    const v = cell.querySelector('.sr-v');
-    ivGrid += `<div class="rb-iv-cell"><span class="rb-iv-s">${s}</span>` +
-              `<span class="rb-iv-v ${v.className.replace('sr-v','').trim()}">${v.textContent}</span></div>`;
-  });
+function openRbModal(el) {
+  const raw = el.getAttribute('data-modal');
+  if (!raw) return;
+  const d = JSON.parse(raw);
 
   const colorMap = {
     'rb-green':'#3fb950','rb-blue':'#58a6ff','rb-amber':'#d29922','rb-red':'#f85149'
   };
-  const color = colorMap[cls] || '#8b949e';
+  const color = colorMap[d.rbc] || '#8b949e';
+
+  // grid de IVs
+  let ivGrid = '';
+  d.ivs.forEach(iv => {
+    const dimStyle = iv.dim ? 'opacity:0.3;' : '';
+    const vClass = iv.v >= 25 ? 'iv-high' : iv.v >= 15 ? 'iv-mid' : 'iv-low';
+    ivGrid += `<div class="rb-iv-cell" style="${dimStyle}">` +
+              `<span class="rb-iv-s">${iv.s}</span>` +
+              `<span class="rb-iv-v ${vClass}">${iv.v}</span></div>`;
+  });
+
+  // naturalezas ideales
+  const ideals = d.ideal_natures.map(n =>
+    `<span class="modal-nature-ideal">${n}</span>`
+  ).join('');
+
+  // check si la naturaleza actual es óptima
+  const isIdeal = d.ideal_natures.some(n => n.startsWith(d.nature));
+  const natureStatus = isIdeal
+    ? `<span style="color:#3fb950;font-size:0.72em">✓ Óptima para ${d.rol_text}</span>`
+    : `<span style="color:#d29922;font-size:0.72em">⚠ No ideal para ${d.rol_text}</span>`;
 
   document.getElementById('rb-modal-content').innerHTML = `
-    <h3>${name}</h3>
-    <div style="font-size:0.78em;color:#8b949e;margin-bottom:8px">${meta}</div>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-      <span class="role-badge ${cls}" style="cursor:default">
-        <span class="rb-score">${pctText}</span>
-        <span class="rb-label">${label}</span>
+    <h3>${d.name}</h3>
+    <div style="font-size:0.78em;color:#8b949e;margin-bottom:12px">Lv.${d.level}</div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+      <span class="role-badge ${d.rbc}" style="cursor:default">
+        <span class="rb-score">${d.pct}%</span>
+        <span class="rb-label">${d.rbc.replace('rb-','').replace('green','Bueno').replace('blue','Viable').replace('amber','Regular').replace('red','Malo')}</span>
       </span>
-      <span style="font-size:0.82em;color:#8b949e">% total de IVs</span>
+      <span style="font-size:0.78em;color:#8b949e">IVs relevantes al rol</span>
     </div>
-    <div class="rb-modal-bar">
-      <div class="rb-modal-marker" style="left:${pct}%;background:${color}"></div>
+    <div class="rb-modal-bar" style="margin-bottom:14px">
+      <div class="rb-modal-marker" style="left:${d.pct}%;background:${color}"></div>
     </div>
-    <div style="font-size:0.68em;color:#484f58;margin-bottom:10px">
-      0% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100%
+    <div class="rb-modal-ivs" style="margin-bottom:16px">${ivGrid}</div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">Naturaleza</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+        <span class="modal-nature-name">${d.nature}</span>
+        ${natureStatus}
+      </div>
+      <div class="modal-section-desc">${d.nature_desc}</div>
+      <div class="modal-section-title" style="margin-top:8px">Naturalezas ideales para ${d.rol_text}</div>
+      <div class="modal-nature-ideals">${ideals || '<span style="color:#484f58">No definidas</span>'}</div>
     </div>
-    <div class="rb-modal-ivs">${ivGrid}</div>
-    <div style="font-size:0.75em;color:#8b949e;margin-top:8px">
-      Para editar el moveset objetivo abre el HTML y completa el bloque <em>Objetivo</em>
-      de la card correspondiente.
+
+    <div class="modal-section" style="margin-top:12px">
+      <div class="modal-section-title">Habilidad — ${d.ability}</div>
+      <div class="modal-section-desc">${d.ability_desc || '<span style="color:#484f58">Sin descripción registrada</span>'}</div>
     </div>
   `;
   document.getElementById('rb-modal-overlay').classList.add('open');
