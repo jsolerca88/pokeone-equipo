@@ -10,7 +10,9 @@
       "PowerShell(python generate_boxes.py input/input_jsolerca.json pokeone_equipo.html 2>&1)",
       "Bash(git commit *)",
       "Bash(python *)",
-      "Bash(del *)"
+      "Bash(del *)",
+      "PowerShell(cd \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\pokeone-repo\"; $json = Get-Content -Path \"input/input_jsolerca.json\" -Raw | ConvertFrom-Json; $pk = $json.data.pokemon[0][0].Pokemon; $sd = $pk.StaticData; Write-Host \"Name: $\\($sd.Name\\)\"; Write-Host \"StaticData keys: $\\($sd | Get-Member -MemberType NoteProperty | % Name\\)\"; Write-Host \"Payload sample keys: $\\($pk.Payload | Get-Member -MemberType NoteProperty | Select -First 10 | % Name\\)\")",
+      "PowerShell(cd \"C:\\\\Users\\\\Usuario\\\\Desktop\\\\pokeone-repo\"; $json = Get-Content -Path \"input/input_jsolerca.json\" -Raw | ConvertFrom-Json; $pk = $json.data.pokemon[0][0].Pokemon; Write-Host \"=== COMPLETE JSON FIELDS ===\"; Write-Host \"Pokemon keys: $\\($pk | Get-Member -MemberType NoteProperty | % Name\\)\"; Write-Host \"\"; Write-Host \"Payload keys: $\\($pk.Payload | Get-Member -MemberType NoteProperty | % Name\\)\"; Write-Host \"\"; Write-Host \"Stats calculated: $\\($pk.Stats\\)\"; Write-Host \"\"; Write-Host \"Checking if any base stats exist...\"; $pk.StaticData | ConvertTo-Json)"
     ]
   }
 }
