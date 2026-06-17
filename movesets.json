@@ -1,0 +1,51 @@
+{
+  "_info": "Movesets objetivo por Pokémon. Clave = nombre en minúsculas (slug). Edita este archivo para actualizar los objetivos; generate_team.py lo lee automáticamente.",
+  "kingler": [
+    { "name": "Crabhammer",       "desc": "STAB Water físico 100 pot — alta critico ★" },
+    { "name": "X-Scissor",        "desc": "Bug físico 80 pot — cobertura" },
+    { "name": "Rock Slide",       "desc": "Rock físico — cobertura Flying" },
+    { "name": "Sword Dance / Agility", "desc": "Setup ofensivo" }
+  ],
+  "togepi": [
+    { "name": "Dazzling Gleam",   "desc": "STAB Fairy especial 80 pot ★" },
+    { "name": "Air Slash",        "desc": "Flying especial 75 pot — 60% flinch con Serene Grace" },
+    { "name": "Thunder Wave",     "desc": "Paraliza rival — soporte" },
+    { "name": "Nasty Plot",       "desc": "Sube SpAtk 2 etapas — setup" }
+  ],
+  "quilava": [
+    { "name": "Flamethrower",     "desc": "STAB Fire especial 90 pot ★" },
+    { "name": "Eruption",         "desc": "STAB Fire 150 pot cuando HP alto" },
+    { "name": "Focus Blast",      "desc": "Cobertura Fighting" },
+    { "name": "Shadow Ball",      "desc": "Cobertura Ghost/Psychic" }
+  ],
+  "kricketot": [
+    { "name": "X-Scissor",        "desc": "STAB Bug físico 80 pot ★" },
+    { "name": "Bug Buzz",         "desc": "STAB Bug especial 90 pot" },
+    { "name": "Leech Life",       "desc": "STAB Bug — roba vida" },
+    { "name": "Endeavor / Sing",  "desc": "Soporte / utilidad" }
+  ],
+  "mareep": [
+    { "name": "Thunderbolt",      "desc": "STAB Electric especial 90 pot ★" },
+    { "name": "Power Gem",        "desc": "Rock especial 80 pot — cobertura Flying/Ice" },
+    { "name": "Focus Blast",      "desc": "Fighting — cobertura Ground/Rock" },
+    { "name": "Cotton Guard",     "desc": "+3 Def — soporte defensivo" }
+  ],
+  "gulpin": [
+    { "name": "Sludge Bomb",      "desc": "STAB Poison especial 90 pot — 30% envenenar ★" },
+    { "name": "Shadow Ball",      "desc": "Cobertura Ghost/Psychic 80 pot" },
+    { "name": "Ice Beam",         "desc": "Cobertura Dragon/Grass" },
+    { "name": "Yawn / Toxic",     "desc": "Soporte stall / envenenar" }
+  ],
+  "bayleef": [
+    { "name": "Giga Drain",       "desc": "STAB Grass — roba vida ★" },
+    { "name": "Sludge Bomb",      "desc": "Poison — cobertura 90 pot" },
+    { "name": "Ancient Power",    "desc": "Necesario para evolucionar a Meganium" },
+    { "name": "Synthesis",        "desc": "Recupera HP — ya lo tiene ✓" }
+  ],
+  "wooper": [
+    { "name": "Waterfall",        "desc": "STAB Water físico 80 pot — 20% flinch ★" },
+    { "name": "Earthquake",       "desc": "STAB Ground físico 100 pot ★" },
+    { "name": "Ice Punch",        "desc": "Cobertura Dragon/Grass" },
+    { "name": "Recover",          "desc": "Recupera HP — sustain" }
+  ]
+}
