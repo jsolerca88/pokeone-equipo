@@ -1125,7 +1125,7 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
 
         mdata = modal_data(slot)
         rows += (
-            f'<div class="box-list-row">'
+            f'<div class="box-list-row" data-level="{level}">'
             f'{rank_html}'
             f'{loc_html}'
             f'<img class="bls-spr" src="{icon}" alt="{name}">'
@@ -1144,10 +1144,15 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
 
     total = len(all_entries)
     return f"""
-<div style="font-size:0.75em;color:#8b949e;margin-bottom:14px">
-  Top {top_n} de {total} Pokémon totales ordenados por % IVs relevantes al rol
+<div class="top-controls">
+  <div class="top-filter-wrap">
+    <label class="top-filter-label" for="top-lvl-max">Nivel máximo</label>
+    <input id="top-lvl-max" class="top-filter-input" type="number" min="1" max="100"
+           placeholder="Sin límite" oninput="filterTopByLevel(this.value)">
+  </div>
+  <span class="top-info" id="top-count">{top_n} de {total} Pokémon</span>
 </div>
-<div class="box-section-list">{rows}</div>"""
+<div class="box-section-list" id="top-list">{rows}</div>"""
 
 
 def modal_data(slot: dict) -> str:
@@ -1642,6 +1647,15 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .bls-box  { font-size: 0.62em; font-weight: 700; color: #484f58; min-width: 24px;
   text-align: center; flex-shrink: 0; }
 
+/* TOP tab controls */
+.top-controls { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+.top-filter-wrap { display: flex; align-items: center; gap: 8px; }
+.top-filter-label { font-size: 0.78em; color: #8b949e; }
+.top-filter-input { background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  color: #e6edf3; font-size: 0.85em; padding: 5px 10px; width: 110px; outline: none; }
+.top-filter-input:focus { border-color: #f3d327; }
+.top-info { font-size: 0.75em; color: #484f58; margin-left: auto; }
+
 /* TOP tab */
 .top-rank { font-size: 0.7em; font-weight: 700; color: #484f58; min-width: 22px;
   text-align: center; flex-shrink: 0; }
@@ -1694,6 +1708,20 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 """
 
 JS = """
+function filterTopByLevel(val) {
+  const max = val === '' ? Infinity : parseInt(val);
+  const rows = document.querySelectorAll('#top-list .box-list-row');
+  let visible = 0;
+  rows.forEach(row => {
+    const lv = parseInt(row.dataset.level);
+    const show = isNaN(max) || lv <= max;
+    row.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  const info = document.getElementById('top-count');
+  if (info) info.textContent = visible + ' de ' + rows.length + ' Pokémon';
+}
+
 function sectionTab(btn, panelId) {
   document.querySelectorAll('.section-tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
