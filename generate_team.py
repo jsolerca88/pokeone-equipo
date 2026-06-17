@@ -1042,39 +1042,32 @@ def build_team_analysis(slots: list) -> tuple:
     return summary_html, detail_html
 
 
-def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
-    """Lista plana con los top_n Pokémon de todo el almacenamiento (equipo + cajas),
-    ordenados por % IVs por rol de mayor a menor."""
-
-    # Recopilar todos los slots con su ubicación
-    all_entries = []
+def _collect_all_entries(team_slots: list, raw_boxes: list) -> list:
+    entries = []
     for slot in team_slots:
         if slot:
-            all_entries.append(("equipo", slot))
+            entries.append(("equipo", slot))
     for i, box in enumerate(raw_boxes):
         if not box or i == 0:
             continue
         for slot in box:
             if slot:
-                all_entries.append((i, slot))
+                entries.append((i, slot))
+    return entries
 
-    # Calcular pct por rol para cada uno y ordenar
-    def entry_pct(entry):
-        _, slot = entry
-        p = slot["Pokemon"]["Payload"]
-        return iv_pct(p["IVs"], infer_role(p["PokemonID"], p["NatureName"], p["EVs"]))
+def _entry_pct(entry):
+    _, slot = entry
+    p = slot["Pokemon"]["Payload"]
+    return iv_pct(p["IVs"], infer_role(p["PokemonID"], p["NatureName"], p["EVs"]))
 
-    all_entries.sort(key=entry_pct, reverse=True)
-    top = all_entries[:top_n]
-
+def _build_ranked_rows(ranked: list, skull: bool = False) -> str:
     rows = ""
-    for rank, (location, slot) in enumerate(top, 1):
+    for rank, (location, slot) in enumerate(ranked, 1):
         pk      = slot["Pokemon"]
         payload = pk["Payload"]
         sd      = pk["StaticData"]
         ivs     = payload["IVs"]
         nature  = payload["NatureName"]
-        ability = pk.get("Ability") or "—"
         evs     = payload["EVs"]
         pid     = payload["PokemonID"]
         level   = payload["Level"]
@@ -1092,24 +1085,21 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
         name       = sd["Name"]
         display    = f'{"★ " if shiny else ""}{name}{f" ({nick})" if nick else ""}'
 
-        # badge de ubicación
         if location == "equipo":
             loc_html = '<span class="top-loc top-loc-team">Equipo</span>'
         else:
             loc_html = f'<span class="top-loc top-loc-box">C{location}</span>'
 
-        # rank medal para top 3
-        if rank == 1:   rank_html = '<span class="top-rank rank-gold">1</span>'
-        elif rank == 2: rank_html = '<span class="top-rank rank-silver">2</span>'
-        elif rank == 3: rank_html = '<span class="top-rank rank-bronze">3</span>'
-        else:           rank_html = f'<span class="top-rank">{rank}</span>'
-
-        types = sd.get("Types", [])
-        type_badges = "".join(
-            f'<span class="type-badge" style="background:{t["color"]}22;color:{t["color"]};'
-            f'border:1px solid {t["color"]}44">{t["name"]}</span>'
-            for t in types
-        )
+        if skull:
+            if rank == 1:   rank_html = '<span class="top-rank skull-rank-1">💀</span>'
+            elif rank == 2: rank_html = '<span class="top-rank skull-rank-2">💀</span>'
+            elif rank == 3: rank_html = '<span class="top-rank skull-rank-3">💀</span>'
+            else:           rank_html = f'<span class="top-rank skull-rank-n">💀</span>'
+        else:
+            if rank == 1:   rank_html = '<span class="top-rank rank-gold">1</span>'
+            elif rank == 2: rank_html = '<span class="top-rank rank-silver">2</span>'
+            elif rank == 3: rank_html = '<span class="top-rank rank-bronze">3</span>'
+            else:           rank_html = f'<span class="top-rank">{rank}</span>'
 
         iv_cells = ""
         for json_key, lbl in zip(IV_ORDER, IV_LABELS):
@@ -1124,8 +1114,9 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
             )
 
         mdata = modal_data(slot)
+        row_cls = " skull-row" if skull else ""
         rows += (
-            f'<div class="box-list-row" data-level="{level}">'
+            f'<div class="box-list-row{row_cls}" data-level="{level}">'
             f'{rank_html}'
             f'{loc_html}'
             f'<img class="bls-spr" src="{icon}" alt="{name}">'
@@ -1141,18 +1132,43 @@ def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
             f'</div>'
             f'</div>'
         )
+    return rows
 
+
+def build_top_html(team_slots: list, raw_boxes: list, top_n: int = 30) -> str:
+    all_entries = _collect_all_entries(team_slots, raw_boxes)
+    all_entries.sort(key=_entry_pct, reverse=True)
+    rows  = _build_ranked_rows(all_entries[:top_n], skull=False)
     total = len(all_entries)
     return f"""
 <div class="top-controls">
   <div class="top-filter-wrap">
     <label class="top-filter-label" for="top-lvl-max">Nivel máximo</label>
     <input id="top-lvl-max" class="top-filter-input" type="number" min="1" max="100"
-           placeholder="Sin límite" oninput="filterTopByLevel(this.value)">
+           placeholder="Sin límite" oninput="filterTopByLevel('top-list','top-count',this.value)">
   </div>
   <span class="top-info" id="top-count">{top_n} de {total} Pokémon</span>
 </div>
 <div class="box-section-list" id="top-list">{rows}</div>"""
+
+
+def build_bottom_html(team_slots: list, raw_boxes: list, bottom_n: int = 30) -> str:
+    all_entries = _collect_all_entries(team_slots, raw_boxes)
+    # excluir equipo activo — no tiene sentido borrar lo que está en uso
+    box_only = [(loc, s) for loc, s in all_entries if loc != "equipo"]
+    box_only.sort(key=_entry_pct, reverse=False)  # peor primero
+    rows  = _build_ranked_rows(box_only[:bottom_n], skull=True)
+    total = len(box_only)
+    return f"""
+<div class="top-controls">
+  <div class="top-filter-wrap">
+    <label class="top-filter-label" for="bot-lvl-max">Nivel máximo</label>
+    <input id="bot-lvl-max" class="top-filter-input" type="number" min="1" max="100"
+           placeholder="Sin límite" oninput="filterTopByLevel('bot-list','bot-count',this.value)">
+  </div>
+  <span class="top-info" id="bot-count">{bottom_n} de {total} Pokémon en cajas</span>
+</div>
+<div class="box-section-list" id="bot-list">{rows}</div>"""
 
 
 def modal_data(slot: dict) -> str:
@@ -1667,6 +1683,12 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 .top-loc-team { background: #001d2d; color: #58a6ff; border: 1px solid #58a6ff44; }
 .top-loc-box  { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
 .top-rol { flex-shrink: 0; font-size: 0.62em !important; }
+.skull-row { background: rgba(248,81,73,0.04); }
+.skull-row:hover { background: rgba(248,81,73,0.08) !important; }
+.skull-rank-1 { font-size: 1.1em; opacity: 1.0; }
+.skull-rank-2 { font-size: 1.0em; opacity: 0.85; }
+.skull-rank-3 { font-size: 0.95em; opacity: 0.75; }
+.skull-rank-n { font-size: 0.8em; opacity: 0.5; }
 .bls-spr  { width: 36px; height: 36px; image-rendering: pixelated; flex-shrink: 0; }
 .bls-info { min-width: 160px; flex-shrink: 0; }
 .bls-name { font-size: 0.88em; font-weight: 700; display: block; }
@@ -1708,9 +1730,9 @@ body { background: #0d1117; color: #e6edf3; font-family: 'Segoe UI', sans-serif;
 """
 
 JS = """
-function filterTopByLevel(val) {
+function filterTopByLevel(listId, countId, val) {
   const max = val === '' ? Infinity : parseInt(val);
-  const rows = document.querySelectorAll('#top-list .box-list-row');
+  const rows = document.querySelectorAll('#' + listId + ' .box-list-row');
   let visible = 0;
   rows.forEach(row => {
     const lv = parseInt(row.dataset.level);
@@ -1718,8 +1740,12 @@ function filterTopByLevel(val) {
     row.style.display = show ? '' : 'none';
     if (show) visible++;
   });
-  const info = document.getElementById('top-count');
-  if (info) info.textContent = visible + ' de ' + rows.length + ' Pokémon';
+  const info = document.getElementById(countId);
+  if (info) {
+    const total = rows.length;
+    const suffix = info.textContent.includes('cajas') ? ' Pokémon en cajas' : ' Pokémon';
+    info.textContent = visible + ' de ' + total + suffix;
+  }
 }
 
 function sectionTab(btn, panelId) {
@@ -1836,6 +1862,7 @@ def build_page(team_name: str, slots: list, trainer: str, raw_boxes: list) -> st
     analysis_summary, analysis_detail = build_team_analysis(slots)
     boxes_html               = build_boxes_html(raw_boxes)
     top_html                 = build_top_html(slots, raw_boxes)
+    bottom_html              = build_bottom_html(slots, raw_boxes)
     box_total  = sum(len(b) for i, b in enumerate(raw_boxes) if b and i > 0)
     box_count  = sum(1 for i, b in enumerate(raw_boxes) if b and i > 0)
 
@@ -1860,6 +1887,7 @@ def build_page(team_name: str, slots: list, trainer: str, raw_boxes: list) -> st
   <button class="section-tab-btn active" onclick="sectionTab(this,'panel-equipo')">&#9876; Equipo activo</button>
   <button class="section-tab-btn" onclick="sectionTab(this,'panel-cajas')">&#128230; Cajas PC</button>
   <button class="section-tab-btn" onclick="sectionTab(this,'panel-top')">&#11088; TOP 30</button>
+  <button class="section-tab-btn" onclick="sectionTab(this,'panel-bottom')">&#128128; A borrar</button>
 </div>
 
 <div id="panel-equipo" class="section-panel active">
@@ -1881,6 +1909,10 @@ def build_page(team_name: str, slots: list, trainer: str, raw_boxes: list) -> st
 
 <div id="panel-top" class="section-panel">
   {top_html}
+</div>
+
+<div id="panel-bottom" class="section-panel">
+  {bottom_html}
 </div>
 
 {MODAL_HTML}
